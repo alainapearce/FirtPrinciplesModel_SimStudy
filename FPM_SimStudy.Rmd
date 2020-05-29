@@ -1,5 +1,5 @@
 ---
-title: "Bite Rate Models"
+title: "First Principle Model Simulation Study"
 output:
   pdf_document:
     toc: true
@@ -33,13 +33,14 @@ header-includes:
 <!-- Note: the first statement is the langauge (i.e., r), then the label for the chunck. After this you can put extra statements like echo (show code and outcome), include (show outcome) -->
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(tidy = TRUE, tidy.opts = list(comment = FALSE), echo = TRUE, fig.width=6, fig.height=4, fig.path='BiteRateModel_figs/fig-', echo=FALSE, warning=FALSE, message=FALSE, comment = NA)
+knitr::opts_chunk$set(tidy = TRUE, tidy.opts = list(comment = FALSE), echo = TRUE, fig.width=6, fig.height=4, fig.path='FPM_SimStudy_figs/fig-', echo=FALSE, warning=FALSE, message=FALSE, comment = NA)
 ```
 
 
 <!-- load startup file and any extra packages -->
 ```{r load_Fig1, echo=FALSE, include=FALSE}
 # source('BiteRateModel_Figure1sim.R')
+source('FPM_SimStudy_setup.R')
 library(knitr)
 library(kableExtra)
 ```
@@ -161,7 +162,7 @@ bite100_CumulativeIntake_Figure1_plotC
 bite100_CumulativeIntake_Figure1_plotD
 ```
 
-```{r bite100_CumulativeIntake_Figure1_grid, echo=FALSE, include = FALSE, eval = FALSE}
+```{r Figure1_bite100Sample_CumulativeIntake_grid, echo=FALSE, include = FALSE, eval = FALSE}
 bite100_CumulativeIntake_Figure1_grid
 ```
 
@@ -184,7 +185,7 @@ bite33_CumulativeIntake_Figure1_plotC
 bite33_CumulativeIntake_Figure1_plotD
 ```
 
-```{r bite33_CumulativeIntake_Figure1_grid, echo=FALSE, include = FALSE, eval = FALSE}
+```{r Figure1_bite33Sample_CumulativeIntake_grid, echo=FALSE, include = FALSE, eval = FALSE}
 bite33_CumulativeIntake_Figure1_grid
 ```
 
@@ -213,22 +214,22 @@ all_CumulativeIntake_Figure1_plotD
   \begin{subfigure}[b]{=0.40\textwidth}
     \centering
     \caption*{\centering 1A - theta: 30 g/min, r: 0.17 1/min, Emax = 400g}
-    \includegraphics[width=\textwidth]{BiteRateModel_figs/fig-Figure1_AllSample_plotA-1.pdf}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Figure1_AllSample_plotA-1.pdf}
   \end{subfigure}
   \begin{subfigure}[b]{=0.40\textwidth}
     \centering
     \caption*{\centering 1B - theta: 30 g/min, r: 0.17 1/min, Emax = 600g}
-    \includegraphics[width=\textwidth]{BiteRateModel_figs/fig-Figure1_AllSample_plotB-1.pdf}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Figure1_AllSample_plotB-1.pdf}
   \end{subfigure}
   \begin{subfigure}[b]{=0.40\textwidth}
     \centering
     \caption*{\centering 1C - theta: 30 g/min, r: 0.5 1/min, Emax = 400g}
-    \includegraphics[width=\textwidth]{BiteRateModel_figs/fig-Figure1_AllSample_plotC-1.pdf}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Figure1_AllSample_plotC-1.pdf}
   \end{subfigure}
   \begin{subfigure}[b]{=0.40\textwidth}
     \centering
     \caption*{\centering 1D - theta: 50 g/min, r: 0.17 1/min, Emax = 400g}
-    \includegraphics[width=\textwidth]{BiteRateModel_figs/fig-Figure1_AllSample_plotD-1.pdf}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Figure1_AllSample_plotD-1.pdf}
   \end{subfigure}
 \end{figure}
 
@@ -241,88 +242,92 @@ all_CumulativeIntake_Figure1_plotD
 
 <!-- <!-- 250 ms sampling --> -->
 
-```{r Figure1_contSample_plotA_paramfits, echo=FALSE, include = FALSE}
-cont_CumulativeIntake_Figure1A_fit.orig
-```
+<!-- ```{r Figure1_contSample_plotA_paramfits, echo=FALSE, include = FALSE} -->
+<!-- cont_CumulativeIntake_Figure1A_fit.orig -->
+<!-- ``` -->
 
-```{r Figure1_contSample_plotB_paramfits, echo=FALSE, include = FALSE}
-cont_CumulativeIntake_Figure1B_fit.orig
-```
+<!-- ```{r Figure1_contSample_plotB_paramfits, echo=FALSE, include = FALSE} -->
+<!-- cont_CumulativeIntake_Figure1B_fit.orig -->
+<!-- ``` -->
 
-```{r Figure1_contSample_plotC_paramfits, echo=FALSE, include = FALSE}
-cont_CumulativeIntake_Figure1C_fit.orig
-```
+<!-- ```{r Figure1_contSample_plotC_paramfits, echo=FALSE, include = FALSE} -->
+<!-- cont_CumulativeIntake_Figure1C_fit.orig -->
+<!-- ``` -->
 
-```{r Figure1_contSample_plotD_paramfits, echo=FALSE, include = FALSE}
-cont_CumulativeIntake_Figure1D_fit.orig
-```
+<!-- ```{r Figure1_contSample_plotD_paramfits, echo=FALSE, include = FALSE} -->
+<!-- cont_CumulativeIntake_Figure1D_fit.orig -->
+<!-- ``` -->
 
-```{r Figure1_contSample_paramfits, echo=FALSE, include = FALSE}
-cont_CumulativeIntake_Figure1_fit.orig_grid
-```
+<!-- ```{r Figure1_contSample_paramfits, echo=FALSE, include = FALSE} -->
+<!-- cont_CumulativeIntake_Figure1_fit.orig_grid -->
+<!-- ``` -->
 
-<!-- 100 Bite sampling -->
+<!-- <!-- 100 Bite sampling --> -->
 
-```{r Figure1_bite100Sample_plotA_paramfits, echo=FALSE, include = FALSE}
-bite100_CumulativeIntake_Figure1A_fit.orig
-```
+<!-- ```{r Figure1_bite100Sample_plotA_paramfits, echo=FALSE, include = FALSE} -->
+<!-- bite100_CumulativeIntake_Figure1A_fit.orig -->
+<!-- ``` -->
 
-```{r Figure1_bite100Sample_plotB_paramfits, echo=FALSE, include = FALSE}
-bite100_CumulativeIntake_Figure1B_fit.orig
-```
+<!-- ```{r Figure1_bite100Sample_plotB_paramfits, echo=FALSE, include = FALSE} -->
+<!-- bite100_CumulativeIntake_Figure1B_fit.orig -->
+<!-- ``` -->
 
-```{r Figure1_bite100Sample_plotC_paramfits, echo=FALSE, include = FALSE}
-bite100_CumulativeIntake_Figure1C_fit.orig
-```
+<!-- ```{r Figure1_bite100Sample_plotC_paramfits, echo=FALSE, include = FALSE} -->
+<!-- bite100_CumulativeIntake_Figure1C_fit.orig -->
+<!-- ``` -->
 
-```{r Figure1_bite100Sample_plotD_paramfits, echo=FALSE, include = FALSE}
-bite100_CumulativeIntake_Figure1D_fit.orig
-```
+<!-- ```{r Figure1_bite100Sample_plotD_paramfits, echo=FALSE, include = FALSE} -->
+<!-- bite100_CumulativeIntake_Figure1D_fit.orig -->
+<!-- ``` -->
 
-```{r Figure1_bite100Sample_paramfits, echo=FALSE, include = FALSE}
-bite100_CumulativeIntake_Figure1_fit.orig_grid
-```
+<!-- ```{r Figure1_bite100Sample_paramfits, echo=FALSE, include = FALSE} -->
+<!-- bite100_CumulativeIntake_Figure1_fit.orig_grid -->
+<!-- ``` -->
 
-<!-- <!-- 33 Bite sampling --> -->
+<!-- <!-- <!-- 33 Bite sampling --> --> -->
 
-```{r Figure1_bite33Sample_plotA_paramfits, echo=FALSE, include = FALSE}
-bite33_CumulativeIntake_Figure1_plotA_fit.orig
-```
+<!-- ```{r Figure1_bite33Sample_plotA_paramfits, echo=FALSE, include = FALSE} -->
+<!-- bite33_CumulativeIntake_Figure1_plotA_fit.orig -->
+<!-- ``` -->
 
-```{r Figure1_bite33Sample_plotB_paramfits, echo=FALSE, include = FALSE}
-bite33_CumulativeIntake_Figure1_plotB_fit.orig
-```
+<!-- ```{r Figure1_bite33Sample_plotB_paramfits, echo=FALSE, include = FALSE} -->
+<!-- bite33_CumulativeIntake_Figure1_plotB_fit.orig -->
+<!-- ``` -->
 
-```{r Figure1_bite33Sample_plotC_paramfits, echo=FALSE, include = FALSE}
-bite33_CumulativeIntake_Figure1_plotC_fit.orig
-```
+<!-- ```{r Figure1_bite33Sample_plotC_paramfits, echo=FALSE, include = FALSE} -->
+<!-- bite33_CumulativeIntake_Figure1_plotC_fit.orig -->
+<!-- ``` -->
 
-```{r Figure1_bite33Sample_plotD_paramfits, echo=FALSE, include = FALSE}
-bite33_CumulativeIntake_Figure1_plotD_fit.orig
-```
+<!-- ```{r Figure1_bite33Sample_plotD_paramfits, echo=FALSE, include = FALSE} -->
+<!-- bite33_CumulativeIntake_Figure1_plotD_fit.orig -->
+<!-- ``` -->
 
 \FloatBarrier
 
-```{r Figure1_contSample_singleFit, echo=FALSE, results='asis'}
-kable(cont_optimize, "latex",  digits = 3, caption = "Fitted parameters from initail recovery simulation using 250ms sampling", row.names = FALSE) %>%
-  kable_styling(latex_options = c("hold_position", "repeat_header"))
-```
+<!-- ```{r Figure1_contSample_singleFit, echo=FALSE, results='asis'} -->
+<!-- kable(cont_optimize, "latex",  digits = 3, caption = "Fitted parameters from initail recovery simulation using 250ms sampling", row.names = FALSE) %>% -->
+<!--   kable_styling(latex_options = c("hold_position", "repeat_header")) -->
+<!-- ``` -->
+<!-- \FloatBarrier -->
+
 \begin{figure}[ht!]
   \centering
   \caption*{\centering 250 ms Sampling}
-  \includegraphics[width=\textwidth]{BiteRateModel_figs/fig-Figure1_contSample_paramfits-1.pdf}
+  \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Figure1_contSample_paramfits-1.pdf}
 \end{figure}
 
 \FloatBarrier
 
-```{r Figure1_bite100Sample_singleFit, echo=FALSE, results='asis'}
-kable(bite100_optimize, "latex",  digits = 3, caption = "Fitted parameters from initail recovery simulation using 100 bite sampling", row.names = FALSE) %>%
-  kable_styling(latex_options = c("hold_position", "repeat_header"))
-```
+<!-- ```{r Figure1_bite100Sample_singleFit, echo=FALSE, results='asis'} -->
+<!-- kable(bite100_optimize, "latex",  digits = 3, caption = "Fitted parameters from initail recovery simulation using 100 bite sampling", row.names = FALSE) %>% -->
+<!--   kable_styling(latex_options = c("hold_position", "repeat_header")) -->
+<!-- ``` -->
+<!-- \FloatBarrier -->
+
 \begin{figure}[ht!]
   \centering
   \caption*{\centering 100 bite Sampling}
-  \includegraphics[width=\textwidth]{BiteRateModel_figs/fig-Figure1_bite100Sample_paramfits-1.pdf}
+  \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Figure1_bite100Sample_paramfits-1.pdf}
 \end{figure}
 
 \FloatBarrier
@@ -330,56 +335,196 @@ kable(bite100_optimize, "latex",  digits = 3, caption = "Fitted parameters from 
 \begin{figure}[ht!]
   \centering
    \caption*{\centering randomly sampled number of bites: mean = 33, sd = 5}
-  \begin{subfigure}[b]{=0.40\textwidth}
+  \begin{subfigure}[b]{=0.70\textwidth}
     \centering
     \caption*{\centering 1A - theta: 30 g/min, r: 0.17 1/min, Emax = 400g}
-    \includegraphics[width=\textwidth]{BiteRateModel_figs/fig-Figure1_bite33Sample_plotA_paramfits-1.pdf}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Figure1_bite33Sample_plotA_paramfits-1.pdf}
   \end{subfigure}
-  \begin{subfigure}[b]{=0.40\textwidth}
+  \begin{subfigure}[b]{=0.70\textwidth}
     \centering
     \caption*{\centering 1B - theta: 30 g/min, r: 0.17 1/min, Emax = 600g}
-    \includegraphics[width=\textwidth]{BiteRateModel_figs/fig-Figure1_bite33Sample_plotB_paramfits-1.pdf}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Figure1_bite33Sample_plotB_paramfits-1.pdf}
   \end{subfigure}
 \end{figure}
 \FloatBarrier
 
 \begin{figure}[ht!]
   \centering
-  \begin{subfigure}[b]{=0.40\textwidth}
+  \begin{subfigure}[b]{=0.70\textwidth}
     \centering
     \caption*{\centering 1C - theta: 30 g/min, r: 0.5 1/min, Emax = 400g}
-    \includegraphics[width=\textwidth]{BiteRateModel_figs/fig-Figure1_bite33Sample_plotC_paramfits-1.pdf}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Figure1_bite33Sample_plotC_paramfits-1.pdf}
   \end{subfigure}
-  \begin{subfigure}[b]{=0.40\textwidth}
+  \begin{subfigure}[b]{=0.70\textwidth}
     \centering
     \caption*{\centering 1D - theta: 50 g/min, r: 0.17 1/min, Emax = 400g}
-    \includegraphics[width=\textwidth]{BiteRateModel_figs/fig-Figure1_bite33Sample_plotD_paramfits-1.pdf}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Figure1_bite33Sample_plotD_paramfits-1.pdf}
   \end{subfigure}
 \end{figure}
 \FloatBarrier
 \newpage
 
 
-<!-- #Simulations based on Fogel et al., 2017 -->
+#Simulations based on Fogel et al., 2017
 
-<!-- ##Correlations between Microstructure Behaviors - Simulated -->
+##Correlations between Microstructure Behaviors
 
-<!-- ```{r Fogel2017_microstructureSim_cortab, echo=FALSE, results='asis'} -->
-<!-- kable(SimDat_Fogel2017_cormat, "latex",  digits = 3, caption = "Correlations between Microstructure Behaviors - Simulated", row.names = FALSE) %>% -->
-<!--   kable_styling(latex_options = c("hold_position", "repeat_header")) -->
-<!-- ``` -->
+###Corrleations Reported in Fogel et al., 2017 (Table 1)
 
-<!-- ##Average Bite Size vs Added Bite Size Variability -->
-<!-- ```{r Fogel2017_Average_BiteSizeVar_plot, echo=FALSE, include = TRUE} -->
-<!-- SimBites_Fogel2017_CumulativeIntake_BiteSizeVar -->
-<!-- ``` -->
+```{r Fogel2017_Reported_cortab, echo=FALSE, results='asis'}
+kable(Fogel2017_ReportedCorMat, "latex",  digits = 3, caption = "Correlations between Microstructure Behaviors - Simulated", row.names = FALSE) %>%
+  kable_styling(latex_options = c("hold_position", "repeat_header"))
+```
+\FloatBarrier
 
-<!-- ```{r Fogel2017_Average_BiteSizeVar_byIDSlow_plot, echo=FALSE, include = TRUE} -->
-<!-- SimBites_Fogel2017_CumulativeIntake_BiteSizeVar_byIDslow -->
-<!-- ``` -->
+###Corrleations Simulated
 
-<!-- ```{r Fogel2017_Average_BiteSizeVar_byIDFast_plot, echo=FALSE, include = TRUE} -->
-<!-- SimBites_Fogel2017_CumulativeIntake_BiteSizeVar_byIDfast -->
-<!-- ``` -->
+```{r Fogel2017_microstructureSim_cortab, echo=FALSE, results='asis'}
+kable(Fogel2017_corMat, "latex",  digits = 3, caption = "Correlations between Microstructure Behaviors - Simulated", row.names = FALSE) %>%
+  kable_styling(latex_options = c("hold_position", "repeat_header"))
+```
+
+###Corrleations Simulated - After Rounding Simulated Number of Bites
+
+```{r Fogel2017_microstructureSim_BiteRound_cortab, echo=FALSE, results='asis'}
+kable(Fogel2017_BiteRound_corMat, "latex",  digits = 3, caption = "Correlations between Microstructure Behaviors - Simulated, Rounded", row.names = FALSE) %>%
+  kable_styling(latex_options = c("hold_position", "repeat_header"))
+```
+
+##Fast vs Slow Eaters Microstructure Characteristics
+
+###Means (SEM) Reported in Fogel et al., 2017 (Table 2)
+
+\begin{table}[ht!]
+\begin{tabular}{lll@{\hspace{5pt}}lll@{\hspace{5pt}}ll}
+  \hline
+  & \multicolumn{1}{c}{Slow} && \multicolumn{1}{c}{Fast} && \multicolumn{1}{c}{t} & \multicolumn{1}{c}{p} \bigstrut[t] \\
+  \cline{2-2} \cline{4-4} \cline{6-6} \cline{8-8}
+  Bites\scriptsize{(\#)} & 57.7 (2.5) && 68.4 (2.5) && 3.04 & 0.003 \\
+  Bite Size \scriptsize{(grams/bite)} & 1.4 (0.1) && 2.4 (0.1) && 9.17 & <0.001 \\
+  Oral Exposure per Bite \scriptsize{(sec)}  & 20.1 (0.9) && 15.6 (0.5) && 4.11 & <0.001 \\
+  Active Mealtime \scriptsize{(\%)} & 75.0 (1.0) && 76.0 (1.0) && 0.56 & 0.570\\
+  Total Oral Exposure \scriptsize{(min)} & 15.1 (0.4) && 15.2 (0.4) && 0.08 & 0.930\\
+  Total Intake \scriptsize{(kCal)} & 175.3 (6.09) && 306.7 (9.9) && 11.28 & <0.001\\
+  \hline
+\end{tabular}
+\end{table}
+
+###Means (SEM) After Rounding Simulated Number of Bites
+
+\begin{table}[ht!]
+\begin{tabular}{lll@{\hspace{5pt}}lll@{\hspace{5pt}}ll}
+  \hline
+  & \multicolumn{1}{c}{Slow} && \multicolumn{1}{c}{Fast} && \multicolumn{1}{c}{t} & \multicolumn{1}{c}{p} \bigstrut[t] \\
+  \cline{2-2} \cline{4-4} \cline{6-6} \cline{8-8}
+  Bites\scriptsize{(\#)} & 57.7 (2.5) && 68.4 (2.5) && 3.04 & 0.003 \\
+  Bite Size \scriptsize{(grams/bite)} & 1.4 (0.1) && 2.4 (0.1) && 9.17 & <0.001 \\
+  Oral Exposure per Bite \scriptsize{(sec)}  & 20.1 (0.9) && 15.6 (0.5) && 4.11 & <0.001 \\
+  Active Mealtime \scriptsize{(\%)} & 75.0 (1.0) && 76.0 (1.0) && 0.56 & 0.570\\
+  Total Oral Exposure \scriptsize{(min)} & 15.1 (0.4) && 15.2 (0.4) && 0.08 & 0.930\\
+  Total Intake \scriptsize{(kCal)} & 175.3 (6.09) && 306.7 (9.9) && 11.28 & <0.001\\
+  \hline
+\end{tabular}
+\end{table}
 
 
+###Parameter Distributions - Quadratic
+
+###Parameter Distributions - First Principles Model
+
+```{r Hist_theta_logitBiteSim, echo=FALSE, include = FALSE}
+SimDat_Fogel2017_thetaHist
+```
+
+```{r Hist_theta_logitBiteSim_ERgroup, echo=FALSE, include = FALSE}
+SimDat_Fogel2017_thetaHist_group
+```
+
+```{r Hist_r_logitBiteSim, echo=FALSE, include = FALSE}
+SimDat_Fogel2017_rHist
+```
+
+```{r Hist_r_logitBiteSim_ERgroup, echo=FALSE, include = FALSE}
+SimDat_Fogel2017_rHist_group
+```
+
+```{r Hist_Emax_logitBiteSim, echo=FALSE, include = FALSE}
+SimDat_Fogel2017_EmaxHist
+```
+
+```{r Hist_Emax_logitBiteSim_ERgroup, echo=FALSE, include = FALSE}
+SimDat_Fogel2017_EmaxHist_group
+```
+
+\begin{figure}[ht!]
+  \centering
+  \begin{subfigure}[b]{=0.40\textwidth}
+    \centering
+    \caption*{\centering $\theta$}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Hist_theta_logitBiteSim-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.40\textwidth}
+    \centering
+    \caption*{\centering r}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Hist_r_logitBiteSim-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.40\textwidth}
+    \centering
+    \caption*{\centering Emax }
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Hist_Emax_logitBiteSim-1.pdf}
+  \end{subfigure}
+\end{figure}
+
+\FloatBarrier
+
+\begin{figure}[ht!]
+  \centering
+  \begin{subfigure}[b]{=0.40\textwidth}
+    \centering
+    \caption*{\centering $\theta$ by Eating Rate Group}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Hist_theta_logitBiteSim_ERgroup-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.40\textwidth}
+    \centering
+    \caption*{\centering r by Group}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Hist_r_logitBiteSim_ERgroup-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.40\textwidth}
+    \centering
+    \caption*{\centering Emax by Group}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Hist_Emax_logitBiteSim_ERgroup-1.pdf}
+  \end{subfigure}
+\end{figure}
+
+\FloatBarrier
+
+```{r Dist_theta_logitBiteSim_ERgroup, echo=FALSE, include = FALSE}
+SimDat_Fogel2017_thetaDist_group
+```
+
+```{r Dist_r_logitBiteSim_ERgroup, echo=FALSE, include = FALSE}
+SimDat_Fogel2017_rDist_group
+```
+
+```{r Dist_Emax_logitBiteSim_ERgroup, echo=FALSE, include = FALSE}
+SimDat_Fogel2017_EmaxDist_group
+```
+
+\begin{figure}[ht!]
+  \centering
+  \begin{subfigure}[b]{=0.40\textwidth}
+    \centering
+    \caption*{\centering $\theta$ by Eating Rate Group}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Dist_theta_logitBiteSim_ERgroup-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.40\textwidth}
+    \centering
+    \caption*{\centering r by Group}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Dist_r_logitBiteSim_ERgroup-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.40\textwidth}
+    \centering
+    \caption*{\centering Emax by Group}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Dist_Emax_logitBiteSim_ERgroup-1.pdf}
+  \end{subfigure}
+\end{figure}

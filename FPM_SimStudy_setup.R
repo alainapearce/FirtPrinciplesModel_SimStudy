@@ -8,8 +8,10 @@ library(stats)
 #library(rstudioapi)
 library(psych)
 library(faux)
-library(RColorBrewer)
 #installed from devtools::install_github("debruine/faux")
+library(RColorBrewer)
+library(bitemodelr)
+
 
 #### set up ####
 
@@ -19,25 +21,18 @@ library(RColorBrewer)
 # setwd(dirname(this.dir))
 
 source('functions.R')
+###################################################
+####                                           
+#### Create distributions for model parameters ####
+####
+###################################################
 
-#### Source Setup Scripts ####
-source('CurveFit.R')
-source('BiteSimulated.R')
-source('CumulativeIntakeCurve.R')
-
-#### Generate curves from Figure 1A with bite level data ####
-# Figure 1A: theta = 30g/min, r = 0.17 1/min, Emax = 400
-# Figure 1B: theta = 30g/min, r = 0.17 1/min, Emax = 600
-# Figure 1C: theta = 30g/min, r = 0.5 1/min, Emax = 400
-# Figure 1C: theta = 50g/min, r = 0.17 1/min, Emax = 400
-
-source('BiteRateModel_Figure1sim.R')
-
-#### Fogel et al., 2017: A description of an ‘obesogenic’ eating style ####
-#### that promotes higher energy intake and is associated with greater ####
-#### adiposity in 4.5 year-old children: Results from the GUSTO cohort ####
-#### Slow vs Faster Eaters (median = 6.41 g/min) ####
-#### N = 386 ####
+##Create a simulated dataset
+# Fogel et al., 2017: A description of an ‘obesogenic’ eating style
+# that promotes higher energy intake and is associated with greater
+# adiposity in 4.5 year-old children: Results from the GUSTO cohort
+# Slow vs Faster Eaters (median = 6.41 g/min) ####
+# N = 386
 #table 2                      Slow - 192    Fast - 194    t         p
 #  Bites (#)	                57.7 ± 2.5	  68.4 ± 2.5	  3.04	  0.003
 #  Oral exposure per bite (s)	20.1 ± 0.9	  15.6 ± 0.5	  4.11	  < 0.0001
@@ -54,210 +49,86 @@ source('BiteRateModel_Figure1sim.R')
 
 #NOTE: 7/9 foods had eating rates from 9.7-11.6, 1 was 5.8, and 1 was 15.1
 
+#### Simulate Data and check characteristics
 source('Fogel2017_SimDat.R')
 SimDat_Fogel2017 = Fogel2017_simDat(500)
-SimDat_Fogel2017$Emax = SimDat_Fogel2017$TotalGrams
-SimDat_Fogel2017$EatRate_group = ifelse(SimDat_Fogel2017$EatRate <=6.41, 'Slow', 'Fast')
+
+##Correlation Matrices
+
+#original Fogel2017
+Fogel2017_ReportedCorMat = matrix(c(NA, NA, NA, NA, NA, NA, 
+                                    '-0.42*', NA, NA, NA, NA, NA,
+                                    '-0.58*', '0.54*', NA, NA, NA, NA,
+                                     '0.11*', '0.17*', '0.16*', NA, NA, NA,
+                                     '0.54*', '-0.01', '0.02', '0.33', NA, NA, 
+                                     '0.15*', '0.55*', '-0.25*', '-0.02', '-0.05', NA), byrow = TRUE, nrow = 6)
+
+rownames(Fogel2017_ReportedCorMat) = c('nBites', 'BiteSize_g', 'BiteOralExposure_sec', 'ActiveMeal_pcent', 'TotalOralExposure_min', 'EatRate_g.min')
+colnames(Fogel2017_ReportedCorMat) = c('nBites', 'BiteSize_g', 'BiteOralExposure_sec', 'ActiveMeal_pcent', 'TotalOralExposure_min', 'EatRate_g.min')
+
+
+#orignial simulated
+Fogel2017_corVars = SimDat_Fogel2017[c(2:5, 7:8, 6, 9:10)]
+Fogel2017_corVarNames = names(SimDat_Fogel2017)[c(2:5, 7:8, 6, 9:10)]
+Fogel2017_corMat = cor.matrix(Fogel2017_corVars, Fogel2017_corVarNames)
+  
+#rounded bites 
+Fogel2017_BiteRound_corVars = SimDat_Fogel2017[c(11, 3:5, 13:14, 12, 15:16)]
+Fogel2017_BiteRound_corMat = cor.matrix(Fogel2017_BiteRound_corVars, Fogel2017_corVarNames)
+
+##Means(SD) for Fast vs Slow
+SimDat_Fogel2017$EatRate_group = ifelse(SimDat_Fogel2017$EatRate_g.min < median(SimDat_Fogel2017$EatRate_g.min), 'Slow', 'Fast')
+SimDat_Fogel2017$BiteRound_EatRate_group = ifelse(SimDat_Fogel2017$BiteRound_EatRate_g.min < median(SimDat_Fogel2017$BiteRound_EatRate_g.min), 'Slow', 'Fast')
 
 #### Generate parameter distributions from Fogel_simDat ####
 
-SimBites_Fogel2017_bitesize0.25 = CIC_simulate(SimDat_Fogel2017, bitesize_sd = 0.25)
+#get bite data set using random time sampling from a logistic curve
+source('simBitesLogit.R')
+SimBites_Fogel2017_list = t(mapply(simBitesLogit, mealdur = SimDat_Fogel2017$BiteRound_MealDur_min, nBites = SimDat_Fogel2017$BiteRound_nBites, Emax = SimDat_Fogel2017$BiteRound_TotalIntake_g, id = SimDat_Fogel2017$ID))
 
+SimBites_Fogel2017 = data.frame(matrix(c(unlist(SimBites_Fogel2017_list)), byrow = FALSE, ncol = 4))
+names(SimBites_Fogel2017) = c('ID', 'Bite', 'SampledTime', 'EstimatedCumulativeIntake')
 
+#fit parameters to the bite datasets
+SimBites_Fogel2017_params = IntakeModelParams(data = SimBites_Fogel2017, timeVar = 'SampledTime', intakeVar = 'EstimatedCumulativeIntake', fit_fn = FPM_Fit, idVar = 'ID')
 
+SimDat_Fogel2017 = merge(SimDat_Fogel2017, SimBites_Fogel2017_params, by = 'ID')
 
+#### Make Distribution Graphs ####
+#histograms
+SimDat_Fogel2017_thetaHist = ggplot(SimDat_Fogel2017, aes(x = theta, group = EatRate_group)) +
+  geom_histogram(bins = 20, position = 'identity')
 
-SimBites_Fogel2017_CumulativeIntake_BiteSizeVar = ggplot(SimBites_Fogel2017_bitesize_long, 
-                                                      aes(y = EstimatedIntake, x = Time,
-                                                          color = BiteSizeEstimate, linetype = AverageYN)) +
-  geom_smooth(method = 'loess', formula = y~x, se = F) +
-  scale_color_manual(values=c(brewer.pal(8, "Dark2"), 'black'))+
-  guides(linetype=FALSE)+
-  ggtitle('Cumulative Intake Curves from Simulated Bite Data: Avg Bite Size vs differing levels of variability') +
-  scale_y_continuous(name='Estimated Intake (E(t))') +
-  scale_x_continuous(name='Time (min)') +
-  labs(colour = "BiteSizeEstimate",linetype = "AverageYN") + 
-  theme(panel.border = element_blank(), panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
-        panel.background = element_blank())
+SimDat_Fogel2017_thetaHist_group = ggplot(SimDat_Fogel2017, aes(x = theta, group = EatRate_group)) +
+  geom_histogram(bins = 20, aes(fill = EatRate_group), alpha=0.6, position = 'identity')
 
-SimBites_Fogel2017_CumulativeIntake_BiteSizeVar_byIDslow = ggplot(SimBites_Fogel2017_bitesize_long[SimBites_Fogel2017_bitesize_long$EatRate_group == 'Slow', ], 
-                                                      aes(y = EstimatedIntake, x = Time,
-                                                          color = BiteSizeEstimate, linetype = AverageYN)) +
-  geom_smooth(method = 'loess', formula = y~x, se = F) +
-  scale_color_manual(values=c(brewer.pal(8, "Dark2"), 'black'))+
-  guides(linetype=FALSE)+
-  ggtitle('Cumulative Intake Curves from Simulated Bite Data: Avg Bite Size vs differing levels of variability') +
-  scale_y_continuous(name='Estimated Intake (E(t))') +
-  scale_x_continuous(name='Time (min)') +
-  labs(colour = "BiteSizeEstimate",linetype = "AverageYN") + 
-  theme(strip.text = element_text(size = 6, margin = margin(.05, 0, .05, 0, "cm")), legend.position="bottom", 
-        panel.border = element_blank(), panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"), 
-        panel.background = element_blank()) + facet_wrap(~id)
+SimDat_Fogel2017_rHist = ggplot(SimDat_Fogel2017, aes(x = r, group = EatRate_group)) +
+  geom_histogram(bins = 20, position = 'identity')
 
-SimBites_Fogel2017_CumulativeIntake_BiteSizeVar_byIDfast = ggplot(SimBites_Fogel2017_bitesize_long[SimBites_Fogel2017_bitesize_long$EatRate_group == 'Fast', ], 
-                                                                  aes(y = EstimatedIntake, x = Time,
-                                                                      color = BiteSizeEstimate, linetype = AverageYN)) +
-  geom_smooth(method = 'loess', formula = y~x, se = F) +
-  scale_color_manual(values=c(brewer.pal(8, "Dark2"), 'black'))+
-  guides(linetype=FALSE)+
-  ggtitle('Cumulative Intake Curves from Simulated Bite Data: Avg Bite Size vs differing levels of variability') +
-  scale_y_continuous(name='Estimated Intake (E(t))') +
-  scale_x_continuous(name='Time (min)') +
-  labs(colour = "BiteSizeEstimate",linetype = "AverageYN") + 
-  theme(strip.text = element_text(size = 6, margin = margin(.05, 0, .05, 0, "cm")), legend.position="bottom", 
-        panel.border = element_blank(), panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"), 
-        panel.background = element_blank()) + facet_wrap(~id)
+SimDat_Fogel2017_rHist_group = ggplot(SimDat_Fogel2017, aes(x = r, group = EatRate_group)) +
+  geom_histogram(bins = 20, aes(fill = EatRate_group), alpha=0.6, position = 'identity')
 
+SimDat_Fogel2017_EmaxHist = ggplot(SimDat_Fogel2017, aes(x = BiteRound_TotalIntake_g, group = EatRate_group)) +
+  geom_histogram(bins = 20, position = 'identity')
 
-##run optimization
-SimFit_Fogel2017_bitesizeAvg = CIC_fit(SimBites_Fogel2017_bitesize0.25, intake = 'CumulativeGrams_avgBite', parameters = c(20, .1), method = 'Thomas2017')
-SimFit_Fogel2017_bitesizeAvg$BiteSizeEstimate = 'Average'
-SimFit_Fogel2017_bitesize0.25 = CIC_fit(SimBites_Fogel2017_bitesize0.25, intake = 'CumulativeGrams_0.25', parameters = c(20, .1), method = 'Thomas2017')
-SimFit_Fogel2017_bitesize0.25$BiteSizeEstimate = 'sd_0.25g'
-SimFit_Fogel2017_bitesize0.5 = CIC_fit(SimBites_Fogel2017_bitesize0.5, intake = 'CumulativeGrams_0.5', parameters = c(20, .1), method = 'Thomas2017')
-SimFit_Fogel2017_bitesize0.5$BiteSizeEstimate = 'sd_0.5g'
-SimFit_Fogel2017_bitesize0.75 = CIC_fit(SimBites_Fogel2017_bitesize0.75, intake = 'CumulativeGrams_0.75', parameters = c(20, .1), method = 'Thomas2017')
-SimFit_Fogel2017_bitesize0.75$BiteSizeEstimate = 'sd_0.75g'
-SimFit_Fogel2017_bitesize1 = CIC_fit(SimBites_Fogel2017_bitesize1, intake = 'CumulativeGrams_1', parameters = c(20, .1), method = 'Thomas2017')
-SimFit_Fogel2017_bitesize1$BiteSizeEstimate = 'sd_1g'
-SimFit_Fogel2017_bitesize1.5 = CIC_fit(SimBites_Fogel2017_bitesize1.5, intake = 'CumulativeGrams_1.5', parameters = c(20, .1), method = 'Thomas2017')
-SimFit_Fogel2017_bitesize1.5$BiteSizeEstimate = 'sd_1.5g'
-SimFit_Fogel2017_bitesize2 = CIC_fit(SimBites_Fogel2017_bitesize2, intake = 'CumulativeGrams_2', parameters = c(20, .1), method = 'Thomas2017')
-SimFit_Fogel2017_bitesize2$BiteSizeEstimate = 'sd_2g'
-SimFit_Fogel2017_bitesize2.5 = CIC_fit(SimBites_Fogel2017_bitesize2.5, intake = 'CumulativeGrams_2.5', parameters = c(20, .1), method = 'Thomas2017')
-SimFit_Fogel2017_bitesize2.5$BiteSizeEstimate = 'sd_2.5g'
-SimFit_Fogel2017_bitesize3 = CIC_fit(SimBites_Fogel2017_bitesize3, intake = 'CumulativeGrams_3', parameters = c(20, .1), method = 'Thomas2017')
-SimFit_Fogel2017_bitesize3$BiteSizeEstimate = 'sd_3g'
+SimDat_Fogel2017_EmaxHist_group = ggplot(SimDat_Fogel2017, aes(x = BiteRound_TotalIntake_g, group = EatRate_group)) +
+  geom_histogram(bins = 20, aes(fill = EatRate_group), alpha=0.6, position = 'identity')
 
-SimFit_Fogel2017_bitesize_long = rbind(SimFit_Fogel2017_bitesize0.25, SimFit_Fogel2017_bitesize0.5, SimFit_Fogel2017_bitesize0.75,
-                                       SimFit_Fogel2017_bitesize1, SimFit_Fogel2017_bitesize1.5, SimFit_Fogel2017_bitesize2,
-                                       SimFit_Fogel2017_bitesize2.5, SimFit_Fogel2017_bitesize3, SimFit_Fogel2017_bitesizeAvg)
-SimFit_Fogel2017_bitesize_long$id = factor(SimFit_Fogel2017_bitesize_long$id)
+SimDat_Fogel2017_EatRateHist = ggplot(SimDat_Fogel2017, aes(x = BiteRound_EatRate_g.min, group = EatRate_group)) +
+  geom_histogram(bins = 20, position = 'identity')
 
-SimFit_Fogel2017_bitesize_listbyid = t(sapply(levels(SimFit_Fogel2017_bitesize_long$id), function(x){
-  SimFit_Fogel2017_bitesize_long[SimFit_Fogel2017_bitesize_long$id == x, ]}))
+SimDat_Fogel2017_EatRateHist_group = ggplot(SimDat_Fogel2017, aes(x = BiteRound_EatRate_g.min, group = EatRate_group)) +
+  geom_histogram(bins = 20, aes(fill = EatRate_group), alpha=0.6, position = 'identity')
 
-SimFit_Fogel2017_tabnames = c('id', 'theta', 'r', 'neg2ll', 'counts.function')
+#Density
+SimDat_Fogel2017_thetaDist_group = ggplot(SimDat_Fogel2017, aes(x = theta, group = EatRate_group)) +
+  geom_density(aes(fill = EatRate_group), alpha=0.6, position = 'identity')
 
-SimFit_Fogel2017_means = data.frame(SimFit_Fogel2017_bitesizeAvg$id, matrix(mapply(mean, SimFit_Fogel2017_bitesize_listbyid[, 2:5]), nrow = 40, byrow = FALSE))
-SimFit_Fogel2017_sd = data.frame(SimFit_Fogel2017_bitesizeAvg$id, matrix(mapply(sd, SimFit_Fogel2017_bitesize_listbyid[, 2:5]), nrow = 40, byrow = FALSE))
-SimFit_Fogel2017_min = data.frame(SimFit_Fogel2017_bitesizeAvg$id, matrix(mapply(range, SimFit_Fogel2017_bitesize_listbyid[, 2:5])[1, ], nrow = 40, byrow = FALSE))
-SimFit_Fogel2017_max = data.frame(SimFit_Fogel2017_bitesizeAvg$id, matrix(mapply(range, SimFit_Fogel2017_bitesize_listbyid[, 2:5])[2, ], nrow = 40, byrow = FALSE))
+SimDat_Fogel2017_rDist_group = ggplot(SimDat_Fogel2017, aes(x = r, group = EatRate_group)) +
+  geom_density(aes(fill = EatRate_group), alpha=0.6, position = 'identity')
 
-SimFit_Fogel2017_tab = cbind(SimFit_Fogel2017_means[1:2], SimFit_Fogel2017_sd[2], SimFit_Fogel2017_min[2], SimFit_Fogel2017_max[2],
-                             SimFit_Fogel2017_means[3], SimFit_Fogel2017_sd[3], SimFit_Fogel2017_min[3], SimFit_Fogel2017_max[3],
-                             SimFit_Fogel2017_means[4], SimFit_Fogel2017_sd[4], SimFit_Fogel2017_min[4], SimFit_Fogel2017_max[4],
-                             SimFit_Fogel2017_means[5], SimFit_Fogel2017_sd[5], SimFit_Fogel2017_min[5], SimFit_Fogel2017_max[5])
-names(SimFit_Fogel2017_tab) = c('id', 'theta_mean', 'theta_sd', 'theta_min', 'theta_max',
-                                'r_mean', 'r_sd', 'r_min', 'r_max',
-                                'n2ll_mean', 'n2ll_sd', 'n2ll_min', 'n2ll_max',
-                                'count_mean', 'count_sd', 'count_min', 'count_max')
+SimDat_Fogel2017_EmaxDist_group = ggplot(SimDat_Fogel2017, aes(x = BiteRound_TotalIntake_g, group = EatRate_group)) +
+  geom_density(aes(fill = EatRate_group), alpha=0.6, position = 'identity')
 
-
-SimFit_Fogel2017_tab = merge(SimFit_Fogel2017_tab, SimDat_Fogel2017[c(10, 12)], by = 'id')
-
-SimFit_Fogel2017_tab_slow = SimFit_Fogel2017_tab[SimFit_Fogel2017_tab$EatRate_group == 'Slow', ]
-SimFit_Fogel2017_tab_fast = SimFit_Fogel2017_tab[SimFit_Fogel2017_tab$EatRate_group == 'Fast', ]
-
-# ##recover intake curves
-# SimFit_Fogel2017_bitesizeAvg_merge = merge(SimFit_Fogel2017_bitesizeAvg, SimDat_Fogel2017, by = 'id')
-# SimFit_Fogel2017_bitesizeAvg_merge = merge(SimBites_Fogel2017_bitesize[c(1, 3)], SimFit_Fogel2017_bitesizeAvg_merge, by = 'id')
-# 
-# EstBites_Fogel2017_bitesizeAvg = CIC_estimateBites(SimFit_Fogel2017_bitesizeAvg_merge, method = 'Thomas2017')
-# EstBites_Fogel2017_bitesizeAvg$BiteSizeEstimate = 'Average'
-# EstBites_Fogel2017_bitesize0.25 = CIC_estimateBites(SimFit_Fogel2017_bitesize_long_merge[SimFit_Fogel2017_bitesize_long_merge$BiteSizeEstimate == 'sd_0.25g', ], method = 'Thomas2017')
-# EstBites_Fogel2017_bitesize0.25$BiteSizeEstimate = 'sd_0.25g'
-# EstBites_Fogel2017_bitesize0.5 = CIC_estimateBites(SimFit_Fogel2017_bitesize_long_merge[SimFit_Fogel2017_bitesize_long_merge$BiteSizeEstimate == 'sd_0.5g', ], method = 'Thomas2017')
-# EstBites_Fogel2017_bitesize0.5$BiteSizeEstimate = 'sd_0.5g'
-# EstBites_Fogel2017_bitesize0.75 =CIC_estimateBites(SimFit_Fogel2017_bitesize_long_merge[SimFit_Fogel2017_bitesize_long_merge$BiteSizeEstimate == 'sd_0.75g', ], method = 'Thomas2017')
-# EstBites_Fogel2017_bitesize0.75$BiteSizeEstimate = 'sd_0.75g'
-# EstBites_Fogel2017_bitesize1 = CIC_estimateBites(SimFit_Fogel2017_bitesize_long_merge[SimFit_Fogel2017_bitesize_long_merge$BiteSizeEstimate == 'sd_1g', ], method = 'Thomas2017')
-# EstBites_Fogel2017_bitesize1$BiteSizeEstimate = 'sd_1g'
-# EstBites_Fogel2017_bitesize1.5 = CIC_estimateBites(SimFit_Fogel2017_bitesize_long_merge[SimFit_Fogel2017_bitesize_long_merge$BiteSizeEstimate == 'sd_1.5g', ], method = 'Thomas2017')
-# EstBites_Fogel2017_bitesize1.5$BiteSizeEstimate = 'sd_1.5g'
-# EstBites_Fogel2017_bitesize2 = CIC_estimateBites(SimFit_Fogel2017_bitesize_long_merge[SimFit_Fogel2017_bitesize_long_merge$BiteSizeEstimate == 'sd_2g', ], method = 'Thomas2017')
-# EstBites_Fogel2017_bitesize2$BiteSizeEstimate = 'sd_2g'
-# EstBites_Fogel2017_bitesize2.5 = CIC_estimateBites(SimFit_Fogel2017_bitesize_long_merge[SimFit_Fogel2017_bitesize_long_merge$BiteSizeEstimate == 'sd_2.5g', ], method = 'Thomas2017')
-# EstBites_Fogel2017_bitesize2.5$BiteSizeEstimate = 'sd_2.5g'
-# EstBites_Fogel2017_bitesize3 = CIC_estimateBites(SimFit_Fogel2017_bitesize_long_merge[SimFit_Fogel2017_bitesize_long_merge$BiteSizeEstimate == 'sd_3g', ], method = 'Thomas2017')
-# EstBites_Fogel2017_bitesize3$BiteSizeEstimate = 'sd_3g'
-# 
-
-# 
-# SimBites_Fogel2017_bitesize = cbind(SimBites_Fogel2017_bitesize0.25, SimBites_Fogel2017_bitesize0.5[4],
-#                                     SimBites_Fogel2017_bitesize0.75[4], SimBites_Fogel2017_bitesize1[4],
-#                                     SimBites_Fogel2017_bitesize1.5[4], SimBites_Fogel2017_bitesize2[4],
-#                                     SimBites_Fogel2017_bitesize2.5[4], SimBites_Fogel2017_bitesize3[4])
-# 
-# 
-# SimBites_Fogel2017_bitesize_long = melt(SimBites_Fogel2017_bitesize, id.vars = names(SimBites_Fogel2017_bitesize)[c(1:3)])
-# SimBites_Fogel2017_bitesize_long$BiteSizeEstimate = ifelse(SimBites_Fogel2017_bitesize_long$variable == 'CumulativeGrams_0.25', 'sd_0.25g', ifelse(
-#   SimBites_Fogel2017_bitesize_long$variable == 'CumulativeGrams_0.5', 'sd_0.5g', ifelse(
-#     SimBites_Fogel2017_bitesize_long$variable == 'CumulativeGrams_0.75', 'sd_0.75g', ifelse(
-#       SimBites_Fogel2017_bitesize_long$variable == 'CumulativeGrams_1', 'sd_1g', ifelse(
-#         SimBites_Fogel2017_bitesize_long$variable == 'CumulativeGrams_1.5', 'sd_1.5g', ifelse(
-#           SimBites_Fogel2017_bitesize_long$variable == 'CumulativeGrams_2', 'sd_2g', ifelse(
-#             SimBites_Fogel2017_bitesize_long$variable == 'CumulativeGrams_2.5', 'sd_2.5g', ifelse(
-#               SimBites_Fogel2017_bitesize_long$variable == 'CumulativeGrams_3', 'sd_3g', 'Average'
-#             ))))))))
-# SimBites_Fogel2017_bitesize_long$BiteSizeEstimate = factor(SimBites_Fogel2017_bitesize_long$BiteSizeEstimate,
-#                                                            levels = c('sd_0.25g', 'sd_0.5g', 'sd_0.75g', 
-#                                                                       'sd_1g', 'sd_1.5g', 'sd_2g', 'sd_2.5g', 
-#                                                                       'sd_3g', 'Average'))
-# BiteSizeEstimateLevels = levels(SimBites_Fogel2017_bitesize_long$BiteSizeEstimate)
-# SimBites_Fogel2017_bitesize_long$EstimatedIntake = SimBites_Fogel2017_bitesize_long$value
-# SimBites_Fogel2017_bitesize_long = SimBites_Fogel2017_bitesize_long[c(1:3, 6:7)]
-# SimBites_Fogel2017_bitesize_long$AverageYN = ifelse(SimBites_Fogel2017_bitesize_long$BiteSizeEstimate == 'Average', 'Y', 'N')
-# SimBites_Fogel2017_bitesize_long$AverageYN = factor(SimBites_Fogel2017_bitesize_long$AverageYN, levels = c('Y', 'N'))
-# 
-# SimBites_Fogel2017_bitesize_long = merge(SimBites_Fogel2017_bitesize_long, SimDat_Fogel2017[c(10, 12)], by = 'id')
-# 
-# 
-# SimBites_Fogel2017_CumulativeIntake_BiteSizeVar = ggplot(SimBites_Fogel2017_bitesize_long, 
-#                                                          aes(y = EstimatedIntake, x = Time,
-#                                                              color = BiteSizeEstimate, linetype = AverageYN)) +
-#   geom_smooth(method = 'loess', formula = y~x, se = F) +
-#   scale_color_manual(values=c(brewer.pal(8, "Dark2"), 'black'))+
-#   guides(linetype=FALSE)+
-#   ggtitle('Cumulative Intake Curves from Simulated Bite Data: Avg Bite Size vs differing levels of variability') +
-#   scale_y_continuous(name='Estimated Intake (E(t))') +
-#   scale_x_continuous(name='Time (min)') +
-#   labs(colour = "BiteSizeEstimate",linetype = "AverageYN") + 
-#   theme(panel.border = element_blank(), panel.grid.major = element_blank(),
-#         panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
-#         panel.background = element_blank())
-# 
-# SimBites_Fogel2017_CumulativeIntake_BiteSizeVar_byIDslow = ggplot(SimBites_Fogel2017_bitesize_long[SimBites_Fogel2017_bitesize_long$EatRate_group == 'Slow', ], 
-#                                                                   aes(y = EstimatedIntake, x = Time,
-#                                                                       color = BiteSizeEstimate, linetype = AverageYN)) +
-#   geom_smooth(method = 'loess', formula = y~x, se = F) +
-#   scale_color_manual(values=c(brewer.pal(8, "Dark2"), 'black'))+
-#   guides(linetype=FALSE)+
-#   ggtitle('Cumulative Intake Curves from Simulated Bite Data: Avg Bite Size vs differing levels of variability') +
-#   scale_y_continuous(name='Estimated Intake (E(t))') +
-#   scale_x_continuous(name='Time (min)') +
-#   labs(colour = "BiteSizeEstimate",linetype = "AverageYN") + 
-#   theme(strip.text = element_text(size = 6, margin = margin(.05, 0, .05, 0, "cm")), legend.position="bottom", 
-#         panel.border = element_blank(), panel.grid.major = element_blank(),
-#         panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"), 
-#         panel.background = element_blank()) + facet_wrap(~id)
-# 
-# SimBites_Fogel2017_CumulativeIntake_BiteSizeVar_byIDfast = ggplot(SimBites_Fogel2017_bitesize_long[SimBites_Fogel2017_bitesize_long$EatRate_group == 'Fast', ], 
-#                                                                   aes(y = EstimatedIntake, x = Time,
-#                                                                       color = BiteSizeEstimate, linetype = AverageYN)) +
-#   geom_smooth(method = 'loess', formula = y~x, se = F) +
-#   scale_color_manual(values=c(brewer.pal(8, "Dark2"), 'black'))+
-#   guides(linetype=FALSE)+
-#   ggtitle('Cumulative Intake Curves from Simulated Bite Data: Avg Bite Size vs differing levels of variability') +
-#   scale_y_continuous(name='Estimated Intake (E(t))') +
-#   scale_x_continuous(name='Time (min)') +
-#   labs(colour = "BiteSizeEstimate",linetype = "AverageYN") + 
-#   theme(strip.text = element_text(size = 6, margin = margin(.05, 0, .05, 0, "cm")), legend.position="bottom", 
-#         panel.border = element_blank(), panel.grid.major = element_blank(),
-#         panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"), 
-#         panel.background = element_blank()) + facet_wrap(~id)
-# 
-# 
+SimDat_Fogel2017_EatRateDist_group = ggplot(SimDat_Fogel2017, aes(x = BiteRound_EatRate_g.min, group = EatRate_group)) +
+  geom_density(aes(fill = EatRate_group), alpha=0.6, position = 'identity')
