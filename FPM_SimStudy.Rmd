@@ -1,0 +1,385 @@
+---
+title: "Bite Rate Models"
+output:
+  pdf_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+  html_document: default
+header-includes:
+- \usepackage{fullpage}
+- \usepackage{graphicx}
+- \usepackage{subcaption}
+- \usepackage{float}
+- \usepackage{placeins}
+- \usepackage{caption}
+- \usepackage{mathtools}
+- \usepackage{rotating}
+- \usepackage{multirow}
+- \usepackage{amssymb}
+- \usepackage{amsmath}
+- \usepackage{bigstrut}
+- \usepackage{geometry}
+- \usepackage{longtable}
+- \usepackage{rotating}
+---
+
+<!-- R Markdown -->
+
+<!-- This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>. -->
+
+<!-- When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this: -->
+
+<!-- Note: the first statement is the langauge (i.e., r), then the label for the chunck. After this you can put extra statements like echo (show code and outcome), include (show outcome) -->
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(tidy = TRUE, tidy.opts = list(comment = FALSE), echo = TRUE, fig.width=6, fig.height=4, fig.path='BiteRateModel_figs/fig-', echo=FALSE, warning=FALSE, message=FALSE, comment = NA)
+```
+
+
+<!-- load startup file and any extra packages -->
+```{r load_Fig1, echo=FALSE, include=FALSE}
+# source('BiteRateModel_Figure1sim.R')
+library(knitr)
+library(kableExtra)
+```
+<!-- The number of hashtags (#) will determine the boldness of heading -->
+
+
+## Quadratic Model
+
+###Intake Equation
+
+$E(t) = \beta_\theta + \beta_{1}t + \beta_{2}t^2$
+\FloatBarrier
+
+###Time equation
+
+$t = min(\frac{-\beta_{1} \pm \left(\beta_{1}^2 - 4(\beta_{\theta} - E(t))\beta_{2}\right)^{1/2}}{2\beta{2}}$
+\FloatBarrier
+
+## Thompson et al., 2017 First-Principles Dynamic Model
+
+###Oringinal Equation in paper
+
+$E(t) = \frac{ E_{max} \theta \left( e^{ \frac{t(E_{max}r + \theta)}{E_{max}}} -1  \right)}{ \theta \left( e^{ \frac{t(E_{max}r + \theta)}{E_{max}}} + E_{max}r \right)  }$
+
+###Correct intake equation - took the integral of the derivative/eating rate equation
+
+\begin{eqnarray} \label{Correct Integration}
+\begin{split}
+\frac{dE}{dt} &= \left( rE(t) = \theta \right) \left( 1 - \frac{E(t)}{E_{max}} \right) \\
+\int \frac{dE}{dt}  &= \int \left( rE(t) = \theta \right) \left( 1 - \frac{E(t)}{E_{max}} \right) \\
+&\vdots\\
+E(t) &= \frac{ E_{max} \theta \left( e^{ \frac{t(E_{max}r + \theta)}{E_{max}}} -1  \right)}{ \theta \left( e^{ \frac{t(E_{max}r + \theta)}{E_{max}}} + \frac{E_{max}r}{\theta}  \right)} \\
+    &= \frac{ E_{max} \left( e^{ \frac{t(E_{max}r + \theta)}{E_{max}}} -1  \right)}{ e^{ \frac{t(E_{max}r + \theta)}{E_{max}}} + \frac{E_{max}r}{\theta} }  \\
+\end{split}
+\end{eqnarray}
+
+\FloatBarrier
+$\theta \ne 0; \; integral \; constant \; c \ne 1; \; \theta \ne +E_{max}r$
+\FloatBarrier
+
+\FloatBarrier
+
+###Correct time equation
+
+\begin{align*} \label{Correct time equation}
+E(t) &= \frac{ E_{max} \left( e^{ \frac{t(E_{max}r + \theta)}{E_{max}}} -1  \right)}{ e^{ \frac{t(E_{max}r + \theta)}{E_{max}}} + \frac{E_{max}r}{\theta}}\\
+E(t) \left( e^{ \frac{t(E_{max}r + \theta)}{E_{max}}} + \frac{E_{max}r}{\theta} \right) &= E_{max} \left( e^{ \frac{t(E_{max}r + \theta)}{E_{max}}} -1  \right)\\
+E(t) \left( e^{ \frac{t(E_{max}r + \theta)}{E_{max}}} \right) + E(t) \left(\frac{E_{max}r}{\theta} \right) &= E_{max} \left( e^{ \frac{t(E_{max}r + \theta)}{E_{max}}} \right) - E_{max} \\
+E(t) \left(\frac{E_{max}r}{\theta} \right) + E_{max} &= E_{max} \left( e^{ \frac{t(E_{max}r + \theta)}{E_{max}}} \right) - E(t) \left( e^{ \frac{t(E_{max}r + \theta)}{E_{max}}} \right) \\
+E_{max} \left(\frac{E(t)r}{\theta} + 1 \right) &= e^{ \frac{t(E_{max}r + \theta)}{E_{max}}} \left( E_{max} - E(t) \right) \\
+\frac{E_{max} \left(\frac{E(t)r}{\theta} + 1 \right)}{E_{max} - E(t)} &= e^{ \frac{t(E_{max}r + \theta)}{E_{max}}} \\
+ln \left( \frac{E_{max} \left(\frac{E(t)r}{\theta} + 1 \right)}{E_{max} - E(t)} \right) &= \frac{t(E_{max}r + \theta)}{E_{max}} \\
+\frac{E_{max}}{E_{max}r + \theta} ln \left( \frac{E_{max} \left(\frac{E(t)r}{\theta} + 1 \right)}{E_{max} - E(t)} \right) &= t
+\end{align*}
+
+## Log likelihood
+
+\begin{eqnarray} \label{Joint Probability}
+\begin{split}
+L(\hat{E(t)} + \epsilon, \sigma^2 | t, \theta, r, E_{max} ) &= \prod_{i = 1}^{n} \frac{1}{\sqrt{2 \pi \sigma^2}} e^{-\frac{\left( E_{i} - E(t_{i}) \right)^2}{2\sigma^2}} \\
+      &= \prod_{i = 1}^{n} (2 \pi \sigma^2)^{\frac{-1}{2}} \;  e^{-\frac{1}{2\sigma^2}\left( E_{i} - E(t_{i}) \right)^2} \\
+      &= (2 \pi \sigma^2)^{\frac{-n}{2}} \;  \prod_{i = 1}^{n}   e^{-\frac{1}{2\sigma^2}\left( E_{i} - E(t_{i}) \right)^2} \\[20pt]
+\ln \left( L(\hat{E(t)} + \epsilon, \sigma^2 | t, \theta, r, E_{max} ) \right) &= \ln \left( (2 \pi \sigma^2)^{\frac{-n}{2}} \;  \prod_{i = 1}^{n}   e^{-\frac{1}{2\sigma^2}\left( E_{i} - E(t_{i}) \right)^2}  \right) \\
+        &= \ln \left( (2 \pi \sigma^2)^{\frac{-n}{2}} \right) \; + ln\left( \prod_{i = 1}^{n}   e^{-\frac{1}{2\sigma^2}\left( E_{i} - E(t_{i}) \right)^2}  \right) \\
+        &= \ln \left( (2 \pi \sigma^2)^{\frac{-n}{2}} \right) \; + ln\left( e^{-\frac{1}{2\sigma^2} \; \sum^{n}_{i} \left( E_{i} - E(t_{i}) \right)^2}  \right) \\
+        &= \frac{-n}{2} \ln \left( 2 \pi \sigma^2 \right) \; + -\frac{1}{2\sigma^2} \; \sum^{n}_{i} \left( E_{i} - E(t_{i}) \right)^2  \\[20pt]
+\sigma^2 &=  \frac{\sum^{n}_{i} \left( E_{i} - E(t_{i}) \right)^2}{n} \\[20pt]
+\ln \left( L(\hat{E(t)} + \epsilon, \sigma^2 | t, \theta, r, E_{max} ) \right)  &= \frac{-n}{2} \ln \left( 2 \pi \left( \frac{\sum^{n}_{i} \left( E_{i} - E(t_{i}) \right)^2}{n} \right)^2 \right) \; + -\frac{1}{2\left( \frac{\sum^{n}_{i} \left( E_{i} - E(t_{i}) \right)^2}{n} \right)^2} \; \sum^{n}_{i} \left( E_{i} - E(t_{i}) \right)^2  \\
+\end{split}
+\end{eqnarray}
+
+\FloatBarrier
+\newpage
+
+<!-- ##Replicate Figure 1 -->
+
+<!-- ###Sampling every 250ms - Comparison of Equations -->
+
+already created - only need to redo if something changes
+
+```{r Figure1_contSample_plotA, echo=FALSE, include = FALSE, eval = FALSE}
+cont_CumulativeIntake_Figure1_plotA
+```
+
+```{r Figure1_contSample_plotB, echo=FALSE, include = FALSE, eval = FALSE}
+cont_CumulativeIntake_Figure1_plotB
+```
+
+```{r Figure1_contSample_plotC, echo=FALSE, include = FALSE, eval = FALSE}
+cont_CumulativeIntake_Figure1_plotC
+```
+
+```{r Figure1_contSample_plotD, echo=FALSE, include = FALSE, eval = FALSE}
+cont_CumulativeIntake_Figure1_plotD
+```
+
+```{r Figure1_contSample_Figure1_grid, echo=FALSE, include = FALSE, eval = FALSE}
+cont_CumulativeIntake_Figure1_grid
+```
+
+
+<!-- \FloatBarrier -->
+<!-- \newpage -->
+<!-- ### 100 Bite Sampling -->
+
+```{r Figure1_bite100Sample_plotA, echo=FALSE, include = FALSE, eval = FALSE}
+bite100_CumulativeIntake_Figure1_plotA
+```
+
+```{r Figure1_bite100Sample_plotB, echo=FALSE, include = FALSE, eval = FALSE}
+bite100_CumulativeIntake_Figure1_plotB
+```
+
+```{r Figure1_bite100Sample_plotC, echo=FALSE, include = FALSE, eval = FALSE}
+bite100_CumulativeIntake_Figure1_plotC
+```
+
+```{r Figure1_bite100Sample_plotD, echo=FALSE, include = FALSE, eval = FALSE}
+bite100_CumulativeIntake_Figure1_plotD
+```
+
+```{r bite100_CumulativeIntake_Figure1_grid, echo=FALSE, include = FALSE, eval = FALSE}
+bite100_CumulativeIntake_Figure1_grid
+```
+
+
+<!-- ### 35 Bite Sampling -->
+
+```{r Figure1_bite33Sample_plotA, echo=FALSE, include = FALSE, eval = FALSE}
+bite33_CumulativeIntake_Figure1_plotA
+```
+
+```{r Figure1_bite33Sample_plotB, echo=FALSE, include = FALSE, eval = FALSE}
+bite33_CumulativeIntake_Figure1_plotB
+```
+
+```{r Figure1_bite33Sample_plotC, echo=FALSE, include = FALSE, eval = FALSE}
+bite33_CumulativeIntake_Figure1_plotC
+```
+
+```{r Figure1_bite33Sample_plotD, echo=FALSE, include = FALSE, eval = FALSE}
+bite33_CumulativeIntake_Figure1_plotD
+```
+
+```{r bite33_CumulativeIntake_Figure1_grid, echo=FALSE, include = FALSE, eval = FALSE}
+bite33_CumulativeIntake_Figure1_grid
+```
+
+<!-- ###Sampling at 250ms, 100 Bites, and 33 Bites on same graph - Correct E(t) equation -->
+
+<!-- Already created - only need to re-run if something changes -->
+
+```{r Figure1_AllSample_plotA, echo=FALSE, include = FALSE, eval = FALSE}
+all_CumulativeIntake_Figure1_plotA
+```
+
+```{r Figure1_AllSample_plotB, echo=FALSE, include = FALSE, eval = FALSE}
+all_CumulativeIntake_Figure1_plotB
+```
+
+```{r Figure1_AllSample_plotC, echo=FALSE, include = FALSE, eval = FALSE}
+all_CumulativeIntake_Figure1_plotC
+```
+
+```{r Figure1_AllSample_plotD, echo=FALSE, include = FALSE, eval = FALSE}
+all_CumulativeIntake_Figure1_plotD
+```
+
+\begin{figure}[ht!]
+  \centering
+  \begin{subfigure}[b]{=0.40\textwidth}
+    \centering
+    \caption*{\centering 1A - theta: 30 g/min, r: 0.17 1/min, Emax = 400g}
+    \includegraphics[width=\textwidth]{BiteRateModel_figs/fig-Figure1_AllSample_plotA-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.40\textwidth}
+    \centering
+    \caption*{\centering 1B - theta: 30 g/min, r: 0.17 1/min, Emax = 600g}
+    \includegraphics[width=\textwidth]{BiteRateModel_figs/fig-Figure1_AllSample_plotB-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.40\textwidth}
+    \centering
+    \caption*{\centering 1C - theta: 30 g/min, r: 0.5 1/min, Emax = 400g}
+    \includegraphics[width=\textwidth]{BiteRateModel_figs/fig-Figure1_AllSample_plotC-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.40\textwidth}
+    \centering
+    \caption*{\centering 1D - theta: 50 g/min, r: 0.17 1/min, Emax = 400g}
+    \includegraphics[width=\textwidth]{BiteRateModel_figs/fig-Figure1_AllSample_plotD-1.pdf}
+  \end{subfigure}
+\end{figure}
+
+\FloatBarrier
+\newpage
+
+###Compare Parameter Fits by Sampling Rate
+
+<!-- need to eval each time as may be small changes -->
+
+<!-- <!-- 250 ms sampling --> -->
+
+```{r Figure1_contSample_plotA_paramfits, echo=FALSE, include = FALSE}
+cont_CumulativeIntake_Figure1A_fit.orig
+```
+
+```{r Figure1_contSample_plotB_paramfits, echo=FALSE, include = FALSE}
+cont_CumulativeIntake_Figure1B_fit.orig
+```
+
+```{r Figure1_contSample_plotC_paramfits, echo=FALSE, include = FALSE}
+cont_CumulativeIntake_Figure1C_fit.orig
+```
+
+```{r Figure1_contSample_plotD_paramfits, echo=FALSE, include = FALSE}
+cont_CumulativeIntake_Figure1D_fit.orig
+```
+
+```{r Figure1_contSample_paramfits, echo=FALSE, include = FALSE}
+cont_CumulativeIntake_Figure1_fit.orig_grid
+```
+
+<!-- 100 Bite sampling -->
+
+```{r Figure1_bite100Sample_plotA_paramfits, echo=FALSE, include = FALSE}
+bite100_CumulativeIntake_Figure1A_fit.orig
+```
+
+```{r Figure1_bite100Sample_plotB_paramfits, echo=FALSE, include = FALSE}
+bite100_CumulativeIntake_Figure1B_fit.orig
+```
+
+```{r Figure1_bite100Sample_plotC_paramfits, echo=FALSE, include = FALSE}
+bite100_CumulativeIntake_Figure1C_fit.orig
+```
+
+```{r Figure1_bite100Sample_plotD_paramfits, echo=FALSE, include = FALSE}
+bite100_CumulativeIntake_Figure1D_fit.orig
+```
+
+```{r Figure1_bite100Sample_paramfits, echo=FALSE, include = FALSE}
+bite100_CumulativeIntake_Figure1_fit.orig_grid
+```
+
+<!-- <!-- 33 Bite sampling --> -->
+
+```{r Figure1_bite33Sample_plotA_paramfits, echo=FALSE, include = FALSE}
+bite33_CumulativeIntake_Figure1_plotA_fit.orig
+```
+
+```{r Figure1_bite33Sample_plotB_paramfits, echo=FALSE, include = FALSE}
+bite33_CumulativeIntake_Figure1_plotB_fit.orig
+```
+
+```{r Figure1_bite33Sample_plotC_paramfits, echo=FALSE, include = FALSE}
+bite33_CumulativeIntake_Figure1_plotC_fit.orig
+```
+
+```{r Figure1_bite33Sample_plotD_paramfits, echo=FALSE, include = FALSE}
+bite33_CumulativeIntake_Figure1_plotD_fit.orig
+```
+
+\FloatBarrier
+
+```{r Figure1_contSample_singleFit, echo=FALSE, results='asis'}
+kable(cont_optimize, "latex",  digits = 3, caption = "Fitted parameters from initail recovery simulation using 250ms sampling", row.names = FALSE) %>%
+  kable_styling(latex_options = c("hold_position", "repeat_header"))
+```
+\begin{figure}[ht!]
+  \centering
+  \caption*{\centering 250 ms Sampling}
+  \includegraphics[width=\textwidth]{BiteRateModel_figs/fig-Figure1_contSample_paramfits-1.pdf}
+\end{figure}
+
+\FloatBarrier
+
+```{r Figure1_bite100Sample_singleFit, echo=FALSE, results='asis'}
+kable(bite100_optimize, "latex",  digits = 3, caption = "Fitted parameters from initail recovery simulation using 100 bite sampling", row.names = FALSE) %>%
+  kable_styling(latex_options = c("hold_position", "repeat_header"))
+```
+\begin{figure}[ht!]
+  \centering
+  \caption*{\centering 100 bite Sampling}
+  \includegraphics[width=\textwidth]{BiteRateModel_figs/fig-Figure1_bite100Sample_paramfits-1.pdf}
+\end{figure}
+
+\FloatBarrier
+
+\begin{figure}[ht!]
+  \centering
+   \caption*{\centering randomly sampled number of bites: mean = 33, sd = 5}
+  \begin{subfigure}[b]{=0.40\textwidth}
+    \centering
+    \caption*{\centering 1A - theta: 30 g/min, r: 0.17 1/min, Emax = 400g}
+    \includegraphics[width=\textwidth]{BiteRateModel_figs/fig-Figure1_bite33Sample_plotA_paramfits-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.40\textwidth}
+    \centering
+    \caption*{\centering 1B - theta: 30 g/min, r: 0.17 1/min, Emax = 600g}
+    \includegraphics[width=\textwidth]{BiteRateModel_figs/fig-Figure1_bite33Sample_plotB_paramfits-1.pdf}
+  \end{subfigure}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}[ht!]
+  \centering
+  \begin{subfigure}[b]{=0.40\textwidth}
+    \centering
+    \caption*{\centering 1C - theta: 30 g/min, r: 0.5 1/min, Emax = 400g}
+    \includegraphics[width=\textwidth]{BiteRateModel_figs/fig-Figure1_bite33Sample_plotC_paramfits-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.40\textwidth}
+    \centering
+    \caption*{\centering 1D - theta: 50 g/min, r: 0.17 1/min, Emax = 400g}
+    \includegraphics[width=\textwidth]{BiteRateModel_figs/fig-Figure1_bite33Sample_plotD_paramfits-1.pdf}
+  \end{subfigure}
+\end{figure}
+\FloatBarrier
+\newpage
+
+
+<!-- #Simulations based on Fogel et al., 2017 -->
+
+<!-- ##Correlations between Microstructure Behaviors - Simulated -->
+
+<!-- ```{r Fogel2017_microstructureSim_cortab, echo=FALSE, results='asis'} -->
+<!-- kable(SimDat_Fogel2017_cormat, "latex",  digits = 3, caption = "Correlations between Microstructure Behaviors - Simulated", row.names = FALSE) %>% -->
+<!--   kable_styling(latex_options = c("hold_position", "repeat_header")) -->
+<!-- ``` -->
+
+<!-- ##Average Bite Size vs Added Bite Size Variability -->
+<!-- ```{r Fogel2017_Average_BiteSizeVar_plot, echo=FALSE, include = TRUE} -->
+<!-- SimBites_Fogel2017_CumulativeIntake_BiteSizeVar -->
+<!-- ``` -->
+
+<!-- ```{r Fogel2017_Average_BiteSizeVar_byIDSlow_plot, echo=FALSE, include = TRUE} -->
+<!-- SimBites_Fogel2017_CumulativeIntake_BiteSizeVar_byIDslow -->
+<!-- ``` -->
+
+<!-- ```{r Fogel2017_Average_BiteSizeVar_byIDFast_plot, echo=FALSE, include = TRUE} -->
+<!-- SimBites_Fogel2017_CumulativeIntake_BiteSizeVar_byIDfast -->
+<!-- ``` -->
+
+
