@@ -39,7 +39,7 @@ knitr::opts_chunk$set(tidy = TRUE, tidy.opts = list(comment = FALSE), echo = TRU
 
 <!-- load startup file and any extra packages -->
 ```{r load_Fig1, echo=FALSE, include=FALSE}
-# source('BiteRateModel_Figure1sim.R')
+source('FPM_SimStudy_Figure1sim.R')
 source('FPM_SimStudy_setup.R')
 library(knitr)
 library(kableExtra)
@@ -119,7 +119,7 @@ L(\hat{E(t)} + \epsilon, \sigma^2 | t, \theta, r, E_{max} ) &= \prod_{i = 1}^{n}
 
 <!-- ###Sampling every 250ms - Comparison of Equations -->
 
-already created - only need to redo if something changes
+<!-- already created - only need to redo if something changes -->
 
 ```{r Figure1_contSample_plotA, echo=FALSE, include = FALSE, eval = FALSE}
 cont_CumulativeIntake_Figure1_plotA
@@ -239,68 +239,67 @@ all_CumulativeIntake_Figure1_plotD
 ###Compare Parameter Fits by Sampling Rate
 
 <!-- need to eval each time as may be small changes -->
+<!-- 250 ms sampling -->
 
-<!-- <!-- 250 ms sampling --> -->
+```{r Figure1_contSample_plotA_paramfits, echo=FALSE, include = FALSE}
+cont_CumulativeIntake_Figure1A_fit.orig
+```
 
-<!-- ```{r Figure1_contSample_plotA_paramfits, echo=FALSE, include = FALSE} -->
-<!-- cont_CumulativeIntake_Figure1A_fit.orig -->
-<!-- ``` -->
+```{r Figure1_contSample_plotB_paramfits, echo=FALSE, include = FALSE}
+cont_CumulativeIntake_Figure1B_fit.orig
+```
 
-<!-- ```{r Figure1_contSample_plotB_paramfits, echo=FALSE, include = FALSE} -->
-<!-- cont_CumulativeIntake_Figure1B_fit.orig -->
-<!-- ``` -->
+```{r Figure1_contSample_plotC_paramfits, echo=FALSE, include = FALSE}
+cont_CumulativeIntake_Figure1C_fit.orig
+```
 
-<!-- ```{r Figure1_contSample_plotC_paramfits, echo=FALSE, include = FALSE} -->
-<!-- cont_CumulativeIntake_Figure1C_fit.orig -->
-<!-- ``` -->
+```{r Figure1_contSample_plotD_paramfits, echo=FALSE, include = FALSE}
+cont_CumulativeIntake_Figure1D_fit.orig
+```
 
-<!-- ```{r Figure1_contSample_plotD_paramfits, echo=FALSE, include = FALSE} -->
-<!-- cont_CumulativeIntake_Figure1D_fit.orig -->
-<!-- ``` -->
+```{r Figure1_contSample_paramfits, echo=FALSE, include = FALSE}
+cont_CumulativeIntake_Figure1_fit.orig_grid
+```
 
-<!-- ```{r Figure1_contSample_paramfits, echo=FALSE, include = FALSE} -->
-<!-- cont_CumulativeIntake_Figure1_fit.orig_grid -->
-<!-- ``` -->
+<!-- 100 Bite sampling -->
 
-<!-- <!-- 100 Bite sampling --> -->
+```{r Figure1_bite100Sample_plotA_paramfits, echo=FALSE, include = FALSE}
+bite100_CumulativeIntake_Figure1A_fit.orig
+```
 
-<!-- ```{r Figure1_bite100Sample_plotA_paramfits, echo=FALSE, include = FALSE} -->
-<!-- bite100_CumulativeIntake_Figure1A_fit.orig -->
-<!-- ``` -->
+```{r Figure1_bite100Sample_plotB_paramfits, echo=FALSE, include = FALSE}
+bite100_CumulativeIntake_Figure1B_fit.orig
+```
 
-<!-- ```{r Figure1_bite100Sample_plotB_paramfits, echo=FALSE, include = FALSE} -->
-<!-- bite100_CumulativeIntake_Figure1B_fit.orig -->
-<!-- ``` -->
+```{r Figure1_bite100Sample_plotC_paramfits, echo=FALSE, include = FALSE}
+bite100_CumulativeIntake_Figure1C_fit.orig
+```
 
-<!-- ```{r Figure1_bite100Sample_plotC_paramfits, echo=FALSE, include = FALSE} -->
-<!-- bite100_CumulativeIntake_Figure1C_fit.orig -->
-<!-- ``` -->
+```{r Figure1_bite100Sample_plotD_paramfits, echo=FALSE, include = FALSE}
+bite100_CumulativeIntake_Figure1D_fit.orig
+```
 
-<!-- ```{r Figure1_bite100Sample_plotD_paramfits, echo=FALSE, include = FALSE} -->
-<!-- bite100_CumulativeIntake_Figure1D_fit.orig -->
-<!-- ``` -->
+```{r Figure1_bite100Sample_paramfits, echo=FALSE, include = FALSE}
+bite100_CumulativeIntake_Figure1_fit.orig_grid
+```
 
-<!-- ```{r Figure1_bite100Sample_paramfits, echo=FALSE, include = FALSE} -->
-<!-- bite100_CumulativeIntake_Figure1_fit.orig_grid -->
-<!-- ``` -->
+<!-- 33 Bite sampling -->
 
-<!-- <!-- <!-- 33 Bite sampling --> --> -->
+```{r Figure1_bite33Sample_plotA_paramfits, echo=FALSE, include = FALSE}
+bite33_CumulativeIntake_Figure1_plotA_fit.orig
+```
 
-<!-- ```{r Figure1_bite33Sample_plotA_paramfits, echo=FALSE, include = FALSE} -->
-<!-- bite33_CumulativeIntake_Figure1_plotA_fit.orig -->
-<!-- ``` -->
+```{r Figure1_bite33Sample_plotB_paramfits, echo=FALSE, include = FALSE}
+bite33_CumulativeIntake_Figure1_plotB_fit.orig
+```
 
-<!-- ```{r Figure1_bite33Sample_plotB_paramfits, echo=FALSE, include = FALSE} -->
-<!-- bite33_CumulativeIntake_Figure1_plotB_fit.orig -->
-<!-- ``` -->
+```{r Figure1_bite33Sample_plotC_paramfits, echo=FALSE, include = FALSE}
+bite33_CumulativeIntake_Figure1_plotC_fit.orig
+```
 
-<!-- ```{r Figure1_bite33Sample_plotC_paramfits, echo=FALSE, include = FALSE} -->
-<!-- bite33_CumulativeIntake_Figure1_plotC_fit.orig -->
-<!-- ``` -->
-
-<!-- ```{r Figure1_bite33Sample_plotD_paramfits, echo=FALSE, include = FALSE} -->
-<!-- bite33_CumulativeIntake_Figure1_plotD_fit.orig -->
-<!-- ``` -->
+```{r Figure1_bite33Sample_plotD_paramfits, echo=FALSE, include = FALSE}
+bite33_CumulativeIntake_Figure1_plotD_fit.orig
+```
 
 \FloatBarrier
 
@@ -412,25 +411,10 @@ kable(Fogel2017_BiteRound_corMat, "latex",  digits = 3, caption = "Correlations 
 
 ###Means (SEM) After Rounding Simulated Number of Bites
 
-\begin{table}[ht!]
-\begin{tabular}{lll@{\hspace{5pt}}lll@{\hspace{5pt}}ll}
-  \hline
-  & \multicolumn{1}{c}{Slow} && \multicolumn{1}{c}{Fast} && \multicolumn{1}{c}{t} & \multicolumn{1}{c}{p} \bigstrut[t] \\
-  \cline{2-2} \cline{4-4} \cline{6-6} \cline{8-8}
-  Bites\scriptsize{(\#)} & 57.7 (2.5) && 68.4 (2.5) && 3.04 & 0.003 \\
-  Bite Size \scriptsize{(grams/bite)} & 1.4 (0.1) && 2.4 (0.1) && 9.17 & <0.001 \\
-  Oral Exposure per Bite \scriptsize{(sec)}  & 20.1 (0.9) && 15.6 (0.5) && 4.11 & <0.001 \\
-  Active Mealtime \scriptsize{(\%)} & 75.0 (1.0) && 76.0 (1.0) && 0.56 & 0.570\\
-  Total Oral Exposure \scriptsize{(min)} & 15.1 (0.4) && 15.2 (0.4) && 0.08 & 0.930\\
-  Total Intake \scriptsize{(kCal)} & 175.3 (6.09) && 306.7 (9.9) && 11.28 & <0.001\\
-  \hline
-\end{tabular}
-\end{table}
 
+##Parameter Distributions - Quadratic
 
-###Parameter Distributions - Quadratic
-
-###Parameter Distributions - First Principles Model
+##Parameter Distributions - First Principles Model
 
 ```{r Hist_theta_logitBiteSim, echo=FALSE, include = FALSE}
 SimDat_Fogel2017_thetaHist
@@ -456,6 +440,8 @@ SimDat_Fogel2017_EmaxHist
 SimDat_Fogel2017_EmaxHist_group
 ```
 
+###Histogram: Overall Distributions
+
 \begin{figure}[ht!]
   \centering
   \begin{subfigure}[b]{=0.40\textwidth}
@@ -477,6 +463,8 @@ SimDat_Fogel2017_EmaxHist_group
 
 \FloatBarrier
 
+###Histogram: Distributions by Eating Rate Group
+
 \begin{figure}[ht!]
   \centering
   \begin{subfigure}[b]{=0.40\textwidth}
@@ -495,6 +483,8 @@ SimDat_Fogel2017_EmaxHist_group
     \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Hist_Emax_logitBiteSim_ERgroup-1.pdf}
   \end{subfigure}
 \end{figure}
+
+###Density: Distributions by Eating Rate Group
 
 \FloatBarrier
 
