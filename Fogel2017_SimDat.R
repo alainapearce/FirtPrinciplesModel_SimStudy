@@ -3,7 +3,7 @@
 # structure of average meal microstructure in children
 # reported in Fogel et al., 2017.
 # 
-#     Copyright (C) 2015 Alaina L Pearce
+#     Copyright (C) 2012 Alaina L Pearce
 # 
 #     This program is free software: you can redistribute it and/or modify
 #     it under the terms of the GNU General Public License as published by
@@ -22,6 +22,7 @@
 ############ Basic Data Load/Setup ############
 library(stats)
 library(faux)
+library(dplyr)
 #installed from devtools::install_github("debruine/faux")
 
 #### Fogel et al., 2017: A description of an ‘obesogenic’ eating style ####
@@ -46,48 +47,118 @@ library(faux)
 #n children
 Fogel2017_simDat <- function(n){
   #### Simuluate Data ####
-  Fogel2017_r <- matrix(c(1, -0.42, -0.58, 0.11, 
-                         -0.42, 1, 0.54, 0.17, 
-                         -0.58, 0.54, 1, 0.16,
-                         0.11, 0.17, 0.16, 1), byrow = TRUE, nrow = 4)
   
-  Fogel2017_means_slow <- c(57.7, 1.4, 20.1, 75.0, 175.3)
-  Fogel2017_means_fast <- c(68.4, 2.4, 15.6, 76.0, 306.8)
-  Fogel2017_sds_slow <- c(2.5, 0.1, 0.9, 1.0, 6.09)
-  Fogel2017_sds_fast <- c(2.5, 0.1, 0.5, 1.0, 9.9)
-  
-  poolmean <- function (mean1, mean2, n1, n2){
-    mean_pooled <- (mean1*n1 + mean2*n2)/(n1 + n2)
+  Fogel2017_means_slow <- c(57.7, 1.4, 75, 20.1, 175.3)
+  Fogel2017_means_fast <- c(68.4, 2.4, 76,  15.6, 306.8)
+  Fogel2017_ses_slow <- c(2.5, 0.1, 1.0, 0.9, 6.09)
+  Fogel2017_ses_fast <- c(2.5, 0.1, 1.0, 0.5, 9.9)
+
+  sampleMean <- function (mean1, mean2, n1, n2){
+    mean_cacl <- (mean1*n1 + mean2*n2)/(n1 + n2)
   }
   
-  poolsd <- function (sd1, sd2, n1, n2){
-    sd_pooled <- sqrt(((n1 - 1)*sd1^2 + (n2-1)*sd2^2)/(n1 + n2 -2))
+  sampleSD <- function (se1, se2, n1, n2, mean1, mean2){
+    #convert from se to sd
+    sd1 = se1*sqrt(n1)
+    sd2 = se2*sqrt(n2)
+    
+    sd_calc <- sqrt((((n1 - 1)*sd1^2 + (n2-1)*sd2^2)/(n1 + n2 - 1)) + ((n1*n2)*(mean1-mean2)^2)/((n1 + n2)*(n1 + n2 - 1)))
   }
   
-  overall_mean = mapply(poolmean, mean1 = Fogel2017_means_slow, mean2 = Fogel2017_means_fast, n1 = 192, n2 = 194)
-  overall_sd = mapply(poolsd, sd1 = Fogel2017_sds_slow, sd2 = Fogel2017_sds_fast, n1 = 192, n2 = 194)
   
-  SimDat <- rnorm_multi(n = n, vars = 4,
-    mu = overall_mean[1:4],
-    sd = overall_sd[1:4],
-    r = Fogel2017_r, 
-    varnames = c("nBites", "BiteSize_g", "BiteOralExposure_sec", "ActiveMeal_pcent"),
-    empirical = TRUE)
+  overall_mean = mapply(sampleMean, mean1 = Fogel2017_means_slow, mean2 = Fogel2017_means_fast, n1 = 192, n2 = 194)
+  overall_sd = mapply(sampleSD, se1 = Fogel2017_ses_slow, se2 = Fogel2017_ses_fast, n1 = 192, n2 = 194, mean1 = Fogel2017_means_slow, mean2 = Fogel2017_means_fast)
+
   
-  SimDat$TotalIntake_g = SimDat$BiteSize_g*SimDat$nBites
-  SimDat$TotalOralExposure_min = (SimDat$BiteOralExposure_sec*SimDat$nBites)/60
-  SimDat$EatRate_g.min = SimDat$TotalIntake_g/SimDat$TotalOralExposure_min
-  SimDat$TotalIntake_kcal = rnorm_pre(SimDat$EatRate_g.min, mu = overall_mean[5], sd = overall_sd[5], r = 0.61)
-  SimDat$MealDur_min = SimDat$TotalOralExposure_min/(SimDat$ActiveMeal_pcent/100)
+  # Fogel2017_r <- matrix(c(1, 0.15, 0.11, -0.58,
+  #   0.15, 1, -0.02, -0.25,
+  #   0.11, -0.02, 1, 0.16,
+  #   -0.58, -0.25, 0.16, 1), byrow = TRUE, nrow = 4)
+
+  Fogel2017_r <- matrix(c(1, -0.42, 0.11, -0.58,
+    -0.42, 1, 0.17, 0.54,
+    0.11, 0.17, 1, 0.16,
+    -0.58, 0.54, 0.16, 1), byrow = TRUE, nrow = 4)
   
-  SimDat$BiteRound_nBites = round(SimDat$nBites)
-  SimDat$BiteRound_TotalIntake_g = SimDat$BiteSize_g*SimDat$BiteRound_nBites
-  SimDat$BiteRound_TotalOralExposure_min = (SimDat$BiteOralExposure_sec*SimDat$BiteRound_nBites)/60
-  SimDat$BiteRound_EatRate_g.min = SimDat$BiteRound_TotalIntake_g/SimDat$BiteRound_TotalOralExposure_min
-  SimDat$BiteRound_TotalIntake_kcal = rnorm_pre(SimDat$BiteRound_EatRate_g.min, mu = overall_mean[5], sd = overall_sd[5], r = 0.61)
-  SimDat$BiteRound_MealDur_min = SimDat$BiteRound_TotalOralExposure_min/(SimDat$ActiveMeal_pcent/100)
   
+  #simulate  distribution but make sure we do not get a negative eating rate
+  nSim = 0
+  while(nSim < n){
+    nSim_loop = n - nSim
+    
+    if(nSim_loop < 10){
+      nSim_loop = 10
+    }
+    
+    SimDat_loop <- rnorm_multi(n = nSim_loop, vars = 4,
+      mu = overall_mean[c(1:4)],
+      sd = overall_sd[c(1:4)],
+      r = Fogel2017_r,
+      varnames = c( "nBites", "BiteSize_g", "ActiveMeal_pcent", "BiteOE_sec"),
+      empirical = TRUE)
+
+    
+    # Constrain the Total Oral Exposure to the min in the Fogel et al., 2017 
+    # dataset
+
+    SimDat_loop$TotalOE_min = (SimDat_loop$BiteOE_sec*SimDat_loop$nBites)/60
+    
+    if(nrow(SimDat_loop[SimDat_loop$TotalOE_min > 2, ]) < n-nSim){
+      SimDat_loop = SimDat_loop[SimDat_loop$TotalOE_min > 2, ]
+    } else {
+      SimDat_loop = SimDat_loop[sample(nrow(SimDat_loop[SimDat_loop$TotalOE_min > 2, ]), n-nSim), ]
+    }
+    
+    # Ensure Percent of Active Time during meal does not exceed 100 to 
+    # retain realistic values
+    if(nrow(SimDat_loop[SimDat_loop$ActiveMeal_pcent <= 100, ]) < n-nSim){
+      SimDat_loop = SimDat_loop[SimDat_loop$ActiveMeal_pcent <= 100, ]
+    } else {
+      SimDat_loop = SimDat_loop[sample(nrow(SimDat_loop[SimDat_loop$ActiveMeal_pcent <= 100, ]), n-nSim), ]
+    }
+    
+    # Ensure bites size is greater than 0
+    if(nrow(SimDat_loop[SimDat_loop$BiteSize_g > 0.1, ]) < n-nSim){
+      SimDat_loop = SimDat_loop[SimDat_loop$BiteSize_g > 0.1, ]
+    } else {
+      SimDat_loop = SimDat_loop[sample(nrow(SimDat_loop[SimDat_loop$BiteSize_g > 0.1, ]), n-nSim), ]
+    }
+    
+    # round bites for real unts
+    SimDat_loop$nBites = round(SimDat_loop$nBites)
+    
+    # get total grams and eating rate
+    SimDat_loop$TotalIntake_g = SimDat_loop$BiteSize_g*SimDat_loop$nBites
+    SimDat_loop$EatRate = SimDat_loop$TotalIntake_g/SimDat_loop$TotalOE_min
+    
+    # Ensure eating rate doesn't exceed the Fogel et al., 2017 dataset
+    if(nrow(SimDat_loop[SimDat_loop$EatRate > 0 & SimDat_loop$EatRate < 25, ]) < n-nSim){
+      SimDat_loop = SimDat_loop[SimDat_loop$EatRate > 0 & SimDat_loop$EatRate < 25, ]
+    } else {
+      SimDat_loop = SimDat_loop[sample(nrow(SimDat_loop[SimDat_loop$EatRate > 0 & SimDat_loop$EatRate < 25, ]), n-nSim), ]
+    }
+    
+    # Get meal duration and ensure it doesn't go beyond the 30 min protocol
+    # in Fogel et al., 2017
+    SimDat_loop$MealDur_min = SimDat_loop$TotalOE_min/(SimDat_loop$ActiveMeal_pcent/100)
+    
+    if(nrow(SimDat_loop[SimDat_loop$MealDur_min <= 30, ]) < n-nSim){
+      SimDat_loop = SimDat_loop[SimDat_loop$MealDur_min <= 30, ]
+    } else {
+      SimDat_loop = SimDat_loop[sample(nrow(SimDat_loop[SimDat_loop$MealDur_min <= 30, ]), n-nSim), ]
+    }
+    
+    # check number that fit criteria and save
+    if(nSim == 0){
+      SimDat = SimDat_loop
+      nSim = nSim + nrow(SimDat_loop)
+    } else {
+      SimDat = rbind(SimDat, SimDat_loop)
+      nSim = nSim + nrow(SimDat_loop)
+    }
+  }
+    
   SimDat$ID = seq(1, n, by = 1)
-  SimDat <- data.frame(SimDat[c(16, 1:15)])
+  SimDat <- data.frame(SimDat[c(9, 1:8)])
   return(SimDat)
 }

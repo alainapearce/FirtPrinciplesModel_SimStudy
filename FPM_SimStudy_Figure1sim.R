@@ -1,3 +1,25 @@
+# This script was written by Alaina Pearce in 2020 
+# to recreate Figure 1 A-D from the Thompson et al., 2017 
+# paper using the First Principle Model. The purpose is to 
+# validate our implimentation of the model and to determine the
+# ability to recover parameters and bite curves with infrequent
+# sampling. This is proof of concept.
+# 
+#     Copyright (C) 20120 Alaina L Pearce
+# 
+#     This program is free software: you can redistribute it and/or modify
+#     it under the terms of the GNU General Public License as published by
+#     the Free Software Foundation, either version 3 of the License, or
+#     (at your option) any later version.
+# 
+#     This program is distributed in the hope that it will be useful,
+#     but WITHOUT ANY WARRANTY; without even the implied warranty of
+#     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#     GNU General Public License for more details.
+# 
+#     You should have received a copy of the GNU General Public License
+#     along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
 ############ Basic Data Load/Setup ############
 library(reporttools)
 library(xtable)
@@ -66,7 +88,7 @@ cont_CumulativeIntake_Figure1D_cor$Figure = '1D'
 cont_CumulativeIntake_Figure1_cor_long = rbind.data.frame(cont_CumulativeIntake_Figure1A_cor, cont_CumulativeIntake_Figure1B_cor, cont_CumulativeIntake_Figure1C_cor, cont_CumulativeIntake_Figure1D_cor)
 cont_CumulativeIntake_Figure1_cor_long$group = 'cont'
 
-cont_CumulativeIntake_Figure1_plotA = ggplot(cont_CumulativeIntake_Figure1A_cor, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avg)) +
+cont_CumulativeIntake_Figure1_plotA = ggplot(cont_CumulativeIntake_Figure1A_cor, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avgBite)) +
   geom_smooth(method = 'gam', formula = y~s(x),linetype = 1, color = 'black') +
   stat_smooth(data = cont_CumulativeIntake_Figure1A_orig, method = 'gam', formula = y~s(x), linetype = 2, color = 'black') +
   ggtitle('Replication of Figure 1A with 250 ms sampling (for 30 min meal)') +
@@ -76,7 +98,7 @@ cont_CumulativeIntake_Figure1_plotA = ggplot(cont_CumulativeIntake_Figure1A_cor,
         panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
         panel.background = element_blank())
 
-cont_CumulativeIntake_Figure1_plotB = ggplot(cont_CumulativeIntake_Figure1B_cor, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avg)) +
+cont_CumulativeIntake_Figure1_plotB = ggplot(cont_CumulativeIntake_Figure1B_cor, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avgBite)) +
   geom_smooth(method = 'gam', formula = y~s(x),linetype = 1, color = 'black') +
   stat_smooth(data = cont_CumulativeIntake_Figure1B_orig, method = 'gam', formula = y~s(x), linetype = 2, color = 'black') +
   ggtitle('Replication of Figure 1B with 250 ms sampling (for 30 min meal)') +
@@ -86,7 +108,7 @@ cont_CumulativeIntake_Figure1_plotB = ggplot(cont_CumulativeIntake_Figure1B_cor,
         panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
         panel.background = element_blank())
 
-cont_CumulativeIntake_Figure1_plotC = ggplot(cont_CumulativeIntake_Figure1C_cor, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avg)) +
+cont_CumulativeIntake_Figure1_plotC = ggplot(cont_CumulativeIntake_Figure1C_cor, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avgBite)) +
   geom_smooth(method = 'gam', formula = y~s(x),linetype = 1, color = 'black') +
   stat_smooth(data = cont_CumulativeIntake_Figure1C_orig, method = 'gam', formula = y~s(x), linetype = 2, color = 'black') +
   ggtitle('Replication of Figure 1C with 250 ms sampling (for 30 min meal)') +
@@ -96,7 +118,7 @@ cont_CumulativeIntake_Figure1_plotC = ggplot(cont_CumulativeIntake_Figure1C_cor,
         panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
         panel.background = element_blank())
 
-cont_CumulativeIntake_Figure1_plotD = ggplot(cont_CumulativeIntake_Figure1D_cor, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avg)) +
+cont_CumulativeIntake_Figure1_plotD = ggplot(cont_CumulativeIntake_Figure1D_cor, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avgBite)) +
   geom_smooth(method = 'gam', formula = y~s(x),linetype = 1, color = 'black') +
   stat_smooth(data = cont_CumulativeIntake_Figure1D_orig, method = 'gam', formula = y~s(x), linetype = 2, color = 'black') +
   ggtitle('Replication of Figure 1D with 250 ms sampling (for 30 min meal)') +
@@ -107,7 +129,7 @@ cont_CumulativeIntake_Figure1_plotD = ggplot(cont_CumulativeIntake_Figure1D_cor,
         panel.background = element_blank())
 
 #facet wrap
-cont_CumulativeIntake_Figure1_grid = ggplot(cont_CumulativeIntake_Figure1_cor_long, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avg)) +
+cont_CumulativeIntake_Figure1_grid = ggplot(cont_CumulativeIntake_Figure1_cor_long, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avgBite)) +
   geom_smooth(method = 'gam', formula = y~s(x),linetype = 1, color = 'black') +
   stat_smooth(data = cont_CumulativeIntake_Figure1_orig_long, method = 'gam', formula = y~s(x), linetype = 2, color = 'black') +
   ggtitle('Replication of Figure 1 with 250 ms sampling (for 30 min meal)') +
@@ -132,7 +154,7 @@ bite100_CumulativeIntake_Figure1D_cor$Figure = '1D'
 bite100_CumulativeIntake_Figure1_cor_long = rbind.data.frame(bite100_CumulativeIntake_Figure1A_cor, bite100_CumulativeIntake_Figure1B_cor, bite100_CumulativeIntake_Figure1C_cor, bite100_CumulativeIntake_Figure1D_cor)
 bite100_CumulativeIntake_Figure1_cor_long$group = 'bite100'
 
-bite100_CumulativeIntake_Figure1_plotA = ggplot(bite100_CumulativeIntake_Figure1A_cor, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avg)) +
+bite100_CumulativeIntake_Figure1_plotA = ggplot(bite100_CumulativeIntake_Figure1A_cor, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avgBite)) +
   stat_smooth(data = cont_CumulativeIntake_Figure1A_cor, method = 'gam', formula = y~s(x), linetype = 1, color = 'black') +
   geom_point(shape = 23, color = 'red', size = 3) +
   ggtitle('Replication of Figure 1A with 100 Bites') +
@@ -142,7 +164,7 @@ bite100_CumulativeIntake_Figure1_plotA = ggplot(bite100_CumulativeIntake_Figure1
         panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
         panel.background = element_blank())
 
-bite100_CumulativeIntake_Figure1_plotB = ggplot(bite100_CumulativeIntake_Figure1B_cor, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avg)) +
+bite100_CumulativeIntake_Figure1_plotB = ggplot(bite100_CumulativeIntake_Figure1B_cor, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avgBite)) +
   stat_smooth(data = cont_CumulativeIntake_Figure1B_cor, method = 'gam', formula = y~s(x), linetype = 1, color = 'black') +
   geom_point(shape = 23, color = 'red', size = 3) +
   ggtitle('Replication of Figure 1B with 100 Bites') +
@@ -152,7 +174,7 @@ bite100_CumulativeIntake_Figure1_plotB = ggplot(bite100_CumulativeIntake_Figure1
         panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
         panel.background = element_blank())
 
-bite100_CumulativeIntake_Figure1_plotC = ggplot(bite100_CumulativeIntake_Figure1C_cor, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avg)) +
+bite100_CumulativeIntake_Figure1_plotC = ggplot(bite100_CumulativeIntake_Figure1C_cor, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avgBite)) +
   stat_smooth(data = cont_CumulativeIntake_Figure1C_cor, method = 'gam', formula = y~s(x), linetype = 1, color = 'black') +
   geom_point(shape = 23, color = 'red', size = 3) +
   ggtitle('Replication of Figure 1C with 100 Bites') +
@@ -162,7 +184,7 @@ bite100_CumulativeIntake_Figure1_plotC = ggplot(bite100_CumulativeIntake_Figure1
         panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
         panel.background = element_blank())
 
-bite100_CumulativeIntake_Figure1_plotD = ggplot(bite100_CumulativeIntake_Figure1D_cor, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avg)) +
+bite100_CumulativeIntake_Figure1_plotD = ggplot(bite100_CumulativeIntake_Figure1D_cor, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avgBite)) +
   stat_smooth(data = cont_CumulativeIntake_Figure1D_cor, method = 'gam', formula = y~s(x), linetype = 1, color = 'black') +
   geom_point(shape = 23, color = 'red', size = 3) +
   ggtitle('Replication of Figure 1D with 100 Bites') +
@@ -173,7 +195,7 @@ bite100_CumulativeIntake_Figure1_plotD = ggplot(bite100_CumulativeIntake_Figure1
         panel.background = element_blank())
 
 #facet wrap
-bite100_CumulativeIntake_Figure1_grid = ggplot(bite100_CumulativeIntake_Figure1_cor_long, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avg)) +
+bite100_CumulativeIntake_Figure1_grid = ggplot(bite100_CumulativeIntake_Figure1_cor_long, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avgBite)) +
   stat_smooth(data = cont_CumulativeIntake_Figure1_cor_long, method = 'gam', formula = y~s(x), linetype = 1, color = 'black') +
   geom_point(shape = 23, color = 'red', size = 3) +
   ggtitle('Replication of Figure 1 with 100 Bites') +
@@ -186,29 +208,36 @@ bite100_CumulativeIntake_Figure1_grid = ggplot(bite100_CumulativeIntake_Figure1_
 #### Replication with 33 bite sampling ####
 
 #corrected equation
-bite33_CumulativeIntake_Figure1A_cor = ParamRecovery(nBites = 30, Emax = Figure1Params$Emax[1], parameters = c(Figure1Params$theta[1], Figure1Params$r[1]), time_fn = FPM_Time, fit_fn = FPM_Fit, simVar = 'bitesSampled', simValue = 5, keepBites = TRUE)
+bite33_CumulativeIntake_Figure1A_cor = ParamRecovery(nBites = 30, Emax = Figure1Params$Emax[1], parameters = c(Figure1Params$theta[1], Figure1Params$r[1]), time_fn = FPM_Time, fit_fn = FPM_Fit, simVar = 'bitesSampled', simValue = 5, keepBites = TRUE, intake_fn = FPM_Intake, CI = TRUE)
 bite33_CumulativeIntake_Figure1A_Et = bite33_CumulativeIntake_Figure1A_cor$biteDat_paramRecov
 bite33_CumulativeIntake_Figure1A_Et$Figure = '1A'
 bite33_CumulativeIntake_Figure1A_paramsRec = bite33_CumulativeIntake_Figure1A_cor$paramDat
+bite33_CumulativeIntake_Figure1A_paramsRec$r_CIfit = ifelse(bite33_CumulativeIntake_Figure1A_paramsRec$initial_r < bite33_CumulativeIntake_Figure1A_paramsRec$u95CI_r & bite33_CumulativeIntake_Figure1A_paramsRec$initial_r > bite33_CumulativeIntake_Figure1A_paramsRec$l95CI_r, 'Y', 'N')
+nrow(bite33_CumulativeIntake_Figure1A_paramsRec[bite33_CumulativeIntake_Figure1A_paramsRec$r_CIfit == 'Y', ])
 
-bite33_CumulativeIntake_Figure1B_cor = ParamRecovery(nBites = 30, Emax = Figure1Params$Emax[2], parameters = c(Figure1Params$theta[2], Figure1Params$r[2]), time_fn = FPM_Time, fit_fn = FPM_Fit, simVar = 'bitesSampled', simValue = 5, keepBites = TRUE)
+bite33_CumulativeIntake_Figure1A_paramsRec$theta_CIfit = ifelse(bite33_CumulativeIntake_Figure1A_paramsRec$initial_theta < bite33_CumulativeIntake_Figure1A_paramsRec$u95CI_theta & bite33_CumulativeIntake_Figure1A_paramsRec$initial_theta > bite33_CumulativeIntake_Figure1A_paramsRec$l95CI_theta, 'Y', 'N')
+
+bite33_CumulativeIntake_Figure1B_cor = ParamRecovery(nBites = 30, Emax = Figure1Params$Emax[2], parameters = c(Figure1Params$theta[2], Figure1Params$r[2]), time_fn = FPM_Time, fit_fn = FPM_Fit, simVar = 'bitesSampled', simValue = 5, keepBites = TRUE, intake_fn = FPM_Intake, CI = TRUE)
 bite33_CumulativeIntake_Figure1B_Et = bite33_CumulativeIntake_Figure1B_cor$biteDat_paramRecov
 bite33_CumulativeIntake_Figure1B_Et$Figure = '1B'
 bite33_CumulativeIntake_Figure1B_paramsRec = bite33_CumulativeIntake_Figure1B_cor$paramDat
+bite33_CumulativeIntake_Figure1B_paramsRec$r_CIfit = ifelse(bite33_CumulativeIntake_Figure1B_paramsRec$initial_r < bite33_CumulativeIntake_Figure1B_paramsRec$u95CI_r & bite33_CumulativeIntake_Figure1B_paramsRec$initial_r > bite33_CumulativeIntake_Figure1B_paramsRec$l95CI_r, 'Y', 'N')
 
-bite33_CumulativeIntake_Figure1C_cor = ParamRecovery(nBites = 30, Emax = Figure1Params$Emax[3], parameters = c(Figure1Params$theta[3], Figure1Params$r[3]), time_fn = FPM_Time, fit_fn = FPM_Fit, simVar = 'bitesSampled', simValue = 5, keepBites = TRUE)
+bite33_CumulativeIntake_Figure1C_cor = ParamRecovery(nBites = 30, Emax = Figure1Params$Emax[3], parameters = c(Figure1Params$theta[3], Figure1Params$r[3]), time_fn = FPM_Time, fit_fn = FPM_Fit, simVar = 'bitesSampled', simValue = 5, keepBites = TRUE, intake_fn = FPM_Intake, CI = TRUE)
 bite33_CumulativeIntake_Figure1C_Et = bite33_CumulativeIntake_Figure1C_cor$biteDat_paramRecov
 bite33_CumulativeIntake_Figure1C_Et$Figure = '1C'
 bite33_CumulativeIntake_Figure1C_paramsRec = bite33_CumulativeIntake_Figure1C_cor$paramDat
+bite33_CumulativeIntake_Figure1C_paramsRec$r_CIfit = ifelse(bite33_CumulativeIntake_Figure1C_paramsRec$initial_r < bite33_CumulativeIntake_Figure1C_paramsRec$u95CI_r & bite33_CumulativeIntake_Figure1C_paramsRec$initial_r > bite33_CumulativeIntake_Figure1C_paramsRec$l95CI_r, 'Y', 'N')
 
-bite33_CumulativeIntake_Figure1D_cor = ParamRecovery(nBites = 30, Emax = Figure1Params$Emax[4], parameters = c(Figure1Params$theta[4], Figure1Params$r[4]), time_fn = FPM_Time, fit_fn = FPM_Fit, simVar = 'bitesSampled', simValue = 5, keepBites = TRUE)
+bite33_CumulativeIntake_Figure1D_cor = ParamRecovery(nBites = 30, Emax = Figure1Params$Emax[4], parameters = c(Figure1Params$theta[4], Figure1Params$r[4]), time_fn = FPM_Time, fit_fn = FPM_Fit, simVar = 'bitesSampled', simValue = 5, keepBites = TRUE, intake_fn = FPM_Intake, CI = TRUE)
 bite33_CumulativeIntake_Figure1D_Et = bite33_CumulativeIntake_Figure1D_cor$biteDat_paramRecov
 bite33_CumulativeIntake_Figure1D_Et$Figure = '1D'
 bite33_CumulativeIntake_Figure1D_paramsRec = bite33_CumulativeIntake_Figure1D_cor$paramDat
+bite33_CumulativeIntake_Figure1D_paramsRec$r_CIfit = ifelse(bite33_CumulativeIntake_Figure1D_paramsRec$initial_r < bite33_CumulativeIntake_Figure1D_paramsRec$u95CI_r & bite33_CumulativeIntake_Figure1D_paramsRec$initial_r > bite33_CumulativeIntake_Figure1D_paramsRec$l95CI_r, 'Y', 'N')
 
 #Graphs
-bite33_CumulativeIntake_Figure1_plotA = ggplot(bite33_CumulativeIntake_Figure1A_Et[bite33_CumulativeIntake_Figure1A_Et$simNum == 1, ], aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avg)) +
-  stat_smooth(data = cont_CumulativeIntake_Figure1A_cor, method = 'gam', formula = y~s(x), linetype = 1, color = 'black') +
+bite33_CumulativeIntake_Figure1_plotA = ggplot(bite33_CumulativeIntake_Figure1A_Et[bite33_CumulativeIntake_Figure1A_Et$simNum == 1, ], aes(y = CumulativeGrams_recov, x = EstimatedTime_avgBite)) +
+  stat_smooth(data = cont_CumulativeIntake_Figure1A_cor, aes(y = CumulativeGrams_avgBite), method = 'gam', formula = y~s(x), linetype = 1, color = 'black') +
   geom_point(shape = 23, color = 'red', size = 3) +
   ggtitle('Replication of Figure 1A with 33 Bites') +
   scale_y_continuous(name='E(t)') +
@@ -217,8 +246,8 @@ bite33_CumulativeIntake_Figure1_plotA = ggplot(bite33_CumulativeIntake_Figure1A_
     panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
     panel.background = element_blank())
 
-bite33_CumulativeIntake_Figure1_plotB = ggplot(bite33_CumulativeIntake_Figure1B_Et[bite33_CumulativeIntake_Figure1B_Et$simNum == 1, ], aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avg)) +
-  stat_smooth(data = cont_CumulativeIntake_Figure1B_cor, method = 'gam', formula = y~s(x), linetype = 1, color = 'black') +
+bite33_CumulativeIntake_Figure1_plotB = ggplot(bite33_CumulativeIntake_Figure1B_Et[bite33_CumulativeIntake_Figure1B_Et$simNum == 1, ], aes(y = CumulativeGrams_recov, x = EstimatedTime_avgBite)) +
+  stat_smooth(data = cont_CumulativeIntake_Figure1B_cor, aes(y = CumulativeGrams_avgBite), method = 'gam', formula = y~s(x), linetype = 1, color = 'black') +
   geom_point(shape = 23, color = 'red', size = 3) +
   ggtitle('Replication of Figure 1B with 33 Bites') +
   scale_y_continuous(name='E(t)') +
@@ -227,8 +256,8 @@ bite33_CumulativeIntake_Figure1_plotB = ggplot(bite33_CumulativeIntake_Figure1B_
     panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
     panel.background = element_blank())
 
-bite33_CumulativeIntake_Figure1_plotC = ggplot(bite33_CumulativeIntake_Figure1C_Et[bite33_CumulativeIntake_Figure1C_Et$simNum == 1, ], aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avg)) +
-  stat_smooth(data = cont_CumulativeIntake_Figure1C_cor, method = 'gam', formula = y~s(x), linetype = 1, color = 'black') +
+bite33_CumulativeIntake_Figure1_plotC = ggplot(bite33_CumulativeIntake_Figure1C_Et[bite33_CumulativeIntake_Figure1C_Et$simNum == 1, ], aes(y = CumulativeGrams_recov, x = EstimatedTime_avgBite)) +
+  stat_smooth(data = cont_CumulativeIntake_Figure1C_cor, aes(y = CumulativeGrams_avgBite), method = 'gam', formula = y~s(x), linetype = 1, color = 'black') +
   geom_point(shape = 23, color = 'red', size = 3) +
   ggtitle('Replication of Figure 1C with 33 Bites') +
   scale_y_continuous(name='E(t)') +
@@ -237,8 +266,8 @@ bite33_CumulativeIntake_Figure1_plotC = ggplot(bite33_CumulativeIntake_Figure1C_
     panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
     panel.background = element_blank())
 
-bite33_CumulativeIntake_Figure1_plotD = ggplot(bite33_CumulativeIntake_Figure1D_Et[bite33_CumulativeIntake_Figure1D_Et$simNum == 1, ], aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avg)) +
-  stat_smooth(data = cont_CumulativeIntake_Figure1D_cor, method = 'gam', formula = y~s(x), linetype = 1, color = 'black') +
+bite33_CumulativeIntake_Figure1_plotD = ggplot(bite33_CumulativeIntake_Figure1D_Et[bite33_CumulativeIntake_Figure1D_Et$simNum == 1, ], aes(y = CumulativeGrams_recov, x = EstimatedTime_avgBite)) +
+  stat_smooth(data = cont_CumulativeIntake_Figure1D_cor, aes(y = CumulativeGrams_avgBite), method = 'gam', formula = y~s(x), linetype = 1, color = 'black') +
   geom_point(shape = 23, color = 'red', size = 3) +
   ggtitle('Replication of Figure 1D with 33 Bites') +
   scale_y_continuous(name='E(t)') +
@@ -260,8 +289,8 @@ bite33_CumulativeIntake_Figure1D_Et_33bite = bite33_CumulativeIntake_Figure1D_Et
 
 bite33_CumulativeIntake_Figure1_Et_long = rbind.data.frame(bite33_CumulativeIntake_Figure1A_Et_33bite, bite33_CumulativeIntake_Figure1B_Et_33bite, bite33_CumulativeIntake_Figure1C_Et_33bite, bite33_CumulativeIntake_Figure1D_Et_33bite)
 
-bite33_CumulativeIntake_Figure1_grid = ggplot(bite33_CumulativeIntake_Figure1_Et_long, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avg)) +
-  stat_smooth(data = cont_CumulativeIntake_Figure1_cor_long, method = 'gam', formula = y~s(x), linetype = 1, color = 'black') +
+bite33_CumulativeIntake_Figure1_grid = ggplot(bite33_CumulativeIntake_Figure1_Et_long, aes(y = CumulativeGrams_recov, x = EstimatedTime_avgBite)) +
+  stat_smooth(data = cont_CumulativeIntake_Figure1_cor_long, aes(y = CumulativeGrams_avgBite), method = 'gam', formula = y~s(x), linetype = 1, color = 'black') +
   geom_point(shape = 23, color = 'red', size = 3) +
   ggtitle('Replication of Figure 1 with 33 Bites') +
   scale_y_continuous(name='E(t)') +
@@ -273,10 +302,10 @@ bite33_CumulativeIntake_Figure1_grid = ggplot(bite33_CumulativeIntake_Figure1_Et
 #### Plot all data by sampling rate - corrected only ####
 bite100_CumulativeIntake_Figure1A_cor$nBites = 100
 cont_CumulativeIntake_Figure1A_cor$nBites = 7200
-all_CumulativeIntake_Figure1_plotA = ggplot(cont_CumulativeIntake_Figure1A_cor, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avg)) +
+all_CumulativeIntake_Figure1_plotA = ggplot(cont_CumulativeIntake_Figure1A_cor, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avgBite)) +
   geom_smooth(method = 'gam', formula = y~s(x), se = FALSE, color = 'black') +
   geom_point(data = bite100_CumulativeIntake_Figure1A_cor, shape = 23, aes(color = factor(nBites)), size = 3) +
-  geom_point(data = bite33_CumulativeIntake_Figure1A_Et_33bite, shape = 23, aes(color = factor(nBites)), size = 3) +
+  geom_point(data = bite33_CumulativeIntake_Figure1A_Et_33bite, shape = 23, aes(y = CumulativeGrams_recov, color = factor(nBites)), size = 3) +
   scale_color_manual(name = 'Sampling Rate',
                      breaks = c( '7200', '100', '33'),
                      values = c('black', 'blue', 'red'),
@@ -290,10 +319,10 @@ all_CumulativeIntake_Figure1_plotA = ggplot(cont_CumulativeIntake_Figure1A_cor, 
 
 bite100_CumulativeIntake_Figure1B_cor$nBites = 100
 cont_CumulativeIntake_Figure1B_cor$nBites = 7200
-all_CumulativeIntake_Figure1_plotB = ggplot(cont_CumulativeIntake_Figure1B_cor, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avg)) +
+all_CumulativeIntake_Figure1_plotB = ggplot(cont_CumulativeIntake_Figure1B_cor, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avgBite)) +
   geom_smooth(method = 'gam', formula = y~s(x), se = FALSE, color = 'black') +
   geom_point(data = bite100_CumulativeIntake_Figure1B_cor, shape = 23, aes(color = factor(nBites)), size = 3) +
-  geom_point(data = bite33_CumulativeIntake_Figure1B_Et_33bite, shape = 23, aes(color = factor(nBites)), size = 3) +
+  geom_point(data = bite33_CumulativeIntake_Figure1B_Et_33bite,shape = 23, aes(y = CumulativeGrams_recov, color = factor(nBites)), size = 3) +
   scale_color_manual(name = 'Sampling Rate',
     breaks = c( '7200', '100', '33'),
     values = c('black', 'blue', 'red'),
@@ -307,10 +336,10 @@ all_CumulativeIntake_Figure1_plotB = ggplot(cont_CumulativeIntake_Figure1B_cor, 
 
 bite100_CumulativeIntake_Figure1C_cor$nBites = 100
 cont_CumulativeIntake_Figure1C_cor$nBites = 7200
-all_CumulativeIntake_Figure1_plotC = ggplot(cont_CumulativeIntake_Figure1C_cor, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avg)) +
+all_CumulativeIntake_Figure1_plotC = ggplot(cont_CumulativeIntake_Figure1C_cor, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avgBite)) +
   geom_smooth(method = 'gam', formula = y~s(x), se = FALSE, color = 'black') +
   geom_point(data = bite100_CumulativeIntake_Figure1C_cor, shape = 23, aes(color = factor(nBites)), size = 3) +
-  geom_point(data = bite33_CumulativeIntake_Figure1C_Et_33bite, shape = 23, aes(color = factor(nBites)), size = 3) +
+  geom_point(data = bite33_CumulativeIntake_Figure1C_Et_33bite, shape = 23, aes(y = CumulativeGrams_recov, color = factor(nBites)), size = 3) +
   scale_color_manual(name = 'Sampling Rate',
     breaks = c( '7200', '100', '33'),
     values = c('black', 'blue', 'red'),
@@ -324,10 +353,10 @@ all_CumulativeIntake_Figure1_plotC = ggplot(cont_CumulativeIntake_Figure1C_cor, 
 
 bite100_CumulativeIntake_Figure1D_cor$nBites = 100
 cont_CumulativeIntake_Figure1D_cor$nBites = 7200
-all_CumulativeIntake_Figure1_plotD = ggplot(cont_CumulativeIntake_Figure1D_cor, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avg)) +
+all_CumulativeIntake_Figure1_plotD = ggplot(cont_CumulativeIntake_Figure1D_cor, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avgBite)) +
   geom_smooth(method = 'gam', formula = y~s(x), se = FALSE, color = 'black') +
   geom_point(data = bite100_CumulativeIntake_Figure1D_cor, shape = 23, aes(color = factor(nBites)), size = 3) +
-  geom_point(data = bite33_CumulativeIntake_Figure1D_Et_33bite, shape = 23, aes(color = factor(nBites)), size = 3) +
+  geom_point(data = bite33_CumulativeIntake_Figure1D_Et_33bite, shape = 23, aes(y = CumulativeGrams_recov, color = factor(nBites)), size = 3) +
   scale_color_manual(name = 'Sampling Rate',
     breaks = c( '7200', '100', '33'),
     values = c('black', 'blue', 'red'),
@@ -341,7 +370,7 @@ all_CumulativeIntake_Figure1_plotD = ggplot(cont_CumulativeIntake_Figure1D_cor, 
 
 #### Try to Recover Parameters from 250ms Sampling E(T) ####
 #Get fitted parameters based on bite data
-cont_optimize = IntakeModelParams(data = cont_CumulativeIntake_Figure1_cor_long, time = 'EstimatedTime_avg', intake = 'CumulativeGrams_avgBite', fit_fn = FPM_Fit, idVar = 'Figure')
+cont_optimize = IntakeModelParams(data = cont_CumulativeIntake_Figure1_cor_long, time = 'EstimatedTime_avgBite', intake = 'CumulativeGrams_avgBite', fit_fn = FPM_Fit, idVar = 'Figure')
 cont_optimize$Emax = c(max(cont_CumulativeIntake_Figure1A_cor$CumulativeGrams_avgBite), max(cont_CumulativeIntake_Figure1B_cor$CumulativeGrams_avgBite),
   max(cont_CumulativeIntake_Figure1C_cor$CumulativeGrams_avgBite), max(cont_CumulativeIntake_Figure1D_cor$CumulativeGrams_avgBite))
 
@@ -366,7 +395,7 @@ cont_CumulativeIntake_Figure1_fit_long$Fit = 'FitParams'
 cont_CumulativeIntake_Figure1A_fit$Fit = 'FitParams'
 cont_CumulativeIntake_Figure1A_cor$Fit = 'Original'
 
-cont_CumulativeIntake_Figure1A_fit.orig = ggplot(cont_CumulativeIntake_Figure1A_fit, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avg)) +
+cont_CumulativeIntake_Figure1A_fit.orig = ggplot(cont_CumulativeIntake_Figure1A_fit, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avgBite)) +
   stat_smooth(data = cont_CumulativeIntake_Figure1A_cor, method = 'gam', formula = y~s(x), aes(linetype = Fit, color = Fit)) +
   geom_smooth(method = 'gam', formula = y~s(x), aes(linetype = Fit, color = Fit)) +
   ggtitle('Replication of Figure 1A with 250 ms sampling (for 30 min meal)') +
@@ -387,7 +416,7 @@ cont_CumulativeIntake_Figure1A_fit.orig = ggplot(cont_CumulativeIntake_Figure1A_
 cont_CumulativeIntake_Figure1B_fit$Fit = 'FitParams'
 cont_CumulativeIntake_Figure1B_cor$Fit = 'Original'
 
-cont_CumulativeIntake_Figure1B_fit.orig = ggplot(cont_CumulativeIntake_Figure1B_fit, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avg)) +
+cont_CumulativeIntake_Figure1B_fit.orig = ggplot(cont_CumulativeIntake_Figure1B_fit, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avgBite)) +
   stat_smooth(data = cont_CumulativeIntake_Figure1B_cor, method = 'gam', formula = y~s(x), aes(linetype = Fit, color = Fit)) +
   geom_smooth(method = 'gam', formula = y~s(x), aes(linetype = Fit, color = Fit)) +
   ggtitle('Replication of Figure 1B with 250 ms sampling (for 30 min meal)') +
@@ -408,7 +437,7 @@ cont_CumulativeIntake_Figure1B_fit.orig = ggplot(cont_CumulativeIntake_Figure1B_
 cont_CumulativeIntake_Figure1C_fit$Fit = 'FitParams'
 cont_CumulativeIntake_Figure1C_cor$Fit = 'Original'
 
-cont_CumulativeIntake_Figure1C_fit.orig = ggplot(cont_CumulativeIntake_Figure1C_fit, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avg)) +
+cont_CumulativeIntake_Figure1C_fit.orig = ggplot(cont_CumulativeIntake_Figure1C_fit, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avgBite)) +
   stat_smooth(data = cont_CumulativeIntake_Figure1C_cor, method = 'gam', formula = y~s(x), aes(linetype = Fit, color = Fit)) +
   geom_smooth(method = 'gam', formula = y~s(x), aes(linetype = Fit, color = Fit)) +
   ggtitle('Replication of Figure 1C with 250 ms sampling (for 30 min meal)') +
@@ -429,7 +458,7 @@ cont_CumulativeIntake_Figure1C_fit.orig = ggplot(cont_CumulativeIntake_Figure1C_
 cont_CumulativeIntake_Figure1D_fit$Fit = 'FitParams'
 cont_CumulativeIntake_Figure1D_cor$Fit = 'Original'
 
-cont_CumulativeIntake_Figure1D_fit.orig = ggplot(cont_CumulativeIntake_Figure1D_fit, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avg)) +
+cont_CumulativeIntake_Figure1D_fit.orig = ggplot(cont_CumulativeIntake_Figure1D_fit, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avgBite)) +
   stat_smooth(data = cont_CumulativeIntake_Figure1D_cor, method = 'gam', formula = y~s(x), aes(linetype = Fit, color = Fit)) +
   geom_smooth(method = 'gam', formula = y~s(x), aes(linetype = Fit, color = Fit)) +
   ggtitle('Replication of Figure 1D with 250 ms sampling (for 30 min meal)') +
@@ -450,7 +479,7 @@ cont_CumulativeIntake_Figure1D_fit.orig = ggplot(cont_CumulativeIntake_Figure1D_
 
 #Facet wrap
 cont_CumulativeIntake_Figure1_cor_long$Fit = 'Original'
-cont_CumulativeIntake_Figure1_fit.orig_grid = ggplot(cont_CumulativeIntake_Figure1_fit_long, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avg)) +
+cont_CumulativeIntake_Figure1_fit.orig_grid = ggplot(cont_CumulativeIntake_Figure1_fit_long, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avgBite)) +
   stat_smooth(data = cont_CumulativeIntake_Figure1_cor_long, method = 'gam', formula = y~s(x), aes(linetype = Fit, color = Fit)) +
   geom_smooth(method = 'gam', formula = y~s(x), aes(linetype = Fit, color = Fit)) +
   ggtitle('Replication of Figure 1A with 250 ms sampling (for 30 min meal)') +
@@ -470,7 +499,7 @@ cont_CumulativeIntake_Figure1_fit.orig_grid = ggplot(cont_CumulativeIntake_Figur
 
 
 #### Try to Recover Parameters from 100 bite Sampling E(T) ####
-bite100_optimize = IntakeModelParams(data = bite100_CumulativeIntake_Figure1_cor_long, time = 'EstimatedTime_avg', intake = 'CumulativeGrams_avgBite', fit_fn = FPM_Fit, idVar = 'Figure')
+bite100_optimize = IntakeModelParams(data = bite100_CumulativeIntake_Figure1_cor_long, time = 'EstimatedTime_avgBite', intake = 'CumulativeGrams_avgBite', fit_fn = FPM_Fit, idVar = 'Figure')
 bite100_optimize$Emax = c(max(bite100_CumulativeIntake_Figure1A_cor$CumulativeGrams_avgBite), max(bite100_CumulativeIntake_Figure1B_cor$CumulativeGrams_avgBite),
   max(bite100_CumulativeIntake_Figure1C_cor$CumulativeGrams_avgBite), max(bite100_CumulativeIntake_Figure1D_cor$CumulativeGrams_avgBite))
 
@@ -493,7 +522,7 @@ bite100_CumulativeIntake_Figure1_fit_long$Fit = 'FitParams'
 bite100_CumulativeIntake_Figure1A_fit$Fit = 'FitParams'
 bite100_CumulativeIntake_Figure1A_cor$Fit = 'Original'
 
-bite100_CumulativeIntake_Figure1A_fit.orig = ggplot(bite100_CumulativeIntake_Figure1A_fit, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avg)) +
+bite100_CumulativeIntake_Figure1A_fit.orig = ggplot(bite100_CumulativeIntake_Figure1A_fit, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avgBite)) +
   stat_smooth(data = bite100_CumulativeIntake_Figure1A_cor, method = 'gam', formula = y~s(x), aes(linetype = Fit, color = Fit)) +
   geom_smooth(method = 'gam', formula = y~s(x), aes(linetype = Fit, color = Fit)) +
   ggtitle('Replication of Figure 1A with 250 ms sampling (for 30 min meal)') +
@@ -514,7 +543,7 @@ bite100_CumulativeIntake_Figure1A_fit.orig = ggplot(bite100_CumulativeIntake_Fig
 bite100_CumulativeIntake_Figure1B_fit$Fit = 'FitParams'
 bite100_CumulativeIntake_Figure1B_cor$Fit = 'Original'
 
-bite100_CumulativeIntake_Figure1B_fit.orig = ggplot(bite100_CumulativeIntake_Figure1B_fit, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avg)) +
+bite100_CumulativeIntake_Figure1B_fit.orig = ggplot(bite100_CumulativeIntake_Figure1B_fit, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avgBite)) +
   stat_smooth(data = bite100_CumulativeIntake_Figure1B_cor, method = 'gam', formula = y~s(x), aes(linetype = Fit, color = Fit)) +
   geom_smooth(method = 'gam', formula = y~s(x), aes(linetype = Fit, color = Fit)) +
   ggtitle('Replication of Figure 1B with 250 ms sampling (for 30 min meal)') +
@@ -535,7 +564,7 @@ bite100_CumulativeIntake_Figure1B_fit.orig = ggplot(bite100_CumulativeIntake_Fig
 bite100_CumulativeIntake_Figure1C_fit$Fit = 'FitParams'
 bite100_CumulativeIntake_Figure1C_cor$Fit = 'Original'
 
-bite100_CumulativeIntake_Figure1C_fit.orig = ggplot(bite100_CumulativeIntake_Figure1C_fit, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avg)) +
+bite100_CumulativeIntake_Figure1C_fit.orig = ggplot(bite100_CumulativeIntake_Figure1C_fit, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avgBite)) +
   stat_smooth(data = bite100_CumulativeIntake_Figure1C_cor, method = 'gam', formula = y~s(x), aes(linetype = Fit, color = Fit)) +
   geom_smooth(method = 'gam', formula = y~s(x), aes(linetype = Fit, color = Fit)) +
   ggtitle('Replication of Figure 1C with 250 ms sampling (for 30 min meal)') +
@@ -556,7 +585,7 @@ bite100_CumulativeIntake_Figure1C_fit.orig = ggplot(bite100_CumulativeIntake_Fig
 bite100_CumulativeIntake_Figure1D_fit$Fit = 'FitParams'
 bite100_CumulativeIntake_Figure1D_cor$Fit = 'Original'
 
-bite100_CumulativeIntake_Figure1D_fit.orig = ggplot(bite100_CumulativeIntake_Figure1D_fit, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avg)) +
+bite100_CumulativeIntake_Figure1D_fit.orig = ggplot(bite100_CumulativeIntake_Figure1D_fit, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avgBite)) +
   stat_smooth(data = bite100_CumulativeIntake_Figure1D_cor, method = 'gam', formula = y~s(x), aes(linetype = Fit, color = Fit)) +
   geom_smooth(method = 'gam', formula = y~s(x), aes(linetype = Fit, color = Fit)) +
   ggtitle('Replication of Figure 1D with 250 ms sampling (for 30 min meal)') +
@@ -577,7 +606,7 @@ bite100_CumulativeIntake_Figure1D_fit.orig = ggplot(bite100_CumulativeIntake_Fig
 #facet wrap
 bite100_CumulativeIntake_Figure1_cor_long$Fit = 'Original'
 
-bite100_CumulativeIntake_Figure1_fit.orig_grid = ggplot(bite100_CumulativeIntake_Figure1_fit_long, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avg)) +
+bite100_CumulativeIntake_Figure1_fit.orig_grid = ggplot(bite100_CumulativeIntake_Figure1_fit_long, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avgBite)) +
   stat_smooth(data = bite100_CumulativeIntake_Figure1_cor_long, method = 'gam', formula = y~s(x), aes(linetype = Fit, color = Fit)) +
   geom_smooth(method = 'gam', formula = y~s(x), aes(linetype = Fit, color = Fit)) +
   ggtitle('Replication of Figure 1 with 250 ms sampling (for 30 min meal)') +
@@ -595,12 +624,12 @@ bite100_CumulativeIntake_Figure1_fit.orig_grid = ggplot(bite100_CumulativeIntake
     panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
     panel.background = element_blank()) + facet_wrap(~Figure)
 
-#### Try to Recover Parameters from 33 bite Sampling E(T) ####
+#### Plot Recovered Parameters from 33 bite Sampling E(T) ####
 bite33_CumulativeIntake_Figure1A_Et$nBiteGroup = ifelse(bite33_CumulativeIntake_Figure1A_Et$nBites < 26, '15-25',
   ifelse(bite33_CumulativeIntake_Figure1A_Et$nBites < 36, '26-35', ifelse(bite33_CumulativeIntake_Figure1A_Et$nBites < 46,'36-45', '45+')))
 
-bite33_CumulativeIntake_Figure1_plotA_fit.orig = ggplot(bite33_CumulativeIntake_Figure1A_Et, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avg)) +
-  stat_smooth(data = cont_CumulativeIntake_Figure1A_cor, method = 'gam', formula = y~s(x), linetype = 1, color = 'black') +
+bite33_CumulativeIntake_Figure1_plotA_fit.orig = ggplot(bite33_CumulativeIntake_Figure1A_Et, aes(y = CumulativeGrams_recov, x = EstimatedTime_avgBite)) +
+  stat_smooth(data = cont_CumulativeIntake_Figure1A_cor, aes(y = CumulativeGrams_avgBite), method = 'gam', formula = y~s(x), linetype = 1, color = 'black') +
   geom_smooth(method = 'gam', formula = y~s(x), linetype = 3, se = TRUE) +
   geom_jitter(aes(color = nBites)) +
   scale_colour_gradientn(colors = rainbow(10)) +
@@ -616,8 +645,8 @@ bite33_CumulativeIntake_Figure1_plotA_fit.orig = ggplot(bite33_CumulativeIntake_
 bite33_CumulativeIntake_Figure1B_Et$nBiteGroup = ifelse(bite33_CumulativeIntake_Figure1B_Et$nBites < 26, '15-25',
   ifelse(bite33_CumulativeIntake_Figure1B_Et$nBites < 36, '26-35', ifelse(bite33_CumulativeIntake_Figure1B_Et$nBites < 46,'36-45', '45+')))
 
-bite33_CumulativeIntake_Figure1_plotB_fit.orig = ggplot(bite33_CumulativeIntake_Figure1B_Et, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avg)) +
-  stat_smooth(data = cont_CumulativeIntake_Figure1B_cor, method = 'gam', formula = y~s(x), linetype = 1, color = 'black') +
+bite33_CumulativeIntake_Figure1_plotB_fit.orig = ggplot(bite33_CumulativeIntake_Figure1B_Et, aes(y = CumulativeGrams_recov, x = EstimatedTime_avgBite)) +
+  stat_smooth(data = cont_CumulativeIntake_Figure1B_cor, aes(y = CumulativeGrams_avgBite), method = 'gam', formula = y~s(x), linetype = 1, color = 'black') +
   geom_smooth(method = 'gam', formula = y~s(x), linetype = 3, se = TRUE) +
   geom_jitter(aes(color = nBites)) +
   scale_colour_gradientn(colors = rainbow(10)) +
@@ -633,8 +662,8 @@ bite33_CumulativeIntake_Figure1_plotB_fit.orig = ggplot(bite33_CumulativeIntake_
 bite33_CumulativeIntake_Figure1C_Et$nBiteGroup = ifelse(bite33_CumulativeIntake_Figure1C_Et$nBites < 26, '15-25',
   ifelse(bite33_CumulativeIntake_Figure1C_Et$nBites < 36, '26-35', ifelse(bite33_CumulativeIntake_Figure1C_Et$nBites < 46,'36-45', '45+')))
 
-bite33_CumulativeIntake_Figure1_plotC_fit.orig = ggplot(bite33_CumulativeIntake_Figure1C_Et, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avg)) +
-  stat_smooth(data = cont_CumulativeIntake_Figure1C_cor, method = 'gam', formula = y~s(x), linetype = 1, color = 'black') +
+bite33_CumulativeIntake_Figure1_plotC_fit.orig = ggplot(bite33_CumulativeIntake_Figure1C_Et, aes(y = CumulativeGrams_recov, x = EstimatedTime_avgBite)) +
+  stat_smooth(data = cont_CumulativeIntake_Figure1C_cor, aes(y = CumulativeGrams_avgBite), method = 'gam', formula = y~s(x), linetype = 1, color = 'black') +
   geom_smooth(method = 'gam', formula = y~s(x), linetype = 3, se = TRUE) +
   geom_jitter(aes(color = nBites)) +
   scale_colour_gradientn(colors = rainbow(10)) +
@@ -650,8 +679,8 @@ bite33_CumulativeIntake_Figure1_plotC_fit.orig = ggplot(bite33_CumulativeIntake_
 bite33_CumulativeIntake_Figure1D_Et$nBiteGroup = ifelse(bite33_CumulativeIntake_Figure1D_Et$nBites < 26, '15-25',
   ifelse(bite33_CumulativeIntake_Figure1D_Et$nBites < 36, '26-35', ifelse(bite33_CumulativeIntake_Figure1D_Et$nBites < 46,'36-45', '45+')))
 
-bite33_CumulativeIntake_Figure1_plotD_fit.orig = ggplot(bite33_CumulativeIntake_Figure1D_Et, aes(y = CumulativeGrams_avgBite, x = EstimatedTime_avg)) +
-  stat_smooth(data = cont_CumulativeIntake_Figure1D_cor, method = 'gam', formula = y~s(x), linetype = 1, color = 'black') +
+bite33_CumulativeIntake_Figure1_plotD_fit.orig = ggplot(bite33_CumulativeIntake_Figure1D_Et, aes(y = CumulativeGrams_recov, x = EstimatedTime_avgBite)) +
+  stat_smooth(data = cont_CumulativeIntake_Figure1D_cor, aes(y = CumulativeGrams_avgBite), method = 'gam', formula = y~s(x), linetype = 1, color = 'black') +
   geom_smooth(method = 'gam', formula = y~s(x), linetype = 3, se = TRUE) +
   geom_jitter(aes(color = nBites)) +
   scale_colour_gradientn(colors = rainbow(10)) +

@@ -7,23 +7,18 @@ library(reshape2)
 library(stats)
 #library(rstudioapi)
 library(psych)
-library(faux)
-#installed from devtools::install_github("debruine/faux")
 library(RColorBrewer)
 library(bitemodelr)
+library(GGally)
+library(MASS)
 
 
 #### set up ####
 
-#set piorking directory to location of script--not needed pihen called 
-#through Rmarkdopin doc. Uncomment belopi if running locally/manually
-# this.dir = getActiveDocumentContext()$path
-# setwd(dirname(this.dir))
-
 source('functions.R')
 ###################################################
 ####                                           
-#### Create distributions for model parameters ####
+#### Create Densityributions for model parameters ####
 ####
 ###################################################
 
@@ -49,53 +44,122 @@ source('functions.R')
 
 #NOTE: 7/9 foods had eating rates from 9.7-11.6, 1 was 5.8, and 1 was 15.1
 
-#### Simulate Data and check characteristics
-source('Fogel2017_SimDat.R')
-SimDat_Fogel2017 = Fogel2017_simDat(500)
+#### Simulate Data and check characteristics ####
+
+SimDat_Fogel2017 = read.csv('Data/ParamDat_Fogel2017.csv')
 
 ##Correlation Matrices
-
 #original Fogel2017
-Fogel2017_ReportedCorMat = matrix(c(NA, NA, NA, NA, NA, NA, 
-                                    '-0.42*', NA, NA, NA, NA, NA,
-                                    '-0.58*', '0.54*', NA, NA, NA, NA,
-                                     '0.11*', '0.17*', '0.16*', NA, NA, NA,
-                                     '0.54*', '-0.01', '0.02', '0.33', NA, NA, 
-                                     '0.15*', '0.55*', '-0.25*', '-0.02', '-0.05', NA), byrow = TRUE, nrow = 6)
+Fogel2017_ReportedCorMat = matrix(c(NA, NA, NA, NA, NA,
+                                    '0.15**', NA, NA, NA, NA,
+                                    '0.54*', '-0.05', NA, NA, NA,
+                                     '0.11*', '-0.02', '0.33***', NA, NA,
+                                     '-0.58****', '-0.25***', '0.02', '0.16**', NA,
+                                     NA, NA, NA, NA, NA,
+                                     '-0.42***', '0.55*', '-0.01', '0.17**', '0.54***'), byrow = TRUE, nrow = 7)
 
-rownames(Fogel2017_ReportedCorMat) = c('nBites', 'BiteSize_g', 'BiteOralExposure_sec', 'ActiveMeal_pcent', 'TotalOralExposure_min', 'EatRate_g.min')
-colnames(Fogel2017_ReportedCorMat) = c('nBites', 'BiteSize_g', 'BiteOralExposure_sec', 'ActiveMeal_pcent', 'TotalOralExposure_min', 'EatRate_g.min')
+rownames(Fogel2017_ReportedCorMat) = c('nBites', 'EatRate', 'TotalOE_min', 'ActiveMeal_pcent', 'BiteOE_sec', 'TotalIntake_g', 'BiteSize_g')
+colnames(Fogel2017_ReportedCorMat) = c('nBites', 'EatRate', 'TotalOE_min', 'ActiveMeal_pcent', 'BiteOE_sec')
 
 
-#orignial simulated
-Fogel2017_corVars = SimDat_Fogel2017[c(2:5, 7:8, 6, 9:10)]
-Fogel2017_corVarNames = names(SimDat_Fogel2017)[c(2:5, 7:8, 6, 9:10)]
+#original simulated
+
+Fogel2017_corVars = SimDat_Fogel2017[c(2, 8, 6, 4:5, 7, 3)]
+Fogel2017_corVarNames = names(SimDat_Fogel2017)[c(2, 8, 6, 4:5, 7, 3)]
 Fogel2017_corMat = cor.matrix(Fogel2017_corVars, Fogel2017_corVarNames)
   
-#rounded bites 
-Fogel2017_BiteRound_corVars = SimDat_Fogel2017[c(11, 3:5, 13:14, 12, 15:16)]
-Fogel2017_BiteRound_corMat = cor.matrix(Fogel2017_BiteRound_corVars, Fogel2017_corVarNames)
+
+# Correlations between behaviors
+SimDat_Fogel2017$EatRate_group = ifelse(SimDat_Fogel2017$EatRate < median(SimDat_Fogel2017$EatRate), 'Slow', 'Fast')
+
+microstructure_corPlot = ggpairs(SimDat_Fogel2017, columns = c(2, 8, 6, 4:5, 7, 3), mapping = ggplot2::aes(colour=EatRate_group), legend = 1,
+                                 upper = list(continuous = wrap("cor", size=3)),
+                                 lower = list(continuous = wrap("smooth", alpha = 0.3, size=0.2))) +
+  theme(panel.border = element_blank(), panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
+        panel.background = element_blank(), legend.position = "bottom")
+
 
 ##Means(SD) for Fast vs Slow
-SimDat_Fogel2017$EatRate_group = ifelse(SimDat_Fogel2017$EatRate_g.min < median(SimDat_Fogel2017$EatRate_g.min), 'Slow', 'Fast')
-SimDat_Fogel2017$BiteRound_EatRate_group = ifelse(SimDat_Fogel2017$BiteRound_EatRate_g.min < median(SimDat_Fogel2017$BiteRound_EatRate_g.min), 'Slow', 'Fast')
 
-#### Generate parameter distributions from Fogel_simDat ####
+#bites
+bites_ttest = t.test(nBites~EatRate_group, data = SimDat_Fogel2017)
+bites_se = se.function(SimDat_Fogel2017, SimDat_Fogel2017$nBites, SimDat_Fogel2017$EatRate_group)
+bites_mean = means.function(SimDat_Fogel2017, SimDat_Fogel2017$nBites, SimDat_Fogel2017$EatRate_group)
+bites_range = range.function(SimDat_Fogel2017, SimDat_Fogel2017$nBites, SimDat_Fogel2017$EatRate_group)
 
-#get bite data set using random time sampling from a logistic curve
-source('simBitesLogit.R')
-SimBites_Fogel2017_list = t(mapply(simBitesLogit, mealdur = SimDat_Fogel2017$BiteRound_MealDur_min, nBites = SimDat_Fogel2017$BiteRound_nBites, Emax = SimDat_Fogel2017$BiteRound_TotalIntake_g, id = SimDat_Fogel2017$ID))
+#bite size
+bitesize_ttest = t.test(BiteSize_g~EatRate_group, data = SimDat_Fogel2017)
+bitesize_se = se.function(SimDat_Fogel2017, SimDat_Fogel2017$BiteSize_g, SimDat_Fogel2017$EatRate_group)
+bitesize_mean = means.function(SimDat_Fogel2017, SimDat_Fogel2017$BiteSize_g, SimDat_Fogel2017$EatRate_group)
+bitesize_range = range.function(SimDat_Fogel2017, SimDat_Fogel2017$BiteSize_g, SimDat_Fogel2017$EatRate_group)
 
-SimBites_Fogel2017 = data.frame(matrix(c(unlist(SimBites_Fogel2017_list)), byrow = FALSE, ncol = 4))
-names(SimBites_Fogel2017) = c('ID', 'Bite', 'SampledTime', 'EstimatedCumulativeIntake')
+#oral exposure per bite
+OE.bite_ttest = t.test(BiteOE_sec~EatRate_group, data = SimDat_Fogel2017)
+OE.bite_se = se.function(SimDat_Fogel2017, SimDat_Fogel2017$BiteOE_sec, SimDat_Fogel2017$EatRate_group)
+OE.bite_mean = means.function(SimDat_Fogel2017, SimDat_Fogel2017$BiteOE_sec, SimDat_Fogel2017$EatRate_group)
+OE.bite_range = range.function(SimDat_Fogel2017, SimDat_Fogel2017$BiteOE_sec, SimDat_Fogel2017$EatRate_group)
 
-#fit parameters to the bite datasets
-SimBites_Fogel2017_params = IntakeModelParams(data = SimBites_Fogel2017, timeVar = 'SampledTime', intakeVar = 'EstimatedCumulativeIntake', fit_fn = FPM_Fit, idVar = 'ID')
+#active mealtime
+percActive_ttest = t.test(ActiveMeal_pcent~EatRate_group, data = SimDat_Fogel2017)
+percActive_se = se.function(SimDat_Fogel2017, SimDat_Fogel2017$ActiveMeal_pcent, SimDat_Fogel2017$EatRate_group)
+percActive_mean = means.function(SimDat_Fogel2017, SimDat_Fogel2017$ActiveMeal_pcent, SimDat_Fogel2017$EatRate_group)
+percActive_range = range.function(SimDat_Fogel2017, SimDat_Fogel2017$ActiveMeal_pcent, SimDat_Fogel2017$EatRate_group)
 
-SimDat_Fogel2017 = merge(SimDat_Fogel2017, SimBites_Fogel2017_params, by = 'ID')
+#total oral exposure
+OE.total_ttest = t.test(TotalOE_min~EatRate_group, data = SimDat_Fogel2017)
+OE.total_se = se.function(SimDat_Fogel2017, SimDat_Fogel2017$TotalOE_min, SimDat_Fogel2017$EatRate_group)
+OE.total_mean = means.function(SimDat_Fogel2017, SimDat_Fogel2017$TotalOE_min, SimDat_Fogel2017$EatRate_group)
+OE.total_range = range.function(SimDat_Fogel2017, SimDat_Fogel2017$TotalOE_min, SimDat_Fogel2017$EatRate_group)
 
-#### Make Distribution Graphs ####
-#histograms
+#total gram intake
+total_g_ttest = t.test(TotalIntake_g~EatRate_group, data = SimDat_Fogel2017)
+total_g_se = se.function(SimDat_Fogel2017, SimDat_Fogel2017$TotalIntake_g, SimDat_Fogel2017$EatRate_group)
+total_g_mean = means.function(SimDat_Fogel2017, SimDat_Fogel2017$TotalIntake_g, SimDat_Fogel2017$EatRate_group)
+total_g_range = range.function(SimDat_Fogel2017, SimDat_Fogel2017$TotalIntake_g, SimDat_Fogel2017$EatRate_group)
+
+#### Densityribution Plots ####
+
+## Eating Rate
+SimDat_Fogel2017_EatRateHist = ggplot(SimDat_Fogel2017, aes(x = EatRate, group = EatRate_group)) +
+  geom_histogram(bins = 20, position = 'identity')
+
+SimDat_Fogel2017_EatRateHist_group = ggplot(SimDat_Fogel2017, aes(x = EatRate, group = EatRate_group)) +
+  geom_histogram(bins = 20, aes(fill = EatRate_group), alpha=0.6, position = 'identity')
+
+SimDat_Fogel2017_EatRateDensity_group = ggplot(SimDat_Fogel2017, aes(x = EatRate, group = EatRate_group)) +
+  geom_density(aes(fill = EatRate_group), alpha=0.6, position = 'identity')
+
+## Kissileff Model
+
+SimDat_Fogel2017_intHist = ggplot(SimDat_Fogel2017, aes(x = int, group = EatRate_group)) +
+  geom_histogram(bins = 20, position = 'identity')
+
+SimDat_Fogel2017_intHist_group = ggplot(SimDat_Fogel2017, aes(x = int, group = EatRate_group)) +
+  geom_histogram(bins = 20, aes(fill = EatRate_group), alpha=0.6, position = 'identity')
+
+SimDat_Fogel2017_linearHist = ggplot(SimDat_Fogel2017, aes(x = linear, group = EatRate_group)) +
+  geom_histogram(bins = 20, position = 'identity')
+
+SimDat_Fogel2017_linearHist_group = ggplot(SimDat_Fogel2017, aes(x = linear, group = EatRate_group)) +
+  geom_histogram(bins = 20, aes(fill = EatRate_group), alpha=0.6, position = 'identity')
+
+SimDat_Fogel2017_quadHist = ggplot(SimDat_Fogel2017, aes(x = quad, group = EatRate_group)) +
+  geom_histogram(bins = 20, position = 'identity')
+
+SimDat_Fogel2017_quadHist_group = ggplot(SimDat_Fogel2017, aes(x = quad, group = EatRate_group)) +
+  geom_histogram(bins = 20, aes(fill = EatRate_group), alpha=0.6, position = 'identity')
+
+SimDat_Fogel2017_intDensity_group = ggplot(SimDat_Fogel2017, aes(x = int, group = EatRate_group)) +
+  geom_density(aes(fill = EatRate_group), alpha=0.6, position = 'identity')
+
+SimDat_Fogel2017_linearDensity_group = ggplot(SimDat_Fogel2017, aes(x = linear, group = EatRate_group)) +
+  geom_density(aes(fill = EatRate_group), alpha=0.6, position = 'identity')
+
+SimDat_Fogel2017_quadDensity_group = ggplot(SimDat_Fogel2017, aes(x = quad, group = EatRate_group)) +
+  geom_density(aes(fill = EatRate_group), alpha=0.6, position = 'identity')
+
+## FPM Model
 SimDat_Fogel2017_thetaHist = ggplot(SimDat_Fogel2017, aes(x = theta, group = EatRate_group)) +
   geom_histogram(bins = 20, position = 'identity')
 
@@ -108,27 +172,177 @@ SimDat_Fogel2017_rHist = ggplot(SimDat_Fogel2017, aes(x = r, group = EatRate_gro
 SimDat_Fogel2017_rHist_group = ggplot(SimDat_Fogel2017, aes(x = r, group = EatRate_group)) +
   geom_histogram(bins = 20, aes(fill = EatRate_group), alpha=0.6, position = 'identity')
 
-SimDat_Fogel2017_EmaxHist = ggplot(SimDat_Fogel2017, aes(x = BiteRound_TotalIntake_g, group = EatRate_group)) +
+SimDat_Fogel2017_EmaxHist = ggplot(SimDat_Fogel2017, aes(x = TotalIntake_g, group = EatRate_group)) +
   geom_histogram(bins = 20, position = 'identity')
 
-SimDat_Fogel2017_EmaxHist_group = ggplot(SimDat_Fogel2017, aes(x = BiteRound_TotalIntake_g, group = EatRate_group)) +
+SimDat_Fogel2017_EmaxHist_group = ggplot(SimDat_Fogel2017, aes(x = TotalIntake_g, group = EatRate_group)) +
   geom_histogram(bins = 20, aes(fill = EatRate_group), alpha=0.6, position = 'identity')
 
-SimDat_Fogel2017_EatRateHist = ggplot(SimDat_Fogel2017, aes(x = BiteRound_EatRate_g.min, group = EatRate_group)) +
-  geom_histogram(bins = 20, position = 'identity')
-
-SimDat_Fogel2017_EatRateHist_group = ggplot(SimDat_Fogel2017, aes(x = BiteRound_EatRate_g.min, group = EatRate_group)) +
-  geom_histogram(bins = 20, aes(fill = EatRate_group), alpha=0.6, position = 'identity')
-
-#Density
-SimDat_Fogel2017_thetaDist_group = ggplot(SimDat_Fogel2017, aes(x = theta, group = EatRate_group)) +
+SimDat_Fogel2017_thetaDensity_group = ggplot(SimDat_Fogel2017, aes(x = theta, group = EatRate_group)) +
   geom_density(aes(fill = EatRate_group), alpha=0.6, position = 'identity')
 
-SimDat_Fogel2017_rDist_group = ggplot(SimDat_Fogel2017, aes(x = r, group = EatRate_group)) +
+SimDat_Fogel2017_rDensity_group = ggplot(SimDat_Fogel2017, aes(x = r, group = EatRate_group)) +
   geom_density(aes(fill = EatRate_group), alpha=0.6, position = 'identity')
 
-SimDat_Fogel2017_EmaxDist_group = ggplot(SimDat_Fogel2017, aes(x = BiteRound_TotalIntake_g, group = EatRate_group)) +
+SimDat_Fogel2017_EmaxDensity_group = ggplot(SimDat_Fogel2017, aes(x = TotalIntake_g, group = EatRate_group)) +
   geom_density(aes(fill = EatRate_group), alpha=0.6, position = 'identity')
 
-SimDat_Fogel2017_EatRateDist_group = ggplot(SimDat_Fogel2017, aes(x = BiteRound_EatRate_g.min, group = EatRate_group)) +
-  geom_density(aes(fill = EatRate_group), alpha=0.6, position = 'identity')
+### Correlations between parameters ####
+param_corPlot = ggpairs(SimDat_Fogel2017, columns = c(7, 10:11, 17:19), mapping = ggplot2::aes(colour=EatRate_group), legend = 1, 
+                        upper = list(continuous = wrap("cor", size=3)),
+                        lower = list(continuous = wrap("smooth", alpha = 0.3, size=0.2))) +
+  theme(legend.position = "bottom", panel.border = element_blank(), panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
+        panel.background = element_blank())
+
+
+#### Extreme Paratemters ####
+source('param_plotGrid_setup.R')
+
+## Kissileff Model
+Kissileff_paramGrid_procNoise_int1 = ggplot(Kissileff_paramGrid_procNoiseDat[Kissileff_paramGrid_procNoiseDat$int == "i = -43.43", ], aes(x = EstimatedTime_procNoise, y = CumulativeGrams_procNoise)) +
+  geom_smooth(method = 'gam', formula = y~s(x),linetype = 1, color = 'black') +
+  geom_point(color = 'blue', shape = 3)+
+  ggtitle('Intake Curves From Linear and Quadratic Density Distributions at Lowest Intercept of -43.43 (55 bites, Emax = 107.62 grams)') +
+  scale_y_continuous(name='E(t)') +
+  scale_x_continuous(name='Time (min)') +
+  geom_vline(xintercept = 30, linetype = 3, color = 'darkgrey') +
+  theme(panel.border = element_blank(), panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
+    panel.background = element_blank()) + 
+  facet_grid(linear ~ quad)
+
+Kissileff_paramGrid_procNoise_intmean = ggplot(Kissileff_paramGrid_procNoiseDat[Kissileff_paramGrid_procNoiseDat$int == "i = 3.13", ], aes(x = EstimatedTime_procNoise, y = CumulativeGrams_procNoise)) +
+  geom_smooth(method = 'gam', formula = y~s(x),linetype = 1, color = 'black') +
+  geom_point(color = 'blue', shape = 3)+
+  ggtitle('Intake Curves From Linear and Quadratic Density Distributions at Lowest Intercept of -43.43 (55 bites, Emax = 107.62 grams)') +
+  scale_y_continuous(name='E(t)') +
+  scale_x_continuous(name='Time (min)') +
+  geom_vline(xintercept = 30, linetype = 3, color = 'darkgrey') +
+  theme(panel.border = element_blank(), panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
+    panel.background = element_blank()) + 
+  facet_grid(linear ~ quad)
+
+Kissileff_paramGrid_procNoise_int5 = ggplot(Kissileff_paramGrid_procNoiseDat[Kissileff_paramGrid_procNoiseDat$int == "i = 41.2", ], aes(x = EstimatedTime_procNoise, y = CumulativeGrams_procNoise)) +
+  geom_smooth(method = 'gam', formula = y~s(x),linetype = 1, color = 'black') +
+  geom_point(color = 'blue', shape = 3)+
+  ggtitle('Intake Curves From Linear and Quadratic Density Distributions at Lowest Intercept of -43.43 (55 bites, Emax = 107.62 grams)') +
+  scale_y_continuous(name='E(t)') +
+  scale_x_continuous(name='Time (min)') +
+  geom_vline(xintercept = 30, linetype = 3, color = 'darkgrey') +
+  theme(panel.border = element_blank(), panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
+    panel.background = element_blank()) + 
+  facet_grid(linear ~ quad)
+
+
+Kissileff_paramGrid_procNoise_30min_int1 = ggplot(Kissileff_paramGrid_procNoise_30minDat[Kissileff_paramGrid_procNoise_30minDat$int == "i = -43.43", ], aes(x = EstimatedTime_procNoise, y = CumulativeGrams_procNoise)) +
+  geom_smooth(method = 'gam', formula = y~s(x),linetype = 1, color = 'black') +
+  geom_point(color = 'blue', shape = 3)+
+  ggtitle('Intake Curves From Parameter Density Distributions - 30 min Time Limit (55 bites, Emax = 107.62 grams)') +
+  scale_y_continuous(name='E(t)') +
+  scale_x_continuous(name='Time (min)') +
+  geom_hline(yintercept=Emax_mean, linetype = 3, color = 'darkgrey') +
+  theme(panel.border = element_blank(), panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
+    panel.background = element_blank()) + 
+  facet_grid(linear ~ quad)
+
+Kissileff_paramGrid_procNoise_30min_intmean = ggplot(Kissileff_paramGrid_procNoise_30minDat[Kissileff_paramGrid_procNoise_30minDat$int == "i = 3.13", ], aes(x = EstimatedTime_procNoise, y = CumulativeGrams_procNoise)) +
+  geom_smooth(method = 'gam', formula = y~s(x),linetype = 1, color = 'black') +
+  geom_point(color = 'blue', shape = 3)+
+  ggtitle('Intake Curves From Parameter Density Distributions - 30 min Time Limit (55 bites, Emax = 107.62 grams)') +
+  scale_y_continuous(name='E(t)') +
+  scale_x_continuous(name='Time (min)') +
+  geom_hline(yintercept=Emax_mean, linetype = 3, color = 'darkgrey') +
+  theme(panel.border = element_blank(), panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
+    panel.background = element_blank()) + 
+  facet_grid(linear ~ quad)
+
+Kissileff_paramGrid_procNoise_30min_int5 = ggplot(Kissileff_paramGrid_procNoise_30minDat[Kissileff_paramGrid_procNoise_30minDat$int == "i = 41.2", ], aes(x = EstimatedTime_procNoise, y = CumulativeGrams_procNoise)) +
+  geom_smooth(method = 'gam', formula = y~s(x),linetype = 1, color = 'black') +
+  geom_point(color = 'blue', shape = 3)+
+  ggtitle('Intake Curves From Parameter Density Distributions - 30 min Time Limit (55 bites, Emax = 107.62 grams)') +
+  scale_y_continuous(name='E(t)') +
+  scale_x_continuous(name='Time (min)') +
+  geom_hline(yintercept=Emax_mean, linetype = 3, color = 'darkgrey') +
+  theme(panel.border = element_blank(), panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
+    panel.background = element_blank()) + 
+  facet_grid(linear ~ quad)
+
+## FPM
+
+###all combinations
+FPM_paramGrid_procNoise = ggplot(FPM_paramGrid_procNoiseDat, aes(x = EstimatedTime_procNoise, y = CumulativeGrams_procNoise)) +
+  geom_smooth(method = 'gam', formula = y~s(x),linetype = 1, color = 'black') +
+  geom_point(color = 'blue', shape = 3)+
+  ggtitle('Intake Curves From Parameter Density Distributions (55 bites, Emax = 107.62 grams)') +
+  scale_y_continuous(name='E(t)') +
+  scale_x_continuous(name='Time (min)') +
+  geom_vline(xintercept = 30, linetype = 3, color = 'darkgrey') +
+  theme(panel.border = element_blank(), panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
+    panel.background = element_blank()) + 
+  facet_grid(theta ~ r)
+
+FPM_paramGrid_procNoise_30min = ggplot(FPM_paramGrid_procNoise_30minDat, aes(x = EstimatedTime_procNoise, y = CumulativeGrams_procNoise)) +
+  geom_smooth(method = 'gam', formula = y~s(x),linetype = 1, color = 'black') +
+  geom_point(color = 'blue', shape = 3)+
+  ggtitle('Intake Curves From Parameter Density Distributions - 30 min Time Limit (55 bites, Emax = 107.62 grams)') +
+  scale_y_continuous(name='E(t)') +
+  scale_x_continuous(name='Time (min)') +
+  geom_hline(yintercept=Emax_mean, linetype = 3, color = 'darkgrey') +
+  theme(panel.border = element_blank(), panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
+    panel.background = element_blank()) + 
+  facet_grid(theta ~ r)
+
+###extreme r values - negative and small pos
+FPM_paramGrid_r_procNoise = ggplot(FPM_paramGrid_r_procNoiseDat, aes(x = EstimatedTime_procNoise, y = CumulativeGrams_procNoise)) +
+  geom_smooth(method = 'gam', formula = y~s(x),linetype = 1, color = 'black') +
+  geom_point(color = 'blue', shape = 3)+
+  ggtitle('Intake Curves From Parameter Density Distributions ') + 
+  ggtitle('Emax calculated to work at lowest r and Bites Size set to 25th percentile: 14 bites, Emax = 17 grams') +
+  scale_y_continuous(name='E(t)') +
+  scale_x_continuous(name='Time (min)') +
+  geom_vline(xintercept = 30, linetype = 3, color = 'darkgrey') +
+  theme(panel.border = element_blank(), panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
+    panel.background = element_blank()) + 
+  facet_grid(theta ~ r)
+
+FPM_paramGrid_r_procNoise_30min = ggplot(FPM_paramGrid_r_procNoise_30minDat, aes(x = EstimatedTime_procNoise, y = CumulativeGrams_procNoise)) +
+  geom_smooth(method = 'gam', formula = y~s(x),linetype = 1, color = 'black') +
+  geom_point(color = 'blue', shape = 3)+
+  ggtitle('Intake Curves From Parameter Density Distributions ') + 
+  ggtitle('Emax calculated to work at lowest r and Bites Size set to 25th percentile: 14 bites, Emax = 17 grams') +
+  scale_y_continuous(name='E(t)') +
+  scale_x_continuous(name='Time (min)') +
+  geom_hline(yintercept=17, linetype = 3, color = 'darkgrey') +
+  theme(panel.border = element_blank(), panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
+    panel.background = element_blank()) + 
+  facet_grid(theta ~ r)
+
+# Draw random sample from multivariate distribution and test parameter recovery with only procNoise ####
+source('rmvnSample_ParamRec.R')
+# FPM_rmvnList = rmvnSample_ParamRec(nSample = 100, nSim = 100, model = "FPM", datOnly = FALSE)
+# FPM_rmvnParamRec = FPM_rmvnList$SimDat_rmvnParamDat
+# FPM_rmvnDat = FPM_rmvnList$SimDat_rmvnDat
+
+FPM_rmvnParamRec = read.csv('Data/SimDat_rmvnParamRec.csv')
+FPM_rmvnDat = read.csv('Data/SimDat_rmvn.csv')
+
+# Measurement Error ####
+# Discretizaiton of bite size
+paramRec1_2catMean = ParamRecovery(nBites = FPM_rmvnDat$nBites[1], Emax = FPM_rmvnDat$TotalIntake_g[1], parameters = c(FPM_rmvnDat$theta[1], FPM_rmvnDat$r[1]), time_fn = FPM_Time, fit_fn = FPM_Fit, keepBites = TRUE, intake_fn = FPM_Intake, CI = TRUE, nSims = 100, simVar = 'biteSize', simValue = FPM_rmvnDat$TotalIntake_g[1]/FPM_rmvnDat$nBites[1])
+
+#get parameter recovery with bite timing error
+
+
+
+
+
