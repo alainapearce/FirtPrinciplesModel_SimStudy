@@ -197,7 +197,16 @@ param_corPlot = ggpairs(SimDat_Fogel2017, columns = c(7, 10:11, 17:19), mapping 
 
 
 #### Extreme Paratemters ####
-source('param_plotGrid_setup.R')
+#no need to source after datasets are created and saved
+#source(param_plotGrid_setup.R)
+Kissileff_paramGrid_procNoiseDat = read.csv('Data/Kissileff_paramGrid_All_procNoiseDat.csv')
+Kissileff_paramGrid_procNoise_30minDat = read.csv('Data/Kissileff_paramGrid_All_procNoise_30minDat.csv')
+
+FPM_paramGrid_procNoiseDat = read.csv('Data/FPM_paramGrid_All_procNoiseDat.csv')
+FPM_paramGrid_procNoise_30minDat = read.csv('Data/FPM_paramGrid_All_procNoise_30minDat.csv')
+
+FPM_paramGrid_r_procNoiseDat = read.csv('Data/FPM_paramGrid_r_procNoiseDat.csv')
+FPM_paramGrid_r_procNoise_30minDat = read.csv('Data/FPM_paramGrid_r_procNoise_30minDat.csv')
 
 ## Kissileff Model
 Kissileff_paramGrid_procNoise_int1 = ggplot(Kissileff_paramGrid_procNoiseDat[Kissileff_paramGrid_procNoiseDat$int == "i = -43.43", ], aes(x = EstimatedTime_procNoise, y = CumulativeGrams_procNoise)) +
@@ -329,6 +338,13 @@ FPM_paramGrid_r_procNoise_30min = ggplot(FPM_paramGrid_r_procNoise_30minDat, aes
 
 # Draw random sample from multivariate distribution and test parameter recovery with only procNoise ####
 source('rmvnSample_ParamRec.R')
+
+#Test CI estimation with no error added
+FPM_rmvn100_CI = rmvnSample_ParamRec(nSample = 100, nSim = 1, model = "FPM", datOnly = FALSE, keepBites = FALSE, paramCI = c('r', 'theta'), bound = 'both')
+
+FPM_rmvnParamRec = FPM_rmvnList$SimDat_rmvnParamDat
+FPM_rmvnDat = FPM_rmvnList$SimDat_rmvnDat
+
 # FPM_rmvnList = rmvnSample_ParamRec(nSample = 100, nSim = 100, model = "FPM", datOnly = FALSE)
 # FPM_rmvnParamRec = FPM_rmvnList$SimDat_rmvnParamDat
 # FPM_rmvnDat = FPM_rmvnList$SimDat_rmvnDat
@@ -337,8 +353,12 @@ FPM_rmvnParamRec = read.csv('Data/SimDat_rmvnParamRec.csv')
 FPM_rmvnDat = read.csv('Data/SimDat_rmvn.csv')
 
 # Measurement Error ####
-# Discretizaiton of bite size
-paramRec1_2catMean = ParamRecovery(nBites = FPM_rmvnDat$nBites[1], Emax = FPM_rmvnDat$TotalIntake_g[1], parameters = c(FPM_rmvnDat$theta[1], FPM_rmvnDat$r[1]), time_fn = FPM_Time, fit_fn = FPM_Fit, keepBites = TRUE, intake_fn = FPM_Intake, CI = TRUE, nSims = 100, simVar = 'biteSize', simValue = FPM_rmvnDat$TotalIntake_g[1]/FPM_rmvnDat$nBites[1])
+# Discretization of bite size
+paramRec1_2catMean = ParamRecovery(nBites = FPM_rmvnDat$nBites[1], Emax = FPM_rmvnDat$TotalIntake_g[1], parameters = c(FPM_rmvnDat$theta[1], FPM_rmvnDat$r[1]), time_fn = FPM_Time, fit_fn = FPM_Fit, keepBites = TRUE, intake_fn = FPM_Intake, paramCI = list(r = TRUE, theta = TRUE), nSims = 100, simVar = 'biteSize', simValue = FPM_rmvnDat$TotalIntake_g[1]/FPM_rmvnDat$nBites[1])
+
+paramRec1_2catMean_params = paramRec1_2catMean$paramDat
+paramRec1_2catMean_params$CIfit_r = ifelse(round(paramRec1_2catMean_params$initial_r, 5) <= round(paramRec1_2catMean_params$u95CI_r, 5) & round(paramRec1_2catMean_params$initial_r, 5) >= round(paramRec1_2catMean_params$l95CI_r, 5), 'Y', 'N')
+
 
 #get parameter recovery with bite timing error
 

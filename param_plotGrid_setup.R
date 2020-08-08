@@ -198,6 +198,9 @@ Kissileff_paramGrid_procNoise_30minDat$int = factor(Kissileff_paramGrid_procNois
 Kissileff_paramGrid_procNoise_30minDat$linear = factor(Kissileff_paramGrid_procNoise_30minDat$linear, levels = c("l = -3.63", "l = 8.35", "l = 15.83", "l = 20.85", "l = 66.19"))
 Kissileff_paramGrid_procNoise_30minDat$quad = factor(Kissileff_paramGrid_procNoise_30minDat$quad, levels = c("q = -7.61", "q = -0.87", "q = -0.73", "q = -0.26", "q = 2.37"))
 
+write.csv(Kissileff_paramGrid_procNoiseDat, 'Data/Kissileff_paramGrid_All_procNoiseDat.csv', row.names = FALSE)
+write.csv(Kissileff_paramGrid_procNoise_30minDat, 'Data/Kissileff_paramGrid_All_procNoise_30minDat.csv', row.names = FALSE)
+
 ## FPM
 
 theta_quants = quantile(SimDat_Fogel2017$theta)
@@ -262,6 +265,9 @@ FPM_paramGrid_procNoise_30minDat$r = factor(FPM_paramGrid_procNoise_30minDat$r, 
 FPM_paramGrid_procNoiseDat$theta = factor(FPM_paramGrid_procNoiseDat$theta, levels = c("t = 0.46", "t = 7.74", "t = 13.65", "t = 23.03", "t = 109.4"))
 FPM_paramGrid_procNoise_30minDat$theta = factor(FPM_paramGrid_procNoise_30minDat$theta, levels = c("t = 0.46", "t = 7.74", "t = 13.65", "t = 23.03", "t = 109.4"))
 
+write.csv(FPM_paramGrid_procNoiseDat, 'Data/FPM_paramGrid_All_procNoiseDat.csv', row.names = FALSE)
+write.csv(FPM_paramGrid_procNoise_30minDat, 'Data/FPM_paramGrid_All_procNoise_30minDat.csv', row.names = FALSE)
+
 ##Small and negative R
 ###theta set to 70 (Very high) and intake to the 25th percentile of intake; nBites calculated so bite size is at 25th percentile (1.25 g/bite)
 ###theta set to 75th percentile (23.0276) and intake to the 25th percentile of intake to 17g (very low); nBites calculated so bite size is at 25th (1.25 g/bite) percentile
@@ -303,3 +309,6 @@ FPM_paramGrid_r_procNoise_30minDat$r = factor(FPM_paramGrid_r_procNoise_30minDat
 
 FPM_paramGrid_r_procNoiseDat$theta = factor(FPM_paramGrid_r_procNoiseDat$theta, levels = c("t = 23.03", "t = 70"))
 FPM_paramGrid_r_procNoise_30minDat$theta = factor(FPM_paramGrid_r_procNoise_30minDat$theta, levels = c("t = 23.03", "t = 70"))
+
+write.csv(FPM_paramGrid_r_procNoiseDat, 'Data/FPM_paramGrid_r_procNoiseDat.csv', row.names = FALSE)
+write.csv(FPM_paramGrid_r_procNoise_30minDat, 'Data/FPM_paramGrid_r_procNoise_30minDat.csv', row.names = FALSE)
