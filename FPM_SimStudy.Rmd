@@ -129,23 +129,23 @@ L(\hat{E(t)} + \epsilon, \sigma^2 | t, \theta, r, E_{max} ) &= \prod_{i = 1}^{n}
 
 <!-- already created - only need to redo if something changes -->
 
-```{r Figure1_contSample_plotA, echo=FALSE, include = FALSE, eval = FALSE}
+```{r Figure1_contSample_plotA, echo=FALSE, include = FALSE, eval = TRUE}
 cont_CumulativeIntake_Figure1_plotA
 ```
 
-```{r Figure1_contSample_plotB, echo=FALSE, include = FALSE, eval = FALSE}
+```{r Figure1_contSample_plotB, echo=FALSE, include = FALSE, eval = TRUE}
 cont_CumulativeIntake_Figure1_plotB
 ```
 
-```{r Figure1_contSample_plotC, echo=FALSE, include = FALSE, eval = FALSE}
+```{r Figure1_contSample_plotC, echo=FALSE, include = FALSE, eval = TRUE}
 cont_CumulativeIntake_Figure1_plotC
 ```
 
-```{r Figure1_contSample_plotD, echo=FALSE, include = FALSE, eval = FALSE}
+```{r Figure1_contSample_plotD, echo=FALSE, include = FALSE, eval = TRUE}
 cont_CumulativeIntake_Figure1_plotD
 ```
 
-```{r Figure1_contSample_Figure1_grid, echo=FALSE, include = FALSE, eval = FALSE}
+```{r Figure1_contSample_Figure1_grid, echo=FALSE, include = FALSE, eval = TRUE}
 cont_CumulativeIntake_Figure1_grid
 ```
 
@@ -154,46 +154,46 @@ cont_CumulativeIntake_Figure1_grid
 <!-- \newpage -->
 <!-- ### 100 Bite Sampling -->
 
-```{r Figure1_bite100Sample_plotA, echo=FALSE, include = FALSE, eval = FALSE}
+```{r Figure1_bite100Sample_plotA, echo=FALSE, include = FALSE, eval = TRUE}
 bite100_CumulativeIntake_Figure1_plotA
 ```
 
-```{r Figure1_bite100Sample_plotB, echo=FALSE, include = FALSE, eval = FALSE}
+```{r Figure1_bite100Sample_plotB, echo=FALSE, include = FALSE, eval = TRUE}
 bite100_CumulativeIntake_Figure1_plotB
 ```
 
-```{r Figure1_bite100Sample_plotC, echo=FALSE, include = FALSE, eval = FALSE}
+```{r Figure1_bite100Sample_plotC, echo=FALSE, include = FALSE, eval = TRUE}
 bite100_CumulativeIntake_Figure1_plotC
 ```
 
-```{r Figure1_bite100Sample_plotD, echo=FALSE, include = FALSE, eval = FALSE}
+```{r Figure1_bite100Sample_plotD, echo=FALSE, include = FALSE, eval = TRUE}
 bite100_CumulativeIntake_Figure1_plotD
 ```
 
-```{r Figure1_bite100Sample_CumulativeIntake_grid, echo=FALSE, include = FALSE, eval = FALSE}
+```{r Figure1_bite100Sample_CumulativeIntake_grid, echo=FALSE, include = FALSE, eval = TRUE}
 bite100_CumulativeIntake_Figure1_grid
 ```
 
 
 <!-- ### 35 Bite Sampling -->
 
-```{r Figure1_bite33Sample_plotA, echo=FALSE, include = FALSE, eval = FALSE}
+```{r Figure1_bite33Sample_plotA, echo=FALSE, include = FALSE, eval = TRUE}
 bite33_CumulativeIntake_Figure1_plotA
 ```
 
-```{r Figure1_bite33Sample_plotB, echo=FALSE, include = FALSE, eval = FALSE}
+```{r Figure1_bite33Sample_plotB, echo=FALSE, include = FALSE, eval = TRUE}
 bite33_CumulativeIntake_Figure1_plotB
 ```
 
-```{r Figure1_bite33Sample_plotC, echo=FALSE, include = FALSE, eval = FALSE}
+```{r Figure1_bite33Sample_plotC, echo=FALSE, include = FALSE, eval = TRUE}
 bite33_CumulativeIntake_Figure1_plotC
 ```
 
-```{r Figure1_bite33Sample_plotD, echo=FALSE, include = FALSE, eval = FALSE}
+```{r Figure1_bite33Sample_plotD, echo=FALSE, include = FALSE, eval = TRUE}
 bite33_CumulativeIntake_Figure1_plotD
 ```
 
-```{r Figure1_bite33Sample_CumulativeIntake_grid, echo=FALSE, include = FALSE, eval = FALSE}
+```{r Figure1_bite33Sample_CumulativeIntake_grid, echo=FALSE, include = FALSE, eval = TRUE}
 bite33_CumulativeIntake_Figure1_grid
 ```
 
@@ -201,19 +201,19 @@ bite33_CumulativeIntake_Figure1_grid
 
 <!-- Already created - only need to re-run if something changes -->
 
-```{r Figure1_AllSample_plotA, echo=FALSE, include = FALSE, eval = FALSE}
+```{r Figure1_AllSample_plotA, echo=FALSE, include = FALSE, eval = TRUE}
 all_CumulativeIntake_Figure1_plotA
 ```
 
-```{r Figure1_AllSample_plotB, echo=FALSE, include = FALSE, eval = FALSE}
+```{r Figure1_AllSample_plotB, echo=FALSE, include = FALSE, eval = TRUE}
 all_CumulativeIntake_Figure1_plotB
 ```
 
-```{r Figure1_AllSample_plotC, echo=FALSE, include = FALSE, eval = FALSE}
+```{r Figure1_AllSample_plotC, echo=FALSE, include = FALSE, eval = TRUE}
 all_CumulativeIntake_Figure1_plotC
 ```
 
-```{r Figure1_AllSample_plotD, echo=FALSE, include = FALSE, eval = FALSE}
+```{r Figure1_AllSample_plotD, echo=FALSE, include = FALSE, eval = TRUE}
 all_CumulativeIntake_Figure1_plotD
 ```
 
@@ -249,73 +249,73 @@ all_CumulativeIntake_Figure1_plotD
 <!-- need to eval each time as may be small changes -->
 <!-- 250 ms sampling -->
 
-```{r Figure1_contSample_plotA_paramfits, echo=FALSE, include = FALSE, eval = FALSE}
+```{r Figure1_contSample_plotA_paramfits, echo=FALSE, include = FALSE, eval = TRUE}
 cont_CumulativeIntake_Figure1A_fit.orig
 ```
 
-```{r Figure1_contSample_plotB_paramfits, echo=FALSE, include = FALSE, eval = FALSE}
+```{r Figure1_contSample_plotB_paramfits, echo=FALSE, include = FALSE, eval = TRUE}
 cont_CumulativeIntake_Figure1B_fit.orig
 ```
 
-```{r Figure1_contSample_plotC_paramfits, echo=FALSE, include = FALSE, eval = FALSE}
+```{r Figure1_contSample_plotC_paramfits, echo=FALSE, include = FALSE, eval = TRUE}
 cont_CumulativeIntake_Figure1C_fit.orig
 ```
 
-```{r Figure1_contSample_plotD_paramfits, echo=FALSE, include = FALSE, eval = FALSE}
+```{r Figure1_contSample_plotD_paramfits, echo=FALSE, include = FALSE, eval = TRUE}
 cont_CumulativeIntake_Figure1D_fit.orig
 ```
 
-```{r Figure1_contSample_paramfits, echo=FALSE, include = FALSE, eval = FALSE}
+```{r Figure1_contSample_paramfits, echo=FALSE, include = FALSE, eval = TRUE}
 cont_CumulativeIntake_Figure1_fit.orig_grid
 ```
 
 <!-- 100 Bite sampling -->
 
-```{r Figure1_bite100Sample_plotA_paramfits, echo=FALSE, include = FALSE, eval = FALSE}
+```{r Figure1_bite100Sample_plotA_paramfits, echo=FALSE, include = FALSE, eval = TRUE}
 bite100_CumulativeIntake_Figure1A_fit.orig
 ```
 
-```{r Figure1_bite100Sample_plotB_paramfits, echo=FALSE, include = FALSE, eval = FALSE}
+```{r Figure1_bite100Sample_plotB_paramfits, echo=FALSE, include = FALSE, eval = TRUE}
 bite100_CumulativeIntake_Figure1B_fit.orig
 ```
 
-```{r Figure1_bite100Sample_plotC_paramfits, echo=FALSE, include = FALSE, eval = FALSE}
+```{r Figure1_bite100Sample_plotC_paramfits, echo=FALSE, include = FALSE, eval = TRUE}
 bite100_CumulativeIntake_Figure1C_fit.orig
 ```
 
-```{r Figure1_bite100Sample_plotD_paramfits, echo=FALSE, include = FALSE, eval = FALSE}
+```{r Figure1_bite100Sample_plotD_paramfits, echo=FALSE, include = FALSE, eval = TRUE}
 bite100_CumulativeIntake_Figure1D_fit.orig
 ```
 
-```{r Figure1_bite100Sample_paramfits, echo=FALSE, include = FALSE, eval = FALSE}
+```{r Figure1_bite100Sample_paramfits, echo=FALSE, include = FALSE, eval = TRUE}
 bite100_CumulativeIntake_Figure1_fit.orig_grid
 ```
 
 <!-- 33 Bite sampling -->
 
-```{r Figure1_bite33Sample_plotA_paramfits, echo=FALSE, include = FALSE, eval = FALSE}
+```{r Figure1_bite33Sample_plotA_paramfits, echo=FALSE, include = FALSE, eval = TRUE}
 bite33_CumulativeIntake_Figure1_plotA_fit.orig
 ```
 
-```{r Figure1_bite33Sample_plotB_paramfits, echo=FALSE, include = FALSE, eval = FALSE}
+```{r Figure1_bite33Sample_plotB_paramfits, echo=FALSE, include = FALSE, eval = TRUE}
 bite33_CumulativeIntake_Figure1_plotB_fit.orig
 ```
 
-```{r Figure1_bite33Sample_plotC_paramfits, echo=FALSE, include = FALSE, eval = FALSE}
+```{r Figure1_bite33Sample_plotC_paramfits, echo=FALSE, include = FALSE, eval = TRUE}
 bite33_CumulativeIntake_Figure1_plotC_fit.orig
 ```
 
-```{r Figure1_bite33Sample_plotD_paramfits, echo=FALSE, include = FALSE, eval = FALSE}
+```{r Figure1_bite33Sample_plotD_paramfits, echo=FALSE, include = FALSE, eval = TRUE}
 bite33_CumulativeIntake_Figure1_plotD_fit.orig
 ```
 
 \FloatBarrier
 
-<!-- ```{r Figure1_contSample_singleFit, echo=FALSE, results='asis'} -->
-<!-- kable(cont_optimize, "latex",  digits = 3, caption = "Fitted parameters from initail recovery simulation using 250ms sampling", row.names = FALSE) %>% -->
-<!--   kable_styling(latex_options = c("hold_position", "repeat_header")) -->
-<!-- ``` -->
-<!-- \FloatBarrier -->
+```{r Figure1_contSample_singleFit, echo=FALSE, results='asis'}
+kable(cont_optimize, "latex",  digits = 3, caption = "Fitted parameters from initail recovery simulation using 250ms sampling", row.names = FALSE) %>%
+  kable_styling(latex_options = c("hold_position", "repeat_header"))
+```
+\FloatBarrier
 
 \begin{figure}[ht!]
   \centering
@@ -325,11 +325,11 @@ bite33_CumulativeIntake_Figure1_plotD_fit.orig
 
 \FloatBarrier
 
-<!-- ```{r Figure1_bite100Sample_singleFit, echo=FALSE, results='asis'} -->
-<!-- kable(bite100_optimize, "latex",  digits = 3, caption = "Fitted parameters from initail recovery simulation using 100 bite sampling", row.names = FALSE) %>% -->
-<!--   kable_styling(latex_options = c("hold_position", "repeat_header")) -->
-<!-- ``` -->
-<!-- \FloatBarrier -->
+```{r Figure1_bite100Sample_singleFit, echo=FALSE, results='asis'}
+kable(bite100_optimize, "latex",  digits = 3, caption = "Fitted parameters from initail recovery simulation using 100 bite sampling", row.names = FALSE) %>%
+  kable_styling(latex_options = c("hold_position", "repeat_header"))
+```
+\FloatBarrier
 
 \begin{figure}[ht!]
   \centering
@@ -790,3 +790,93 @@ FPM_paramGrid_r_procNoise_30min
 \FloatBarrier
 \clearpage
 
+#Parameter Recovery 
+
+##100 Random Multivariate Samples - Parameter Capture
+
+```{r FPM_rmvn100_CIplot_theta, echo=FALSE, include = FALSE, eval = TRUE}
+FPM_rmvn100_CIplot_theta
+```
+
+```{r FPM_rmvn100_CIplot_theta_procNoise, echo=FALSE, include = FALSE, eval = TRUE}
+FPM_theta_rmvn100_procNoiseCIplot_theta
+```
+
+```{r FPM_rmvn100_CIplot_r, echo=FALSE, include = FALSE, eval = TRUE}
+FPM_rmvn100_CIplot_r
+```
+
+```{r FPM_rmvn100_CIplot_r_procNoise, echo=FALSE, include = FALSE, eval = TRUE}
+FPM_theta_rmvn100_procNoiseCIplot_r
+```
+
+
+\begin{figure}[ht!]
+  \centering
+  \caption*{\centering Theta - Parameter Recovery 95% CI}
+  \begin{subfigure}[b]{=0.70\textwidth}
+    \centering
+    \caption*{\centering Average Bite Size}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-FPM_rmvn100_CIplot_theta-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.70\textwidth}
+    \centering
+    \caption*{\centering Proccess Noise Added}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-FPM_rmvn100_CIplot_theta_procNoise-1.pdf}
+  \end{subfigure}
+  \caption*{\centering r - Parameter Recovery 95% CI}
+  \begin{subfigure}[b]{=0.70\textwidth}
+    \centering
+    \caption*{\centering Average Bite Size}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-FPM_rmvn100_CIplot_r-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.70\textwidth}
+    \centering
+    \caption*{\centering Proccess Noise Added}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-FPM_rmvn100_CIplot_r_procNoise-1.pdf}
+  \end{subfigure}
+\end{figure}
+\FloatBarrier
+\clearpage
+
+
+##100 Random Multivariate Samples - Cumulative Intake Curve
+```{r FPM_rmvn100_CIplot_CumulativeIntake1, echo=FALSE, include = FALSE, eval = TRUE}
+FPM_procNoise_rmvnParamRec_95CI_CumulativeIntake1
+```
+
+```{r FPM_rmvn100_CIplot_CumulativeIntake2, echo=FALSE, include = FALSE, eval = TRUE}
+FPM_procNoise_rmvnParamRec_95CI_CumulativeIntake2
+```
+
+```{r FPM_rmvn100_CIplot_CumulativeIntake3, echo=FALSE, include = FALSE, eval = TRUE}
+FPM_procNoise_rmvnParamRec_95CI_CumulativeIntake3
+```
+
+```{r FPM_rmvn100_CIplot_CumulativeIntake4, echo=FALSE, include = FALSE, eval = TRUE}
+FPM_procNoise_rmvnParamRec_95CI_CumulativeIntake4
+```
+
+
+\begin{figure}[ht!]
+  \centering
+  \caption*{\centering Theta - Parameter Recovery 95% CI}
+  \begin{subfigure}[b]{=0.70\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-FPM_procNoise_rmvnParamRec_95CI_CumulativeIntake1-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.70\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-FPM_procNoise_rmvnParamRec_95CI_CumulativeIntake2-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.70\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-FPM_procNoise_rmvnParamRec_95CI_CumulativeIntake3-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.70\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-FPM_procNoise_rmvnParamRec_95CI_CumulativeIntake4-1.pdf}
+  \end{subfigure}
+\end{figure}
+\FloatBarrier
+\clearpage

@@ -16,6 +16,11 @@ library(MASS)
 #### set up ####
 
 source('functions.R')
+
+## ggplot theme
+theme_set(theme(panel.border = element_blank(), panel.grid.major = element_blank(),
+      panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
+      panel.background = element_blank()))
 ###################################################
 ####                                           
 #### Create Densityributions for model parameters ####
@@ -199,6 +204,8 @@ param_corPlot = ggpairs(SimDat_Fogel2017, columns = c(7, 10:11, 17:19), mapping 
 #### Extreme Paratemters ####
 #no need to source after datasets are created and saved
 #source(param_plotGrid_setup.R)
+Emax_mean = round(mean(SimDat_Fogel2017$TotalIntake_g), 2)
+
 Kissileff_paramGrid_procNoiseDat = read.csv('Data/Kissileff_paramGrid_All_procNoiseDat.csv')
 Kissileff_paramGrid_procNoise_30minDat = read.csv('Data/Kissileff_paramGrid_All_procNoise_30minDat.csv')
 
@@ -216,9 +223,6 @@ Kissileff_paramGrid_procNoise_int1 = ggplot(Kissileff_paramGrid_procNoiseDat[Kis
   scale_y_continuous(name='E(t)') +
   scale_x_continuous(name='Time (min)') +
   geom_vline(xintercept = 30, linetype = 3, color = 'darkgrey') +
-  theme(panel.border = element_blank(), panel.grid.major = element_blank(),
-    panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
-    panel.background = element_blank()) + 
   facet_grid(linear ~ quad)
 
 Kissileff_paramGrid_procNoise_intmean = ggplot(Kissileff_paramGrid_procNoiseDat[Kissileff_paramGrid_procNoiseDat$int == "i = 3.13", ], aes(x = EstimatedTime_procNoise, y = CumulativeGrams_procNoise)) +
@@ -228,9 +232,6 @@ Kissileff_paramGrid_procNoise_intmean = ggplot(Kissileff_paramGrid_procNoiseDat[
   scale_y_continuous(name='E(t)') +
   scale_x_continuous(name='Time (min)') +
   geom_vline(xintercept = 30, linetype = 3, color = 'darkgrey') +
-  theme(panel.border = element_blank(), panel.grid.major = element_blank(),
-    panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
-    panel.background = element_blank()) + 
   facet_grid(linear ~ quad)
 
 Kissileff_paramGrid_procNoise_int5 = ggplot(Kissileff_paramGrid_procNoiseDat[Kissileff_paramGrid_procNoiseDat$int == "i = 41.2", ], aes(x = EstimatedTime_procNoise, y = CumulativeGrams_procNoise)) +
@@ -240,9 +241,6 @@ Kissileff_paramGrid_procNoise_int5 = ggplot(Kissileff_paramGrid_procNoiseDat[Kis
   scale_y_continuous(name='E(t)') +
   scale_x_continuous(name='Time (min)') +
   geom_vline(xintercept = 30, linetype = 3, color = 'darkgrey') +
-  theme(panel.border = element_blank(), panel.grid.major = element_blank(),
-    panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
-    panel.background = element_blank()) + 
   facet_grid(linear ~ quad)
 
 
@@ -253,9 +251,6 @@ Kissileff_paramGrid_procNoise_30min_int1 = ggplot(Kissileff_paramGrid_procNoise_
   scale_y_continuous(name='E(t)') +
   scale_x_continuous(name='Time (min)') +
   geom_hline(yintercept=Emax_mean, linetype = 3, color = 'darkgrey') +
-  theme(panel.border = element_blank(), panel.grid.major = element_blank(),
-    panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
-    panel.background = element_blank()) + 
   facet_grid(linear ~ quad)
 
 Kissileff_paramGrid_procNoise_30min_intmean = ggplot(Kissileff_paramGrid_procNoise_30minDat[Kissileff_paramGrid_procNoise_30minDat$int == "i = 3.13", ], aes(x = EstimatedTime_procNoise, y = CumulativeGrams_procNoise)) +
@@ -265,9 +260,6 @@ Kissileff_paramGrid_procNoise_30min_intmean = ggplot(Kissileff_paramGrid_procNoi
   scale_y_continuous(name='E(t)') +
   scale_x_continuous(name='Time (min)') +
   geom_hline(yintercept=Emax_mean, linetype = 3, color = 'darkgrey') +
-  theme(panel.border = element_blank(), panel.grid.major = element_blank(),
-    panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
-    panel.background = element_blank()) + 
   facet_grid(linear ~ quad)
 
 Kissileff_paramGrid_procNoise_30min_int5 = ggplot(Kissileff_paramGrid_procNoise_30minDat[Kissileff_paramGrid_procNoise_30minDat$int == "i = 41.2", ], aes(x = EstimatedTime_procNoise, y = CumulativeGrams_procNoise)) +
@@ -277,9 +269,6 @@ Kissileff_paramGrid_procNoise_30min_int5 = ggplot(Kissileff_paramGrid_procNoise_
   scale_y_continuous(name='E(t)') +
   scale_x_continuous(name='Time (min)') +
   geom_hline(yintercept=Emax_mean, linetype = 3, color = 'darkgrey') +
-  theme(panel.border = element_blank(), panel.grid.major = element_blank(),
-    panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
-    panel.background = element_blank()) + 
   facet_grid(linear ~ quad)
 
 ## FPM
@@ -292,9 +281,6 @@ FPM_paramGrid_procNoise = ggplot(FPM_paramGrid_procNoiseDat, aes(x = EstimatedTi
   scale_y_continuous(name='E(t)') +
   scale_x_continuous(name='Time (min)') +
   geom_vline(xintercept = 30, linetype = 3, color = 'darkgrey') +
-  theme(panel.border = element_blank(), panel.grid.major = element_blank(),
-    panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
-    panel.background = element_blank()) + 
   facet_grid(theta ~ r)
 
 FPM_paramGrid_procNoise_30min = ggplot(FPM_paramGrid_procNoise_30minDat, aes(x = EstimatedTime_procNoise, y = CumulativeGrams_procNoise)) +
@@ -304,9 +290,6 @@ FPM_paramGrid_procNoise_30min = ggplot(FPM_paramGrid_procNoise_30minDat, aes(x =
   scale_y_continuous(name='E(t)') +
   scale_x_continuous(name='Time (min)') +
   geom_hline(yintercept=Emax_mean, linetype = 3, color = 'darkgrey') +
-  theme(panel.border = element_blank(), panel.grid.major = element_blank(),
-    panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
-    panel.background = element_blank()) + 
   facet_grid(theta ~ r)
 
 ###extreme r values - negative and small pos
@@ -318,9 +301,6 @@ FPM_paramGrid_r_procNoise = ggplot(FPM_paramGrid_r_procNoiseDat, aes(x = Estimat
   scale_y_continuous(name='E(t)') +
   scale_x_continuous(name='Time (min)') +
   geom_vline(xintercept = 30, linetype = 3, color = 'darkgrey') +
-  theme(panel.border = element_blank(), panel.grid.major = element_blank(),
-    panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
-    panel.background = element_blank()) + 
   facet_grid(theta ~ r)
 
 FPM_paramGrid_r_procNoise_30min = ggplot(FPM_paramGrid_r_procNoise_30minDat, aes(x = EstimatedTime_procNoise, y = CumulativeGrams_procNoise)) +
@@ -331,27 +311,171 @@ FPM_paramGrid_r_procNoise_30min = ggplot(FPM_paramGrid_r_procNoise_30minDat, aes
   scale_y_continuous(name='E(t)') +
   scale_x_continuous(name='Time (min)') +
   geom_hline(yintercept=17, linetype = 3, color = 'darkgrey') +
-  theme(panel.border = element_blank(), panel.grid.major = element_blank(),
-    panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"),
-    panel.background = element_blank()) + 
   facet_grid(theta ~ r)
 
 # Draw random sample from multivariate distribution and test parameter recovery with only procNoise ####
 source('rmvnSample_ParamRec.R')
 
-#Test CI estimation with no error added
-FPM_rmvn100_CI = rmvnSample_ParamRec(nSample = 100, nSim = 1, model = "FPM", datOnly = FALSE, keepBites = FALSE, paramCI = c('r', 'theta'), bound = 'both')
+#Test CI estimation with no error added - estimation per 100 randomly sampled microstructure sets
+# only need to run if want to re-generate
+# FPM_rmvn100_CI = rmvnSample_ParamRec(nSample = 100, procNoise = FALSE, model = "FPM", datOnly = FALSE, paramCI = c('r', 'theta'), bound = 'both', data_str = 'simDat')
+# FPM_procNoise_rmvn100_CI = rmvnSample_ParamRec(nSample = 100, procNoise = TRUE, model = "FPM", datOnly = FALSE, paramCI = c('r', 'theta'), bound = 'both', data_str = 'simDat_procNoise')
+# FPM_procNoise_measureNoise_rmvn100_CI = rmvnSample_ParamRec(nSample = 100, procNoise = TRUE, measureNoise = TRUE, model = "FPM", datOnly = FALSE, paramCI = c('r', 'theta'), bound = 'both', data_str = 'simDat_procNoise')
 
-FPM_rmvnParamRec = FPM_rmvnList$SimDat_rmvnParamDat
-FPM_rmvnDat = FPM_rmvnList$SimDat_rmvnDat
+FPM_procNoise_rmvnParamRec = read.csv('Data/FPM_simDat_procNoise_rmvnParamRec100.csv')
+FPM_procNoise_rmvnParamRec$ID = seq(1, 100, 1)
+FPM_procNoise_rmvnDat = read.csv('Data/FPM_simDat_procNoise_rmvnDat100.csv')
 
-# FPM_rmvnList = rmvnSample_ParamRec(nSample = 100, nSim = 100, model = "FPM", datOnly = FALSE)
-# FPM_rmvnParamRec = FPM_rmvnList$SimDat_rmvnParamDat
-# FPM_rmvnDat = FPM_rmvnList$SimDat_rmvnDat
+FPM_rmvnParamRec = read.csv('Data/FPM_simDat_rmvnParamRec100.csv')
+FPM_rmvnParamRec$ID = seq(1, 100, 1)
+FPM_rmvnDat = read.csv('Data/FPM_simDat_rmvnDat100.csv')
 
-FPM_rmvnParamRec = read.csv('Data/SimDat_rmvnParamRec.csv')
-FPM_rmvnDat = read.csv('Data/SimDat_rmvn.csv')
+##re-parameterization of r to e^r
+# FPM_rmvn100_CI = rmvnSample_ParamRec(nSample = 100, nSim = 1, procNoise = FALSE, model = "FPM", datOnly = FALSE, paramCI = c('r', 'theta'), bound = 'both', data_str = 'simDat_rReParam')
+# FPM_procNoise_rmvn100_CI = rmvnSample_ParamRec(nSample = 100, nSim = 1, procNoise = TRUE, model = "FPM", datOnly = FALSE, paramCI = c('r', 'theta'), bound = 'both', data_str = 'simDat_procNoise_rReParam')
 
+FPM_rReParam_procNoise_rmvnParamRec = read.csv('Data/FPM_simDat_procNoise_rReParam_rmvnParamRec100.csv')
+FPM_rReParam_procNoise_rmvnParamRec$ID = seq(1, 100, 1)
+FPM_rReParam_procNoise_rmvnDat = read.csv('Data/FPM_simDat_procNoise_rReParam_rmvnDat100.csv')
+
+FPM_rReParam_rmvnParamRec = read.csv('Data/FPM_simDat_rReParam_rmvnParamRec100.csv')
+FPM_rReParam_rmvnParamRec$ID = seq(1, 100, 1)
+FPM_rReParam_rmvnDat = read.csv('Data/FPM_simDat_rReParam_rmvnDat100.csv')
+
+# Kissileff_rmvn100_CI = rmvnSample_ParamRec(nSample = 100, nSim = 1, procNoise = FALSE, model = "Kissileff", datOnly = FALSE, paramCI = c('int', 'linear', 'quad'), bound = 'both', data_str = 'simDat')
+# Kissileff_procNoise_rmvn100_CI = rmvnSample_ParamRec(nSample = 100, nSim = 1, procNoise = TRUE, model = "Kissileff", datOnly = FALSE, paramCI = c('int', 'linear', 'quad'), bound = 'both', data_str = 'simDat_procNoise')
+
+Kissileff_procNoise_rmvnParamRec = read.csv('Data/Kissileff_simDat_procNoise_rmvnParamRec100.csv')
+Kissileff_procNoise_rmvnParamRec$ID = seq(1, 100, 1)
+Kissileff_rmvnDat = read.csv('Data/Kissileff_simDat_rmvnDat100.csv')
+Kissileff_rmvnParamRec = read.csv('Data/Kissileff_simDat_rmvnParamRec100.csv')
+Kissileff_rmvnParamRec$ID = seq(1, 100, 1)
+Kissileff_rmvnDat = read.csv('Data/Kissileff_simDat_rmvnDat100.csv')
+
+
+#plot CIs in forestplot-like plot
+FPM_rmvn100_CIplot_r <- ggplot(data=FPM_rReParam_rmvnParamRec, aes(y=ID, x=initial_r, xmin=l95CI_r, xmax=u95CI_r)) +
+  geom_point(aes(col=r_fit)) + 
+  geom_errorbarh(aes(xmin=l95CI_r, xmax=u95CI_r, col=r_fit),height=0.5,cex=1) +
+  xlab("r(95% CI)") + ylab("Random Sample Number")
+
+FPM_rmvn100_procNoiseCIplot_r <- ggplot(data=FPM_rReParam_procNoise_rmvnParamRec, aes(y=ID, x=initial_r, xmin=l95CI_r, xmax=u95CI_r)) +
+  geom_point(aes(col=r_fit)) + 
+  geom_errorbarh(aes(xmin=l95CI_r, xmax=u95CI_r, col=r_fit),height=0.5,cex=1) +
+  xlab("r(95% CI)") + ylab("Random Sample Number")
+
+FPM_rmvn100_CIplot_theta <- ggplot(data=FPM_rmvnParamRec, aes(y=ID, x=initial_theta, xmin=l95CI_theta, xmax=u95CI_theta)) +
+  geom_point(aes(col=theta_fit)) + 
+  geom_errorbarh(aes(xmin=l95CI_theta, xmax=u95CI_theta, col=theta_fit),height=0.5,cex=1) +
+  xlab("theta(95% CI)") + ylab("Random Sample Number")
+
+FPM_rmvn100_procNoiseCIplot_theta <- ggplot(data=FPM_procNoise_rmvnParamRec, aes(y=ID, x=initial_theta, xmin=l95CI_theta, xmax=u95CI_theta)) +
+  geom_point(aes(col=theta_fit)) + 
+  geom_errorbarh(aes(xmin=l95CI_theta, xmax=u95CI_theta, col=theta_fit),height=0.5,cex=1) +
+  xlab("theta(95% CI)") + ylab("Random Sample Number")
+
+Kissileff_rmvn100_CIplot_int <- ggplot(data=Kissileff_rmvnParamRec, aes(y=ID, x=initial_int, xmin=l95CI_int, xmax=u95CI_int)) +
+  geom_point(aes(col=int_fit)) + 
+  geom_errorbarh(aes(xmin=l95CI_int, xmax=u95CI_int, col=int_fit),height=0.5,cex=1) +
+  xlab("Intercept (95% CI)") + ylab("Random Sample Number")
+
+Kissileff_rmvn100_procNoise_CIplot_int <- ggplot(data=Kissileff_procNoise_rmvnParamRec, aes(y=ID, x=initial_int, xmin=l95CI_int, xmax=u95CI_int)) +
+  geom_point(aes(col=int_fit)) + 
+  geom_errorbarh(aes(xmin=l95CI_int, xmax=u95CI_int, col=int_fit),height=0.5,cex=1) +
+  xlab("Intercept (95% CI)") + ylab("Random Sample Number")
+
+Kissileff_rmvn100_CIplot_linear <- ggplot(data=Kissileff_rmvnParamRec, aes(y=ID, x=initial_linear, xmin=l95CI_linear, xmax=u95CI_linear)) +
+  geom_point(aes(col=linear_fit)) + 
+  geom_errorbarh(aes(xmin=l95CI_linear, xmax=u95CI_linear, col=linear_fit),height=0.5,cex=1) +
+  xlab("linearercept (95% CI)") + ylab("Random Sample Number")
+
+Kissileff_rmvn100_procNoise_CIplot_linear <- ggplot(data=Kissileff_procNoise_rmvnParamRec, aes(y=ID, x=initial_linear, xmin=l95CI_linear, xmax=u95CI_linear)) +
+  geom_point(aes(col=linear_fit)) + 
+  geom_errorbarh(aes(xmin=l95CI_linear, xmax=u95CI_linear, col=linear_fit),height=0.5,cex=1) +
+  xlab("linearercept (95% CI)") + ylab("Random Sample Number")
+
+Kissileff_rmvn100_CIplot_quad <- ggplot(data=Kissileff_rmvnParamRec, aes(y=ID, x=initial_quad, xmin=l95CI_quad, xmax=u95CI_quad)) +
+  geom_point(aes(col=quad_fit)) + 
+  geom_errorbarh(aes(xmin=l95CI_quad, xmax=u95CI_quad, col=quad_fit),height=0.5,cex=1) +
+  xlab("quadercept (95% CI)") + ylab("Random Sample Number")
+
+Kissileff_rmvn100_procNoise_CIplot_quad <- ggplot(data=Kissileff_procNoise_rmvnParamRec, aes(y=ID, x=initial_quad, xmin=l95CI_quad, xmax=u95CI_quad)) +
+  geom_point(aes(col=quad_fit)) + 
+  geom_errorbarh(aes(xmin=l95CI_quad, xmax=u95CI_quad, col=quad_fit),height=0.5,cex=1) +
+  xlab("quadercept (95% CI)") + ylab("Random Sample Number")
+
+#generate bite for 1
+FPM_procNoise_rmvnParamRec_bothFit = FPM_procNoise_rmvnParamRec[FPM_procNoise_rmvnParamRec$r_fit == TRUE & FPM_procNoise_rmvnParamRec$theta_fit == TRUE, ]
+
+FPM_procNoise_rmvnParamRec_true_Bites1 = simBites(nBites = FPM_procNoise_rmvnParamRec_bothFit$nBites[1], Emax = FPM_procNoise_rmvnParamRec_bothFit$Emax[1], parameters = c(FPM_procNoise_rmvnParamRec_bothFit$initial_theta[1], FPM_procNoise_rmvnParamRec_bothFit$initial_r[1]), time_fn = FPM_Time, procNoise = TRUE)
+
+FPM_procNoise_rmvnParamRec_fit_Bites1 = simBites(nBites = FPM_procNoise_rmvnParamRec_bothFit$nBites[1], Emax = FPM_procNoise_rmvnParamRec_bothFit$Emax[1], parameters = c(FPM_procNoise_rmvnParamRec_bothFit$theta[1], FPM_procNoise_rmvnParamRec_bothFit$r[1]), time_fn = FPM_Time, procNoise = TRUE)
+
+FPM_procNoise_rmvnParamRec_upper95CI_Bites1 = simBites(nBites = FPM_procNoise_rmvnParamRec_bothFit$nBites[1], Emax = FPM_procNoise_rmvnParamRec_bothFit$Emax[1], parameters = c(FPM_procNoise_rmvnParamRec_bothFit$u95CI_theta[1], FPM_procNoise_rmvnParamRec_bothFit$u95CI_r[1]), time_fn = FPM_Time, procNoise = TRUE)
+
+FPM_procNoise_rmvnParamRec_lower95CI_Bites1 = simBites(nBites = FPM_procNoise_rmvnParamRec_bothFit$nBites[1], Emax = FPM_procNoise_rmvnParamRec_bothFit$Emax[1], parameters = c(FPM_procNoise_rmvnParamRec_bothFit$l95CI_theta[1], FPM_procNoise_rmvnParamRec_bothFit$l95CI_r[1]), time_fn = FPM_Time, procNoise = TRUE)
+
+
+FPM_procNoise_rmvnParamRec_95CI_CumulativeIntake1 = ggplot(FPM_procNoise_rmvnParamRec_true_Bites1, aes(y = CumulativeGrams_procNoise, x = EstimatedTime_procNoise)) +
+  geom_smooth(method = 'gam', formula = y~s(x), linetype = 1, color = 'black') +
+  geom_point(data = FPM_procNoise_rmvnParamRec_fit_Bites1, color = 'blue') +
+  stat_smooth(data = FPM_procNoise_rmvnParamRec_upper95CI_Bites1, method = 'gam', formula = y~s(x), linetype = 2, color = 'cornflowerblue') +
+  stat_smooth(data = FPM_procNoise_rmvnParamRec_lower95CI_Bites1, method = 'gam', formula = y~s(x), linetype = 2, color = 'cornflowerblue') +
+  ggtitle('Parameter Recovery with 95%CI: heta = 9.13, r = -0.028') +
+  scale_y_continuous(name='E(t)') +
+  scale_x_continuous(name='Time (min)')
+  
+FPM_procNoise_rmvnParamRec_true_Bites2 = simBites(nBites = FPM_procNoise_rmvnParamRec_bothFit$nBites[2], Emax = FPM_procNoise_rmvnParamRec_bothFit$Emax[2], parameters = c(FPM_procNoise_rmvnParamRec_bothFit$initial_theta[2], FPM_procNoise_rmvnParamRec_bothFit$initial_r[2]), time_fn = FPM_Time, procNoise = TRUE)
+  
+FPM_procNoise_rmvnParamRec_fit_Bites2 = simBites(nBites = FPM_procNoise_rmvnParamRec_bothFit$nBites[2], Emax = FPM_procNoise_rmvnParamRec_bothFit$Emax[2], parameters = c(FPM_procNoise_rmvnParamRec_bothFit$theta[2], FPM_procNoise_rmvnParamRec_bothFit$r[2]), time_fn = FPM_Time, procNoise = TRUE)
+  
+FPM_procNoise_rmvnParamRec_upper95CI_Bites2 = simBites(nBites = FPM_procNoise_rmvnParamRec_bothFit$nBites[2], Emax = FPM_procNoise_rmvnParamRec_bothFit$Emax[2], parameters = c(FPM_procNoise_rmvnParamRec_bothFit$u95CI_theta[2], FPM_procNoise_rmvnParamRec_bothFit$u95CI_r[2]), time_fn = FPM_Time, procNoise = TRUE)
+  
+FPM_procNoise_rmvnParamRec_lower95CI_Bites2 = simBites(nBites = FPM_procNoise_rmvnParamRec_bothFit$nBites[2], Emax = FPM_procNoise_rmvnParamRec_bothFit$Emax[2], parameters = c(FPM_procNoise_rmvnParamRec_bothFit$l95CI_theta[2], FPM_procNoise_rmvnParamRec_bothFit$l95CI_r[2]), time_fn = FPM_Time, procNoise = TRUE)
+  
+FPM_procNoise_rmvnParamRec_95CI_CumulativeIntake2 = ggplot(FPM_procNoise_rmvnParamRec_lower95CI_Bites2, aes(y = CumulativeGrams_procNoise, x = EstimatedTime_procNoise)) +
+  geom_smooth(method = 'gam', formula = y~s(x), linetype = 1, color = 'black') +
+  geom_point(data = FPM_procNoise_rmvnParamRec_fit_Bites2, color = 'blue') +
+  stat_smooth(data = FPM_procNoise_rmvnParamRec_upper95CI_Bites2, method = 'gam', formula = y~s(x), linetype = 2, color = 'cornflowerblue') +
+    stat_smooth(data = FPM_procNoise_rmvnParamRec_lower95CI_Bites2, method = 'gam', formula = y~s(x), linetype = 2, color = 'cornflowerblue') +
+  ggtitle('Parameter Recovery with 95%CI: theta = 28.37, r = 0.83') +
+    scale_y_continuous(name='E(t)') +
+    scale_x_continuous(name='Time (min)') 
+
+FPM_procNoise_rmvnParamRec_true_Bites3 = simBites(nBites = FPM_procNoise_rmvnParamRec_bothFit$nBites[3], Emax = FPM_procNoise_rmvnParamRec_bothFit$Emax[3], parameters = c(FPM_procNoise_rmvnParamRec_bothFit$initial_theta[3], FPM_procNoise_rmvnParamRec_bothFit$initial_r[3]), time_fn = FPM_Time, procNoise = TRUE)
+
+FPM_procNoise_rmvnParamRec_fit_Bites3 = simBites(nBites = FPM_procNoise_rmvnParamRec_bothFit$nBites[3], Emax = FPM_procNoise_rmvnParamRec_bothFit$Emax[3], parameters = c(FPM_procNoise_rmvnParamRec_bothFit$theta[3], FPM_procNoise_rmvnParamRec_bothFit$r[3]), time_fn = FPM_Time, procNoise = TRUE)
+
+FPM_procNoise_rmvnParamRec_upper95CI_Bites3 = simBites(nBites = FPM_procNoise_rmvnParamRec_bothFit$nBites[3], Emax = FPM_procNoise_rmvnParamRec_bothFit$Emax[3], parameters = c(FPM_procNoise_rmvnParamRec_bothFit$u95CI_theta[3], FPM_procNoise_rmvnParamRec_bothFit$u95CI_r[3]), time_fn = FPM_Time, procNoise = TRUE)
+
+FPM_procNoise_rmvnParamRec_lower95CI_Bites3 = simBites(nBites = FPM_procNoise_rmvnParamRec_bothFit$nBites[3], Emax = FPM_procNoise_rmvnParamRec_bothFit$Emax[3], parameters = c(FPM_procNoise_rmvnParamRec_bothFit$l95CI_theta[3], FPM_procNoise_rmvnParamRec_bothFit$l95CI_r[3]), time_fn = FPM_Time, procNoise = TRUE)
+
+FPM_procNoise_rmvnParamRec_95CI_CumulativeIntake3 = ggplot(FPM_procNoise_rmvnParamRec_lower95CI_Bites3, aes(y = CumulativeGrams_procNoise, x = EstimatedTime_procNoise)) +
+  geom_smooth(method = 'gam', formula = y~s(x), linetype = 1, color = 'black') +
+  geom_point(data = FPM_procNoise_rmvnParamRec_fit_Bites3, color = 'blue') +
+  stat_smooth(data = FPM_procNoise_rmvnParamRec_upper95CI_Bites3, method = 'gam', formula = y~s(x), linetype = 2, color = 'cornflowerblue') +
+  stat_smooth(data = FPM_procNoise_rmvnParamRec_lower95CI_Bites3, method = 'gam', formula = y~s(x), linetype = 2, color = 'cornflowerblue') +
+  ggtitle('Parameter Recovery with 95%CI: theta = 16.47, r = 0.24') +
+  scale_y_continuous(name='E(t)') +
+  scale_x_continuous(name='Time (min)') 
+
+FPM_procNoise_rmvnParamRec_true_Bites4 = simBites(nBites = FPM_procNoise_rmvnParamRec_bothFit$nBites[4], Emax = FPM_procNoise_rmvnParamRec_bothFit$Emax[4], parameters = c(FPM_procNoise_rmvnParamRec_bothFit$initial_theta[4], FPM_procNoise_rmvnParamRec_bothFit$initial_r[4]), time_fn = FPM_Time, procNoise = TRUE)
+
+FPM_procNoise_rmvnParamRec_fit_Bites4 = simBites(nBites = FPM_procNoise_rmvnParamRec_bothFit$nBites[4], Emax = FPM_procNoise_rmvnParamRec_bothFit$Emax[4], parameters = c(FPM_procNoise_rmvnParamRec_bothFit$theta[4], FPM_procNoise_rmvnParamRec_bothFit$r[4]), time_fn = FPM_Time, procNoise = TRUE)
+
+FPM_procNoise_rmvnParamRec_upper95CI_Bites4 = simBites(nBites = FPM_procNoise_rmvnParamRec_bothFit$nBites[4], Emax = FPM_procNoise_rmvnParamRec_bothFit$Emax[4], parameters = c(FPM_procNoise_rmvnParamRec_bothFit$u95CI_theta[4], FPM_procNoise_rmvnParamRec_bothFit$u95CI_r[4]), time_fn = FPM_Time, procNoise = TRUE)
+
+FPM_procNoise_rmvnParamRec_lower95CI_Bites4 = simBites(nBites = FPM_procNoise_rmvnParamRec_bothFit$nBites[4], Emax = FPM_procNoise_rmvnParamRec_bothFit$Emax[4], parameters = c(FPM_procNoise_rmvnParamRec_bothFit$l95CI_theta[4], FPM_procNoise_rmvnParamRec_bothFit$l95CI_r[4]), time_fn = FPM_Time, procNoise = TRUE)
+
+FPM_procNoise_rmvnParamRec_95CI_CumulativeIntake4 = ggplot(FPM_procNoise_rmvnParamRec_lower95CI_Bites4, aes(y = CumulativeGrams_procNoise, x = EstimatedTime_procNoise)) +
+  geom_smooth(method = 'gam', formula = y~s(x), linetype = 1, color = 'black') +
+  geom_point(data = FPM_procNoise_rmvnParamRec_fit_Bites4, color = 'blue') +
+  stat_smooth(data = FPM_procNoise_rmvnParamRec_upper95CI_Bites4, method = 'gam', formula = y~s(x), linetype = 2, color = 'cornflowerblue') +
+  stat_smooth(data = FPM_procNoise_rmvnParamRec_lower95CI_Bites4, method = 'gam', formula = y~s(x), linetype = 2, color = 'cornflowerblue') +
+  ggtitle('Parameter Recovery with 95%CI: theta = 5.41, r = 0.10') +
+  scale_y_continuous(name='E(t)') +
+  scale_x_continuous(name='Time (min)') 
+  
 # Measurement Error ####
 # Discretization of bite size
 paramRec1_2catMean = ParamRecovery(nBites = FPM_rmvnDat$nBites[1], Emax = FPM_rmvnDat$TotalIntake_g[1], parameters = c(FPM_rmvnDat$theta[1], FPM_rmvnDat$r[1]), time_fn = FPM_Time, fit_fn = FPM_Fit, keepBites = TRUE, intake_fn = FPM_Intake, paramCI = list(r = TRUE, theta = TRUE), nSims = 100, simVar = 'biteSize', simValue = FPM_rmvnDat$TotalIntake_g[1]/FPM_rmvnDat$nBites[1])

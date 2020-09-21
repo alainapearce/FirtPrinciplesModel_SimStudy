@@ -208,28 +208,43 @@ bite100_CumulativeIntake_Figure1_grid = ggplot(bite100_CumulativeIntake_Figure1_
 #### Replication with 33 bite sampling ####
 
 #corrected equation
-bite33_CumulativeIntake_Figure1A_cor = ParamRecovery(nBites = 30, Emax = Figure1Params$Emax[1], parameters = c(Figure1Params$theta[1], Figure1Params$r[1]), time_fn = FPM_Time, fit_fn = FPM_Fit, simVar = 'bitesSampled', simValue = 5, keepBites = TRUE, intake_fn = FPM_Intake, CI = TRUE)
-bite33_CumulativeIntake_Figure1A_Et = bite33_CumulativeIntake_Figure1A_cor$biteDat_paramRecov
-bite33_CumulativeIntake_Figure1A_Et$Figure = '1A'
-bite33_CumulativeIntake_Figure1A_paramsRec = bite33_CumulativeIntake_Figure1A_cor$paramDat
-bite33_CumulativeIntake_Figure1A_paramsRec$r_CIfit = ifelse(bite33_CumulativeIntake_Figure1A_paramsRec$initial_r < bite33_CumulativeIntake_Figure1A_paramsRec$u95CI_r & bite33_CumulativeIntake_Figure1A_paramsRec$initial_r > bite33_CumulativeIntake_Figure1A_paramsRec$l95CI_r, 'Y', 'N')
+# bite33_CumulativeIntake_Figure1A_cor = ParamRecovery(nBites = 30, Emax = Figure1Params$Emax[1], parameters = c(Figure1Params$theta[1], Figure1Params$r[1]), time_fn = FPM_Time, fit_fn = FPM_Fit, simVar = 'bitesSampled', simValue = 5, keepBites = TRUE, intake_fn = FPM_Intake, paramCI = c('theta', 'r'), bound = 'both')
+# 
+# bite33_CumulativeIntake_Figure1A_Et = bite33_CumulativeIntake_Figure1A_cor$biteDat_paramRecov
+# bite33_CumulativeIntake_Figure1A_Et$Figure = '1A'
+# bite33_CumulativeIntake_Figure1A_paramsRec = bite33_CumulativeIntake_Figure1A_cor$paramDat
+# bite33_CumulativeIntake_Figure1A_paramsRec$r_CIfit = ifelse(bite33_CumulativeIntake_Figure1A_paramsRec$initial_r < bite33_CumulativeIntake_Figure1A_paramsRec$u95CI_r & bite33_CumulativeIntake_Figure1A_paramsRec$initial_r > bite33_CumulativeIntake_Figure1A_paramsRec$l95CI_r, 'Y', 'N')
+
+# bite33_CumulativeIntake_Figure1A_paramsRec$theta_CIfit = ifelse(bite33_CumulativeIntake_Figure1A_paramsRec$initial_theta < bite33_CumulativeIntake_Figure1A_paramsRec$u95CI_theta & bite33_CumulativeIntake_Figure1A_paramsRec$initial_theta > bite33_CumulativeIntake_Figure1A_paramsRec$l95CI_theta, 'Y', 'N')
+
+# write.csv(bite33_CumulativeIntake_Figure1A_Et, 'Data/Figure1A_bite33_CumulativeIntake.csv', row.names = FALSE)
+bite33_CumulativeIntake_Figure1A_Et = read.csv('Data/Figure1A_bite33_CumulativeIntake.csv')
 nrow(bite33_CumulativeIntake_Figure1A_paramsRec[bite33_CumulativeIntake_Figure1A_paramsRec$r_CIfit == 'Y', ])
 
-bite33_CumulativeIntake_Figure1A_paramsRec$theta_CIfit = ifelse(bite33_CumulativeIntake_Figure1A_paramsRec$initial_theta < bite33_CumulativeIntake_Figure1A_paramsRec$u95CI_theta & bite33_CumulativeIntake_Figure1A_paramsRec$initial_theta > bite33_CumulativeIntake_Figure1A_paramsRec$l95CI_theta, 'Y', 'N')
+nrow(bite33_CumulativeIntake_Figure1A_paramsRec[bite33_CumulativeIntake_Figure1A_paramsRec$theta_CIfit == 'Y', ])
 
-bite33_CumulativeIntake_Figure1B_cor = ParamRecovery(nBites = 30, Emax = Figure1Params$Emax[2], parameters = c(Figure1Params$theta[2], Figure1Params$r[2]), time_fn = FPM_Time, fit_fn = FPM_Fit, simVar = 'bitesSampled', simValue = 5, keepBites = TRUE, intake_fn = FPM_Intake, CI = TRUE)
-bite33_CumulativeIntake_Figure1B_Et = bite33_CumulativeIntake_Figure1B_cor$biteDat_paramRecov
-bite33_CumulativeIntake_Figure1B_Et$Figure = '1B'
-bite33_CumulativeIntake_Figure1B_paramsRec = bite33_CumulativeIntake_Figure1B_cor$paramDat
-bite33_CumulativeIntake_Figure1B_paramsRec$r_CIfit = ifelse(bite33_CumulativeIntake_Figure1B_paramsRec$initial_r < bite33_CumulativeIntake_Figure1B_paramsRec$u95CI_r & bite33_CumulativeIntake_Figure1B_paramsRec$initial_r > bite33_CumulativeIntake_Figure1B_paramsRec$l95CI_r, 'Y', 'N')
+# bite33_CumulativeIntake_Figure1B_cor = ParamRecovery(nBites = 30, Emax = Figure1Params$Emax[2], parameters = c(Figure1Params$theta[2], Figure1Params$r[2]), time_fn = FPM_Time, fit_fn = FPM_Fit, simVar = 'bitesSampled', simValue = 5, keepBites = TRUE, intake_fn = FPM_Intake,  paramCI = c('theta', 'r'), bound = 'both')
+# bite33_CumulativeIntake_Figure1B_Et = bite33_CumulativeIntake_Figure1B_cor$biteDat_paramRecov
+# bite33_CumulativeIntake_Figure1B_Et$Figure = '1B'
+# bite33_CumulativeIntake_Figure1B_paramsRec = bite33_CumulativeIntake_Figure1B_cor$paramDat
+# bite33_CumulativeIntake_Figure1B_paramsRec$r_CIfit = ifelse(bite33_CumulativeIntake_Figure1B_paramsRec$initial_r < bite33_CumulativeIntake_Figure1B_paramsRec$u95CI_r & bite33_CumulativeIntake_Figure1B_paramsRec$initial_r > bite33_CumulativeIntake_Figure1B_paramsRec$l95CI_r, 'Y', 'N')
+# bite33_CumulativeIntake_Figure1B_paramsRec$theta_CIfit = ifelse(bite33_CumulativeIntake_Figure1B_paramsRec$initial_theta < bite33_CumulativeIntake_Figure1B_paramsRec$u95CI_theta & bite33_CumulativeIntake_Figure1B_paramsRec$initial_theta > bite33_CumulativeIntake_Figure1B_paramsRec$l95CI_theta, 'Y', 'N')
+# 
+# write.csv(bite33_CumulativeIntake_Figure1B_paramsRec, 'Data/Figure1B_bite33_CumulativeIntake.csv', row.names = FALSE)
+bite33_CumulativeIntake_Figure1B_paramsRec = read.csv('Data/Figure1B_bite33_CumulativeIntake.csv')
 
-bite33_CumulativeIntake_Figure1C_cor = ParamRecovery(nBites = 30, Emax = Figure1Params$Emax[3], parameters = c(Figure1Params$theta[3], Figure1Params$r[3]), time_fn = FPM_Time, fit_fn = FPM_Fit, simVar = 'bitesSampled', simValue = 5, keepBites = TRUE, intake_fn = FPM_Intake, CI = TRUE)
+
+bite33_CumulativeIntake_Figure1C_cor = ParamRecovery(nBites = 30, Emax = Figure1Params$Emax[3], parameters = c(Figure1Params$theta[3], Figure1Params$r[3]), time_fn = FPM_Time, fit_fn = FPM_Fit, simVar = 'bitesSampled', simValue = 5, keepBites = TRUE, intake_fn = FPM_Intake, paramCI = c('theta', 'r'), bound = 'both')
 bite33_CumulativeIntake_Figure1C_Et = bite33_CumulativeIntake_Figure1C_cor$biteDat_paramRecov
 bite33_CumulativeIntake_Figure1C_Et$Figure = '1C'
 bite33_CumulativeIntake_Figure1C_paramsRec = bite33_CumulativeIntake_Figure1C_cor$paramDat
 bite33_CumulativeIntake_Figure1C_paramsRec$r_CIfit = ifelse(bite33_CumulativeIntake_Figure1C_paramsRec$initial_r < bite33_CumulativeIntake_Figure1C_paramsRec$u95CI_r & bite33_CumulativeIntake_Figure1C_paramsRec$initial_r > bite33_CumulativeIntake_Figure1C_paramsRec$l95CI_r, 'Y', 'N')
 
-bite33_CumulativeIntake_Figure1D_cor = ParamRecovery(nBites = 30, Emax = Figure1Params$Emax[4], parameters = c(Figure1Params$theta[4], Figure1Params$r[4]), time_fn = FPM_Time, fit_fn = FPM_Fit, simVar = 'bitesSampled', simValue = 5, keepBites = TRUE, intake_fn = FPM_Intake, CI = TRUE)
+# write.csv(bite33_CumulativeIntake_Figure1A_Et, 'Data/Figure1A_bite33_CumulativeIntake.csv', row.names = FALSE)
+bite33_CumulativeIntake_Figure1A_Et = read.csv('Data/Figure1A_bite33_CumulativeIntake.csv')
+
+
+bite33_CumulativeIntake_Figure1D_cor = ParamRecovery(nBites = 30, Emax = Figure1Params$Emax[4], parameters = c(Figure1Params$theta[4], Figure1Params$r[4]), time_fn = FPM_Time, fit_fn = FPM_Fit, simVar = 'bitesSampled', simValue = 5, keepBites = TRUE, intake_fn = FPM_Intake,  paramCI = c('theta', 'r'), bound = 'both')
 bite33_CumulativeIntake_Figure1D_Et = bite33_CumulativeIntake_Figure1D_cor$biteDat_paramRecov
 bite33_CumulativeIntake_Figure1D_Et$Figure = '1D'
 bite33_CumulativeIntake_Figure1D_paramsRec = bite33_CumulativeIntake_Figure1D_cor$paramDat
@@ -370,11 +385,39 @@ all_CumulativeIntake_Figure1_plotD = ggplot(cont_CumulativeIntake_Figure1D_cor, 
 
 #### Try to Recover Parameters from 250ms Sampling E(T) ####
 #Get fitted parameters based on bite data
-cont_optimize = IntakeModelParams(data = cont_CumulativeIntake_Figure1_cor_long, time = 'EstimatedTime_avgBite', intake = 'CumulativeGrams_avgBite', fit_fn = FPM_Fit, idVar = 'Figure')
-cont_optimize$Emax = c(max(cont_CumulativeIntake_Figure1A_cor$CumulativeGrams_avgBite), max(cont_CumulativeIntake_Figure1B_cor$CumulativeGrams_avgBite),
-  max(cont_CumulativeIntake_Figure1C_cor$CumulativeGrams_avgBite), max(cont_CumulativeIntake_Figure1D_cor$CumulativeGrams_avgBite))
+cont_optimize = IntakeModelParams(data = cont_CumulativeIntake_Figure1_cor_long, timeVar = 'EstimatedTime_avgBite', intakeVar = 'CumulativeGrams_avgBite', fit_fn = FPM_Fit, idVar = 'Figure')
 
-cont_optimize
+cont_optimize$Emax = c(max(cont_CumulativeIntake_Figure1A_cor$CumulativeGrams_avgBite), max(cont_CumulativeIntake_Figure1B_cor$CumulativeGrams_avgBite),
+                       max(cont_CumulativeIntake_Figure1C_cor$CumulativeGrams_avgBite), max(cont_CumulativeIntake_Figure1D_cor$CumulativeGrams_avgBite))
+
+
+cont_optimize$theta95CI_upper = NA
+cont_optimize$theta95CI_lower = NA
+cont_optimize$r95CI_upper = NA
+cont_optimize$r95CI_lower = NA
+cont_optimize$theta95CI_fit = NA
+cont_optimize$r95CI_fit = NA
+
+for (fig in 1:nrow(cont_optimize)){
+  #get figure subset of data
+  dat = cont_CumulativeIntake_Figure1_cor_long[cont_CumulativeIntake_Figure1_cor_long$Figure == cont_optimize$Figure[fig], ]
+  
+  #calculated -2LL
+  fit_n2ll = FPM_n2ll(data = dat, par = c(cont_optimize$theta[fig], cont_optimize$r[fig]), timeVar = 'EstimatedTime_avgBite', intakeVar = 'CumulativeGrams_avgBite', Emax = cont_optimize$Emax[fig])
+  
+  #get CI
+  cont_optimize_CI = LRT_CIbounds(data = dat, parameters = c(cont_optimize$theta[fig], cont_optimize$r[fig]), min_n2ll = fit_n2ll, paramCI = c('theta', 'r'), fit_fn = FPM_Fit, timeVar = 'EstimatedTime_avgBite', intakeVar = 'CumulativeGrams_avgBite', bound = 'both')
+  
+  cont_optimize$theta95CI_upper[fig] = cont_optimize_CI$parCI_upper[1]
+  cont_optimize$theta95CI_lower[fig] = cont_optimize_CI$parCI_upper[1]
+  cont_optimize$r95CI_upper[fig] = cont_optimize_CI$parCI_upper[2]
+  cont_optimize$r95CI_lower[fig] = cont_optimize_CI$parCI_upper[2]
+  
+  cont_optimize$theta95CI_fit[fig] = ifelse(cont_optimize_CI$parCI_upper[1] > cont_optimize$theta[fig] & cont_optimize_CI$parCI_lower[1] < cont_optimize$theta[fig], 'Y', 'N')
+  cont_optimize$r95CI_fit[fig] = ifelse(cont_optimize_CI$parCI_upper[2] > cont_optimize$r[fig] & cont_optimize_CI$parCI_lower[2] < cont_optimize$theta[fig], 'Y', 'N')
+  
+}
+
 
 #get bite data from fitted parameters
 cont_CumulativeIntake_Figure1A_fit = simBites(time_fn = FPM_Time, nBites = 7200, parameters = c(cont_optimize$theta[1], cont_optimize$r[1]), Emax = cont_optimize$Emax[1])
@@ -503,6 +546,33 @@ bite100_optimize = IntakeModelParams(data = bite100_CumulativeIntake_Figure1_cor
 bite100_optimize$Emax = c(max(bite100_CumulativeIntake_Figure1A_cor$CumulativeGrams_avgBite), max(bite100_CumulativeIntake_Figure1B_cor$CumulativeGrams_avgBite),
   max(bite100_CumulativeIntake_Figure1C_cor$CumulativeGrams_avgBite), max(bite100_CumulativeIntake_Figure1D_cor$CumulativeGrams_avgBite))
 
+bite100_optimize$theta95CI_upper = NA
+bite100_optimize$theta95CI_lower = NA
+bite100_optimize$r95CI_upper = NA
+bite100_optimize$r95CI_lower = NA
+bite100_optimize$theta95CI_fit = NA
+bite100_optimize$r95CI_fit = NA
+
+for (fig in 1:nrow(bite100_optimize)){
+  #get figure subset of data
+  dat = bite100_CumulativeIntake_Figure1_cor_long[bite100_CumulativeIntake_Figure1_cor_long$Figure == bite100_optimize$Figure[fig], ]
+  
+  #calculated -2LL
+  fit_n2ll = FPM_n2ll(data = dat, par = c(bite100_optimize$theta[fig], bite100_optimize$r[fig]), timeVar = 'EstimatedTime_avgBite', intakeVar = 'CumulativeGrams_avgBite', Emax = bite100_optimize$Emax[fig])
+  
+  #get CI
+  bite100_optimize_CI = LRT_CIbounds(data = dat, parameters = c(bite100_optimize$theta[fig], bite100_optimize$r[fig]), min_n2ll = fit_n2ll, paramCI = c('theta', 'r'), fit_fn = FPM_Fit, timeVar = 'EstimatedTime_avgBite', intakeVar = 'CumulativeGrams_avgBite', bound = 'both')
+  
+  bite100_optimize$theta95CI_upper[fig] = bite100_optimize_CI$parCI_upper[1]
+  bite100_optimize$theta95CI_lower[fig] = bite100_optimize_CI$parCI_upper[1]
+  bite100_optimize$r95CI_upper[fig] = bite100_optimize_CI$parCI_upper[2]
+  bite100_optimize$r95CI_lower[fig] = bite100_optimize_CI$parCI_upper[2]
+  bite100_optimize$theta95CI_fit[fig] = ifelse(bite100_optimize_CI$parCI_upper[1] > bite100_optimize$theta[fig] & bite100_optimize_CI$parCI_lower[1] < bite100_optimize$theta[fig], 'Y', 'N')
+  bite100_optimize$r95CI_fit[fig] = ifelse(bite100_optimize_CI$parCI_upper[2] > bite100_optimize$r[fig] & bite100_optimize_CI$parCI_lower[2] < bite100_optimize$theta[fig], 'Y', 'N')
+  
+}
+
+
 #get bite data back
 bite100_CumulativeIntake_Figure1A_fit = simBites(time_fn = FPM_Time, nBites = 100, parameters = c(bite100_optimize$theta[1], bite100_optimize$r[1]), Emax = bite100_optimize$Emax[1])
 bite100_CumulativeIntake_Figure1A_fit$Figure = '1A'
@@ -625,6 +695,9 @@ bite100_CumulativeIntake_Figure1_fit.orig_grid = ggplot(bite100_CumulativeIntake
     panel.background = element_blank()) + facet_wrap(~Figure)
 
 #### Plot Recovered Parameters from 33 bite Sampling E(T) ####
+# ggplot(bite33_CumulativeIntake_Figure1A_paramsRec[bite33_CumulativeIntake_Figure1A_paramsRec$r_CIfit == 'Y', ], aes(nBites)) + 
+#   geom_histogram()
+
 bite33_CumulativeIntake_Figure1A_Et$nBiteGroup = ifelse(bite33_CumulativeIntake_Figure1A_Et$nBites < 26, '15-25',
   ifelse(bite33_CumulativeIntake_Figure1A_Et$nBites < 36, '26-35', ifelse(bite33_CumulativeIntake_Figure1A_Et$nBites < 46,'36-45', '45+')))
 
