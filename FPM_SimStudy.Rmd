@@ -22,6 +22,7 @@ header-includes:
 - \usepackage{geometry}
 - \usepackage{longtable}
 - \usepackage{rotating}
+- \geometry{textwidth=7.5in}
 ---
 
 <!-- R Markdown -->
@@ -33,13 +34,14 @@ header-includes:
 <!-- Note: the first statement is the langauge (i.e., r), then the label for the chunck. After this you can put extra statements like echo (show code and outcome), include (show outcome) -->
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(tidy = TRUE, tidy.opts = list(comment = FALSE), echo = TRUE, fig.width=6, fig.height=4, fig.path='FPM_SimStudy_figs/fig-', echo=FALSE, warning=FALSE, message=FALSE, comment = NA)
+knitr::opts_chunk$set(tidy = TRUE, tidy.opts = list(comment = FALSE), echo = TRUE, fig.width=8, fig.height=8, fig.path='FPM_SimStudy_figs/fig-', echo=FALSE, warning=FALSE, message=FALSE, comment = NA)
+options(knitr.table.format = "latex")
 ```
 
 
 <!-- load startup file and any extra packages -->
 ```{r load_Fig1, echo=FALSE, include=FALSE}
-source('FPM_SimStudy_Figure1sim.R')
+#source('FPM_SimStudy_Figure1sim.R')
 source('FPM_SimStudy_setup.R')
 library(knitr)
 library(kableExtra)
@@ -129,253 +131,252 @@ L(\hat{E(t)} + \epsilon, \sigma^2 | t, \theta, r, E_{max} ) &= \prod_{i = 1}^{n}
 
 <!-- already created - only need to redo if something changes -->
 
-```{r Figure1_contSample_plotA, echo=FALSE, include = FALSE, eval = TRUE}
-cont_CumulativeIntake_Figure1_plotA
-```
+<!-- ```{r Figure1_contSample_plotA, echo=FALSE, include = FALSE, eval = FALSE} -->
+<!-- cont_CumulativeIntake_Figure1_plotA -->
+<!-- ``` -->
 
-```{r Figure1_contSample_plotB, echo=FALSE, include = FALSE, eval = TRUE}
-cont_CumulativeIntake_Figure1_plotB
-```
+<!-- ```{r Figure1_contSample_plotB, echo=FALSE, include = FALSE, eval = FALSE} -->
+<!-- cont_CumulativeIntake_Figure1_plotB -->
+<!-- ``` -->
 
-```{r Figure1_contSample_plotC, echo=FALSE, include = FALSE, eval = TRUE}
-cont_CumulativeIntake_Figure1_plotC
-```
+<!-- ```{r Figure1_contSample_plotC, echo=FALSE, include = FALSE, eval = FALSE} -->
+<!-- cont_CumulativeIntake_Figure1_plotC -->
+<!-- ``` -->
 
-```{r Figure1_contSample_plotD, echo=FALSE, include = FALSE, eval = TRUE}
-cont_CumulativeIntake_Figure1_plotD
-```
+<!-- ```{r Figure1_contSample_plotD, echo=FALSE, include = FALSE, eval = FALSE} -->
+<!-- cont_CumulativeIntake_Figure1_plotD -->
+<!-- ``` -->
 
-```{r Figure1_contSample_Figure1_grid, echo=FALSE, include = FALSE, eval = TRUE}
-cont_CumulativeIntake_Figure1_grid
-```
+<!-- ```{r Figure1_contSample_Figure1_grid, echo=FALSE, include = FALSE, eval = FALSE} -->
+<!-- cont_CumulativeIntake_Figure1_grid -->
+<!-- ``` -->
 
 
 <!-- \FloatBarrier -->
 <!-- \newpage -->
 <!-- ### 100 Bite Sampling -->
 
-```{r Figure1_bite100Sample_plotA, echo=FALSE, include = FALSE, eval = TRUE}
-bite100_CumulativeIntake_Figure1_plotA
-```
+<!-- ```{r Figure1_bite100Sample_plotA, echo=FALSE, include = FALSE, eval = FALSE} -->
+<!-- bite100_CumulativeIntake_Figure1_plotA -->
+<!-- ``` -->
 
-```{r Figure1_bite100Sample_plotB, echo=FALSE, include = FALSE, eval = TRUE}
-bite100_CumulativeIntake_Figure1_plotB
-```
+<!-- ```{r Figure1_bite100Sample_plotB, echo=FALSE, include = FALSE, eval = FALSE} -->
+<!-- bite100_CumulativeIntake_Figure1_plotB -->
+<!-- ``` -->
 
-```{r Figure1_bite100Sample_plotC, echo=FALSE, include = FALSE, eval = TRUE}
-bite100_CumulativeIntake_Figure1_plotC
-```
+<!-- ```{r Figure1_bite100Sample_plotC, echo=FALSE, include = FALSE, eval = FALSE} -->
+<!-- bite100_CumulativeIntake_Figure1_plotC -->
+<!-- ``` -->
 
-```{r Figure1_bite100Sample_plotD, echo=FALSE, include = FALSE, eval = TRUE}
-bite100_CumulativeIntake_Figure1_plotD
-```
+<!-- ```{r Figure1_bite100Sample_plotD, echo=FALSE, include = FALSE, eval = FALSE} -->
+<!-- bite100_CumulativeIntake_Figure1_plotD -->
+<!-- ``` -->
 
-```{r Figure1_bite100Sample_CumulativeIntake_grid, echo=FALSE, include = FALSE, eval = TRUE}
-bite100_CumulativeIntake_Figure1_grid
-```
+<!-- ```{r Figure1_bite100Sample_CumulativeIntake_grid, echo=FALSE, include = FALSE, eval = FALSE} -->
+<!-- bite100_CumulativeIntake_Figure1_grid -->
+<!-- ``` -->
 
 
 <!-- ### 35 Bite Sampling -->
 
-```{r Figure1_bite33Sample_plotA, echo=FALSE, include = FALSE, eval = TRUE}
-bite33_CumulativeIntake_Figure1_plotA
-```
+<!-- ```{r Figure1_bite33Sample_plotA, echo=FALSE, include = FALSE, eval = FALSE} -->
+<!-- bite33_CumulativeIntake_Figure1_plotA -->
+<!-- ``` -->
 
-```{r Figure1_bite33Sample_plotB, echo=FALSE, include = FALSE, eval = TRUE}
-bite33_CumulativeIntake_Figure1_plotB
-```
+<!-- ```{r Figure1_bite33Sample_plotB, echo=FALSE, include = FALSE, eval = FALSE} -->
+<!-- bite33_CumulativeIntake_Figure1_plotB -->
+<!-- ``` -->
 
-```{r Figure1_bite33Sample_plotC, echo=FALSE, include = FALSE, eval = TRUE}
-bite33_CumulativeIntake_Figure1_plotC
-```
+<!-- ```{r Figure1_bite33Sample_plotC, echo=FALSE, include = FALSE, eval = FALSE} -->
+<!-- bite33_CumulativeIntake_Figure1_plotC -->
+<!-- ``` -->
 
-```{r Figure1_bite33Sample_plotD, echo=FALSE, include = FALSE, eval = TRUE}
-bite33_CumulativeIntake_Figure1_plotD
-```
+<!-- ```{r Figure1_bite33Sample_plotD, echo=FALSE, include = FALSE, eval = FALSE} -->
+<!-- bite33_CumulativeIntake_Figure1_plotD -->
+<!-- ``` -->
 
-```{r Figure1_bite33Sample_CumulativeIntake_grid, echo=FALSE, include = FALSE, eval = TRUE}
-bite33_CumulativeIntake_Figure1_grid
-```
+<!-- ```{r Figure1_bite33Sample_CumulativeIntake_grid, echo=FALSE, include = FALSE, eval = FALSE} -->
+<!-- bite33_CumulativeIntake_Figure1_grid -->
+<!-- ``` -->
 
 <!-- ###Sampling at 250ms, 100 Bites, and 33 Bites on same graph - Correct E(t) equation -->
 
 <!-- Already created - only need to re-run if something changes -->
 
-```{r Figure1_AllSample_plotA, echo=FALSE, include = FALSE, eval = TRUE}
-all_CumulativeIntake_Figure1_plotA
-```
+<!-- ```{r Figure1_AllSample_plotA, echo=FALSE, include = FALSE, eval = FALSE} -->
+<!-- all_CumulativeIntake_Figure1_plotA -->
+<!-- ``` -->
 
-```{r Figure1_AllSample_plotB, echo=FALSE, include = FALSE, eval = TRUE}
-all_CumulativeIntake_Figure1_plotB
-```
+<!-- ```{r Figure1_AllSample_plotB, echo=FALSE, include = FALSE, eval = FALSE} -->
+<!-- all_CumulativeIntake_Figure1_plotB -->
+<!-- ``` -->
 
-```{r Figure1_AllSample_plotC, echo=FALSE, include = FALSE, eval = TRUE}
-all_CumulativeIntake_Figure1_plotC
-```
+<!-- ```{r Figure1_AllSample_plotC, echo=FALSE, include = FALSE, eval = FALSE} -->
+<!-- all_CumulativeIntake_Figure1_plotC -->
+<!-- ``` -->
 
-```{r Figure1_AllSample_plotD, echo=FALSE, include = FALSE, eval = TRUE}
-all_CumulativeIntake_Figure1_plotD
-```
+<!-- ```{r Figure1_AllSample_plotD, echo=FALSE, include = FALSE, eval = FALSE} -->
+<!-- all_CumulativeIntake_Figure1_plotD -->
+<!-- ``` -->
 
-\begin{figure}[ht!]
-  \centering
-  \begin{subfigure}[b]{=0.40\textwidth}
-    \centering
-    \caption*{\centering 1A - theta: 30 g/min, r: 0.17 1/min, Emax = 400g}
-    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Figure1_AllSample_plotA-1.pdf}
-  \end{subfigure}
-  \begin{subfigure}[b]{=0.40\textwidth}
-    \centering
-    \caption*{\centering 1B - theta: 30 g/min, r: 0.17 1/min, Emax = 600g}
-    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Figure1_AllSample_plotB-1.pdf}
-  \end{subfigure}
-  \begin{subfigure}[b]{=0.40\textwidth}
-    \centering
-    \caption*{\centering 1C - theta: 30 g/min, r: 0.5 1/min, Emax = 400g}
-    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Figure1_AllSample_plotC-1.pdf}
-  \end{subfigure}
-  \begin{subfigure}[b]{=0.40\textwidth}
-    \centering
-    \caption*{\centering 1D - theta: 50 g/min, r: 0.17 1/min, Emax = 400g}
-    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Figure1_AllSample_plotD-1.pdf}
-  \end{subfigure}
-\end{figure}
+<!-- \begin{figure}[ht!] -->
+<!--   \centering -->
+<!--   \begin{subfigure}[b]{=0.40\textwidth} -->
+<!--     \centering -->
+<!--     \caption*{\centering 1A - theta: 30 g/min, r: 0.17 1/min, Emax = 400g} -->
+<!--     \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Figure1_AllSample_plotA-1.pdf} -->
+<!--   \end{subfigure} -->
+<!--   \begin{subfigure}[b]{=0.40\textwidth} -->
+<!--     \centering -->
+<!--     \caption*{\centering 1B - theta: 30 g/min, r: 0.17 1/min, Emax = 600g} -->
+<!--     \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Figure1_AllSample_plotB-1.pdf} -->
+<!--   \end{subfigure} -->
+<!--   \begin{subfigure}[b]{=0.40\textwidth} -->
+<!--     \centering -->
+<!--     \caption*{\centering 1C - theta: 30 g/min, r: 0.5 1/min, Emax = 400g} -->
+<!--     \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Figure1_AllSample_plotC-1.pdf} -->
+<!--   \end{subfigure} -->
+<!--   \begin{subfigure}[b]{=0.40\textwidth} -->
+<!--     \centering -->
+<!--     \caption*{\centering 1D - theta: 50 g/min, r: 0.17 1/min, Emax = 400g} -->
+<!--     \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Figure1_AllSample_plotD-1.pdf} -->
+<!--   \end{subfigure} -->
+<!-- \end{figure} -->
 
-\FloatBarrier
-\clearpage
+<!-- \FloatBarrier -->
+<!-- \clearpage -->
 
 ## Paremeter Recovery by Sampling Rate
 
 <!-- need to eval each time as may be small changes -->
 <!-- 250 ms sampling -->
 
-```{r Figure1_contSample_plotA_paramfits, echo=FALSE, include = FALSE, eval = TRUE}
-cont_CumulativeIntake_Figure1A_fit.orig
-```
+<!-- ```{r Figure1_contSample_plotA_paramfits, echo=FALSE, include = FALSE, eval = FALSE} -->
+<!-- cont_CumulativeIntake_Figure1A_fit.orig -->
+<!-- ``` -->
 
-```{r Figure1_contSample_plotB_paramfits, echo=FALSE, include = FALSE, eval = TRUE}
-cont_CumulativeIntake_Figure1B_fit.orig
-```
+<!-- ```{r Figure1_contSample_plotB_paramfits, echo=FALSE, include = FALSE, eval = FALSE} -->
+<!-- cont_CumulativeIntake_Figure1B_fit.orig -->
+<!-- ``` -->
 
-```{r Figure1_contSample_plotC_paramfits, echo=FALSE, include = FALSE, eval = TRUE}
-cont_CumulativeIntake_Figure1C_fit.orig
-```
+<!-- ```{r Figure1_contSample_plotC_paramfits, echo=FALSE, include = FALSE, eval = FALSE} -->
+<!-- cont_CumulativeIntake_Figure1C_fit.orig -->
+<!-- ``` -->
 
-```{r Figure1_contSample_plotD_paramfits, echo=FALSE, include = FALSE, eval = TRUE}
-cont_CumulativeIntake_Figure1D_fit.orig
-```
+<!-- ```{r Figure1_contSample_plotD_paramfits, echo=FALSE, include = FALSE, eval = FALSE} -->
+<!-- cont_CumulativeIntake_Figure1D_fit.orig -->
+<!-- ``` -->
 
-```{r Figure1_contSample_paramfits, echo=FALSE, include = FALSE, eval = TRUE}
-cont_CumulativeIntake_Figure1_fit.orig_grid
-```
+<!-- ```{r Figure1_contSample_paramfits, echo=FALSE, include = FALSE, eval = FALSE} -->
+<!-- cont_CumulativeIntake_Figure1_fit.orig_grid -->
+<!-- ``` -->
 
 <!-- 100 Bite sampling -->
 
-```{r Figure1_bite100Sample_plotA_paramfits, echo=FALSE, include = FALSE, eval = TRUE}
-bite100_CumulativeIntake_Figure1A_fit.orig
-```
+<!-- ```{r Figure1_bite100Sample_plotA_paramfits, echo=FALSE, include = FALSE, eval = FALSE} -->
+<!-- bite100_CumulativeIntake_Figure1A_fit.orig -->
+<!-- ``` -->
 
-```{r Figure1_bite100Sample_plotB_paramfits, echo=FALSE, include = FALSE, eval = TRUE}
-bite100_CumulativeIntake_Figure1B_fit.orig
-```
+<!-- ```{r Figure1_bite100Sample_plotB_paramfits, echo=FALSE, include = FALSE, eval = FALSE} -->
+<!-- bite100_CumulativeIntake_Figure1B_fit.orig -->
+<!-- ``` -->
 
-```{r Figure1_bite100Sample_plotC_paramfits, echo=FALSE, include = FALSE, eval = TRUE}
-bite100_CumulativeIntake_Figure1C_fit.orig
-```
+<!-- ```{r Figure1_bite100Sample_plotC_paramfits, echo=FALSE, include = FALSE, eval = FALSE} -->
+<!-- bite100_CumulativeIntake_Figure1C_fit.orig -->
+<!-- ``` -->
 
-```{r Figure1_bite100Sample_plotD_paramfits, echo=FALSE, include = FALSE, eval = TRUE}
-bite100_CumulativeIntake_Figure1D_fit.orig
-```
+<!-- ```{r Figure1_bite100Sample_plotD_paramfits, echo=FALSE, include = FALSE, eval = FALSE} -->
+<!-- bite100_CumulativeIntake_Figure1D_fit.orig -->
+<!-- ``` -->
 
-```{r Figure1_bite100Sample_paramfits, echo=FALSE, include = FALSE, eval = TRUE}
-bite100_CumulativeIntake_Figure1_fit.orig_grid
-```
+<!-- ```{r Figure1_bite100Sample_paramfits, echo=FALSE, include = FALSE, eval = FALSE} -->
+<!-- bite100_CumulativeIntake_Figure1_fit.orig_grid -->
+<!-- ``` -->
 
 <!-- 33 Bite sampling -->
 
-```{r Figure1_bite33Sample_plotA_paramfits, echo=FALSE, include = FALSE, eval = TRUE}
-bite33_CumulativeIntake_Figure1_plotA_fit.orig
-```
+<!-- ```{r Figure1_bite33Sample_plotA_paramfits, echo=FALSE, include = FALSE, eval = FALSE} -->
+<!-- bite33_CumulativeIntake_Figure1_plotA_fit.orig -->
+<!-- ``` -->
 
-```{r Figure1_bite33Sample_plotB_paramfits, echo=FALSE, include = FALSE, eval = TRUE}
-bite33_CumulativeIntake_Figure1_plotB_fit.orig
-```
+<!-- ```{r Figure1_bite33Sample_plotB_paramfits, echo=FALSE, include = FALSE, eval = FALSE} -->
+<!-- bite33_CumulativeIntake_Figure1_plotB_fit.orig -->
+<!-- ``` -->
 
-```{r Figure1_bite33Sample_plotC_paramfits, echo=FALSE, include = FALSE, eval = TRUE}
-bite33_CumulativeIntake_Figure1_plotC_fit.orig
-```
+<!-- ```{r Figure1_bite33Sample_plotC_paramfits, echo=FALSE, include = FALSE, eval = FALSE} -->
+<!-- bite33_CumulativeIntake_Figure1_plotC_fit.orig -->
+<!-- ``` -->
 
-```{r Figure1_bite33Sample_plotD_paramfits, echo=FALSE, include = FALSE, eval = TRUE}
-bite33_CumulativeIntake_Figure1_plotD_fit.orig
-```
-
-\FloatBarrier
-
-```{r Figure1_contSample_singleFit, echo=FALSE, results='asis'}
-kable(cont_optimize, "latex",  digits = 3, caption = "Fitted parameters from initail recovery simulation using 250ms sampling", row.names = FALSE) %>%
-  kable_styling(latex_options = c("hold_position", "repeat_header"))
-```
-\FloatBarrier
-
-\begin{figure}[ht!]
-  \centering
-  \caption*{\centering 250 ms Sampling}
-  \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Figure1_contSample_paramfits-1.pdf}
-\end{figure}
+<!-- ```{r Figure1_bite33Sample_plotD_paramfits, echo=FALSE, include = FALSE, eval = FALSE} -->
+<!-- bite33_CumulativeIntake_Figure1_plotD_fit.orig -->
+<!-- ``` -->
 
 \FloatBarrier
 
-```{r Figure1_bite100Sample_singleFit, echo=FALSE, results='asis'}
-kable(bite100_optimize, "latex",  digits = 3, caption = "Fitted parameters from initail recovery simulation using 100 bite sampling", row.names = FALSE) %>%
-  kable_styling(latex_options = c("hold_position", "repeat_header"))
-```
-\FloatBarrier
+<!-- ```{r Figure1_contSample_singleFit, echo=FALSE, results='asis'} -->
+<!-- kable(cont_optimize, "latex",  digits = 3, caption = "Fitted parameters from initail recovery simulation using 250ms sampling", row.names = FALSE) %>% -->
+<!--   kable_styling(latex_options = c("hold_position", "repeat_header")) -->
+<!-- ``` -->
+<!-- \FloatBarrier -->
 
-\begin{figure}[ht!]
-  \centering
-  \caption*{\centering 100 bite Sampling}
-  \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Figure1_bite100Sample_paramfits-1.pdf}
-\end{figure}
+<!-- \begin{figure}[ht!] -->
+<!--   \centering -->
+<!--   \caption*{\centering 250 ms Sampling} -->
+<!--   \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Figure1_contSample_paramfits-1.pdf} -->
+<!-- \end{figure} -->
 
-\FloatBarrier
-\clearpage
+<!-- \FloatBarrier -->
+
+<!-- ```{r Figure1_bite100Sample_singleFit, echo=FALSE, results='asis'} -->
+<!-- kable(bite100_optimize, "latex",  digits = 3, caption = "Fitted parameters from initail recovery simulation using 100 bite sampling", row.names = FALSE) %>% -->
+<!--   kable_styling(latex_options = c("hold_position", "repeat_header")) -->
+<!-- ``` -->
+<!-- \FloatBarrier -->
+
+<!-- \begin{figure}[ht!] -->
+<!--   \centering -->
+<!--   \caption*{\centering 100 bite Sampling} -->
+<!--   \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Figure1_bite100Sample_paramfits-1.pdf} -->
+<!-- \end{figure} -->
+
+<!-- \FloatBarrier -->
+<!-- \clearpage -->
 
 ### Parameter Recovery with Infrequent Bites (500 sims)
 
+<!-- \begin{figure}[ht!] -->
+<!--   \centering -->
+<!--    \caption*{\centering Randomly Sampled Number of Bites: mean = 33, sd = 5} -->
+<!--   \begin{subfigure}[b]{=0.70\textwidth} -->
+<!--     \centering -->
+<!--     \caption*{\centering 1A - theta: 30 g/min, r: 0.17 1/min, Emax = 400g} -->
+<!--     \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Figure1_bite33Sample_plotA_paramfits-1.pdf} -->
+<!--   \end{subfigure} -->
+<!--   \begin{subfigure}[b]{=0.70\textwidth} -->
+<!--     \centering -->
+<!--     \caption*{\centering 1B - theta: 30 g/min, r: 0.17 1/min, Emax = 600g} -->
+<!--     \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Figure1_bite33Sample_plotB_paramfits-1.pdf} -->
+<!--   \end{subfigure} -->
+<!-- \end{figure} -->
+<!-- \FloatBarrier -->
 
-\begin{figure}[ht!]
-  \centering
-   \caption*{\centering Randomly Sampled Number of Bites: mean = 33, sd = 5}
-  \begin{subfigure}[b]{=0.70\textwidth}
-    \centering
-    \caption*{\centering 1A - theta: 30 g/min, r: 0.17 1/min, Emax = 400g}
-    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Figure1_bite33Sample_plotA_paramfits-1.pdf}
-  \end{subfigure}
-  \begin{subfigure}[b]{=0.70\textwidth}
-    \centering
-    \caption*{\centering 1B - theta: 30 g/min, r: 0.17 1/min, Emax = 600g}
-    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Figure1_bite33Sample_plotB_paramfits-1.pdf}
-  \end{subfigure}
-\end{figure}
-\FloatBarrier
+<!-- \begin{figure}[ht!] -->
+<!--   \centering -->
+<!--   \caption*{\centering Randomly Sampled Number of Bites: mean = 33, sd = 5} -->
+<!--   \begin{subfigure}[b]{=0.70\textwidth} -->
+<!--     \centering -->
+<!--     \caption*{\centering 1C - theta: 30 g/min, r: 0.5 1/min, Emax = 400g} -->
+<!--     \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Figure1_bite33Sample_plotC_paramfits-1.pdf} -->
+<!--   \end{subfigure} -->
+<!--   \begin{subfigure}[b]{=0.70\textwidth} -->
+<!--     \centering -->
+<!--     \caption*{\centering 1D - theta: 50 g/min, r: 0.17 1/min, Emax = 400g} -->
+<!--     \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Figure1_bite33Sample_plotD_paramfits-1.pdf} -->
+<!--   \end{subfigure} -->
+<!-- \end{figure} -->
 
-\begin{figure}[ht!]
-  \centering
-  \caption*{\centering Randomly Sampled Number of Bites: mean = 33, sd = 5}
-  \begin{subfigure}[b]{=0.70\textwidth}
-    \centering
-    \caption*{\centering 1C - theta: 30 g/min, r: 0.5 1/min, Emax = 400g}
-    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Figure1_bite33Sample_plotC_paramfits-1.pdf}
-  \end{subfigure}
-  \begin{subfigure}[b]{=0.70\textwidth}
-    \centering
-    \caption*{\centering 1D - theta: 50 g/min, r: 0.17 1/min, Emax = 400g}
-    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Figure1_bite33Sample_plotD_paramfits-1.pdf}
-  \end{subfigure}
-\end{figure}
-
-\FloatBarrier
-\clearpage
+<!-- \FloatBarrier -->
+<!-- \clearpage -->
 
 # Simulations based on Fogel et al., 2017
 
@@ -468,7 +469,7 @@ microstructure_corPlot
 \clearpage
 \FloatBarrier
 
-#Parameter Distributions
+# Parameter Distributions
 
 ## Eating Rate Distribution
 
@@ -654,8 +655,9 @@ SimDat_Fogel2017_EmaxDensity_group
 ```{r FogelSim_param_corPlot, echo=FALSE, include = TRUE, eval = TRUE}
 param_corPlot
 ```
-\clearpage
+  
 \FloatBarrier
+\clearpage
 
 
 # Cumulative Intake Curves Accross Parameter Distributions
@@ -740,18 +742,17 @@ FPM_paramGrid_procNoise
 ```{r FPM_param_plotGrid_procNoise_30min, echo=FALSE, include = FALSE, eval = FALSE}
 FPM_paramGrid_procNoise_30min
 ```
-
 \FloatBarrier
 
 \begin{figure}[ht!]
   \centering
   \caption*{\centering First Prinicples Model Cumulative Intake Curves}
-  \begin{subfigure}[b]{=0.70\textwidth}
+  \begin{subfigure}[b]{=0.50\textwidth}
     \centering
     \caption*{\centering No Time Constraints}
     \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-FPM_param_plotGrid_procNoise-1.pdf}
   \end{subfigure}
-  \begin{subfigure}[b]{=0.70\textwidth}
+  \begin{subfigure}[b]{=0.50\textwidth}
     \centering
     \caption*{\centering All Bites Occured in 30 min}
     \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-FPM_param_plotGrid_procNoise_30min-1.pdf}
@@ -770,18 +771,17 @@ FPM_paramGrid_r_procNoise
 ```{r FPM_param_r_plotGrid_procNoise_30min, echo=FALSE, include = FALSE, eval = FALSE}
 FPM_paramGrid_r_procNoise_30min
 ```
-
 \FloatBarrier
 
 \begin{figure}[ht!]
   \centering
   \caption*{\centering First Prinicples Model Cumulative Intake Curves}
-  \begin{subfigure}[b]{=0.70\textwidth}
+  \begin{subfigure}[b]{=0.50\textwidth}
     \centering
     \caption*{\centering No Time Constraints}
     \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-FPM_param_r_plotGrid_procNoise-1.pdf}
   \end{subfigure}
-  \begin{subfigure}[b]{=0.70\textwidth}
+  \begin{subfigure}[b]{=0.50\textwidth}
     \centering
     \caption*{\centering All Bites Occured in 30 min}
     \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-FPM_param_r_plotGrid_procNoise_30min-1.pdf}
@@ -790,92 +790,658 @@ FPM_paramGrid_r_procNoise_30min
 \FloatBarrier
 \clearpage
 
-#Parameter Recovery 
+# Parameter Recovery
 
-##100 Random Multivariate Samples - Parameter Capture
+## Recovery Tables from 100 Random Samples
 
-```{r FPM_rmvn100_CIplot_theta, echo=FALSE, include = FALSE, eval = TRUE}
+### First Principles Model
+
+\FloatBarrier
+```{r FPM_rmvn100_rRecFit_tab, echo=FALSE, results='asis'}
+kable(FPM_rmvnParamRec_rfit_tab, caption = 'Recovery of r within 95 percent confidence bounds', format = "latex", booktabs = TRUE, longtable = FALSE) %>%
+  kableExtra::kable_styling(latex_options = "hold_position")
+```
+
+\FloatBarrier
+```{r FPM_rmvn100_thetaRecFit_tab, echo=FALSE, results='asis'}
+kable(FPM_rmvnParamRec_thetafit_tab, caption = 'Recovery of theta within 95 percent confidence bounds', format = "latex", booktabs = TRUE, longtable = FALSE) %>%
+  kableExtra::kable_styling(latex_options = "hold_position")
+```
+
+### Kissileff's Quadratic Model
+
+\FloatBarrier
+```{r Kissileff_rmvn100_intRecFit_tab, echo=FALSE, results='asis'}
+kable(Kissileff_rmvnParamRec_intfit_tab, caption = 'Recovery of intercept within 95 percent confidence bounds', format = "latex", booktabs = TRUE, longtable = FALSE) %>%
+  kableExtra::kable_styling(latex_options = "hold_position")
+```
+
+\FloatBarrier
+```{r Kissileff_rmvn100_lienarRecFit_tab, echo=FALSE, results='asis'}
+kable(Kissileff_rmvnParamRec_linearfit_tab, caption = 'Recovery of linear coefficient within 95 percent confidence bounds', format = "latex", booktabs = TRUE, longtable = FALSE) %>%
+  kableExtra::kable_styling(latex_options = "hold_position")
+```
+
+\FloatBarrier
+```{r Kissileff_rmvn100_quadRecFit_tab, echo=FALSE, results='asis'}
+kable(Kissileff_rmvnParamRec_quadfit_tab, caption = 'Recovery of quadratic coefficient within 95 percent confidence bounds', format = "latex", booktabs = TRUE, longtable = FALSE) %>%
+  kableExtra::kable_styling(latex_options = "hold_position")
+```
+
+\FloatBarrier
+\clearpage
+
+## 100 Random Multivariate Samples: No Noise
+
+```{r FPM_rmvn100_CIplot_theta, echo=FALSE, include = FALSE, eval = FALSE}
 FPM_rmvn100_CIplot_theta
 ```
 
-```{r FPM_rmvn100_CIplot_theta_procNoise, echo=FALSE, include = FALSE, eval = TRUE}
-FPM_theta_rmvn100_procNoiseCIplot_theta
-```
-
-```{r FPM_rmvn100_CIplot_r, echo=FALSE, include = FALSE, eval = TRUE}
+```{r FPM_rmvn100_CIplot_r, echo=FALSE, include = FALSE, eval = FALSE}
 FPM_rmvn100_CIplot_r
 ```
 
-```{r FPM_rmvn100_CIplot_r_procNoise, echo=FALSE, include = FALSE, eval = TRUE}
-FPM_theta_rmvn100_procNoiseCIplot_r
+```{r Kissileff_rmvn100_CIplot_int, echo=FALSE, include = FALSE, eval = FALSE}
+Kissileff_rmvn100_CIplot_int
+```
+
+```{r Kissileff_rmvn100_CIplot_linear, echo=FALSE, include = FALSE, eval = FALSE}
+Kissileff_rmvn100_CIplot_linear
+```
+
+```{r Kissileff_rmvn100_CIplot_quad, echo=FALSE, include = FALSE, eval = FALSE}
+Kissileff_rmvn100_CIplot_quad
+```
+\FloatBarrier
+
+\begin{figure}[ht!]
+  \centering
+  \caption*{\centering First Principles Model: No Noise}
+  \begin{subfigure}[b]{=0.30\textwidth}
+    \centering
+    \caption*{\centering Theta: Parameter Recovery 95\% CI}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-FPM_rmvn100_CIplot_theta-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.30\textwidth}
+    \centering
+    \caption*{\centering r Parameter Recovery 95\% CI}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-FPM_rmvn100_CIplot_r-1.pdf}
+  \end{subfigure}
+  \caption*{\centering Kissileff Quadratic Model: No Noise}
+  \begin{subfigure}[b]{=0.30\textwidth}
+    \centering
+    \caption*{\centering Intercept Parameter Recovery 95\% CI}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_int-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.30\textwidth}
+    \centering
+    \caption*{\centering Linear Parameter Recovery 95\% CI}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_linear-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.30\textwidth}
+    \centering
+    \caption*{\centering Quadratic Parameter Recovery 95\% CI}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_quad-1.pdf}
+  \end{subfigure}
+\end{figure}
+
+\FloatBarrier
+\clearpage
+
+```{r FPM_rmvn100_intakeCurveCI_fitTRUE, echo=FALSE, include = FALSE, eval = FALSE}
+FPM_rmvnParamRec_95CI_CumulativeIntake
+```
+
+```{r FPM_rmvn100_intakeCurve_fitFALSE, echo=FALSE, include = FALSE, eval = FALSE}
+FPM_rmvnParamRec_CumulativeIntake_noFit
+```
+
+```{r Kissileff_rmvn100_intakeCurveCI_fitTRUE, echo=FALSE, include = FALSE, eval = FALSE}
+Kissileff_rmvnParamRec_95CI_CumulativeIntake
+```
+
+```{r Kissileff_rmvn100_intakeCurve_fitFALSE, echo=FALSE, include = FALSE, eval = FALSE}
+Kissileff_rmvnParamRec_CumulativeIntake_noFit
+```
+
+\FloatBarrier
+
+\begin{figure}[ht!]
+  \centering
+  \caption*{\centering  First Principles Model - No Noise}
+  \begin{subfigure}[b]{=0.45\textwidth}
+    \centering
+    \caption*{\centering Both Parameters Recovered in 95\% CI}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-FPM_rmvn100_intakeCurveCI_fitTRUE-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.45\textwidth}
+    \centering
+    \caption*{\centering No Parameters Recovered in 95\% CI}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-FPM_rmvn100_intakeCurve_fitFALSE-1.pdf}
+  \end{subfigure}
+  \caption*{\centering Kissileff Quadratic Model - No Noise}
+  \begin{subfigure}[b]{=0.45\textwidth}
+    \centering
+    \caption*{\centering Both Parameters Recovered in 95\% CI}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Kissileff_rmvn100_intakeCurveCI_fitTRUE-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.45\textwidth}
+    \centering
+    \caption*{\centering No Parameters Recovered in 95\% CI}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Kissileff_rmvn100_intakeCurve_fitFALSE-1.pdf}
+  \end{subfigure}
+\end{figure}
+
+\FloatBarrier
+\clearpage
+
+##100 Random Multivariate Samples - Process Noise only
+
+```{r FPM_rmvn100_CIplot_theta_procNoise, echo=FALSE, include = FALSE, eval = FALSE}
+FPM_rmvn100_procNoise_CIplot_theta
+```
+
+```{r FPM_rmvn100_CIplot_r_procNoise, echo=FALSE, include = FALSE, eval = FALSE}
+FPM_rmvn100_procNoise_CIplot_r
+```
+
+```{r Kissileff_rmvn100_CIplot_int_procNoise, echo=FALSE, include = FALSE, eval = FALSE}
+Kissileff_rmvn100_procNoise_CIplot_int
+```
+
+```{r Kissileff_rmvn100_CIplot_linear_procNoise, echo=FALSE, include = FALSE, eval = FALSE}
+Kissileff_rmvn100_procNoise_CIplot_linear
+```
+
+```{r Kissileff_rmvn100_CIplot_quad_procNoise, echo=FALSE, include = FALSE, eval = FALSE}
+Kissileff_rmvn100_procNoise_CIplot_quad
+```
+
+
+\FloatBarrier
+\begin{figure}[ht!]
+  \centering
+  \caption*{\centering First Principles Model - Process Noise}
+  \begin{subfigure}[b]{=0.30\textwidth}
+    \centering
+    \caption*{\centering Theta - Parameter Recovery 95\% CI}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-FPM_rmvn100_CIplot_theta_procNoise-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.30\textwidth}
+    \centering
+    \caption*{\centering r - Parameter Recovery 95\% CI}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-FPM_rmvn100_CIplot_r_procNoise-1.pdf}
+  \end{subfigure}
+  \caption*{\centering Kissileff Quadratic Model - Process Noise}
+  \begin{subfigure}[b]{=0.30\textwidth}
+    \centering
+    \caption*{\centering Intercept - Parameter Recovery 95\% CI}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_int_procNoise-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.30\textwidth}
+    \centering
+    \caption*{\centering Linear - Parameter Recovery 95\% CI}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_linear_procNoise-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.30\textwidth}
+    \centering
+    \caption*{\centering Quadratic - Parameter Recovery 95\% CI}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_quad_procNoise-1.pdf}
+  \end{subfigure}
+\end{figure}
+
+
+\FloatBarrier
+\clearpage
+
+```{r FPM_rmvn100_intakeCurveCI_fitTRUE_procNoise, echo=FALSE, include = FALSE, eval = FALSE}
+FPM_procNoise_rmvnParamRec_95CI_CumulativeIntake
+```
+
+```{r FPM_rmvn100_intakeCurve_fitFALSE_procNoise, echo=FALSE, include = FALSE, eval = FALSE}
+FPM_procNoise_rmvnParamRec_95CI_CumulativeIntake_noFit
+```
+
+```{r Kissileff_rmvn100_intakeCurveCI_fitTRUE_procNoise, echo=FALSE, include = FALSE, eval = FALSE}
+Kissileff_procNoise_rmvnParamRec_95CI_CumulativeIntake
+```
+
+```{r Kissileff_rmvn100_intakeCurve_fitFALSE_procNoise, echo=FALSE, include = FALSE, eval = FALSE}
+Kissileff_procNoise_rmvnParamRec_95CI_CumulativeIntake_noFit
+```
+
+\FloatBarrier
+
+\begin{figure}[ht!]
+  \centering
+  \caption*{\centering First Principles Model - Process Noise}
+  \begin{subfigure}[b]{=0.45\textwidth}
+    \centering
+    \caption*{\centering Both Parameters Recovered in 95\% CI}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-FPM_rmvn100_intakeCurveCI_fitTRUE_procNoise-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.45\textwidth}
+    \centering
+    \caption*{\centering No Parameters Recovered in 95\% CI}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-FPM_rmvn100_intakeCurve_fitFALSE_procNoise-1.pdf}
+  \end{subfigure}
+  \caption*{\centering Kissileff Quadratic Model - No Noise}
+  \begin{subfigure}[b]{=0.45\textwidth}
+    \centering
+    \caption*{\centering Both Parameters Recovered in 95\% CI}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Kissileff_rmvn100_intakeCurveCI_fitTRUE_procNoise-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.45\textwidth}
+    \centering
+    \caption*{\centering No Parameters Recovered in 95\% CI}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Kissileff_rmvn100_intakeCurve_fitFALSE_procNoise-1.pdf}
+  \end{subfigure}
+\end{figure}
+
+\FloatBarrier
+\clearpage
+
+## 100 Random Multivariate Samples - Process Noise and Measurement Error
+Measurement error: uses average bite size and jittered bite timing
+
+```{r FPM_rmvn100_CIplot_theta_procNoise_measureNoise, echo=FALSE, include = FALSE, eval = FALSE}
+FPM_rmvn100_procNoise_measureNoise_CIplot_theta
+```
+
+```{r FPM_rmvn100_CIplot_r_procNoise_measureNoise, echo=FALSE, include = FALSE, eval = FALSE}
+FPM_rmvn100_procNoise_measureNoise_CIplot_r
+```
+
+```{r Kissileff_rmvn100_CIplot_int_procNoise_measureNoise, echo=FALSE, include = FALSE, eval = FALSE}
+Kissileff_rmvn100_procNoise_measureNoise_CIplot_int
+```
+
+```{r Kissileff_rmvn100_CIplot_linear_procNoise_measureNoise, echo=FALSE, include = FALSE, eval = FALSE}
+Kissileff_rmvn100_procNoise_measureNoise_CIplot_linear
+```
+
+```{r Kissileff_rmvn100_CIplot_quad_procNoise_measureNoise, echo=FALSE, include = FALSE, eval = FALSE}
+Kissileff_rmvn100_procNoise_measureNoise_CIplot_quad
+```
+
+\FloatBarrier
+
+\begin{figure}[ht!]
+  \centering
+  \caption*{\centering First Principles Model - Process Noise and Measurement Noise}
+  \begin{subfigure}[b]{=0.30\textwidth}
+    \centering
+    \caption*{\centering Theta - Parameter Recovery 95\% CI}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-FPM_rmvn100_CIplot_theta_procNoise_measureNoise-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.30\textwidth}
+    \centering
+    \caption*{\centering r - Parameter Recovery 95\% CI}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-FPM_rmvn100_CIplot_r_procNoise_measureNoise-1.pdf}
+  \end{subfigure}
+  \caption*{\centering Kissileff Quadratic Model - Process Noise}
+  \begin{subfigure}[b]{=0.30\textwidth}
+    \centering
+    \caption*{\centering Intercept - Parameter Recovery 95\% CI}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_int_procNoise_measureNoise-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.30\textwidth}
+    \centering
+    \caption*{\centering Linear - Parameter Recovery 95\% CI}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_linear_procNoise_measureNoise-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.30\textwidth}
+    \centering
+    \caption*{\centering Quadratic - Parameter Recovery 95\% CI}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_quad_procNoise_measureNoise-1.pdf}
+  \end{subfigure}
+\end{figure}
+
+
+\FloatBarrier
+\clearpage
+
+
+```{r FPM_rmvn100_intakeCurveCI_fitTRUE_procNoise_measureNoise, echo=FALSE, include = FALSE, eval = FALSE}
+FPM_procNoise_measureNoise_rmvnParamRec_95CI_CumulativeIntake
+```
+
+```{r FPM_rmvn100_intakeCurve_fitFALSE_procNoise_measureNoise, echo=FALSE, include = FALSE, eval = FALSE}
+FPM_procNoise_measureNoise_rmvnParamRec_95CI_CumulativeIntake_noFit
+```
+
+```{r Kissileff_rmvn100_intakeCurveCI_fitTRUE_procNoise_measureNoise, echo=FALSE, include = FALSE, eval = FALSE}
+Kissileff_procNoise_measureNoise_rmvnParamRec_95CI_CumulativeIntake
+```
+
+```{r Kissileff_rmvn100_intakeCurve_fitFALSE_procNoise_measureNoise, echo=FALSE, include = FALSE, eval = FALSE}
+Kissileff_procNoise_measureNoise_rmvnParamRec_95CI_CumulativeIntake_noFit
+```
+
+\FloatBarrier
+
+\begin{figure}[ht!]
+  \centering
+  \caption*{\centering First Principles Model - Process Noise}
+  \begin{subfigure}[b]{=0.45\textwidth}
+    \centering
+    \caption*{\centering Both Parameters Recovered in 95\% CI}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-FPM_rmvn100_intakeCurveCI_fitTRUE_procNoise_measureNoise-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.45\textwidth}
+    \centering
+    \caption*{\centering No Parameters Recovered in 95\% CI}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-FPM_rmvn100_intakeCurve_fitFALSE_procNoise_measureNoise-1.pdf}
+  \end{subfigure}
+  \caption*{\centering Kissileff Quadratic Model - No Noise}
+  \begin{subfigure}[b]{=0.45\textwidth}
+    \centering
+    \caption*{\centering Both Parameters Recovered in 95\% CI}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Kissileff_rmvn100_intakeCurveCI_fitTRUE_procNoise_measureNoise-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.45\textwidth}
+    \centering
+    \caption*{\centering No Parameters Recovered in 95\% CI}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Kissileff_rmvn100_intakeCurve_fitFALSE_procNoise_measureNoise-1.pdf}
+  \end{subfigure}
+\end{figure}
+
+\FloatBarrier
+\clearpage
+
+# Root Mean Square Error
+
+## Distributions
+```{r FPM_rmvn500_RMSE_timing, echo=FALSE, include = FALSE, eval = FALSE, fig.height = 8, fig.width = 11}
+FPM_rmvnParamRec_RMSEtiming_density_facet
+```
+
+```{r Kissileff_rmvn500_RMSE_timing, echo=FALSE, include = FALSE, eval = FALSE, fig.height = 8, fig.width = 11}
+Kissileff_rmvnParamRec_RMSEtiming_density_facet
+```
+
+```{r FPM_rmvn500_RMSE_intake, echo=FALSE, include = FALSE, eval = FALSE, fig.height = 8, fig.width = 11}
+FPM_rmvnParamRec_RMSEintake_density_facet
+```
+
+```{r Kissileff_rmvn500_RMSE_intake, echo=FALSE, include = FALSE, eval = FALSE, fig.height = 8, fig.width = 11}
+Kissileff_rmvnParamRec_RMSEintake_density_facet
 ```
 
 
 \begin{figure}[ht!]
   \centering
-  \caption*{\centering Theta - Parameter Recovery 95% CI}
+  \caption*{\centering RMSE Distribution for Bite Timing}
   \begin{subfigure}[b]{=0.70\textwidth}
     \centering
-    \caption*{\centering Average Bite Size}
-    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-FPM_rmvn100_CIplot_theta-1.pdf}
+    \caption*{\centering First Principles Model}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-FPM_rmvn500_RMSE_timing-1.pdf}
   \end{subfigure}
   \begin{subfigure}[b]{=0.70\textwidth}
     \centering
-    \caption*{\centering Proccess Noise Added}
-    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-FPM_rmvn100_CIplot_theta_procNoise-1.pdf}
+    \caption*{\centering Kissileff Quadratic Model}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSE_timing-1.pdf}
   \end{subfigure}
-  \caption*{\centering r - Parameter Recovery 95% CI}
+\end{figure}
+
+\FloatBarrier
+\clearpage
+
+\begin{figure}[ht!]
+  \centering
+  \caption*{\centering RMSE Distribution for Intake}
   \begin{subfigure}[b]{=0.70\textwidth}
     \centering
-    \caption*{\centering Average Bite Size}
-    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-FPM_rmvn100_CIplot_r-1.pdf}
+    \caption*{\centering First Principles Model}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-FPM_rmvn500_RMSE_intake-1.pdf}
   \end{subfigure}
   \begin{subfigure}[b]{=0.70\textwidth}
     \centering
-    \caption*{\centering Proccess Noise Added}
-    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-FPM_rmvn100_CIplot_r_procNoise-1.pdf}
+    \caption*{\centering Kissileff Quadratic Model}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSE_intake-1.pdf}
   \end{subfigure}
 \end{figure}
 \FloatBarrier
 \clearpage
 
+## number of NA's (estimated from recovered parameters)
 
-##100 Random Multivariate Samples - Cumulative Intake Curve
-```{r FPM_rmvn100_CIplot_CumulativeIntake1, echo=FALSE, include = FALSE, eval = TRUE}
-FPM_procNoise_rmvnParamRec_95CI_CumulativeIntake1
+\FloatBarrier
+```{r Kissileff_rmvn500_RMSE_time_nNA, echo=FALSE, results='asis'}
+kable(Kissileff_nNAtime_tab, caption = 'Number of random draws with an NAs in estimation of bite timing', format = "latex", booktabs = TRUE, longtable = FALSE) %>%
+  kableExtra::kable_styling(latex_options = "hold_position")
 ```
 
-```{r FPM_rmvn100_CIplot_CumulativeIntake2, echo=FALSE, include = FALSE, eval = TRUE}
-FPM_procNoise_rmvnParamRec_95CI_CumulativeIntake2
+\FloatBarrier
+```{r Kissileff_rmvn500_RMSE_time_meanNA, echo=FALSE, results='asis'}
+kable(Kissileff_nNAtime_mean, caption = 'Averge number of bites with NA timepoints (limited to the those with NAs)', format = "latex", booktabs = TRUE, longtable = FALSE) %>%
+  kableExtra::kable_styling(latex_options = "hold_position")
+``` 
+
+\FloatBarrier
+```{r Kissileff_rmvn500_RMSE_time_rangeNA, echo=FALSE, results='asis'}
+kable(Kissileff_nNAtime_range, caption = 'Range in the number of bites with NA timepoints (limited to the those with NAs)', format = "latex", booktabs = TRUE, longtable = FALSE) %>%
+  kableExtra::kable_styling(latex_options = "hold_position")
 ```
 
-```{r FPM_rmvn100_CIplot_CumulativeIntake3, echo=FALSE, include = FALSE, eval = TRUE}
-FPM_procNoise_rmvnParamRec_95CI_CumulativeIntake3
+\FloatBarrier
+\clearpage
+
+## Correlation between Parameter Recovery Difference and RMSE
+
+### First Prinicples Model
+```{r FPM_rmvn500_RMSEcor_rDif_timing, echo=FALSE, include = FALSE, eval = FALSE}
+FPM_corRMSE_rDif_timing
 ```
 
-```{r FPM_rmvn100_CIplot_CumulativeIntake4, echo=FALSE, include = FALSE, eval = TRUE}
-FPM_procNoise_rmvnParamRec_95CI_CumulativeIntake4
+```{r FPM_rmvn500_RMSEcor_thetaDif_timing, echo=FALSE, include = FALSE, eval = FALSE}
+FPM_corRMSE_thetaDif_timing
+```
+
+```{r FPM_rmvn500_RMSEcor_rDif_intake, echo=FALSE, include = FALSE, eval = FALSE}
+FPM_corRMSE_rDif_size
+```
+
+```{r FPM_rmvn500_RMSEcor_thetaDif_intake, echo=FALSE, include = FALSE, eval = FALSE}
+FPM_corRMSE_thetaDif_size
 ```
 
 
 \begin{figure}[ht!]
   \centering
-  \caption*{\centering Theta - Parameter Recovery 95% CI}
-  \begin{subfigure}[b]{=0.70\textwidth}
+  \caption*{\centering RMSE correlation with parameter - recovered}
+  \begin{subfigure}[b]{=0.35\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-FPM_procNoise_rmvnParamRec_95CI_CumulativeIntake1-1.pdf}
+    \caption*{\centering Timing: r - r recovered}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor_rDif_timing-1.pdf}
   \end{subfigure}
-  \begin{subfigure}[b]{=0.70\textwidth}
+  \begin{subfigure}[b]{=0.35\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-FPM_procNoise_rmvnParamRec_95CI_CumulativeIntake2-1.pdf}
+    \caption*{\centering Timing: theta - theta recovered}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor_thetaDif_timing-1.pdf}
   \end{subfigure}
-  \begin{subfigure}[b]{=0.70\textwidth}
+  \begin{subfigure}[b]{=0.35\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-FPM_procNoise_rmvnParamRec_95CI_CumulativeIntake3-1.pdf}
+    \caption*{\centering Intake: r - r recovered}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor_rDif_intake-1.pdf}
   \end{subfigure}
-  \begin{subfigure}[b]{=0.70\textwidth}
+  \begin{subfigure}[b]{=0.35\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-FPM_procNoise_rmvnParamRec_95CI_CumulativeIntake4-1.pdf}
+    \caption*{\centering  Intake: theta - theta recovered}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor_thetaDif_intake-1.pdf}
+  \end{subfigure}
+\end{figure}
+\FloatBarrier
+\clearpage
+
+### Kissileff Quadratic Model
+
+```{r Kissileff_rmvn500_RMSEcor_intDif_timing, echo=FALSE, include = FALSE, eval = FALSE}
+Kissileff_corRMSE_intDif_timing
+```
+
+```{r Kissileff_rmvn500_RMSEcor_linearDif_timing, echo=FALSE, include = FALSE, eval = FALSE}
+Kissileff_corRMSE_linearDif_timing
+```
+
+```{r Kissileff_rmvn500_RMSEcor_quadDif_timing, echo=FALSE, include = FALSE, eval = FALSE}
+Kissileff_corRMSE_quadDif_timing
+```
+
+```{r Kissileff_rmvn500_RMSEcor_intDif_intake, echo=FALSE, include = FALSE, eval = FALSE}
+Kissileff_corRMSE_intDif_size
+```
+
+```{r Kissileff_rmvn500_RMSEcor_linearDif_intake, echo=FALSE, include = FALSE, eval = FALSE}
+Kissileff_corRMSE_linearDif_size
+```
+
+```{r Kissileff_rmvn500_RMSEcor_quadDif_intake, echo=FALSE, include = FALSE, eval = FALSE}
+Kissileff_corRMSE_quadDif_size
+```
+
+\begin{figure}[ht!]
+  \centering
+  \caption*{\centering RMSE correlation with parameter - recovered}
+  \begin{subfigure}[b]{=0.30\textwidth}
+    \centering
+    \caption*{\centering Timing: int - int recovered}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor_intDif_timing-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.30\textwidth}
+    \centering
+    \caption*{\centering Timing: linear - linear recovered}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor_linearDif_timing-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.30\textwidth}
+    \centering
+    \caption*{\centering Timing: quad - quad recovered}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor_quadDif_timing-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.30\textwidth}
+    \centering
+    \caption*{\centering Intake: int - int recovered}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor_intDif_intake-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.30\textwidth}
+    \centering
+    \caption*{\centering  Intake: linear - linear recovered}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor_linearDif_intake-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.30\textwidth}
+    \centering
+    \caption*{\centering  Intake: quad - quad recovered}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor_quadDif_intake-1.pdf}
+  \end{subfigure}
+\end{figure}
+\FloatBarrier
+\clearpage
+
+## Correlation between Parameter Recovery Difference and RMSE/Avg Bite Size
+
+### First Prinicples Model
+```{r FPM_rmvn500_RMSEcor.AvgBiteSize_rDif_timing, echo=FALSE, include = FALSE, eval = FALSE}
+FPM_corRMSE.relAvgBite_rDif_timing
+```
+
+```{r FPM_rmvn500_RMSEcor.AvgBiteSize_thetaDif_timing, echo=FALSE, include = FALSE, eval = FALSE}
+FPM_corRMSE.relAvgBite_thetaDif_timing
+```
+
+```{r FPM_rmvn500_RMSEcor.AvgBiteSize_rDif_intake, echo=FALSE, include = FALSE, eval = FALSE}
+FPM_corRMSE.relAvgBite_rDif_size
+```
+
+```{r FPM_rmvn500_RMSEcor.AvgBiteSize_thetaDif_intake, echo=FALSE, include = FALSE, eval = FALSE}
+FPM_corRMSE.relAvgBite_thetaDif_size
+```
+
+
+\begin{figure}[ht!]
+  \centering
+  \caption*{\centering RMSE correlation with parameter - recovered}
+  \begin{subfigure}[b]{=0.35\textwidth}
+    \centering
+    \caption*{\centering Timing: r - r recovered}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor.AvgBiteSize_rDif_timing-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.35\textwidth}
+    \centering
+    \caption*{\centering Timing: theta - theta recovered}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor.AvgBiteSize_thetaDif_timing-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.35\textwidth}
+    \centering
+    \caption*{\centering Intake: r - r recovered}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor.AvgBiteSize_rDif_intake-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.35\textwidth}
+    \centering
+    \caption*{\centering  Intake: theta - theta recovered}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor.AvgBiteSize_thetaDif_intake-1.pdf}
+  \end{subfigure}
+\end{figure}
+\FloatBarrier
+\clearpage
+
+### Kissileff Quadratic Model
+
+```{r Kissileff_rmvn500_RMSEcor.AvgBiteSize_intDif_timing, echo=FALSE, include = FALSE, eval = FALSE}
+Kissileff_corRMSE.relAvgBite_intDif_timing
+```
+
+```{r Kissileff_rmvn500_RMSEcor.AvgBiteSize_linearDif_timing, echo=FALSE, include = FALSE, eval = FALSE}
+Kissileff_corRMSE.relAvgBite_linearDif_timing
+```
+
+```{r Kissileff_rmvn500_RMSEcor.AvgBiteSize_quadDif_timing, echo=FALSE, include = FALSE, eval = FALSE}
+Kissileff_corRMSE.relAvgBite_quadDif_timing
+```
+
+```{r Kissileff_rmvn500_RMSEcor.AvgBiteSize_intDif_intake, echo=FALSE, include = FALSE, eval = FALSE}
+Kissileff_corRMSE.relAvgBite_intDif_size
+```
+
+```{r Kissileff_rmvn500_RMSEcor.AvgBiteSize_linearDif_intake, echo=FALSE, include = FALSE, eval = FALSE}
+Kissileff_corRMSE.relAvgBite_linearDif_size
+```
+
+```{r Kissileff_rmvn500_RMSEcor.AvgBiteSize_quadDif_intake, echo=FALSE, include = FALSE, eval = FALSE}
+Kissileff_corRMSE.relAvgBite_quadDif_size
+```
+
+\begin{figure}[ht!]
+  \centering
+  \caption*{\centering RMSE correlation with parameter - recovered}
+  \begin{subfigure}[b]{=0.30\textwidth}
+    \centering
+    \caption*{\centering Timing: int - int recovered}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor.AvgBiteSize_intDif_timing-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.30\textwidth}
+    \centering
+    \caption*{\centering Timing: linear - linear recovered}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor.AvgBiteSize_linearDif_timing-1.pdf} 
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.30\textwidth}
+    \centering
+    \caption*{\centering Timing: quad - quad recovered}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor.AvgBiteSize_quadDif_timing-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.30\textwidth}
+    \centering
+    \caption*{\centering Intake: int - int recovered}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor.AvgBiteSize_intDif_intake-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.30\textwidth}
+    \centering
+    \caption*{\centering  Intake: linear - linear recovered}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor.AvgBiteSize_linearDif_intake-1.pdf}
+  \end{subfigure}
+  \begin{subfigure}[b]{=0.30\textwidth}
+    \centering
+    \caption*{\centering  Intake: quad - quad recovered}
+    \includegraphics[width=\textwidth]{FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor.AvgBiteSize_quadDif_intake-1.pdf}
   \end{subfigure}
 \end{figure}
 \FloatBarrier

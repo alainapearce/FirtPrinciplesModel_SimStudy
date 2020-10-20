@@ -208,8 +208,9 @@ bite100_CumulativeIntake_Figure1_grid = ggplot(bite100_CumulativeIntake_Figure1_
 #### Replication with 33 bite sampling ####
 
 #corrected equation
-# bite33_CumulativeIntake_Figure1A_cor = ParamRecovery(nBites = 30, Emax = Figure1Params$Emax[1], parameters = c(Figure1Params$theta[1], Figure1Params$r[1]), time_fn = FPM_Time, fit_fn = FPM_Fit, simVar = 'bitesSampled', simValue = 5, keepBites = TRUE, intake_fn = FPM_Intake, paramCI = c('theta', 'r'), bound = 'both')
-# 
+nBites = rnorm(n = 100, mean = 33, sd = 5)
+bite33_CumulativeIntake_Figure1A_cor = ParamRecovery(nBites, Emax = Figure1Params$Emax[1], parameters = c(Figure1Params$theta[1], Figure1Params$r[1]), time_fn = FPM_Time, fit_fn = FPM_Fit, keepBites = TRUE, intake_fn = FPM_Intake, paramCI = c('theta', 'r'), bound = 'both')
+#
 # bite33_CumulativeIntake_Figure1A_Et = bite33_CumulativeIntake_Figure1A_cor$biteDat_paramRecov
 # bite33_CumulativeIntake_Figure1A_Et$Figure = '1A'
 # bite33_CumulativeIntake_Figure1A_paramsRec = bite33_CumulativeIntake_Figure1A_cor$paramDat

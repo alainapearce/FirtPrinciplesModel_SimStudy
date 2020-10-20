@@ -22,6 +22,8 @@
 #     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 
+###now a script in raw-data called DataGen_SimDat_Fogel2017
+
 ############ Basic Data Load/Setup ############
 library(bitemodelr)
 source('Fogel2017_SimDat.R')

@@ -24,181 +24,106 @@
 #     nSample: number of samples to be randomly pulled from multivariate normal distribution, default <- 100
 #     nSims: number of simulations per sample (right now programed for just basic recovery with procNoise); only needed if 
 #            datONLY <- FALSE. default <- 100
-#     model: which model to use, default <- "FPM"
-#     write.dat: logical, want to write data to .csv. default <- TRUE - will write to Data directory
+#     model_str: The base model to use--'FPM' for the first principles model and 'Kissileff' for the quadratic model. Default is 'FPM'.
+#     procNoise (optional) A logical indicator for adding random process noise to the bite data by jittering bite size (and thus estimated timing). Default value is TRUE; if FALSE will use average bite size to estimate initail bite timing.
+#     measureNoise (optional) A string indicating they type of measurement noise to add. The options include:
+#     BiteSize' - will use average bite size for parameter recovery; 'BiteTiming' - add noise to bite timing (jittered);
+#     or 'Both' - will apply both types of measurement noise. This noise is applied to bite data after initial
+#     parameterization and before parameter recovery. Default is no measurement error.
+#     Noise_biteSizeSD (optional) This allows you to enter the standard deviation of individuals bites sizes and will replace the default procNoise routine (jittered bite sizes). Bite sizes will be randomly chosen from a normal distribution truncated at min = 0 with mean = Emax/nBites and standard deviation equal to the entered value. procNoise must be set to TRUE, otherwise this argument will be ignored.
+#     @param mNoise_biteTimeSD (optional) This allows you to enter the standard deviation for adjusting bite timing and will
+#     replace the default (jittered bite timing). The noise add to each timepoint will be chosen from a normal distribution
+#     with mean = 0 and standard deviation entered. measureNoise must be set to to 'BiteTiming' or 'Both' otherwise this
+#     argument will be ignored. Note: the normal distribution will be truncated at at each timepoint so that the time for
+#     timepoint t is not less than timepoint t-1.
+#     mNoise_biteSizeCat (option) This allows you to alter the default for bite size error (average bite size) by
+#     entering category cut points or NA to skip this measurement error. Cut points must equal n - 1 categories (e.g., if
+#     want three categories you would enter the small-medium and medium-large large cut/boundry points). Cut points will
+#     be left/lower inclusive but exclude upper boundary. Bite sizes within each category will be set to the average bite
+#     size for that category. This will replace the default measureNoise routine (all bites = average bite size).
+#     measureNoise must be set to to 'BiteSize' or 'Both' otherwise this argument will be ignored.write.dat: logical, want to write data to .csv. default <- TRUE - will write to Data directory
 #     datOnly: logical, only generate data set and skip parameter recovery, default is TRUE. if FALSE, function will
 #                return both the sampled data set and the parameter dataset as separate items in a list
-#     paramCI: A list of strings with the names of the parameters to compute CIs for. Optional. If none specified, no CI will be computed
-#     bound: A string indicating which confidence bound to return: 'upper, 'lower', or 'both'. Default <- 'both'
-#     data_str: (optional) A string you want to use to name ouput dataset - the model used and number of samples will automatically be part of the name. Default is 'simDat' which results in the dataset name(s) if you use 100 samples: data - model_simDat_rmvnDat_rmvnDat100.csv and parameter recovery - data - model_simDat_rmvnDat_rmvnParamRec100.csv
+#     paramCI: (optional) A list of strings with the names of the parameters to compute CIs for. Optional. If none specified, no CI will be computed
+#     bound: (only required if paramCI is used) A string indicating which confidence bound to return: 'upper, 'lower', or 'both'. Default <- 'both'
+#     rmse (optional) A string indicating which measure to compute root mean square error for. Options include: 'timing' for bite timing, 'intake' for cumulative intake', 'both' to compute for both timing and intake. If not specified, rmse is not computed. Default is to not compute rmse.
+#     data_str: (optional) A string you want to use to name output dataset - the model used and number of samples will automatically be part of the name. Default is 'simDat' which results in the dataset name(s) if you use 100 samples: data - model_simDat_rmvnDat_rmvnDat100.csv and parameter recovery - data - model_simDat_rmvnDat_rmvnParamRec100.csv
+# scaleFactor (optional) A scaling factor to adjust the standard deviation of the multivariate normal distribution. Will be applied to all sampled variables. E.g., a value of 0.5 will scale the standard deviation by half and the variance by a quarter using pre- (S) and post-matrix (S transpose - ST) multiplication of the covariance matrix (C) with the scaling factor on the diagonal (S x C x ST)
 
 #### Set up ####
 library(bitemodelr)
-library(MASS)
-
-
-#if running outside of a script that loads the data, need to load data here
-#SimDat_Fogel2017 <- read.csv('Data/ParamDat_Fogel2017.csv')
 
 # Simulate and extract parameter estimates ####
 # Choose different values based on multivariate distribution and compare 
 # FMP and Kissileff curves. Fit bite timing with FPM first and then use to get
 # cumulative intake from quadratic to avoide the end timing issue
 
-rmvnSample_ParamRec = function(nSample = 100, nSim = 100, procNoise = TRUE, model = "FPM", write.dat = TRUE, datOnly = TRUE, paramCI, bound = 'both', data_str = 'simDat'){
-  set.seed(1234)
+rmvnSample_ParamRec = function(nSample = 100, nSim = 100, model_str = "FPM", procNoise = TRUE, measureNoise = FALSE, pNoise_biteSizeSD = NA, mNoise_biteTimeSD = NA, mNoise_biteSizeCat = "mean", write.dat = TRUE, datOnly = TRUE, paramCI = NA, bound = 'both', rmse = NA, data_str = 'simDat', scaleFactor = NA){
   
-  TotalSamples <- 0
-  while(TotalSamples < nSample){
-    rowsNeed <- 100 - TotalSamples
+  #get rmvn sample
+  SimDat_rmvn = rmvnSample(nSample, model_str, write.dat, data_str)
+  
+  for(l in 1:nrow(SimDat_rmvn)) {
     
-    if(rowsNeed < 10){
-      newsample <- 10
+    SimDat_rmvn$nBites_round = round(SimDat_rmvn$nBites)
+    
+    if(model_str == "FPM" | model_str == "Both" | model_str == "both"){
+      paramRec <- ParamRecovery(nBites = SimDat_rmvn$nBites_round[l], Emax = SimDat_rmvn$TotalIntake_g[l], 
+                                parameters = c(SimDat_rmvn$theta[l], SimDat_rmvn$r[l]), 
+                                model_str = model_str, nSims = 1, procNoise = procNoise, 
+                                measureNoise = measureNoise, pNoise_biteSizeSD = pNoise_biteSizeSD, 
+                                mNoise_biteTimeSD = mNoise_biteTimeSD, mNoise_biteSizeCat = mNoise_biteSizeCat, 
+                                paramCI = paramCI, bound = bound, rmse = rmse)
+    } 
+    
+    if (model_str == "Kissileff" | model_str == "Both" | model_str == "both"){
+      paramRec <- ParamRecovery(nBites = SimDat_rmvn$nBites_round[l], Emax = SimDat_rmvn$TotalIntake_g[l], 
+                                parameters = c(SimDat_rmvn$int[l], SimDat_rmvn$linear[l], SimDat_rmvn$quad[l]), 
+                                model_str = model_str, nSims = 1, procNoise = procNoise, 
+                                measureNoise = measureNoise, pNoise_biteSizeSD = pNoise_biteSizeSD, 
+                                mNoise_biteTimeSD = mNoise_biteTimeSD, mNoise_biteSizeCat = mNoise_biteSizeCat, 
+                                paramCI = paramCI, bound = bound, rmse = rmse)
+    }
+    
+    paramRec$ID <- l
+    
+    if(l == 1){
+      FPM_paramRecDat_rmvn <- paramRec
     } else {
-      newsample <- rowsNeed
+      FPM_paramRecDat_rmvn <- rbind(FPM_paramRecDat_rmvn, paramRec)
     }
-    
-    if(model == "FPM"){
-      rmvn_dat <- as.data.frame(mvrnorm(newsample, mu = colMeans(SimDat_Fogel2017[c(2, 7, 10:11)]), Sigma = cov(SimDat_Fogel2017[c(2, 7, 10:11)]), empirical = TRUE))
-      
-      
-      rmvn_dat$r_check <- (-1*rmvn_dat$theta)/rmvn_dat$TotalIntake_g
-      
-      rmvn_datKeep <- rmvn_dat[rmvn_dat$r_check < rmvn_dat$r, ]
-      rmvn_datKeep <- rmvn_datKeep[rmvn_datKeep$r >= min(SimDat_Fogel2017$r) & rmvn_datKeep$r <= max(SimDat_Fogel2017$r), ]
-      rmvn_datKeep <- rmvn_datKeep[rmvn_datKeep$theta >= min(SimDat_Fogel2017$theta) & rmvn_datKeep$theta <= max(SimDat_Fogel2017$theta), ]
-    
-      
-      } else if(model == "Kissileff"){
-      rmvn_dat <- as.data.frame(mvrnorm(newsample, mu = colMeans(SimDat_Fogel2017[c(2, 7, 17:19)]), Sigma = cov(SimDat_Fogel2017[c(2, 7, 17:19)]), empirical = TRUE))   
-      
-      rmvn_datKeep <- rmvn_dat[rmvn_dat$int >= min(SimDat_Fogel2017$int) & rmvn_dat$int <= max(SimDat_Fogel2017$int), ]
-      rmvn_datKeep <- rmvn_datKeep[rmvn_datKeep$linear >= min(SimDat_Fogel2017$linear) & rmvn_datKeep$linear <= max(SimDat_Fogel2017$linear), ]
-      rmvn_datKeep <- rmvn_datKeep[rmvn_datKeep$quad >= min(SimDat_Fogel2017$quad) & rmvn_datKeep$linear <= max(SimDat_Fogel2017$quad), ]
-      }
-    
-    
-    rmvn_datKeep <- rmvn_datKeep[rmvn_datKeep$nBites >= min(SimDat_Fogel2017$nBites) & rmvn_datKeep$nBites <= max(SimDat_Fogel2017$nBites), ]
-    rmvn_datKeep <- rmvn_datKeep[rmvn_datKeep$TotalIntake_g >= min(SimDat_Fogel2017$TotalIntake_g) & rmvn_datKeep$TotalIntake_g <= max(SimDat_Fogel2017$TotalIntake_g), ]
-    
-    if (nrow(rmvn_datKeep) > 0){
-      rmvn_datKeep$time_calc <- 'Y'
-      
-      for (r in 1:nrow(rmvn_datKeep)){
-        
-        grams.bite_avg <- rep(rmvn_datKeep$TotalIntake_g[r]/round(rmvn_datKeep$nBites[r]), round(rmvn_datKeep$nBites[r]))
-        # get cumulative intake
-        grams.cumulative_avg <- cumsum(grams.bite_avg)
-        
-        message_long <- rep(FALSE, round(rmvn_datKeep$nBites[r]))
-        
-        # get long list of parameters
-        if (model == 'FPM') {
-          params_long <- rep(list(c(rmvn_datKeep$theta[r], rmvn_datKeep$r[r])), round(rmvn_datKeep$nBites[r]))
-          simTime <- mapply(FPM_Time, intake = grams.cumulative_avg,
-                            parameters = params_long, Emax = rmvn_datKeep$TotalIntake_g[r], message = message_long)
-        } else if (model == 'Kissileff'){
-          params_long <- rep(list(c(rmvn_datKeep$int[r], rmvn_datKeep$linear[r], rmvn_datKeep$quad[r])), round(rmvn_datKeep$nBites[r]))
-          simTime <- mapply(Kissileff_Time, intake <- grams.cumulative_avg,
-                            parameters <- params_long, message <- message_long)
-        }
-        
-        if(length(unlist(simTime)) != round(rmvn_datKeep$nBites[r])){
-          rmvn_datKeep$time_calc[r] <- 'N'
-        } 
-        
-        n_negTime = sum(unlist(simTime) < 0)
-        
-        if (n_negTime > 0){
-          rmvn_datKeep$time_calc[r] <- 'N'
-        }
-      }
-      
-      rmvn_datKeep <- rmvn_datKeep[rmvn_datKeep$time_calc == 'Y', ]
-
-    }
-    
-
-    if(TotalSamples == 0){
-      SimDat_rmvn <- rmvn_datKeep
-    } else if(nrow(rmvn_datKeep) > rowsNeed){
-      rmvn_datKeep <- rmvn_datKeep[sample(nrow(rmvn_datKeep), rowsNeed), ]
-      SimDat_rmvn <- rbind(SimDat_rmvn, rmvn_datKeep)
-    } else if(nrow(rmvn_datKeep) <= TotalSamples){
-      SimDat_rmvn <- rbind(SimDat_rmvn, rmvn_datKeep)
-    }
-    
-    TotalSamples <- nrow(SimDat_rmvn)
   }
+  
+  #check if param in fitted
+  if(!is.na(paramCI)){
+    if(bound == 'both'){
+      if(model_str == "FPM"){
+        FPM_paramRecDat_rmvn$r_fit <- ifelse(FPM_paramRecDat_rmvn$initial_r < FPM_paramRecDat_rmvn$u95CI_r & FPM_paramRecDat_rmvn$initial_r > FPM_paramRecDat_rmvn$l95CI_r, TRUE, FALSE)
+        FPM_paramRecDat_rmvn$theta_fit <- ifelse(FPM_paramRecDat_rmvn$initial_theta < FPM_paramRecDat_rmvn$u95CI_theta & FPM_paramRecDat_rmvn$initial_theta > FPM_paramRecDat_rmvn$l95CI_theta, TRUE, FALSE)
+      } else if (model_str == "Kissileff"){
+        FPM_paramRecDat_rmvn$int_fit <- ifelse(FPM_paramRecDat_rmvn$initial_int < FPM_paramRecDat_rmvn$u95CI_int & FPM_paramRecDat_rmvn$initial_int > FPM_paramRecDat_rmvn$l95CI_int, TRUE, FALSE)
+        FPM_paramRecDat_rmvn$linear_fit <- ifelse(FPM_paramRecDat_rmvn$initial_linear < FPM_paramRecDat_rmvn$u95CI_linear & FPM_paramRecDat_rmvn$initial_linear > FPM_paramRecDat_rmvn$l95CI_linear, TRUE, FALSE)
+        FPM_paramRecDat_rmvn$quad_fit <- ifelse(FPM_paramRecDat_rmvn$initial_quad < FPM_paramRecDat_rmvn$u95CI_quad & FPM_paramRecDat_rmvn$initial_quad > FPM_paramRecDat_rmvn$l95CI_quad, TRUE, FALSE)
+      }
+    }
+  }
+  
   
   if(isTRUE(write.dat)){
-    if(isTRUE(procNoise)){
-      write.csv(SimDat_rmvn[1:ncol(SimDat_rmvn)-1], paste0('Data/', model, '_', data_str, '_rmvnDat', nSample, '.csv'), row.names = FALSE)
-  } else {
-    write.csv(SimDat_rmvn[1:ncol(SimDat_rmvn)-1], paste0('Data/', model, '_', data_str, '_rmvnDat', nSample, '.csv'), row.names = FALSE)
-    }
-  }
-
-  if(isTRUE(datOnly)){
-    return(SimDat_rmvn)
-    
-  } else if(isFALSE(datOnly)){
-    #get standard parameter recovery with process noise
-    
-    for(l in 1:nrow(SimDat_rmvn)) {
-      
-      SimDat_rmvn$nBites_round = round(SimDat_rmvn$nBites)
-      
-      if(model == "FPM"){
-        if(hasArg(paramCI)){
-          paramRec <- ParamRecovery(nBites = SimDat_rmvn$nBites_round[l], Emax = SimDat_rmvn$TotalIntake_g[l], parameters = c(SimDat_rmvn$theta[l], SimDat_rmvn$r[l]), time_fn = FPM_Time, fit_fn = FPM_Fit, nSims = 1, procNoise = procNoise, intake_fn = FPM_Intake, paramCI = paramCI, bound = bound)
-        } else {
-          paramRec <- ParamRecovery(nBites = SimDat_rmvn$nBites_round[l], Emax = SimDat_rmvn$TotalIntake_g[l], parameters = c(SimDat_rmvn$theta[l], SimDat_rmvn$r[l]), time_fn = FPM_Time, fit_fn = FPM_Fit, nSims = 1, procNoise = procNoise, intake_fn = FPM_Intake)
-        }
-        
-      } else if (model == "Kissileff"){
-        if(hasArg(paramCI)){
-          paramRec <- ParamRecovery(nBites = SimDat_rmvn$nBites_round[l], Emax = SimDat_rmvn$TotalIntake_g[l], parameters = c(SimDat_rmvn$int[l], SimDat_rmvn$linear[l], SimDat_rmvn$quad[l]), time_fn = Kissileff_Time, fit_fn = Kissileff_Fit, nSims = 1, procNoise = procNoise, intake_fn = Kissileff_Intake, paramCI = paramCI, bound = bound)
-        } else {
-          paramRec <- ParamRecovery(nBites = SimDat_rmvn$nBites_round[l], Emax = SimDat_rmvn$TotalIntake_g[l], parameters = c(SimDat_rmvn$int[l], SimDat_rmvn$linear[l], SimDat_rmvn$quad[l]), time_fn = Kissileff_Time, fit_fn = Kissileff_Fit, nSims = 1, procNoise = procNoise, intake_fn = Kissileff_Intake)
-        }
-        
-        paramRec$ID <- l
-      }
-      
-      if(l == 1){
-        FPM_paramRecDat_rmvn <- paramRec
+    if(!is.na(paramCI)){
+      if(!is.na(rmse)){
+        write.csv(FPM_paramRecDat_rmvn, paste0('Data/', model_str, '_', data_str, '_rmvnParamRecCI_RMSE', nSample, '.csv'), row.names=FALSE)
       } else {
-        FPM_paramRecDat_rmvn <- rbind(FPM_paramRecDat_rmvn, paramRec)
+        write.csv(FPM_paramRecDat_rmvn, paste0('Data/', model_str, '_', data_str, '_rmvnParamRecCI', nSample, '.csv'), row.names=FALSE)
       }
+    } else if (!is.na(rmse)){
+      write.csv(FPM_paramRecDat_rmvn, paste0('Data/', model_str, '_', data_str, '_rmvnParamRecRMSE', nSample, '.csv'), row.names=FALSE)
     }
-    
-    #check if param in fitted
-    if(hasArg(paramCI)){
-      if(bound == 'both'){
-        if(model == "FPM"){
-          FPM_paramRecDat_rmvn$r_fit <- ifelse(FPM_paramRecDat_rmvn$initial_r < FPM_paramRecDat_rmvn$u95CI_r & FPM_paramRecDat_rmvn$initial_r > FPM_paramRecDat_rmvn$l95CI_r, TRUE, FALSE)
-          FPM_paramRecDat_rmvn$theta_fit <- ifelse(FPM_paramRecDat_rmvn$initial_theta < FPM_paramRecDat_rmvn$u95CI_theta & FPM_paramRecDat_rmvn$initial_theta > FPM_paramRecDat_rmvn$l95CI_theta, TRUE, FALSE)
-        } else if (model == "Kissileff"){
-          FPM_paramRecDat_rmvn$int_fit <- ifelse(FPM_paramRecDat_rmvn$initial_int < FPM_paramRecDat_rmvn$u95CI_int & FPM_paramRecDat_rmvn$initial_int > FPM_paramRecDat_rmvn$l95CI_int, TRUE, FALSE)
-          FPM_paramRecDat_rmvn$linear_fit <- ifelse(FPM_paramRecDat_rmvn$initial_linear < FPM_paramRecDat_rmvn$u95CI_linear & FPM_paramRecDat_rmvn$initial_linear > FPM_paramRecDat_rmvn$l95CI_linear, TRUE, FALSE)
-          FPM_paramRecDat_rmvn$quad_fit <- ifelse(FPM_paramRecDat_rmvn$initial_quad < FPM_paramRecDat_rmvn$u95CI_quad & FPM_paramRecDat_rmvn$initial_quad > FPM_paramRecDat_rmvn$l95CI_quad, TRUE, FALSE)
-        }
-      }
-    }
-    
-    
-    if(isTRUE(write.dat)){
-      if(isTRUE(procNoise)){
-        write.csv(FPM_paramRecDat_rmvn, paste0('Data/', model, '_', data_str, '_rmvnParamRec', nSample, '.csv'), row.names=FALSE)
-      } else {
-        write.csv(FPM_paramRecDat_rmvn, paste0('Data/', model, '_', data_str, '_rmvnParamRec', nSample, '.csv'), row.names=FALSE)
-      }
-    }  
-    
-    SimDat_rmvn_list <- list(SimDat_rmvnDat <- SimDat_rmvn[1:4],
-                              SimDat_rmvnParamDat <- FPM_paramRecDat_rmvn)
-      
-    return(SimDat_rmvn_list)
-  }
+  }  
+  
+  SimDat_rmvn_list <- list(SimDat_rmvnDat <- SimDat_rmvn[1:4],
+                           SimDat_rmvnParamDat <- FPM_paramRecDat_rmvn)
+  
+  return(SimDat_rmvn_list)
 }
+

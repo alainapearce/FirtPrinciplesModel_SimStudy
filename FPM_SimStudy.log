@@ -1,28 +1,28 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  8 JUL 2020 15:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  6 OCT 2020 12:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **FPM_SimStudy.tex
 (./FPM_SimStudy.tex
-LaTeX2e <2017-04-15>
-Babel <3.10> and hyphenation patterns for 84 language(s) loaded.
-(/usr/local/texlive/2017/texmf-dist/tex/latex/base/article.cls
+LaTeX2e <2018-04-01> patch level 2
+Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-(/usr/local/texlive/2017/texmf-dist/tex/latex/base/size10.clo
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
-\c@part=\count79
-\c@section=\count80
-\c@subsection=\count81
-\c@subsubsection=\count82
-\c@paragraph=\count83
-\c@subparagraph=\count84
-\c@figure=\count85
-\c@table=\count86
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/lm/lmodern.sty
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/lm/lmodern.sty
 Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
@@ -56,38 +56,38 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/amssymb.sty
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks14
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2016/11/05 v2.16a AMS math features
+)) (/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2017/09/02 v2.17a AMS math features
 \@mathmargin=\skip43
 For additional information on amsmath, use the `?' option.
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01 AMS text
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsgen.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks15
 \ex@=\dimen103
-)) (/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsbsy.sty
+)) (/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen104
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsopn.sty
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count87
+\inf@bad=\count88
 LaTeX Info: Redefining \frac on input line 213.
-\uproot@=\count88
-\leftroot@=\count89
+\uproot@=\count89
+\leftroot@=\count90
 LaTeX Info: Redefining \overline on input line 375.
-\classnum@=\count90
-\DOTSCASE@=\count91
+\classnum@=\count91
+\DOTSCASE@=\count92
 LaTeX Info: Redefining \ldots on input line 472.
 LaTeX Info: Redefining \dots on input line 475.
 LaTeX Info: Redefining \cdots on input line 596.
@@ -96,15 +96,15 @@ LaTeX Info: Redefining \cdots on input line 596.
 \big@size=\dimen105
 LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
-\macc@depth=\count92
-\c@MaxMatrixCols=\count93
+\macc@depth=\count93
+\c@MaxMatrixCols=\count94
 \dotsspace@=\muskip10
-\c@parentequation=\count94
-\dspbrk@lvl=\count95
+\c@parentequation=\count95
+\dspbrk@lvl=\count96
 \tag@help=\toks16
-\row@=\count96
-\column@=\count97
-\maxfields@=\count98
+\row@=\count97
+\column@=\count98
+\maxfields@=\count99
 \andhelp@=\toks17
 \eqnshift@=\dimen106
 \alignsep@=\dimen107
@@ -118,330 +118,21 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 \mathdisplay@stack=\toks19
 LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
-) (/usr/local/texlive/2017/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
-) (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifluatex.sty
 Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/base/fontenc.sty
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
-(/usr/local/texlive/2017/texmf-dist/tex/latex/base/t1enc.def
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/t1enc.def
 File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
-)) (/usr/local/texlive/2017/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2015/03/17 v1.2c Input encoding file
+)) (/usr/local/texlive/2018/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/04/06 v1.3b Input encoding file
 \inpenc@prehook=\toks20
 \inpenc@posthook=\toks21
-(/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
-File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
-Now handling font encoding OML ...
-... no UTF-8 mapping file for font encoding OML
-Now handling font encoding T1 ...
-... processing UTF-8 mapping file for font encoding T1
-(/usr/local/texlive/2017/texmf-dist/tex/latex/base/t1enc.dfu
-File: t1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
-   defining Unicode char U+00A0 (decimal 160)
-   defining Unicode char U+00A1 (decimal 161)
-   defining Unicode char U+00A3 (decimal 163)
-   defining Unicode char U+00AB (decimal 171)
-   defining Unicode char U+00AD (decimal 173)
-   defining Unicode char U+00BB (decimal 187)
-   defining Unicode char U+00BF (decimal 191)
-   defining Unicode char U+00C0 (decimal 192)
-   defining Unicode char U+00C1 (decimal 193)
-   defining Unicode char U+00C2 (decimal 194)
-   defining Unicode char U+00C3 (decimal 195)
-   defining Unicode char U+00C4 (decimal 196)
-   defining Unicode char U+00C5 (decimal 197)
-   defining Unicode char U+00C6 (decimal 198)
-   defining Unicode char U+00C7 (decimal 199)
-   defining Unicode char U+00C8 (decimal 200)
-   defining Unicode char U+00C9 (decimal 201)
-   defining Unicode char U+00CA (decimal 202)
-   defining Unicode char U+00CB (decimal 203)
-   defining Unicode char U+00CC (decimal 204)
-   defining Unicode char U+00CD (decimal 205)
-   defining Unicode char U+00CE (decimal 206)
-   defining Unicode char U+00CF (decimal 207)
-   defining Unicode char U+00D0 (decimal 208)
-   defining Unicode char U+00D1 (decimal 209)
-   defining Unicode char U+00D2 (decimal 210)
-   defining Unicode char U+00D3 (decimal 211)
-   defining Unicode char U+00D4 (decimal 212)
-   defining Unicode char U+00D5 (decimal 213)
-   defining Unicode char U+00D6 (decimal 214)
-   defining Unicode char U+00D8 (decimal 216)
-   defining Unicode char U+00D9 (decimal 217)
-   defining Unicode char U+00DA (decimal 218)
-   defining Unicode char U+00DB (decimal 219)
-   defining Unicode char U+00DC (decimal 220)
-   defining Unicode char U+00DD (decimal 221)
-   defining Unicode char U+00DE (decimal 222)
-   defining Unicode char U+00DF (decimal 223)
-   defining Unicode char U+00E0 (decimal 224)
-   defining Unicode char U+00E1 (decimal 225)
-   defining Unicode char U+00E2 (decimal 226)
-   defining Unicode char U+00E3 (decimal 227)
-   defining Unicode char U+00E4 (decimal 228)
-   defining Unicode char U+00E5 (decimal 229)
-   defining Unicode char U+00E6 (decimal 230)
-   defining Unicode char U+00E7 (decimal 231)
-   defining Unicode char U+00E8 (decimal 232)
-   defining Unicode char U+00E9 (decimal 233)
-   defining Unicode char U+00EA (decimal 234)
-   defining Unicode char U+00EB (decimal 235)
-   defining Unicode char U+00EC (decimal 236)
-   defining Unicode char U+00ED (decimal 237)
-   defining Unicode char U+00EE (decimal 238)
-   defining Unicode char U+00EF (decimal 239)
-   defining Unicode char U+00F0 (decimal 240)
-   defining Unicode char U+00F1 (decimal 241)
-   defining Unicode char U+00F2 (decimal 242)
-   defining Unicode char U+00F3 (decimal 243)
-   defining Unicode char U+00F4 (decimal 244)
-   defining Unicode char U+00F5 (decimal 245)
-   defining Unicode char U+00F6 (decimal 246)
-   defining Unicode char U+00F8 (decimal 248)
-   defining Unicode char U+00F9 (decimal 249)
-   defining Unicode char U+00FA (decimal 250)
-   defining Unicode char U+00FB (decimal 251)
-   defining Unicode char U+00FC (decimal 252)
-   defining Unicode char U+00FD (decimal 253)
-   defining Unicode char U+00FE (decimal 254)
-   defining Unicode char U+00FF (decimal 255)
-   defining Unicode char U+0100 (decimal 256)
-   defining Unicode char U+0101 (decimal 257)
-   defining Unicode char U+0102 (decimal 258)
-   defining Unicode char U+0103 (decimal 259)
-   defining Unicode char U+0104 (decimal 260)
-   defining Unicode char U+0105 (decimal 261)
-   defining Unicode char U+0106 (decimal 262)
-   defining Unicode char U+0107 (decimal 263)
-   defining Unicode char U+0108 (decimal 264)
-   defining Unicode char U+0109 (decimal 265)
-   defining Unicode char U+010A (decimal 266)
-   defining Unicode char U+010B (decimal 267)
-   defining Unicode char U+010C (decimal 268)
-   defining Unicode char U+010D (decimal 269)
-   defining Unicode char U+010E (decimal 270)
-   defining Unicode char U+010F (decimal 271)
-   defining Unicode char U+0110 (decimal 272)
-   defining Unicode char U+0111 (decimal 273)
-   defining Unicode char U+0112 (decimal 274)
-   defining Unicode char U+0113 (decimal 275)
-   defining Unicode char U+0114 (decimal 276)
-   defining Unicode char U+0115 (decimal 277)
-   defining Unicode char U+0116 (decimal 278)
-   defining Unicode char U+0117 (decimal 279)
-   defining Unicode char U+0118 (decimal 280)
-   defining Unicode char U+0119 (decimal 281)
-   defining Unicode char U+011A (decimal 282)
-   defining Unicode char U+011B (decimal 283)
-   defining Unicode char U+011C (decimal 284)
-   defining Unicode char U+011D (decimal 285)
-   defining Unicode char U+011E (decimal 286)
-   defining Unicode char U+011F (decimal 287)
-   defining Unicode char U+0120 (decimal 288)
-   defining Unicode char U+0121 (decimal 289)
-   defining Unicode char U+0122 (decimal 290)
-   defining Unicode char U+0123 (decimal 291)
-   defining Unicode char U+0124 (decimal 292)
-   defining Unicode char U+0125 (decimal 293)
-   defining Unicode char U+0128 (decimal 296)
-   defining Unicode char U+0129 (decimal 297)
-   defining Unicode char U+012A (decimal 298)
-   defining Unicode char U+012B (decimal 299)
-   defining Unicode char U+012C (decimal 300)
-   defining Unicode char U+012D (decimal 301)
-   defining Unicode char U+012E (decimal 302)
-   defining Unicode char U+012F (decimal 303)
-   defining Unicode char U+0130 (decimal 304)
-   defining Unicode char U+0131 (decimal 305)
-   defining Unicode char U+0132 (decimal 306)
-   defining Unicode char U+0133 (decimal 307)
-   defining Unicode char U+0134 (decimal 308)
-   defining Unicode char U+0135 (decimal 309)
-   defining Unicode char U+0136 (decimal 310)
-   defining Unicode char U+0137 (decimal 311)
-   defining Unicode char U+0139 (decimal 313)
-   defining Unicode char U+013A (decimal 314)
-   defining Unicode char U+013B (decimal 315)
-   defining Unicode char U+013C (decimal 316)
-   defining Unicode char U+013D (decimal 317)
-   defining Unicode char U+013E (decimal 318)
-   defining Unicode char U+0141 (decimal 321)
-   defining Unicode char U+0142 (decimal 322)
-   defining Unicode char U+0143 (decimal 323)
-   defining Unicode char U+0144 (decimal 324)
-   defining Unicode char U+0145 (decimal 325)
-   defining Unicode char U+0146 (decimal 326)
-   defining Unicode char U+0147 (decimal 327)
-   defining Unicode char U+0148 (decimal 328)
-   defining Unicode char U+014A (decimal 330)
-   defining Unicode char U+014B (decimal 331)
-   defining Unicode char U+014C (decimal 332)
-   defining Unicode char U+014D (decimal 333)
-   defining Unicode char U+014E (decimal 334)
-   defining Unicode char U+014F (decimal 335)
-   defining Unicode char U+0150 (decimal 336)
-   defining Unicode char U+0151 (decimal 337)
-   defining Unicode char U+0152 (decimal 338)
-   defining Unicode char U+0153 (decimal 339)
-   defining Unicode char U+0154 (decimal 340)
-   defining Unicode char U+0155 (decimal 341)
-   defining Unicode char U+0156 (decimal 342)
-   defining Unicode char U+0157 (decimal 343)
-   defining Unicode char U+0158 (decimal 344)
-   defining Unicode char U+0159 (decimal 345)
-   defining Unicode char U+015A (decimal 346)
-   defining Unicode char U+015B (decimal 347)
-   defining Unicode char U+015C (decimal 348)
-   defining Unicode char U+015D (decimal 349)
-   defining Unicode char U+015E (decimal 350)
-   defining Unicode char U+015F (decimal 351)
-   defining Unicode char U+0160 (decimal 352)
-   defining Unicode char U+0161 (decimal 353)
-   defining Unicode char U+0162 (decimal 354)
-   defining Unicode char U+0163 (decimal 355)
-   defining Unicode char U+0164 (decimal 356)
-   defining Unicode char U+0165 (decimal 357)
-   defining Unicode char U+0168 (decimal 360)
-   defining Unicode char U+0169 (decimal 361)
-   defining Unicode char U+016A (decimal 362)
-   defining Unicode char U+016B (decimal 363)
-   defining Unicode char U+016C (decimal 364)
-   defining Unicode char U+016D (decimal 365)
-   defining Unicode char U+016E (decimal 366)
-   defining Unicode char U+016F (decimal 367)
-   defining Unicode char U+0170 (decimal 368)
-   defining Unicode char U+0171 (decimal 369)
-   defining Unicode char U+0172 (decimal 370)
-   defining Unicode char U+0173 (decimal 371)
-   defining Unicode char U+0174 (decimal 372)
-   defining Unicode char U+0175 (decimal 373)
-   defining Unicode char U+0176 (decimal 374)
-   defining Unicode char U+0177 (decimal 375)
-   defining Unicode char U+0178 (decimal 376)
-   defining Unicode char U+0179 (decimal 377)
-   defining Unicode char U+017A (decimal 378)
-   defining Unicode char U+017B (decimal 379)
-   defining Unicode char U+017C (decimal 380)
-   defining Unicode char U+017D (decimal 381)
-   defining Unicode char U+017E (decimal 382)
-   defining Unicode char U+01CD (decimal 461)
-   defining Unicode char U+01CE (decimal 462)
-   defining Unicode char U+01CF (decimal 463)
-   defining Unicode char U+01D0 (decimal 464)
-   defining Unicode char U+01D1 (decimal 465)
-   defining Unicode char U+01D2 (decimal 466)
-   defining Unicode char U+01D3 (decimal 467)
-   defining Unicode char U+01D4 (decimal 468)
-   defining Unicode char U+01E2 (decimal 482)
-   defining Unicode char U+01E3 (decimal 483)
-   defining Unicode char U+01E6 (decimal 486)
-   defining Unicode char U+01E7 (decimal 487)
-   defining Unicode char U+01E8 (decimal 488)
-   defining Unicode char U+01E9 (decimal 489)
-   defining Unicode char U+01EA (decimal 490)
-   defining Unicode char U+01EB (decimal 491)
-   defining Unicode char U+01F0 (decimal 496)
-   defining Unicode char U+01F4 (decimal 500)
-   defining Unicode char U+01F5 (decimal 501)
-   defining Unicode char U+0218 (decimal 536)
-   defining Unicode char U+0219 (decimal 537)
-   defining Unicode char U+021A (decimal 538)
-   defining Unicode char U+021B (decimal 539)
-   defining Unicode char U+0232 (decimal 562)
-   defining Unicode char U+0233 (decimal 563)
-   defining Unicode char U+1E02 (decimal 7682)
-   defining Unicode char U+1E03 (decimal 7683)
-   defining Unicode char U+200C (decimal 8204)
-   defining Unicode char U+2010 (decimal 8208)
-   defining Unicode char U+2011 (decimal 8209)
-   defining Unicode char U+2012 (decimal 8210)
-   defining Unicode char U+2013 (decimal 8211)
-   defining Unicode char U+2014 (decimal 8212)
-   defining Unicode char U+2015 (decimal 8213)
-   defining Unicode char U+2018 (decimal 8216)
-   defining Unicode char U+2019 (decimal 8217)
-   defining Unicode char U+201A (decimal 8218)
-   defining Unicode char U+201C (decimal 8220)
-   defining Unicode char U+201D (decimal 8221)
-   defining Unicode char U+201E (decimal 8222)
-   defining Unicode char U+2030 (decimal 8240)
-   defining Unicode char U+2031 (decimal 8241)
-   defining Unicode char U+2039 (decimal 8249)
-   defining Unicode char U+203A (decimal 8250)
-   defining Unicode char U+2423 (decimal 9251)
-   defining Unicode char U+1E20 (decimal 7712)
-   defining Unicode char U+1E21 (decimal 7713)
-)
-Now handling font encoding OT1 ...
-... processing UTF-8 mapping file for font encoding OT1
-(/usr/local/texlive/2017/texmf-dist/tex/latex/base/ot1enc.dfu
-File: ot1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
-   defining Unicode char U+00A0 (decimal 160)
-   defining Unicode char U+00A1 (decimal 161)
-   defining Unicode char U+00A3 (decimal 163)
-   defining Unicode char U+00AD (decimal 173)
-   defining Unicode char U+00B8 (decimal 184)
-   defining Unicode char U+00BF (decimal 191)
-   defining Unicode char U+00C5 (decimal 197)
-   defining Unicode char U+00C6 (decimal 198)
-   defining Unicode char U+00D8 (decimal 216)
-   defining Unicode char U+00DF (decimal 223)
-   defining Unicode char U+00E6 (decimal 230)
-   defining Unicode char U+00EC (decimal 236)
-   defining Unicode char U+00ED (decimal 237)
-   defining Unicode char U+00EE (decimal 238)
-   defining Unicode char U+00EF (decimal 239)
-   defining Unicode char U+00F8 (decimal 248)
-   defining Unicode char U+0131 (decimal 305)
-   defining Unicode char U+0141 (decimal 321)
-   defining Unicode char U+0142 (decimal 322)
-   defining Unicode char U+0152 (decimal 338)
-   defining Unicode char U+0153 (decimal 339)
-   defining Unicode char U+0174 (decimal 372)
-   defining Unicode char U+0175 (decimal 373)
-   defining Unicode char U+0176 (decimal 374)
-   defining Unicode char U+0177 (decimal 375)
-   defining Unicode char U+0218 (decimal 536)
-   defining Unicode char U+0219 (decimal 537)
-   defining Unicode char U+021A (decimal 538)
-   defining Unicode char U+021B (decimal 539)
-   defining Unicode char U+2013 (decimal 8211)
-   defining Unicode char U+2014 (decimal 8212)
-   defining Unicode char U+2018 (decimal 8216)
-   defining Unicode char U+2019 (decimal 8217)
-   defining Unicode char U+201C (decimal 8220)
-   defining Unicode char U+201D (decimal 8221)
-)
-Now handling font encoding OMS ...
-... processing UTF-8 mapping file for font encoding OMS
-(/usr/local/texlive/2017/texmf-dist/tex/latex/base/omsenc.dfu
-File: omsenc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
-   defining Unicode char U+00A7 (decimal 167)
-   defining Unicode char U+00B6 (decimal 182)
-   defining Unicode char U+00B7 (decimal 183)
-   defining Unicode char U+2020 (decimal 8224)
-   defining Unicode char U+2021 (decimal 8225)
-   defining Unicode char U+2022 (decimal 8226)
-)
-Now handling font encoding OMX ...
-... no UTF-8 mapping file for font encoding OMX
-Now handling font encoding U ...
-... no UTF-8 mapping file for font encoding U
-   defining Unicode char U+00A9 (decimal 169)
-   defining Unicode char U+00AA (decimal 170)
-   defining Unicode char U+00AE (decimal 174)
-   defining Unicode char U+00BA (decimal 186)
-   defining Unicode char U+02C6 (decimal 710)
-   defining Unicode char U+02DC (decimal 732)
-   defining Unicode char U+200C (decimal 8204)
-   defining Unicode char U+2026 (decimal 8230)
-   defining Unicode char U+2122 (decimal 8482)
-   defining Unicode char U+2423 (decimal 9251)
-)) (/usr/local/texlive/2017/texmf-dist/tex/latex/base/textcomp.sty
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2017/04/05 v2.0i Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
 (textcomp)               5 = only ISO-Adobe without \textcurrency
@@ -455,12 +146,12 @@ Package textcomp Info: Sub-encoding information:
 (textcomp)             Family '?' is the default used for unknown fonts.
 (textcomp)             See the documentation for details.
 Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
-(/usr/local/texlive/2017/texmf-dist/tex/latex/base/ts1enc.def
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1enc.def
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 Now handling font encoding TS1 ...
 ... processing UTF-8 mapping file for font encoding TS1
-(/usr/local/texlive/2017/texmf-dist/tex/latex/base/ts1enc.dfu
-File: ts1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1enc.dfu
+File: ts1enc.dfu 2018/04/05 v1.2c UTF-8 support for inputenc
    defining Unicode char U+00A2 (decimal 162)
    defining Unicode char U+00A3 (decimal 163)
    defining Unicode char U+00A4 (decimal 164)
@@ -530,6 +221,7 @@ File: ts1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
    defining Unicode char U+25E6 (decimal 9702)
    defining Unicode char U+25EF (decimal 9711)
    defining Unicode char U+266A (decimal 9834)
+   defining Unicode char U+FEFF (decimal 65279)
 ))
 LaTeX Info: Redefining \oldstylenums on input line 334.
 Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 349.
@@ -594,47 +286,41 @@ Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
 Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/upquote/upquote.sty
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/upquote/upquote.sty
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/microtype/microtype.sty
-Package: microtype 2016/05/14 v2.6a Micro-typographical refinements (RS)
-(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/keyval.sty
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/microtype.sty
+Package: microtype 2018/01/14 v2.7a Micro-typographical refinements (RS)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks22
 )
 \MT@toks=\toks23
-\MT@count=\count99
-LaTeX Info: Redefining \textls on input line 774.
+\MT@count=\count100
+LaTeX Info: Redefining \textls on input line 793.
 \MT@outer@kern=\dimen112
-LaTeX Info: Redefining \textmicrotypecontext on input line 1310.
-\MT@listname@count=\count100
-(/usr/local/texlive/2017/texmf-dist/tex/latex/microtype/microtype-pdftex.def
-File: microtype-pdftex.def 2016/05/14 v2.6a Definitions specific to pdftex (RS)
+LaTeX Info: Redefining \textmicrotypecontext on input line 1339.
+\MT@listname@count=\count101
+(/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/microtype-pdftex.def
+File: microtype-pdftex.def 2018/01/14 v2.7a Definitions specific to pdftex (RS)
 
-LaTeX Info: Redefining \lsstyle on input line 916.
-LaTeX Info: Redefining \lslig on input line 916.
+LaTeX Info: Redefining \lsstyle on input line 913.
+LaTeX Info: Redefining \lslig on input line 913.
 \MT@outer@space=\skip46
 )
 Package microtype Info: Loading configuration file microtype.cfg.
-(/usr/local/texlive/2017/texmf-dist/tex/latex/microtype/microtype.cfg
-File: microtype.cfg 2016/05/14 v2.6a microtype main configuration file (RS)
-)) (/usr/local/texlive/2017/texmf-dist/tex/latex/parskip/parskip.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/microtype.cfg
+File: microtype.cfg 2018/01/14 v2.7a microtype main configuration file (RS)
+)) (/usr/local/texlive/2018/texmf-dist/tex/latex/parskip/parskip.sty
 Package: parskip 2001/04/09 non-zero parskip adjustments
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/xcolor/xcolor.sty
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
-(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-cfg/color.cfg
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
-(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
-(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
-) (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
-)
-\Gread@gobject=\count101
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 )
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
@@ -645,29 +331,38 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/bookmark.sty
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/xurl/xurl.sty
+Package: xurl 2018/01/09 v 0.03 modify URL breaks
+(/usr/local/texlive/2018/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/bookmark.sty
 Package: bookmark 2016/05/17 v1.26 PDF bookmarks (HO)
-(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/pdfescape.sty
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/pdfescape.sty
 Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
-(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2018/01/30 v0.27 Utility functions of pdfTeX for LuaTeX (HO
 )
-(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-)) (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+)) (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifvtex.sty
 Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2017/03/14 v6.85a Hypertext links for LaTeX
-(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2018/02/06 v6.86b Hypertext links for LaTeX
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
 Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
 
-(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
 Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
 Package hobsub Info: Skipping package `infwarerr' (already loaded).
@@ -699,77 +394,71 @@ Package atveryend Info: \enddocument detected (standard20110627).
 Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
 Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
 Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/auxhook.sty
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/auxhook.sty
 Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 )
 \@linkdim=\dimen113
 \Hy@linkcounter=\count102
 \Hy@pagecounter=\count103
-(/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2017/03/14 v6.85a Hyperref: PDFDocEncoding definition (HO)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2018/02/06 v6.86b Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
 \Hy@SavedSpaceFactor=\count104
-(/usr/local/texlive/2017/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+(/usr/local/texlive/2018/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
-Package hyperref Info: Option `unicode' set `true' on input line 4374.
-(/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2017/03/14 v6.85a Hyperref: PDF Unicode definition (HO)
+Package hyperref Info: Option `unicode' set `true' on input line 4383.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2018/02/06 v6.86b Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
-Package hyperref Info: Hyper figures OFF on input line 4498.
-Package hyperref Info: Link nesting OFF on input line 4503.
-Package hyperref Info: Hyper index ON on input line 4506.
-Package hyperref Info: Plain pages OFF on input line 4513.
-Package hyperref Info: Backreferencing OFF on input line 4518.
+Package hyperref Info: Hyper figures OFF on input line 4509.
+Package hyperref Info: Link nesting OFF on input line 4514.
+Package hyperref Info: Hyper index ON on input line 4517.
+Package hyperref Info: Plain pages OFF on input line 4524.
+Package hyperref Info: Backreferencing OFF on input line 4529.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4751.
+Package hyperref Info: Bookmarks ON on input line 4762.
 \c@Hy@tempcnt=\count105
-(/usr/local/texlive/2017/texmf-dist/tex/latex/url/url.sty
-\Urlmuskip=\muskip11
-Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-)
-LaTeX Info: Redefining \url on input line 5104.
+LaTeX Info: Redefining \url on input line 5115.
 \XeTeXLinkMargin=\dimen114
 \Fld@menulength=\count106
 \Field@Width=\dimen115
 \Fld@charsize=\dimen116
-Package hyperref Info: Hyper figures OFF on input line 6358.
-Package hyperref Info: Link nesting OFF on input line 6363.
-Package hyperref Info: Hyper index ON on input line 6366.
-Package hyperref Info: backreferencing OFF on input line 6373.
-Package hyperref Info: Link coloring OFF on input line 6378.
-Package hyperref Info: Link coloring with OCG OFF on input line 6383.
-Package hyperref Info: PDF/A mode OFF on input line 6388.
-LaTeX Info: Redefining \ref on input line 6428.
-LaTeX Info: Redefining \pageref on input line 6432.
+Package hyperref Info: Hyper figures OFF on input line 6369.
+Package hyperref Info: Link nesting OFF on input line 6374.
+Package hyperref Info: Hyper index ON on input line 6377.
+Package hyperref Info: backreferencing OFF on input line 6384.
+Package hyperref Info: Link coloring OFF on input line 6389.
+Package hyperref Info: Link coloring with OCG OFF on input line 6394.
+Package hyperref Info: PDF/A mode OFF on input line 6399.
+LaTeX Info: Redefining \ref on input line 6439.
+LaTeX Info: Redefining \pageref on input line 6443.
 \Hy@abspage=\count107
 \c@Item=\count108
 \c@Hfootnote=\count109
 )
-
-Package hyperref Message: Driver (autodetected): hpdftex.
-
-(/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2017/03/14 v6.85a Hyperref driver for pdfTeX
+Package hyperref Info: Driver (autodetected): hpdftex.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2018/02/06 v6.86b Hyperref driver for pdfTeX
 \Fld@listcount=\count110
 \c@bookmark@seq@number=\count111
-(/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
 \Hy@SectionHShift=\skip47
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/bkm-pdftex.def
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/bkm-pdftex.def
 File: bkm-pdftex.def 2016/05/17 v1.26 bookmark driver for pdfTeX (HO)
 \BKM@id=\count112
-)) (/usr/local/texlive/2017/texmf-dist/tex/latex/geometry/geometry.sty
-Package: geometry 2010/09/12 v5.6 Page Geometry
+)) (/usr/local/texlive/2018/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2018/03/24 v5.7 Page Geometry
 \Gm@cnth=\count113
 \Gm@cntv=\count114
 \c@Gm@tempcnt=\count115
@@ -782,33 +471,33 @@ Package: geometry 2010/09/12 v5.6 Page Geometry
 \Gm@layouthoffset=\dimen123
 \Gm@layoutvoffset=\dimen124
 \Gm@dimlist=\toks24
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
-(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2017/04/14 v1.1b Standard LaTeX Graphics (DPC,SPQR)
-(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/trig.sty
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 99.
 )
 \Gin@req@height=\dimen125
 \Gin@req@width=\dimen126
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/grffile.sty
-Package: grffile 2016/05/16 v1.17 Extended file name support for graphics (HO)
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/grffile.sty
+Package: grffile 2017/06/30 v1.18 Extended file name support for graphics (HO)
 Package grffile Info: Option `multidot' is set to `true'.
 Package grffile Info: Option `extendedchars' is set to `false'.
 Package grffile Info: Option `space' is set to `true'.
-Package grffile Info: \Gin@ii of package `graphicx' fixed on input line 486.
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/preprint/fullpage.sty
+Package grffile Info: \Gin@ii of package `graphicx' fixed on input line 494.
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/preprint/fullpage.sty
 Package: fullpage 1999/02/23 1.1 (PWD)
 \FP@margin=\skip48
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/caption/subcaption.sty
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2016/05/22 v1.1-161 Sub-captions (AR)
-(/usr/local/texlive/2017/texmf-dist/tex/latex/caption/caption.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
-(/usr/local/texlive/2017/texmf-dist/tex/latex/caption/caption3.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
 \captionmargin=\dimen127
@@ -824,19 +513,19 @@ Package caption Info: hyperref package is loaded.
 )
 \c@subfigure=\count117
 \c@subtable=\count118
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/float/float.sty
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count119
 \float@exts=\toks25
 \float@box=\box28
 \@float@everytoks=\toks26
 \@floatcapt=\box29
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/placeins/placeins.sty
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/placeins/placeins.sty
 Package: placeins 2005/04/18  v 2.2
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/mathtools/mathtools.sty
-Package: mathtools 2015/11/12 v1.18 mathematical typesetting tools
-(/usr/local/texlive/2017/texmf-dist/tex/latex/tools/calc.sty
-Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/mathtools/mathtools.sty
+Package: mathtools 2018/01/08 v1.21 mathematical typesetting tools
+(/usr/local/texlive/2018/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count120
 \calc@Bcount=\count121
 \calc@Adimen=\dimen134
@@ -847,8 +536,8 @@ LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count122
 \calc@Cskip=\skip51
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/mathtools/mhsetup.sty
-Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/mathtools/mhsetup.sty
+Package: mhsetup 2017/03/31 v1.3 programming setup (MH)
 )
 LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
@@ -863,9 +552,9 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \l_MT_below_intertext_sep=\dimen140
 \l_MT_above_shortintertext_sep=\dimen141
 \l_MT_below_shortintertext_sep=\dimen142
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/rotating.sty
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/rotating.sty
 Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
-(/usr/local/texlive/2017/texmf-dist/tex/latex/base/ifthen.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \c@r@tfl@t=\count124
@@ -873,15 +562,15 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 \rotFPbot=\skip54
 \rot@float@box=\box30
 \rot@mess@toks=\toks27
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/multirow/multirow.sty
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
 \multirow@colwidth=\skip55
 \multirow@cntb=\count125
 \multirow@dima=\skip56
 \bigstrutjot=\dimen143
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/multirow/bigstrut.sty
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/multirow/bigstrut.sty
 Package: bigstrut 2016/11/25 v2.2 Provide larger struts in tabulars
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/tools/longtable.sty
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
 \LTleft=\skip57
 \LTright=\skip58
@@ -898,7 +587,12 @@ Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
 \c@LT@tables=\count129
 \c@LT@chunks=\count130
 \LT@p@ftn=\toks28
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/booktabs/booktabs.sty
+)
+
+Package geometry Warning: Over-specification in `h'-direction.
+    `width' (542.025pt) is ignored.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2016/04/27 v1.618033 publication quality tables
 \heavyrulewidth=\dimen145
 \lightrulewidth=\dimen146
@@ -917,35 +611,37 @@ Package: booktabs 2016/04/27 v1.618033 publication quality tables
 \@thisruleclass=\count133
 \@lastruleclass=\count134
 \@thisrulewidth=\dimen157
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/tools/array.sty
-Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/tools/array.sty
+Package: array 2018/04/07 v2.4g Tabular extension package (FMi)
 \col@sep=\dimen158
+\ar@mcellbox=\box35
 \extrarowheight=\dimen159
 \NC@list=\toks29
 \extratabsurround=\skip61
 \backup@length=\skip62
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\ar@cellbox=\box36
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/wrapfig/wrapfig.sty
 \wrapoverhang=\dimen160
 \WF@size=\dimen161
 \c@WF@wrappedlines=\count135
-\WF@box=\box35
+\WF@box=\box37
 \WF@everypar=\toks30
 Package: wrapfig 2003/01/31  v 3.6
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/colortbl/colortbl.sty
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/colortbl/colortbl.sty
 Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
 \everycr=\toks31
 \minrowclearance=\skip63
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/pdflscape.sty
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/pdflscape.sty
 Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
-(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/lscape.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/lscape.sty
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/tabu/tabu.sty
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/tabu/tabu.sty
 Package: tabu 2011/02/26 v2.8 - flexible LaTeX tabulars (FC)
-(/usr/local/texlive/2017/texmf-dist/tex/latex/varwidth/varwidth.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box36
+\@vwid@box=\box38
 \sift@deathcycles=\count136
 \@vwid@loff=\dimen162
 \@vwid@roff=\dimen163
@@ -967,37 +663,37 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \tabustrutrule=\dimen172
 \tabu@thebody=\toks32
 \tabu@footnotes=\toks33
-\tabu@box=\box37
-\tabu@arstrutbox=\box38
-\tabu@hleads=\box39
-\tabu@vleads=\box40
+\tabu@box=\box39
+\tabu@arstrutbox=\box40
+\tabu@hleads=\box41
+\tabu@vleads=\box42
 \tabu@cellskip=\skip64
 )
-(/usr/local/texlive/2017/texmf-dist/tex/latex/threeparttable/threeparttable.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/threeparttable/threeparttable.sty
 Package: threeparttable 2003/06/13  v 3.0
-\@tempboxb=\box41
+\@tempboxb=\box43
 )
-(/usr/local/texlive/2017/texmf-dist/tex/latex/threeparttablex/threeparttablex.s
+(/usr/local/texlive/2018/texmf-dist/tex/latex/threeparttablex/threeparttablex.s
 ty
 Package: threeparttablex 2013/07/23 v0.3 by daleif
-(/usr/local/texlive/2017/texmf-dist/tex/latex/environ/environ.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/environ/environ.sty
 Package: environ 2014/05/04 v0.3 A new way to define environments
-(/usr/local/texlive/2017/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/trimspaces/trimspaces.sty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 ))
 \TPTL@width=\skip65
-) (/usr/local/texlive/2017/texmf-dist/tex/generic/ulem/ulem.sty
-\UL@box=\box42
-\UL@hyphenbox=\box43
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box44
+\UL@hyphenbox=\box45
 \UL@skip=\skip66
 \UL@hook=\toks34
 \UL@height=\dimen173
 \UL@pe=\count143
 \UL@pixel=\dimen174
-\ULC@box=\box44
+\ULC@box=\box46
 Package: ulem 2012/05/18
 \ULdepth=\dimen175
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/makecell/makecell.sty
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/makecell/makecell.sty
 Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
 \rotheadsize=\dimen176
 \c@nlinenum=\count144
@@ -1019,7 +715,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 95.
 LaTeX Font Info:    ... okay on input line 95.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 95.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 95.
-(/usr/local/texlive/2017/texmf-dist/tex/latex/base/ts1cmr.fd
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 95.
@@ -1028,7 +724,7 @@ LaTeX Font Info:    ... okay on input line 95.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 95.
 LaTeX Font Info:    ... okay on input line 95.
 LaTeX Font Info:    Try loading font information for T1+lmr on input line 95.
-(/usr/local/texlive/2017/texmf-dist/tex/latex/lm/t1lmr.fd
+(/usr/local/texlive/2018/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Info: Redefining \microtypecontext on input line 95.
@@ -1041,14 +737,14 @@ Package microtype Info: Using default expansion set `basictext'.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
-(/usr/local/texlive/2017/texmf-dist/tex/latex/microtype/mt-cmr.cfg
+(/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
-) (/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+) (/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count145
 \scratchdimen=\dimen177
-\scratchbox=\box45
+\scratchbox=\box47
 \nofMPsegments=\count146
 \nofMParguments=\count147
 \everyMPshowfont=\toks36
@@ -1057,26 +753,26 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 \MPnumerator=\count149
 \makeMPintoPDFobject=\count150
 \everyMPtoPDFconversion=\toks37
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
-(/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/grfext.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/grfext.sty
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 )
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 38.
 Package grfext Info: Graphics extension search list:
-(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
-(/usr/local/texlive/2017/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+(/usr/local/texlive/2018/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\AtBeginShipoutBox=\box46
+\AtBeginShipoutBox=\box48
 Package hyperref Info: Link coloring OFF on input line 95.
-(/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
-(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count151
@@ -1097,7 +793,7 @@ LaTeX Info: Redefining \nameref on input line 95.
 * \paperwidth=614.295pt
 * \paperheight=794.96999pt
 * \textwidth=469.75502pt
-* \textheight=620.43001pt
+* \textheight=650.43001pt
 * \oddsidemargin=0.0pt
 * \evensidemargin=0.0pt
 * \topmargin=0.0pt
@@ -1121,7 +817,7 @@ LaTeX Info: Redefining \nameref on input line 95.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: longtable package is loaded.
-(/usr/local/texlive/2017/texmf-dist/tex/latex/caption/ltcaption.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/caption/ltcaption.sty
 Package: ltcaption 2013/06/09 v1.4-94 longtable captions (AR)
 )
 Package caption Info: rotating package is loaded.
@@ -1129,21 +825,21 @@ Package caption Info: threeparttable package is loaded.
 Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Try loading font information for OT1+lmr on input line 97.
-(/usr/local/texlive/2017/texmf-dist/tex/latex/lm/ot1lmr.fd
+(/usr/local/texlive/2018/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Try loading font information for OML+lmm on input line 97.
-(/usr/local/texlive/2017/texmf-dist/tex/latex/lm/omllmm.fd
+(/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 97.
 
-(/usr/local/texlive/2017/texmf-dist/tex/latex/lm/omslmsy.fd
+(/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Try loading font information for OMX+lmex on input line 97.
 
-(/usr/local/texlive/2017/texmf-dist/tex/latex/lm/omxlmex.fd
+(/usr/local/texlive/2018/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -1153,15 +849,15 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 97.
 LaTeX Font Info:    Try loading font information for U+msa on input line 97.
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/microtype/mt-msa.cfg
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 97.
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/microtype/mt-msb.cfg
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 ) (./FPM_SimStudy.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -1176,10 +872,10 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 [1
 
-{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Try loading font information for TS1+lmr on input line 134.
 
-(/usr/local/texlive/2017/texmf-dist/tex/latex/lm/ts1lmr.fd
+(/usr/local/texlive/2018/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
@@ -1198,217 +894,103 @@ Overfull \hbox (51.47058pt too wide) in alignment at lines 171--183
  [][][] []
  []
 
-[3] [4]
-<FPM_SimStudy_figs/fig-Figure1_AllSample_plotA-1.pdf, id=88, 417.56pt x 280.046
-25pt>
-File: FPM_SimStudy_figs/fig-Figure1_AllSample_plotA-1.pdf Graphic file (type pd
-f)
-<use FPM_SimStudy_figs/fig-Figure1_AllSample_plotA-1.pdf>
-Package pdftex.def Info: FPM_SimStudy_figs/fig-Figure1_AllSample_plotA-1.pdf us
-ed on input line 200.
-(pdftex.def)             Requested size: 187.90025pt x 126.01964pt.
-
-<FPM_SimStudy_figs/fig-Figure1_AllSample_plotB-1.pdf, id=89, 417.56pt x 280.046
-25pt>
-File: FPM_SimStudy_figs/fig-Figure1_AllSample_plotB-1.pdf Graphic file (type pd
-f)
-<use FPM_SimStudy_figs/fig-Figure1_AllSample_plotB-1.pdf>
-Package pdftex.def Info: FPM_SimStudy_figs/fig-Figure1_AllSample_plotB-1.pdf us
-ed on input line 205.
-(pdftex.def)             Requested size: 187.90025pt x 126.01964pt.
-
-<FPM_SimStudy_figs/fig-Figure1_AllSample_plotC-1.pdf, id=90, 417.56pt x 280.046
-25pt>
-File: FPM_SimStudy_figs/fig-Figure1_AllSample_plotC-1.pdf Graphic file (type pd
-f)
-<use FPM_SimStudy_figs/fig-Figure1_AllSample_plotC-1.pdf>
-Package pdftex.def Info: FPM_SimStudy_figs/fig-Figure1_AllSample_plotC-1.pdf us
-ed on input line 210.
-(pdftex.def)             Requested size: 187.90025pt x 126.01964pt.
-
-<FPM_SimStudy_figs/fig-Figure1_AllSample_plotD-1.pdf, id=91, 417.56pt x 280.046
-25pt>
-File: FPM_SimStudy_figs/fig-Figure1_AllSample_plotD-1.pdf Graphic file (type pd
-f)
-<use FPM_SimStudy_figs/fig-Figure1_AllSample_plotD-1.pdf>
-Package pdftex.def Info: FPM_SimStudy_figs/fig-Figure1_AllSample_plotD-1.pdf us
-ed on input line 215.
-(pdftex.def)             Requested size: 187.90025pt x 126.01964pt.
-[5
-
- <./FPM_SimStudy_figs/fig-Figure1_AllSample_plotA-1.pdf> <./FPM_SimStudy_figs/f
-ig-Figure1_AllSample_plotB-1.pdf> <./FPM_SimStudy_figs/fig-Figure1_AllSample_pl
-otC-1.pdf> <./FPM_SimStudy_figs/fig-Figure1_AllSample_plotD-1.pdf>]
-<FPM_SimStudy_figs/fig-Figure1_contSample_paramfits-1.pdf, id=128, 417.56pt x 2
-80.04625pt>
-File: FPM_SimStudy_figs/fig-Figure1_contSample_paramfits-1.pdf Graphic file (ty
-pe pdf)
-<use FPM_SimStudy_figs/fig-Figure1_contSample_paramfits-1.pdf>
-Package pdftex.def Info: FPM_SimStudy_figs/fig-Figure1_contSample_paramfits-1.p
-df used on input line 231.
-(pdftex.def)             Requested size: 417.57806pt x 280.05836pt.
-
-<FPM_SimStudy_figs/fig-Figure1_bite100Sample_paramfits-1.pdf, id=129, 417.56pt 
-x 280.04625pt>
-File: FPM_SimStudy_figs/fig-Figure1_bite100Sample_paramfits-1.pdf Graphic file 
-(type pdf)
-<use FPM_SimStudy_figs/fig-Figure1_bite100Sample_paramfits-1.pdf>
-Package pdftex.def Info: FPM_SimStudy_figs/fig-Figure1_bite100Sample_paramfits-
-1.pdf used on input line 239.
-(pdftex.def)             Requested size: 417.57806pt x 280.05836pt.
-[6
-
- <./FPM_SimStudy_figs/fig-Figure1_contSample_paramfits-1.pdf>] [7 <./FPM_SimStu
-dy_figs/fig-Figure1_bite100Sample_paramfits-1.pdf>]
-<FPM_SimStudy_figs/fig-Figure1_bite33Sample_plotA_paramfits-1.pdf, id=163, 417.
-56pt x 280.04625pt>
-File: FPM_SimStudy_figs/fig-Figure1_bite33Sample_plotA_paramfits-1.pdf Graphic 
-file (type pdf)
-<use FPM_SimStudy_figs/fig-Figure1_bite33Sample_plotA_paramfits-1.pdf>
-Package pdftex.def Info: FPM_SimStudy_figs/fig-Figure1_bite33Sample_plotA_param
-fits-1.pdf used on input line 255.
-(pdftex.def)             Requested size: 328.84297pt x 220.54611pt.
-
-<FPM_SimStudy_figs/fig-Figure1_bite33Sample_plotB_paramfits-1.pdf, id=164, 417.
-56pt x 280.04625pt>
-File: FPM_SimStudy_figs/fig-Figure1_bite33Sample_plotB_paramfits-1.pdf Graphic 
-file (type pdf)
-<use FPM_SimStudy_figs/fig-Figure1_bite33Sample_plotB_paramfits-1.pdf>
-Package pdftex.def Info: FPM_SimStudy_figs/fig-Figure1_bite33Sample_plotB_param
-fits-1.pdf used on input line 260.
-(pdftex.def)             Requested size: 328.84297pt x 220.54611pt.
-
-<FPM_SimStudy_figs/fig-Figure1_bite33Sample_plotC_paramfits-1.pdf, id=165, 417.
-56pt x 280.04625pt>
-File: FPM_SimStudy_figs/fig-Figure1_bite33Sample_plotC_paramfits-1.pdf Graphic 
-file (type pdf)
-<use FPM_SimStudy_figs/fig-Figure1_bite33Sample_plotC_paramfits-1.pdf>
-Package pdftex.def Info: FPM_SimStudy_figs/fig-Figure1_bite33Sample_plotC_param
-fits-1.pdf used on input line 271.
-(pdftex.def)             Requested size: 328.84297pt x 220.54611pt.
-
-<FPM_SimStudy_figs/fig-Figure1_bite33Sample_plotD_paramfits-1.pdf, id=166, 417.
-56pt x 280.04625pt>
-File: FPM_SimStudy_figs/fig-Figure1_bite33Sample_plotD_paramfits-1.pdf Graphic 
-file (type pdf)
-<use FPM_SimStudy_figs/fig-Figure1_bite33Sample_plotD_paramfits-1.pdf>
-Package pdftex.def Info: FPM_SimStudy_figs/fig-Figure1_bite33Sample_plotD_param
-fits-1.pdf used on input line 276.
-(pdftex.def)             Requested size: 328.84297pt x 220.54611pt.
-[8
-
- <./FPM_SimStudy_figs/fig-Figure1_bite33Sample_plotA_paramfits-1.pdf> <./FPM_Si
-mStudy_figs/fig-Figure1_bite33Sample_plotB_paramfits-1.pdf>] [9 <./FPM_SimStudy
-_figs/fig-Figure1_bite33Sample_plotC_paramfits-1.pdf> <./FPM_SimStudy_figs/fig-
-Figure1_bite33Sample_plotD_paramfits-1.pdf>] [10
+[3] [4] [5
 
 ]
-Overfull \hbox (17.13533pt too wide) in paragraph at lines 361--375
+Overfull \hbox (17.13533pt too wide) in paragraph at lines 283--297
  [][] 
  []
 
-[11
+[6
 
-] [12
+] [7
 
 ]
-<FPM_SimStudy_figs/fig-FogelSim_microstructure_corPlot-1.pdf, id=255, 423.5825p
-t x 274.02374pt>
+<FPM_SimStudy_figs/fig-FogelSim_microstructure_corPlot-1.pdf, id=146, 568.1225p
+t x 563.10374pt>
 File: FPM_SimStudy_figs/fig-FogelSim_microstructure_corPlot-1.pdf Graphic file 
 (type pdf)
 <use FPM_SimStudy_figs/fig-FogelSim_microstructure_corPlot-1.pdf>
 Package pdftex.def Info: FPM_SimStudy_figs/fig-FogelSim_microstructure_corPlot-
-1.pdf used on input line 432.
-(pdftex.def)             Requested size: 423.59439pt x 274.03143pt.
-[13
+1.pdf  used on input line 354.
+(pdftex.def)             Requested size: 469.7731pt x 465.62317pt.
+[8
 
  <./FPM_SimStudy_figs/fig-FogelSim_microstructure_corPlot-1.pdf>]
-<FPM_SimStudy_figs/fig-FogelSim_EatingRate_histogram-1.pdf, id=275, 417.56pt x 
-277.035pt>
+<FPM_SimStudy_figs/fig-FogelSim_EatingRate_histogram-1.pdf, id=166, 562.1pt x 5
+66.115pt>
 File: FPM_SimStudy_figs/fig-FogelSim_EatingRate_histogram-1.pdf Graphic file (t
 ype pdf)
 <use FPM_SimStudy_figs/fig-FogelSim_EatingRate_histogram-1.pdf>
 Package pdftex.def Info: FPM_SimStudy_figs/fig-FogelSim_EatingRate_histogram-1.
-pdf used on input line 445.
-(pdftex.def)             Requested size: 187.90025pt x 124.6646pt.
-
-<FPM_SimStudy_figs/fig-FogelSim_EatingRate_density-1.pdf, id=276, 417.56pt x 27
-7.035pt>
+pdf  used on input line 368.
+(pdftex.def)             Requested size: 187.89511pt x 189.23723pt.
+<FPM_SimStudy_figs/fig-FogelSim_EatingRate_density-1.pdf, id=167, 562.1pt x 566
+.115pt>
 File: FPM_SimStudy_figs/fig-FogelSim_EatingRate_density-1.pdf Graphic file (typ
 e pdf)
 <use FPM_SimStudy_figs/fig-FogelSim_EatingRate_density-1.pdf>
 Package pdftex.def Info: FPM_SimStudy_figs/fig-FogelSim_EatingRate_density-1.pd
-f used on input line 450.
-(pdftex.def)             Requested size: 187.90025pt x 124.6646pt.
-[14
+f  used on input line 373.
+(pdftex.def)             Requested size: 187.89511pt x 189.23723pt.
+[9
 
  <./FPM_SimStudy_figs/fig-FogelSim_EatingRate_histogram-1.pdf> <./FPM_SimStudy_
 figs/fig-FogelSim_EatingRate_density-1.pdf>]
 <FPM_SimStudy_figs/fig-FogelSim_Kissileff_Intercept.EatingRate_histogram-1.pdf,
- id=304, 417.56pt x 277.035pt>
+ id=196, 562.1pt x 566.115pt>
 File: FPM_SimStudy_figs/fig-FogelSim_Kissileff_Intercept.EatingRate_histogram-1
 .pdf Graphic file (type pdf)
-
 <use FPM_SimStudy_figs/fig-FogelSim_Kissileff_Intercept.EatingRate_histogram-1.
 pdf>
 Package pdftex.def Info: FPM_SimStudy_figs/fig-FogelSim_Kissileff_Intercept.Eat
-ingRate_histogram-1.pdf used on input line 467.
-(pdftex.def)             Requested size: 164.42148pt x 109.08733pt.
-
+ingRate_histogram-1.pdf  used on input line 390.
+(pdftex.def)             Requested size: 164.41144pt x 165.5858pt.
 <FPM_SimStudy_figs/fig-FogelSim_Kissileff_Intercept.EatingRate_density-1.pdf, i
-d=305, 417.56pt x 278.03876pt>
+d=197, 562.1pt x 566.115pt>
 File: FPM_SimStudy_figs/fig-FogelSim_Kissileff_Intercept.EatingRate_density-1.p
 df Graphic file (type pdf)
-
 <use FPM_SimStudy_figs/fig-FogelSim_Kissileff_Intercept.EatingRate_density-1.pd
 f>
 Package pdftex.def Info: FPM_SimStudy_figs/fig-FogelSim_Kissileff_Intercept.Eat
-ingRate_density-1.pdf used on input line 472.
-(pdftex.def)             Requested size: 164.42148pt x 109.48257pt.
-
+ingRate_density-1.pdf  used on input line 395.
+(pdftex.def)             Requested size: 164.41144pt x 165.5858pt.
 <FPM_SimStudy_figs/fig-FogelSim_Kissileff_Linear.EatingRate_histogram-1.pdf, id
-=306, 417.56pt x 277.035pt>
+=198, 562.1pt x 566.115pt>
 File: FPM_SimStudy_figs/fig-FogelSim_Kissileff_Linear.EatingRate_histogram-1.pd
 f Graphic file (type pdf)
-
 <use FPM_SimStudy_figs/fig-FogelSim_Kissileff_Linear.EatingRate_histogram-1.pdf
 >
 Package pdftex.def Info: FPM_SimStudy_figs/fig-FogelSim_Kissileff_Linear.Eating
-Rate_histogram-1.pdf used on input line 477.
-(pdftex.def)             Requested size: 164.42148pt x 109.08733pt.
-
-<FPM_SimStudy_figs/fig-FogelSim_Kissileff_Linear.EatingRate_density-1.pdf, id=3
-07, 417.56pt x 277.035pt>
+Rate_histogram-1.pdf  used on input line 400.
+(pdftex.def)             Requested size: 164.41144pt x 165.5858pt.
+<FPM_SimStudy_figs/fig-FogelSim_Kissileff_Linear.EatingRate_density-1.pdf, id=1
+99, 562.1pt x 566.115pt>
 File: FPM_SimStudy_figs/fig-FogelSim_Kissileff_Linear.EatingRate_density-1.pdf 
 Graphic file (type pdf)
-
 <use FPM_SimStudy_figs/fig-FogelSim_Kissileff_Linear.EatingRate_density-1.pdf>
 Package pdftex.def Info: FPM_SimStudy_figs/fig-FogelSim_Kissileff_Linear.Eating
-Rate_density-1.pdf used on input line 482.
-(pdftex.def)             Requested size: 164.42148pt x 109.08733pt.
-
+Rate_density-1.pdf  used on input line 405.
+(pdftex.def)             Requested size: 164.41144pt x 165.5858pt.
 <FPM_SimStudy_figs/fig-FogelSim_Kissileff_Quadratic.EatingRate_histogram-1.pdf,
- id=308, 417.56pt x 279.0425pt>
+ id=200, 562.1pt x 568.1225pt>
 File: FPM_SimStudy_figs/fig-FogelSim_Kissileff_Quadratic.EatingRate_histogram-1
 .pdf Graphic file (type pdf)
-
 <use FPM_SimStudy_figs/fig-FogelSim_Kissileff_Quadratic.EatingRate_histogram-1.
 pdf>
 Package pdftex.def Info: FPM_SimStudy_figs/fig-FogelSim_Kissileff_Quadratic.Eat
-ingRate_histogram-1.pdf used on input line 487.
-(pdftex.def)             Requested size: 164.42148pt x 109.8778pt.
-
+ingRate_histogram-1.pdf  used on input line 410.
+(pdftex.def)             Requested size: 164.41144pt x 166.17299pt.
 <FPM_SimStudy_figs/fig-FogelSim_Kissileff_Quadratic.EatingRate_density-1.pdf, i
-d=309, 417.56pt x 279.0425pt>
+d=201, 562.1pt x 568.1225pt>
 File: FPM_SimStudy_figs/fig-FogelSim_Kissileff_Quadratic.EatingRate_density-1.p
 df Graphic file (type pdf)
-
 <use FPM_SimStudy_figs/fig-FogelSim_Kissileff_Quadratic.EatingRate_density-1.pd
 f>
 Package pdftex.def Info: FPM_SimStudy_figs/fig-FogelSim_Kissileff_Quadratic.Eat
-ingRate_density-1.pdf used on input line 492.
-(pdftex.def)             Requested size: 164.42148pt x 109.8778pt.
-[15
+ingRate_density-1.pdf  used on input line 415.
+(pdftex.def)             Requested size: 164.41144pt x 166.17299pt.
+[10
 
  <./FPM_SimStudy_figs/fig-FogelSim_Kissileff_Intercept.EatingRate_histogram-1.p
 df> <./FPM_SimStudy_figs/fig-FogelSim_Kissileff_Intercept.EatingRate_density-1.
@@ -1418,62 +1000,56 @@ f> <./FPM_SimStudy_figs/fig-FogelSim_Kissileff_Quadratic.EatingRate_histogram-1
 .pdf> <./FPM_SimStudy_figs/fig-FogelSim_Kissileff_Quadratic.EatingRate_density-
 1.pdf>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 507.
-
-<FPM_SimStudy_figs/fig-FogelSim_FPM_theta.EatingRate_histogram-1.pdf, id=376, 4
-17.56pt x 277.035pt>
+(Font)              <9> on input line 430.
+<FPM_SimStudy_figs/fig-FogelSim_FPM_theta.EatingRate_histogram-1.pdf, id=268, 5
+62.1pt x 566.115pt>
 File: FPM_SimStudy_figs/fig-FogelSim_FPM_theta.EatingRate_histogram-1.pdf Graph
 ic file (type pdf)
 <use FPM_SimStudy_figs/fig-FogelSim_FPM_theta.EatingRate_histogram-1.pdf>
 Package pdftex.def Info: FPM_SimStudy_figs/fig-FogelSim_FPM_theta.EatingRate_hi
-stogram-1.pdf used on input line 508.
-(pdftex.def)             Requested size: 164.42148pt x 109.08733pt.
-
-<FPM_SimStudy_figs/fig-FogelSim_FPM_theta.EatingRate_density-1.pdf, id=377, 417
-.56pt x 277.035pt>
+stogram-1.pdf  used on input line 431.
+(pdftex.def)             Requested size: 164.41144pt x 165.5858pt.
+<FPM_SimStudy_figs/fig-FogelSim_FPM_theta.EatingRate_density-1.pdf, id=269, 562
+.1pt x 566.115pt>
 File: FPM_SimStudy_figs/fig-FogelSim_FPM_theta.EatingRate_density-1.pdf Graphic
  file (type pdf)
 <use FPM_SimStudy_figs/fig-FogelSim_FPM_theta.EatingRate_density-1.pdf>
 Package pdftex.def Info: FPM_SimStudy_figs/fig-FogelSim_FPM_theta.EatingRate_de
-nsity-1.pdf used on input line 513.
-(pdftex.def)             Requested size: 164.42148pt x 109.08733pt.
-
-<FPM_SimStudy_figs/fig-FogelSim_FPM_r.EatingRate_histogram-1.pdf, id=378, 417.5
-6pt x 277.035pt>
+nsity-1.pdf  used on input line 436.
+(pdftex.def)             Requested size: 164.41144pt x 165.5858pt.
+<FPM_SimStudy_figs/fig-FogelSim_FPM_r.EatingRate_histogram-1.pdf, id=270, 562.1
+pt x 566.115pt>
 File: FPM_SimStudy_figs/fig-FogelSim_FPM_r.EatingRate_histogram-1.pdf Graphic f
 ile (type pdf)
 <use FPM_SimStudy_figs/fig-FogelSim_FPM_r.EatingRate_histogram-1.pdf>
 Package pdftex.def Info: FPM_SimStudy_figs/fig-FogelSim_FPM_r.EatingRate_histog
-ram-1.pdf used on input line 518.
-(pdftex.def)             Requested size: 164.42148pt x 109.08733pt.
-
-<FPM_SimStudy_figs/fig-FogelSim_FPM_r.EatingRate_density-1.pdf, id=379, 417.56p
-t x 277.035pt>
+ram-1.pdf  used on input line 441.
+(pdftex.def)             Requested size: 164.41144pt x 165.5858pt.
+<FPM_SimStudy_figs/fig-FogelSim_FPM_r.EatingRate_density-1.pdf, id=271, 562.1pt
+ x 566.115pt>
 File: FPM_SimStudy_figs/fig-FogelSim_FPM_r.EatingRate_density-1.pdf Graphic fil
 e (type pdf)
 <use FPM_SimStudy_figs/fig-FogelSim_FPM_r.EatingRate_density-1.pdf>
 Package pdftex.def Info: FPM_SimStudy_figs/fig-FogelSim_FPM_r.EatingRate_densit
-y-1.pdf used on input line 523.
-(pdftex.def)             Requested size: 164.42148pt x 109.08733pt.
-
-<FPM_SimStudy_figs/fig-FogelSim_FPM_Emax.EatingRate_histogram-1.pdf, id=380, 41
-7.56pt x 279.0425pt>
+y-1.pdf  used on input line 446.
+(pdftex.def)             Requested size: 164.41144pt x 165.5858pt.
+<FPM_SimStudy_figs/fig-FogelSim_FPM_Emax.EatingRate_histogram-1.pdf, id=272, 56
+2.1pt x 568.1225pt>
 File: FPM_SimStudy_figs/fig-FogelSim_FPM_Emax.EatingRate_histogram-1.pdf Graphi
 c file (type pdf)
 <use FPM_SimStudy_figs/fig-FogelSim_FPM_Emax.EatingRate_histogram-1.pdf>
 Package pdftex.def Info: FPM_SimStudy_figs/fig-FogelSim_FPM_Emax.EatingRate_his
-togram-1.pdf used on input line 528.
-(pdftex.def)             Requested size: 164.42148pt x 109.8778pt.
-
-<FPM_SimStudy_figs/fig-FogelSim_FPM_Emax.EatingRate_density-1.pdf, id=381, 417.
-56pt x 279.0425pt>
+togram-1.pdf  used on input line 451.
+(pdftex.def)             Requested size: 164.41144pt x 166.17299pt.
+<FPM_SimStudy_figs/fig-FogelSim_FPM_Emax.EatingRate_density-1.pdf, id=273, 562.
+1pt x 568.1225pt>
 File: FPM_SimStudy_figs/fig-FogelSim_FPM_Emax.EatingRate_density-1.pdf Graphic 
 file (type pdf)
 <use FPM_SimStudy_figs/fig-FogelSim_FPM_Emax.EatingRate_density-1.pdf>
 Package pdftex.def Info: FPM_SimStudy_figs/fig-FogelSim_FPM_Emax.EatingRate_den
-sity-1.pdf used on input line 533.
-(pdftex.def)             Requested size: 164.42148pt x 109.8778pt.
-[16
+sity-1.pdf  used on input line 456.
+(pdftex.def)             Requested size: 164.41144pt x 166.17299pt.
+[11
 
  <./FPM_SimStudy_figs/fig-FogelSim_FPM_theta.EatingRate_histogram-1.pdf> <./FPM
 _SimStudy_figs/fig-FogelSim_FPM_theta.EatingRate_density-1.pdf> <./FPM_SimStudy
@@ -1481,157 +1057,665 @@ _figs/fig-FogelSim_FPM_r.EatingRate_histogram-1.pdf> <./FPM_SimStudy_figs/fig-F
 ogelSim_FPM_r.EatingRate_density-1.pdf> <./FPM_SimStudy_figs/fig-FogelSim_FPM_E
 max.EatingRate_histogram-1.pdf> <./FPM_SimStudy_figs/fig-FogelSim_FPM_Emax.Eati
 ngRate_density-1.pdf>]
-<FPM_SimStudy_figs/fig-FogelSim_param_corPlot-1.pdf, id=450, 423.5825pt x 274.0
-2374pt>
+<FPM_SimStudy_figs/fig-FogelSim_param_corPlot-1.pdf, id=342, 568.1225pt x 566.1
+15pt>
 File: FPM_SimStudy_figs/fig-FogelSim_param_corPlot-1.pdf Graphic file (type pdf
 )
 <use FPM_SimStudy_figs/fig-FogelSim_param_corPlot-1.pdf>
-Package pdftex.def Info: FPM_SimStudy_figs/fig-FogelSim_param_corPlot-1.pdf use
-d on input line 543.
-(pdftex.def)             Requested size: 423.59439pt x 274.03143pt.
-[17
+Package pdftex.def Info: FPM_SimStudy_figs/fig-FogelSim_param_corPlot-1.pdf  us
+ed on input line 466.
+(pdftex.def)             Requested size: 469.7731pt x 468.11314pt.
+[12
 
  <./FPM_SimStudy_figs/fig-FogelSim_param_corPlot-1.pdf>]
-<FPM_SimStudy_figs/fig-Kissileff_param_plotGrid_procNoise_int1-1.pdf, id=469, 4
-28.60126pt x 280.04625pt>
+<FPM_SimStudy_figs/fig-Kissileff_param_plotGrid_procNoise_int1-1.pdf, id=361, 5
+73.14125pt x 569.12625pt>
 File: FPM_SimStudy_figs/fig-Kissileff_param_plotGrid_procNoise_int1-1.pdf Graph
 ic file (type pdf)
 <use FPM_SimStudy_figs/fig-Kissileff_param_plotGrid_procNoise_int1-1.pdf>
 Package pdftex.def Info: FPM_SimStudy_figs/fig-Kissileff_param_plotGrid_procNoi
-se_int1-1.pdf used on input line 564.
-(pdftex.def)             Requested size: 187.89844pt x 122.77203pt.
-
+se_int1-1.pdf  used on input line 489.
+(pdftex.def)             Requested size: 187.89534pt x 186.57909pt.
 <FPM_SimStudy_figs/fig-Kissileff_param_plotGrid_procNoise_30min_int1-1.pdf, id=
-470, 428.60126pt x 280.04625pt>
+362, 573.14125pt x 569.12625pt>
 File: FPM_SimStudy_figs/fig-Kissileff_param_plotGrid_procNoise_30min_int1-1.pdf
  Graphic file (type pdf)
-
 <use FPM_SimStudy_figs/fig-Kissileff_param_plotGrid_procNoise_30min_int1-1.pdf>
-Package pdftex.def Info: FPM_SimStudy_figs/fig-Kissileff_param_plotGrid_procNoi
-se_30min_int1-1.pdf used on input line 569.
-(pdftex.def)             Requested size: 187.89844pt x 122.77203pt.
 
-<FPM_SimStudy_figs/fig-Kissileff_param_plotGrid_procNoise_intmean-1.pdf, id=471
-, 428.60126pt x 280.04625pt>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-Kissileff_param_plotGrid_procNoi
+se_30min_int1-1.pdf  used on input line 494.
+(pdftex.def)             Requested size: 187.89534pt x 186.57909pt.
+<FPM_SimStudy_figs/fig-Kissileff_param_plotGrid_procNoise_intmean-1.pdf, id=363
+, 573.14125pt x 569.12625pt>
 File: FPM_SimStudy_figs/fig-Kissileff_param_plotGrid_procNoise_intmean-1.pdf Gr
 aphic file (type pdf)
 <use FPM_SimStudy_figs/fig-Kissileff_param_plotGrid_procNoise_intmean-1.pdf>
 Package pdftex.def Info: FPM_SimStudy_figs/fig-Kissileff_param_plotGrid_procNoi
-se_intmean-1.pdf used on input line 575.
-(pdftex.def)             Requested size: 187.89844pt x 122.77203pt.
-
+se_intmean-1.pdf  used on input line 500.
+(pdftex.def)             Requested size: 187.89534pt x 186.57909pt.
 <FPM_SimStudy_figs/fig-Kissileff_param_plotGrid_procNoise_30min_intmean-1.pdf, 
-id=472, 428.60126pt x 280.04625pt>
+id=364, 573.14125pt x 569.12625pt>
 File: FPM_SimStudy_figs/fig-Kissileff_param_plotGrid_procNoise_30min_intmean-1.
 pdf Graphic file (type pdf)
-
 <use FPM_SimStudy_figs/fig-Kissileff_param_plotGrid_procNoise_30min_intmean-1.p
 df>
 Package pdftex.def Info: FPM_SimStudy_figs/fig-Kissileff_param_plotGrid_procNoi
-se_30min_intmean-1.pdf used on input line 580.
-(pdftex.def)             Requested size: 187.89844pt x 122.77203pt.
-
-<FPM_SimStudy_figs/fig-Kissileff_param_plotGrid_procNoise_int5-1.pdf, id=473, 4
-28.60126pt x 280.04625pt>
+se_30min_intmean-1.pdf  used on input line 505.
+(pdftex.def)             Requested size: 187.89534pt x 186.57909pt.
+<FPM_SimStudy_figs/fig-Kissileff_param_plotGrid_procNoise_int5-1.pdf, id=365, 5
+73.14125pt x 569.12625pt>
 File: FPM_SimStudy_figs/fig-Kissileff_param_plotGrid_procNoise_int5-1.pdf Graph
 ic file (type pdf)
 <use FPM_SimStudy_figs/fig-Kissileff_param_plotGrid_procNoise_int5-1.pdf>
 Package pdftex.def Info: FPM_SimStudy_figs/fig-Kissileff_param_plotGrid_procNoi
-se_int5-1.pdf used on input line 586.
-(pdftex.def)             Requested size: 187.89844pt x 122.77203pt.
+se_int5-1.pdf  used on input line 511.
+(pdftex.def)             Requested size: 187.89534pt x 186.57909pt.
 File: FPM_SimStudy_figs/fig-Kissileff_param_plotGrid_procNoise_int5-1.pdf Graph
 ic file (type pdf)
 <use FPM_SimStudy_figs/fig-Kissileff_param_plotGrid_procNoise_int5-1.pdf>
 Package pdftex.def Info: FPM_SimStudy_figs/fig-Kissileff_param_plotGrid_procNoi
-se_int5-1.pdf used on input line 591.
-(pdftex.def)             Requested size: 187.89844pt x 122.77203pt.
-[18
+se_int5-1.pdf  used on input line 516.
+(pdftex.def)             Requested size: 187.89534pt x 186.57909pt.
 
- <./FPM_SimStudy_figs/fig-Kissileff_param_plotGrid_procNoise_int1-1.pdf> <./FPM
-_SimStudy_figs/fig-Kissileff_param_plotGrid_procNoise_30min_int1-1.pdf> <./FPM_
-SimStudy_figs/fig-Kissileff_param_plotGrid_procNoise_intmean-1.pdf> <./FPM_SimS
-tudy_figs/fig-Kissileff_param_plotGrid_procNoise_30min_intmean-1.pdf> <./FPM_Si
-mStudy_figs/fig-Kissileff_param_plotGrid_procNoise_int5-1.pdf>]
-<FPM_SimStudy_figs/fig-FPM_param_plotGrid_procNoise-1.pdf, id=531, 428.60126pt 
-x 280.04625pt>
+LaTeX Warning: Float too large for page by 33.50732pt on input line 518.
+
+[13
+
+] [14 <./FPM_SimStudy_figs/fig-Kissileff_param_plotGrid_procNoise_int1-1.pdf> <
+./FPM_SimStudy_figs/fig-Kissileff_param_plotGrid_procNoise_30min_int1-1.pdf> <.
+/FPM_SimStudy_figs/fig-Kissileff_param_plotGrid_procNoise_intmean-1.pdf> <./FPM
+_SimStudy_figs/fig-Kissileff_param_plotGrid_procNoise_30min_intmean-1.pdf> <./F
+PM_SimStudy_figs/fig-Kissileff_param_plotGrid_procNoise_int5-1.pdf>]
+<FPM_SimStudy_figs/fig-FPM_param_plotGrid_procNoise-1.pdf, id=429, 568.1225pt x
+ 569.12625pt>
 File: FPM_SimStudy_figs/fig-FPM_param_plotGrid_procNoise-1.pdf Graphic file (ty
 pe pdf)
 <use FPM_SimStudy_figs/fig-FPM_param_plotGrid_procNoise-1.pdf>
 Package pdftex.def Info: FPM_SimStudy_figs/fig-FPM_param_plotGrid_procNoise-1.p
-df used on input line 610.
-(pdftex.def)             Requested size: 328.82718pt x 214.85428pt.
-
-<FPM_SimStudy_figs/fig-FPM_param_plotGrid_procNoise_30min-1.pdf, id=532, 428.60
-126pt x 280.04625pt>
+df  used on input line 535.
+(pdftex.def)             Requested size: 234.88222pt x 235.29721pt.
+<FPM_SimStudy_figs/fig-FPM_param_plotGrid_procNoise_30min-1.pdf, id=430, 573.14
+125pt x 569.12625pt>
 File: FPM_SimStudy_figs/fig-FPM_param_plotGrid_procNoise_30min-1.pdf Graphic fi
 le (type pdf)
 <use FPM_SimStudy_figs/fig-FPM_param_plotGrid_procNoise_30min-1.pdf>
 Package pdftex.def Info: FPM_SimStudy_figs/fig-FPM_param_plotGrid_procNoise_30m
-in-1.pdf used on input line 615.
-(pdftex.def)             Requested size: 328.82718pt x 214.85428pt.
-[19
+in-1.pdf  used on input line 540.
+(pdftex.def)             Requested size: 234.87573pt x 233.23038pt.
+[15
+
 
  <./FPM_SimStudy_figs/fig-FPM_param_plotGrid_procNoise-1.pdf> <./FPM_SimStudy_f
 igs/fig-FPM_param_plotGrid_procNoise_30min-1.pdf>]
-<FPM_SimStudy_figs/fig-FPM_param_r_plotGrid_procNoise-1.pdf, id=561, 428.60126p
-t x 280.04625pt>
+<FPM_SimStudy_figs/fig-FPM_param_r_plotGrid_procNoise-1.pdf, id=457, 573.14125p
+t x 569.12625pt>
 File: FPM_SimStudy_figs/fig-FPM_param_r_plotGrid_procNoise-1.pdf Graphic file (
 type pdf)
 <use FPM_SimStudy_figs/fig-FPM_param_r_plotGrid_procNoise-1.pdf>
 Package pdftex.def Info: FPM_SimStudy_figs/fig-FPM_param_r_plotGrid_procNoise-1
-.pdf used on input line 635.
-(pdftex.def)             Requested size: 328.82718pt x 214.85428pt.
-
-<FPM_SimStudy_figs/fig-FPM_param_r_plotGrid_procNoise_30min-1.pdf, id=562, 428.
-60126pt x 280.04625pt>
+.pdf  used on input line 560.
+(pdftex.def)             Requested size: 234.87573pt x 233.23038pt.
+<FPM_SimStudy_figs/fig-FPM_param_r_plotGrid_procNoise_30min-1.pdf, id=458, 573.
+14125pt x 569.12625pt>
 File: FPM_SimStudy_figs/fig-FPM_param_r_plotGrid_procNoise_30min-1.pdf Graphic 
 file (type pdf)
 <use FPM_SimStudy_figs/fig-FPM_param_r_plotGrid_procNoise_30min-1.pdf>
 Package pdftex.def Info: FPM_SimStudy_figs/fig-FPM_param_r_plotGrid_procNoise_3
-0min-1.pdf used on input line 640.
-(pdftex.def)             Requested size: 328.82718pt x 214.85428pt.
-[20
+0min-1.pdf  used on input line 565.
+(pdftex.def)             Requested size: 234.87573pt x 233.23038pt.
+[16
 
  <./FPM_SimStudy_figs/fig-FPM_param_r_plotGrid_procNoise-1.pdf> <./FPM_SimStudy
-_figs/fig-FPM_param_r_plotGrid_procNoise_30min-1.pdf>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 646.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 646.
+_figs/fig-FPM_param_r_plotGrid_procNoise_30min-1.pdf>] [17
+
+]
+<FPM_SimStudy_figs/fig-FPM_rmvn100_CIplot_theta-1.pdf, id=501, 566.115pt x 569.
+12625pt>
+File: FPM_SimStudy_figs/fig-FPM_rmvn100_CIplot_theta-1.pdf Graphic file (type p
+df)
+<use FPM_SimStudy_figs/fig-FPM_rmvn100_CIplot_theta-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-FPM_rmvn100_CIplot_theta-1.pdf  
+used on input line 675.
+(pdftex.def)             Requested size: 140.92372pt x 141.67332pt.
+<FPM_SimStudy_figs/fig-FPM_rmvn100_CIplot_r-1.pdf, id=502, 566.115pt x 569.1262
+5pt>
+File: FPM_SimStudy_figs/fig-FPM_rmvn100_CIplot_r-1.pdf Graphic file (type pdf)
+<use FPM_SimStudy_figs/fig-FPM_rmvn100_CIplot_r-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-FPM_rmvn100_CIplot_r-1.pdf  used
+ on input line 680.
+(pdftex.def)             Requested size: 140.92372pt x 141.67332pt.
+<FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_int-1.pdf, id=503, 566.115pt x 
+569.12625pt>
+File: FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_int-1.pdf Graphic file (ty
+pe pdf)
+<use FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_int-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_int-1.p
+df  used on input line 686.
+(pdftex.def)             Requested size: 140.92372pt x 141.67332pt.
+<FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_linear-1.pdf, id=504, 566.115pt
+ x 569.12625pt>
+File: FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_linear-1.pdf Graphic file 
+(type pdf)
+<use FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_linear-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_linear-
+1.pdf  used on input line 691.
+(pdftex.def)             Requested size: 140.92372pt x 141.67332pt.
+<FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_quad-1.pdf, id=505, 566.115pt x
+ 569.12625pt>
+File: FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_quad-1.pdf Graphic file (t
+ype pdf)
+<use FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_quad-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_quad-1.
+pdf  used on input line 696.
+(pdftex.def)             Requested size: 140.92372pt x 141.67332pt.
+[18
+
+ <./FPM_SimStudy_figs/fig-FPM_rmvn100_CIplot_theta-1.pdf> <./FPM_SimStudy_figs/
+fig-FPM_rmvn100_CIplot_r-1.pdf> <./FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIpl
+ot_int-1.pdf> <./FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_linear-1.pdf> <
+./FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_quad-1.pdf>]
+<FPM_SimStudy_figs/fig-FPM_rmvn100_intakeCurveCI_fitTRUE-1.pdf, id=548, 568.122
+5pt x 569.12625pt>
+File: FPM_SimStudy_figs/fig-FPM_rmvn100_intakeCurveCI_fitTRUE-1.pdf Graphic fil
+e (type pdf)
+<use FPM_SimStudy_figs/fig-FPM_rmvn100_intakeCurveCI_fitTRUE-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-FPM_rmvn100_intakeCurveCI_fitTRU
+E-1.pdf  used on input line 711.
+(pdftex.def)             Requested size: 211.38965pt x 211.76314pt.
+<FPM_SimStudy_figs/fig-FPM_rmvn100_intakeCurve_fitFALSE-1.pdf, id=549, 568.1225
+pt x 569.12625pt>
+File: FPM_SimStudy_figs/fig-FPM_rmvn100_intakeCurve_fitFALSE-1.pdf Graphic file
+ (type pdf)
+<use FPM_SimStudy_figs/fig-FPM_rmvn100_intakeCurve_fitFALSE-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-FPM_rmvn100_intakeCurve_fitFALSE
+-1.pdf  used on input line 716.
+(pdftex.def)             Requested size: 211.38965pt x 211.76314pt.
+<FPM_SimStudy_figs/fig-Kissileff_rmvn100_intakeCurveCI_fitTRUE-1.pdf, id=550, 5
+73.14125pt x 569.12625pt>
+File: FPM_SimStudy_figs/fig-Kissileff_rmvn100_intakeCurveCI_fitTRUE-1.pdf Graph
+ic file (type pdf)
+<use FPM_SimStudy_figs/fig-Kissileff_rmvn100_intakeCurveCI_fitTRUE-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-Kissileff_rmvn100_intakeCurveCI_
+fitTRUE-1.pdf  used on input line 722.
+(pdftex.def)             Requested size: 211.38554pt x 209.90474pt.
+<FPM_SimStudy_figs/fig-Kissileff_rmvn100_intakeCurve_fitFALSE-1.pdf, id=551, 56
+8.1225pt x 569.12625pt>
+File: FPM_SimStudy_figs/fig-Kissileff_rmvn100_intakeCurve_fitFALSE-1.pdf Graphi
+c file (type pdf)
+<use FPM_SimStudy_figs/fig-Kissileff_rmvn100_intakeCurve_fitFALSE-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-Kissileff_rmvn100_intakeCurve_fi
+tFALSE-1.pdf  used on input line 727.
+(pdftex.def)             Requested size: 211.38965pt x 211.76314pt.
+[19
+
+ <./FPM_SimStudy_figs/fig-FPM_rmvn100_intakeCurveCI_fitTRUE-1.pdf> <./FPM_SimSt
+udy_figs/fig-FPM_rmvn100_intakeCurve_fitFALSE-1.pdf> <./FPM_SimStudy_figs/fig-K
+issileff_rmvn100_intakeCurveCI_fitTRUE-1.pdf> <./FPM_SimStudy_figs/fig-Kissilef
+f_rmvn100_intakeCurve_fitFALSE-1.pdf>]
+<FPM_SimStudy_figs/fig-FPM_rmvn100_CIplot_theta_procNoise-1.pdf, id=598, 566.11
+5pt x 569.12625pt>
+File: FPM_SimStudy_figs/fig-FPM_rmvn100_CIplot_theta_procNoise-1.pdf Graphic fi
+le (type pdf)
+<use FPM_SimStudy_figs/fig-FPM_rmvn100_CIplot_theta_procNoise-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-FPM_rmvn100_CIplot_theta_procNoi
+se-1.pdf  used on input line 743.
+(pdftex.def)             Requested size: 140.92372pt x 141.67332pt.
+<FPM_SimStudy_figs/fig-FPM_rmvn100_CIplot_r_procNoise-1.pdf, id=599, 566.115pt 
+x 569.12625pt>
+File: FPM_SimStudy_figs/fig-FPM_rmvn100_CIplot_r_procNoise-1.pdf Graphic file (
+type pdf)
+<use FPM_SimStudy_figs/fig-FPM_rmvn100_CIplot_r_procNoise-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-FPM_rmvn100_CIplot_r_procNoise-1
+.pdf  used on input line 748.
+(pdftex.def)             Requested size: 140.92372pt x 141.67332pt.
+<FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_int_procNoise-1.pdf, id=600, 56
+6.115pt x 569.12625pt>
+File: FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_int_procNoise-1.pdf Graphi
+c file (type pdf)
+<use FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_int_procNoise-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_int_pro
+cNoise-1.pdf  used on input line 754.
+(pdftex.def)             Requested size: 140.92372pt x 141.67332pt.
+<FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_linear_procNoise-1.pdf, id=601,
+ 566.115pt x 569.12625pt>
+File: FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_linear_procNoise-1.pdf Gra
+phic file (type pdf)
+<use FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_linear_procNoise-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_linear_
+procNoise-1.pdf  used on input line 759.
+(pdftex.def)             Requested size: 140.92372pt x 141.67332pt.
+<FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_quad_procNoise-1.pdf, id=602, 5
+66.115pt x 569.12625pt>
+File: FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_quad_procNoise-1.pdf Graph
+ic file (type pdf)
+<use FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_quad_procNoise-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_quad_pr
+ocNoise-1.pdf  used on input line 764.
+(pdftex.def)             Requested size: 140.92372pt x 141.67332pt.
+[20
+
+ <./FPM_SimStudy_figs/fig-FPM_rmvn100_CIplot_theta_procNoise-1.pdf> <./FPM_SimS
+tudy_figs/fig-FPM_rmvn100_CIplot_r_procNoise-1.pdf> <./FPM_SimStudy_figs/fig-Ki
+ssileff_rmvn100_CIplot_int_procNoise-1.pdf> <./FPM_SimStudy_figs/fig-Kissileff_
+rmvn100_CIplot_linear_procNoise-1.pdf> <./FPM_SimStudy_figs/fig-Kissileff_rmvn1
+00_CIplot_quad_procNoise-1.pdf>]
+<FPM_SimStudy_figs/fig-FPM_rmvn100_intakeCurveCI_fitTRUE_procNoise-1.pdf, id=64
+3, 568.1225pt x 569.12625pt>
+File: FPM_SimStudy_figs/fig-FPM_rmvn100_intakeCurveCI_fitTRUE_procNoise-1.pdf G
+raphic file (type pdf)
+<use FPM_SimStudy_figs/fig-FPM_rmvn100_intakeCurveCI_fitTRUE_procNoise-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-FPM_rmvn100_intakeCurveCI_fitTRU
+E_procNoise-1.pdf  used on input line 779.
+(pdftex.def)             Requested size: 211.38965pt x 211.76314pt.
+<FPM_SimStudy_figs/fig-FPM_rmvn100_intakeCurve_fitFALSE_procNoise-1.pdf, id=644
+, 570.13pt x 569.12625pt>
+File: FPM_SimStudy_figs/fig-FPM_rmvn100_intakeCurve_fitFALSE_procNoise-1.pdf Gr
+aphic file (type pdf)
+<use FPM_SimStudy_figs/fig-FPM_rmvn100_intakeCurve_fitFALSE_procNoise-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-FPM_rmvn100_intakeCurve_fitFALSE
+_procNoise-1.pdf  used on input line 784.
+(pdftex.def)             Requested size: 211.38847pt x 211.01631pt.
+<FPM_SimStudy_figs/fig-Kissileff_rmvn100_intakeCurveCI_fitTRUE_procNoise-1.pdf,
+ id=645, 568.1225pt x 569.12625pt>
+File: FPM_SimStudy_figs/fig-Kissileff_rmvn100_intakeCurveCI_fitTRUE_procNoise-1
+.pdf Graphic file (type pdf)
+<use FPM_SimStudy_figs/fig-Kissileff_rmvn100_intakeCurveCI_fitTRUE_procNoise-1.
+pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-Kissileff_rmvn100_intakeCurveCI_
+fitTRUE_procNoise-1.pdf  used on input line 790.
+(pdftex.def)             Requested size: 211.38965pt x 211.76314pt.
+<FPM_SimStudy_figs/fig-Kissileff_rmvn100_intakeCurve_fitFALSE_procNoise-1.pdf, 
+id=646, 568.1225pt x 569.12625pt>
+File: FPM_SimStudy_figs/fig-Kissileff_rmvn100_intakeCurve_fitFALSE_procNoise-1.
+pdf Graphic file (type pdf)
+<use FPM_SimStudy_figs/fig-Kissileff_rmvn100_intakeCurve_fitFALSE_procNoise-1.p
+df>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-Kissileff_rmvn100_intakeCurve_fi
+tFALSE_procNoise-1.pdf  used on input line 795.
+(pdftex.def)             Requested size: 211.38965pt x 211.76314pt.
+[21
+
+ <./FPM_SimStudy_figs/fig-FPM_rmvn100_intakeCurveCI_fitTRUE_procNoise-1.pdf> <.
+/FPM_SimStudy_figs/fig-FPM_rmvn100_intakeCurve_fitFALSE_procNoise-1.pdf> <./FPM
+_SimStudy_figs/fig-Kissileff_rmvn100_intakeCurveCI_fitTRUE_procNoise-1.pdf> <./
+FPM_SimStudy_figs/fig-Kissileff_rmvn100_intakeCurve_fitFALSE_procNoise-1.pdf>]
+<FPM_SimStudy_figs/fig-FPM_rmvn100_CIplot_theta_procNoise_measureNoise-1.pdf, i
+d=693, 566.115pt x 569.12625pt>
+File: FPM_SimStudy_figs/fig-FPM_rmvn100_CIplot_theta_procNoise_measureNoise-1.p
+df Graphic file (type pdf)
+<use FPM_SimStudy_figs/fig-FPM_rmvn100_CIplot_theta_procNoise_measureNoise-1.pd
+f>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-FPM_rmvn100_CIplot_theta_procNoi
+se_measureNoise-1.pdf  used on input line 817.
+(pdftex.def)             Requested size: 140.92372pt x 141.67332pt.
+<FPM_SimStudy_figs/fig-FPM_rmvn100_CIplot_r_procNoise_measureNoise-1.pdf, id=69
+4, 566.115pt x 569.12625pt>
+File: FPM_SimStudy_figs/fig-FPM_rmvn100_CIplot_r_procNoise_measureNoise-1.pdf G
+raphic file (type pdf)
+<use FPM_SimStudy_figs/fig-FPM_rmvn100_CIplot_r_procNoise_measureNoise-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-FPM_rmvn100_CIplot_r_procNoise_m
+easureNoise-1.pdf  used on input line 822.
+(pdftex.def)             Requested size: 140.92372pt x 141.67332pt.
+<FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_int_procNoise_measureNoise-1.pd
+f, id=695, 566.115pt x 569.12625pt>
+File: FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_int_procNoise_measureNoise
+-1.pdf Graphic file (type pdf)
+<use FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_int_procNoise_measureNoise-
+1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_int_pro
+cNoise_measureNoise-1.pdf  used on input line 828.
+(pdftex.def)             Requested size: 140.92372pt x 141.67332pt.
+<FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_linear_procNoise_measureNoise-1
+.pdf, id=696, 566.115pt x 569.12625pt>
+File: FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_linear_procNoise_measureNo
+ise-1.pdf Graphic file (type pdf)
+<use FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_linear_procNoise_measureNoi
+se-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_linear_
+procNoise_measureNoise-1.pdf  used on input line 833.
+(pdftex.def)             Requested size: 140.92372pt x 141.67332pt.
+<FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_quad_procNoise_measureNoise-1.p
+df, id=697, 566.115pt x 569.12625pt>
+File: FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_quad_procNoise_measureNois
+e-1.pdf Graphic file (type pdf)
+<use FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_quad_procNoise_measureNoise
+-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_quad_pr
+ocNoise_measureNoise-1.pdf  used on input line 838.
+(pdftex.def)             Requested size: 140.92372pt x 141.67332pt.
+[22
+
+ <./FPM_SimStudy_figs/fig-FPM_rmvn100_CIplot_theta_procNoise_measureNoise-1.pdf
+> <./FPM_SimStudy_figs/fig-FPM_rmvn100_CIplot_r_procNoise_measureNoise-1.pdf> <
+./FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_int_procNoise_measureNoise-1.p
+df> <./FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_linear_procNoise_measureN
+oise-1.pdf> <./FPM_SimStudy_figs/fig-Kissileff_rmvn100_CIplot_quad_procNoise_me
+asureNoise-1.pdf>]
+<FPM_SimStudy_figs/fig-FPM_rmvn100_intakeCurveCI_fitTRUE_procNoise_measureNoise
+-1.pdf, id=739, 571.13374pt x 569.12625pt>
+File: FPM_SimStudy_figs/fig-FPM_rmvn100_intakeCurveCI_fitTRUE_procNoise_measure
+Noise-1.pdf Graphic file (type pdf)
+<use FPM_SimStudy_figs/fig-FPM_rmvn100_intakeCurveCI_fitTRUE_procNoise_measureN
+oise-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-FPM_rmvn100_intakeCurveCI_fitTRU
+E_procNoise_measureNoise-1.pdf  used on input line 853.
+(pdftex.def)             Requested size: 211.3859pt x 210.64288pt.
+<FPM_SimStudy_figs/fig-FPM_rmvn100_intakeCurve_fitFALSE_procNoise_measureNoise-
+1.pdf, id=740, 571.13374pt x 569.12625pt>
+File: FPM_SimStudy_figs/fig-FPM_rmvn100_intakeCurve_fitFALSE_procNoise_measureN
+oise-1.pdf Graphic file (type pdf)
+<use FPM_SimStudy_figs/fig-FPM_rmvn100_intakeCurve_fitFALSE_procNoise_measureNo
+ise-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-FPM_rmvn100_intakeCurve_fitFALSE
+_procNoise_measureNoise-1.pdf  used on input line 858.
+(pdftex.def)             Requested size: 211.3859pt x 210.64288pt.
+<FPM_SimStudy_figs/fig-Kissileff_rmvn100_intakeCurveCI_fitTRUE_procNoise_measur
+eNoise-1.pdf, id=741, 568.1225pt x 569.12625pt>
+File: FPM_SimStudy_figs/fig-Kissileff_rmvn100_intakeCurveCI_fitTRUE_procNoise_m
+easureNoise-1.pdf Graphic file (type pdf)
+<use FPM_SimStudy_figs/fig-Kissileff_rmvn100_intakeCurveCI_fitTRUE_procNoise_me
+asureNoise-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-Kissileff_rmvn100_intakeCurveCI_
+fitTRUE_procNoise_measureNoise-1.pdf  used on input line 864.
+(pdftex.def)             Requested size: 211.38965pt x 211.76314pt.
+<FPM_SimStudy_figs/fig-Kissileff_rmvn100_intakeCurve_fitFALSE_procNoise_measure
+Noise-1.pdf, id=742, 568.1225pt x 569.12625pt>
+File: FPM_SimStudy_figs/fig-Kissileff_rmvn100_intakeCurve_fitFALSE_procNoise_me
+asureNoise-1.pdf Graphic file (type pdf)
+<use FPM_SimStudy_figs/fig-Kissileff_rmvn100_intakeCurve_fitFALSE_procNoise_mea
+sureNoise-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-Kissileff_rmvn100_intakeCurve_fi
+tFALSE_procNoise_measureNoise-1.pdf  used on input line 869.
+(pdftex.def)             Requested size: 211.38965pt x 211.76314pt.
+[23
+
+ <./FPM_SimStudy_figs/fig-FPM_rmvn100_intakeCurveCI_fitTRUE_procNoise_measureNo
+ise-1.pdf> <./FPM_SimStudy_figs/fig-FPM_rmvn100_intakeCurve_fitFALSE_procNoise_
+measureNoise-1.pdf> <./FPM_SimStudy_figs/fig-Kissileff_rmvn100_intakeCurveCI_fi
+tTRUE_procNoise_measureNoise-1.pdf> <./FPM_SimStudy_figs/fig-Kissileff_rmvn100_
+intakeCurve_fitFALSE_procNoise_measureNoise-1.pdf>]
+<FPM_SimStudy_figs/fig-FPM_rmvn500_RMSE_timing-1.pdf, id=788, 778.91pt x 568.12
+25pt>
+File: FPM_SimStudy_figs/fig-FPM_rmvn500_RMSE_timing-1.pdf Graphic file (type pd
+f)
+<use FPM_SimStudy_figs/fig-FPM_rmvn500_RMSE_timing-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-FPM_rmvn500_RMSE_timing-1.pdf  u
+sed on input line 888.
+(pdftex.def)             Requested size: 328.82767pt x 239.84079pt.
+<FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSE_timing-1.pdf, id=789, 778.91pt x 
+568.1225pt>
+File: FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSE_timing-1.pdf Graphic file (t
+ype pdf)
+<use FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSE_timing-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSE_timing-1.
+pdf  used on input line 893.
+(pdftex.def)             Requested size: 328.82767pt x 239.84079pt.
+[24
+
+ <./FPM_SimStudy_figs/fig-FPM_rmvn500_RMSE_timing-1.pdf> <./FPM_SimStudy_figs/f
+ig-Kissileff_rmvn500_RMSE_timing-1.pdf>]
+<FPM_SimStudy_figs/fig-FPM_rmvn500_RMSE_intake-1.pdf, id=817, 778.91pt x 568.12
+25pt>
+File: FPM_SimStudy_figs/fig-FPM_rmvn500_RMSE_intake-1.pdf Graphic file (type pd
+f)
+<use FPM_SimStudy_figs/fig-FPM_rmvn500_RMSE_intake-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-FPM_rmvn500_RMSE_intake-1.pdf  u
+sed on input line 906.
+(pdftex.def)             Requested size: 328.82767pt x 239.84079pt.
+<FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSE_intake-1.pdf, id=818, 778.91pt x 
+568.1225pt>
+File: FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSE_intake-1.pdf Graphic file (t
+ype pdf)
+<use FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSE_intake-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSE_intake-1.
+pdf  used on input line 911.
+(pdftex.def)             Requested size: 328.82767pt x 239.84079pt.
+[25
+
+ <./FPM_SimStudy_figs/fig-FPM_rmvn500_RMSE_intake-1.pdf> <./FPM_SimStudy_figs/f
+ig-Kissileff_rmvn500_RMSE_intake-1.pdf>]
+Overfull \hbox (65.27428pt too wide) in paragraph at lines 926--934
+ [][] 
+ []
+
+[26
+
+]
+<FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor_rDif_timing-1.pdf, id=854, 572.1375p
+t x 569.12625pt>
+File: FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor_rDif_timing-1.pdf Graphic file 
+(type pdf)
+<use FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor_rDif_timing-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor_rDif_timing-
+1.pdf  used on input line 988.
+(pdftex.def)             Requested size: 164.41405pt x 163.5487pt.
+<FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor_thetaDif_timing-1.pdf, id=855, 572.1
+375pt x 569.12625pt>
+File: FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor_thetaDif_timing-1.pdf Graphic f
+ile (type pdf)
+<use FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor_thetaDif_timing-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor_thetaDif_tim
+ing-1.pdf  used on input line 993.
+(pdftex.def)             Requested size: 164.41405pt x 163.5487pt.
+<FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor_rDif_intake-1.pdf, id=856, 577.15625
+pt x 569.12625pt>
+File: FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor_rDif_intake-1.pdf Graphic file 
+(type pdf)
+<use FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor_rDif_intake-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor_rDif_intake-
+1.pdf  used on input line 998.
+(pdftex.def)             Requested size: 164.42078pt x 162.1332pt.
+<FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor_thetaDif_intake-1.pdf, id=857, 577.1
+5625pt x 569.12625pt>
+File: FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor_thetaDif_intake-1.pdf Graphic f
+ile (type pdf)
+<use FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor_thetaDif_intake-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor_thetaDif_int
+ake-1.pdf  used on input line 1003.
+(pdftex.def)             Requested size: 164.42078pt x 162.1332pt.
+[27
+
+ <./FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor_rDif_timing-1.pdf> <./FPM_SimStud
+y_figs/fig-FPM_rmvn500_RMSEcor_thetaDif_timing-1.pdf> <./FPM_SimStudy_figs/fig-
+FPM_rmvn500_RMSEcor_rDif_intake-1.pdf> <./FPM_SimStudy_figs/fig-FPM_rmvn500_RMS
+Ecor_thetaDif_intake-1.pdf>]
+<FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor_intDif_timing-1.pdf, id=906, 5
+72.1375pt x 569.12625pt>
+File: FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor_intDif_timing-1.pdf Graph
+ic file (type pdf)
+<use FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor_intDif_timing-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor_intDif
+_timing-1.pdf  used on input line 1019.
+(pdftex.def)             Requested size: 140.93005pt x 140.18832pt.
+<FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor_linearDif_timing-1.pdf, id=907
+, 572.1375pt x 569.12625pt>
+File: FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor_linearDif_timing-1.pdf Gr
+aphic file (type pdf)
+<use FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor_linearDif_timing-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor_linear
+Dif_timing-1.pdf  used on input line 1024.
+(pdftex.def)             Requested size: 140.93005pt x 140.18832pt.
+<FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor_quadDif_timing-1.pdf, id=908, 
+572.1375pt x 569.12625pt>
+File: FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor_quadDif_timing-1.pdf Grap
+hic file (type pdf)
+<use FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor_quadDif_timing-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor_quadDi
+f_timing-1.pdf  used on input line 1029.
+(pdftex.def)             Requested size: 140.93005pt x 140.18832pt.
+<FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor_intDif_intake-1.pdf, id=909, 5
+76.1525pt x 569.12625pt>
+File: FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor_intDif_intake-1.pdf Graph
+ic file (type pdf)
+<use FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor_intDif_intake-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor_intDif
+_intake-1.pdf  used on input line 1034.
+(pdftex.def)             Requested size: 140.92561pt x 139.20702pt.
+<FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor_linearDif_intake-1.pdf, id=910
+, 576.1525pt x 569.12625pt>
+File: FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor_linearDif_intake-1.pdf Gr
+aphic file (type pdf)
+<use FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor_linearDif_intake-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor_linear
+Dif_intake-1.pdf  used on input line 1039.
+(pdftex.def)             Requested size: 140.92561pt x 139.20702pt.
+<FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor_quadDif_intake-1.pdf, id=911, 
+576.1525pt x 569.12625pt>
+File: FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor_quadDif_intake-1.pdf Grap
+hic file (type pdf)
+<use FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor_quadDif_intake-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor_quadDi
+f_intake-1.pdf  used on input line 1044.
+(pdftex.def)             Requested size: 140.92561pt x 139.20702pt.
+[28
+
+ <./FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor_intDif_timing-1.pdf> <./FPM
+_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor_linearDif_timing-1.pdf> <./FPM_Sim
+Study_figs/fig-Kissileff_rmvn500_RMSEcor_quadDif_timing-1.pdf> <./FPM_SimStudy_
+figs/fig-Kissileff_rmvn500_RMSEcor_intDif_intake-1.pdf> <./FPM_SimStudy_figs/fi
+g-Kissileff_rmvn500_RMSEcor_linearDif_intake-1.pdf> <./FPM_SimStudy_figs/fig-Ki
+ssileff_rmvn500_RMSEcor_quadDif_intake-1.pdf>]
+<FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor.AvgBiteSize_rDif_timing-1.pdf, id=98
+0, 574.145pt x 569.12625pt>
+File: FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor.AvgBiteSize_rDif_timing-1.pdf G
+raphic file (type pdf)
+<use FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor.AvgBiteSize_rDif_timing-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor.AvgBiteSize_
+rDif_timing-1.pdf  used on input line 1064.
+(pdftex.def)             Requested size: 164.41272pt x 162.97556pt.
+<FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor.AvgBiteSize_thetaDif_timing-1.pdf, i
+d=981, 574.145pt x 569.12625pt>
+File: FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor.AvgBiteSize_thetaDif_timing-1.p
+df Graphic file (type pdf)
+<use FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor.AvgBiteSize_thetaDif_timing-1.pd
+f>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor.AvgBiteSize_
+thetaDif_timing-1.pdf  used on input line 1069.
+(pdftex.def)             Requested size: 164.41272pt x 162.97556pt.
+<FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor.AvgBiteSize_rDif_intake-1.pdf, id=98
+2, 572.1375pt x 569.12625pt>
+File: FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor.AvgBiteSize_rDif_intake-1.pdf G
+raphic file (type pdf)
+<use FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor.AvgBiteSize_rDif_intake-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor.AvgBiteSize_
+rDif_intake-1.pdf  used on input line 1074.
+(pdftex.def)             Requested size: 164.41405pt x 163.5487pt.
+<FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor.AvgBiteSize_thetaDif_intake-1.pdf, i
+d=983, 572.1375pt x 569.12625pt>
+File: FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor.AvgBiteSize_thetaDif_intake-1.p
+df Graphic file (type pdf)
+<use FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor.AvgBiteSize_thetaDif_intake-1.pd
+f>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor.AvgBiteSize_
+thetaDif_intake-1.pdf  used on input line 1079.
+(pdftex.def)             Requested size: 164.41405pt x 163.5487pt.
+[29
+
+ <./FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor.AvgBiteSize_rDif_timing-1.pdf> <.
+/FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor.AvgBiteSize_thetaDif_timing-1.pdf> <
+./FPM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor.AvgBiteSize_rDif_intake-1.pdf> <./F
+PM_SimStudy_figs/fig-FPM_rmvn500_RMSEcor.AvgBiteSize_thetaDif_intake-1.pdf>]
+<FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor.AvgBiteSize_intDif_timing-1.pd
+f, id=1032, 572.1375pt x 569.12625pt>
+File: FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor.AvgBiteSize_intDif_timing
+-1.pdf Graphic file (type pdf)
+<use FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor.AvgBiteSize_intDif_timing-
+1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor.AvgBit
+eSize_intDif_timing-1.pdf  used on input line 1095.
+(pdftex.def)             Requested size: 140.93005pt x 140.18832pt.
+<FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor.AvgBiteSize_linearDif_timing-1
+.pdf, id=1033, 572.1375pt x 569.12625pt>
+File: FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor.AvgBiteSize_linearDif_tim
+ing-1.pdf Graphic file (type pdf)
+<use FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor.AvgBiteSize_linearDif_timi
+ng-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor.AvgBit
+eSize_linearDif_timing-1.pdf  used on input line 1100.
+(pdftex.def)             Requested size: 140.93005pt x 140.18832pt.
+<FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor.AvgBiteSize_quadDif_timing-1.p
+df, id=1034, 572.1375pt x 569.12625pt>
+File: FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor.AvgBiteSize_quadDif_timin
+g-1.pdf Graphic file (type pdf)
+<use FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor.AvgBiteSize_quadDif_timing
+-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor.AvgBit
+eSize_quadDif_timing-1.pdf  used on input line 1105.
+(pdftex.def)             Requested size: 140.93005pt x 140.18832pt.
+<FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor.AvgBiteSize_intDif_intake-1.pd
+f, id=1035, 575.14874pt x 569.12625pt>
+File: FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor.AvgBiteSize_intDif_intake
+-1.pdf Graphic file (type pdf)
+<use FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor.AvgBiteSize_intDif_intake-
+1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor.AvgBit
+eSize_intDif_intake-1.pdf  used on input line 1110.
+(pdftex.def)             Requested size: 140.92583pt x 139.45018pt.
+<FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor.AvgBiteSize_linearDif_intake-1
+.pdf, id=1036, 575.14874pt x 569.12625pt>
+File: FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor.AvgBiteSize_linearDif_int
+ake-1.pdf Graphic file (type pdf)
+<use FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor.AvgBiteSize_linearDif_inta
+ke-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor.AvgBit
+eSize_linearDif_intake-1.pdf  used on input line 1115.
+(pdftex.def)             Requested size: 140.92583pt x 139.45018pt.
+<FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor.AvgBiteSize_quadDif_intake-1.p
+df, id=1037, 575.14874pt x 569.12625pt>
+File: FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor.AvgBiteSize_quadDif_intak
+e-1.pdf Graphic file (type pdf)
+<use FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor.AvgBiteSize_quadDif_intake
+-1.pdf>
+Package pdftex.def Info: FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor.AvgBit
+eSize_quadDif_intake-1.pdf  used on input line 1120.
+(pdftex.def)             Requested size: 140.92583pt x 139.45018pt.
+[30
+
+ <./FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor.AvgBiteSize_intDif_timing-1
+.pdf> <./FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor.AvgBiteSize_linearDif_
+timing-1.pdf> <./FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor.AvgBiteSize_qu
+adDif_timing-1.pdf> <./FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor.AvgBiteS
+ize_intDif_intake-1.pdf> <./FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMSEcor.Avg
+BiteSize_linearDif_intake-1.pdf> <./FPM_SimStudy_figs/fig-Kissileff_rmvn500_RMS
+Ecor.AvgBiteSize_quadDif_intake-1.pdf>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1126.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1126.
 (./FPM_SimStudy.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 646.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 646.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 646.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1126.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1126.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1126.
  ) 
 Here is how much of TeX's memory you used:
- 16512 strings out of 492995
- 253095 string characters out of 6132704
- 366339 words of memory out of 5000000
- 19642 multiletter control sequences out of 15000+600000
- 64522 words of font info for 79 fonts, out of 8000000 for 9000
+ 16463 strings out of 492649
+ 267789 string characters out of 6129622
+ 368474 words of memory out of 5000000
+ 19873 multiletter control sequences out of 15000+600000
+ 64611 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,16n,41p,717b,557s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/lo
-cal/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/20
-17/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2017/texmf-d
-ist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc
-/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/
-lm-rm.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmbx10.pfb>
-</usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/loca
-l/texlive/2017/texmf-dist/fonts/type1/public/lm/lmbx7.pfb></usr/local/texlive/2
-017/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2017/texmf-
-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts
-/type1/public/lm/lmmi5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/publ
-ic/lm/lmmi7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmmi9
-.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/
-local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texli
-ve/2017/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2017/texm
-f-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts
-/type1/public/lm/lmr9.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/publi
-c/lm/lmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmsy5
-.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmsy7.pfb>
-Output written on FPM_SimStudy.pdf (20 pages, 3803411 bytes).
+ 42i,16n,41p,906b,558s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/lo
+cal/texlive/2018/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/20
+18/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2018/texmf-d
+ist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local/texlive/2018/texmf-dist/fonts/enc
+/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/lm/
+lm-rm.enc}</usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmbx10.pfb>
+</usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/loca
+l/texlive/2018/texmf-dist/fonts/type1/public/lm/lmbx7.pfb></usr/local/texlive/2
+018/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2018/texmf-
+dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2018/texmf-dist/fonts
+/type1/public/lm/lmmi5.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/publ
+ic/lm/lmmi7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmmi9
+.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/
+local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texli
+ve/2018/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2018/texm
+f-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2018/texmf-dist/fonts
+/type1/public/lm/lmr9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/publi
+c/lm/lmsy10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmsy5
+.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/lm/lmsy7.pfb>
+Output written on FPM_SimStudy.pdf (30 pages, 2789695 bytes).
 PDF statistics:
- 728 PDF objects out of 1000 (max. 8388607)
- 575 compressed objects within 6 object streams
- 99 named destinations out of 1000 (max. 500000)
- 14656 words of extra memory for PDF output out of 17280 (max. 10000000)
+ 1285 PDF objects out of 1440 (max. 8388607)
+ 999 compressed objects within 10 object streams
+ 156 named destinations out of 1000 (max. 500000)
+ 14941 words of extra memory for PDF output out of 17280 (max. 10000000)
 
